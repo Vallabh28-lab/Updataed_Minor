@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content=width=device-width, initial-scale=1.0>
+<title>Spotify Tracks Intelligence Dashboard</title>
+<script src=https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js></script>
+<style>
+:root {
+  --bg: #0d0e12;
+  --panel: rgba(18, 22, 30, 0.62);
+  --panel-strong: rgba(20, 25, 35, 0.82);
+  --line: rgba(255,255,255,0.08);
+  --text: #e9f6ff;
+  --muted: #8fa7b8;
+  --green: #4dffb8;
+  --cyan: #39d5ff;
+  --purple: #b06cff;
+  --shadow: 0 10px 30px rgba(0,0,0,0.35), 0 0 18px rgba(57,213,255,0.08);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(77,255,184,0.12), transparent 26%),
+    radial-gradient(circle at 85% 10%, rgba(176,108,255,0.10), transparent 22%),
+    radial-gradient(circle at 50% 80%, rgba(57,213,255,0.10), transparent 26%),
+    linear-gradient(180deg, #090a0d 0%, #0d0e12 100%);
+  color: var(--text);
+}
+.container { width: min(1500px, calc(100% - 32px)); margin: 0 auto; padding: 28px 0 40px; }
+.hero, .panel, .kpi, .chart-card, .table-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 18px;
+}
+.hero {
+  padding: 24px 26px;
+  position: sticky;
+  top: 14px;
+  z-index: 10;
+  margin-bottom: 18px;
+}
+.hero h1 { margin: 0 0 8px; font-size: 32px; letter-spacing: 0.4px; }
+.hero p { margin: 0; color: var(--muted); max-width: 900px; }
+.control-grid, .kpi-grid, .chart-grid { display: grid; gap: 16px; }
+.control-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 18px; }
+.panel { padding: 16px; transition: all 0.3s ease; }
+.panel:hover, .kpi:hover, .chart-card:hover, .table-card:hover { transform: translateY(-2px) scale(1.01); box-shadow: 0 14px 38px rgba(0,0,0,0.42), 0 0 24px rgba(77,255,184,0.12); }
+label { display: block; margin-bottom: 8px; color: var(--muted); font-size: 13px; text-transform: uppercase; letter-spacing: 1px; }
+select, input[type=range] {
+  width: 100%;
+  background: rgba(255,255,255,0.05);
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 12px;
+  padding: 12px;
+}
+.range-wrap { display: flex; gap: 10px; align-items: center; }
+.range-note { margin-top: 8px; color: var(--muted); font-size: 12px; }
+.kpi-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 18px 0; }
+.kpi { padding: 18px; min-height: 118px; position: relative; overflow: hidden; }
+.kpi:before {
+  content: '';
+  position: absolute;
+  inset: auto -20px -20px auto;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(57,213,255,0.14), transparent 60%);
+}
+.kpi .label { color: var(--muted); text-transform: uppercase; letter-spacing: 1px; font-size: 12px; }
+.kpi .value { font-size: 34px; font-weight: 700; margin-top: 12px; }
+.kpi .sub { color: var(--muted); margin-top: 8px; font-size: 13px; }
+.chart-grid { grid-template-columns: repeat(12, 1fr); }
+.chart-card, .table-card { padding: 16px; min-height: 360px; }
+.chart-card h3, .table-card h3 { margin: 0 0 12px; font-size: 18px; }
+.chart-card p, .table-card p { margin: 0 0 12px; color: var(--muted); font-size: 13px; }
+.chart { width: 100%; height: 290px; }
+.span-3 { grid-column: span 3; }
+.span-4 { grid-column: span 4; }
+.span-5 { grid-column: span 5; }
+.span-6 { grid-column: span 6; }
+.span-7 { grid-column: span 7; }
+.span-8 { grid-column: span 8; }
+.span-12 { grid-column: span 12; }
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 13px; }
+th { color: var(--cyan); font-weight: 600; }
+.badge { display: inline-block; padding: 4px 10px; border-radius: 999px; background: rgba(77,255,184,0.12); color: var(--green); font-size: 12px; }
+.footer-note { color: var(--muted); margin-top: 18px; text-align: center; font-size: 12px; }
+@media (max-width: 1200px) {
+  .control-grid, .kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .span-3, .span-4, .span-5, .span-6, .span-7, .span-8 { grid-column: span 12; }
+}
+@media (max-width: 700px) {
+  .container { width: calc(100% - 20px); }
+  .control-grid, .kpi-grid { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 24px; }
+}
+</style>
+</head>
+<body>
+<div class=container>
+  <section class=hero>
+    <div class=badge>Production-Ready Interactive Music Intelligence Dashboard</div>
+    <h1>Spotify Tracks Intelligence Dashboard</h1>
+    <p>Explore popularity, audio characteristics, genre behavior, and track-level performance with a real-time global control panel that updates every chart instantly.</p>
+    <div class=control-grid>
+      <div class=panel>
+        <label for=viewMode>Dynamic View Filter</label>
+        <select id=viewMode>
+          <option value=all>All Tracks</option>
+          <option value=highPopularity>High Popularity</option>
+          <option value=highDanceability>Highly Danceable</option>
+          <option value=highEnergy>High Energy</option>
+          <option value=explicitOnly>Explicit Only</option>
+          <option value=acousticFocus>Acoustic Leaning</option>
+        </select>
+      </div>
+      <div class=panel>
+        <label for=genreFilter>Genre Focus</label>
+        <select id=genreFilter></select>
+      </div>
+      <div class=panel>
+        <label for=minTempo>Tempo Range Slicer</label>
+        <div class=range-wrap><input id=minTempo type=range min=0 max=220 value=0><input id=maxTempo type=range min=0 max=220 value=220></div>
+        <div class=range-note id=tempoLabel>0 BPM to 220 BPM</div>
+      </div>
+      <div class=panel>
+        <label for=popThreshold>Popularity Threshold</label>
+        <input id=popThreshold type=range min=0 max=100 value=0>
+        <div class=range-note id=popLabel>Minimum popularity: 0</div>
+      </div>
+    </div>
+  </section>
+  <section class=kpi-grid>
+    <div class=kpi><div class=label>Total Tracks Analyzed</div><div class=value id=kpiTracks>0</div><div class=sub id=kpiTracksSub>Filtered selection</div></div>
+    <div class=kpi><div class=label>Average Track Popularity</div><div class=value id=kpiPopularity>0</div><div class=sub>Mean popularity score</div></div>
+    <div class=kpi><div class=label>Explicit Tracks</div><div class=value id=kpiExplicit>0%</div><div class=sub>Share of explicit content</div></div>
+    <div class=kpi><div class=label>Average Tempo</div><div class=value id=kpiTempo>0 BPM</div><div class=sub>Average beats per minute</div></div>
+  </section>
+  <section class=chart-grid>
+    <div class='chart-card span-4'><h3>Popularity Distribution</h3><p>Histogram of track popularity across the current selection.</p><div id=chartPopularity class=chart></div></div>
+    <div class='chart-card span-4'><h3>Top Genres by Track Count</h3><p>Most represented genres in the filtered segment.</p><div id=chartGenres class=chart></div></div>
+    <div class='chart-card span-4'><h3>Audio Feature Radar</h3><p>Average audio signature for the selected subset.</p><div id=chartRadar class=chart></div></div>
+    <div class='chart-card span-6'><h3>Danceability vs Energy</h3><p>Bubble size maps popularity and color maps genre clusters.</p><div id=chartDanceEnergy class=chart></div></div>
+    <div class='chart-card span-6'><h3>Tempo vs Valence</h3><p>How speed and positivity move together across tracks.</p><div id=chartTempoValence class=chart></div></div>
+    <div class='chart-card span-7'><h3>Genre Audio Profile Comparison</h3><p>Average danceability, energy, valence, and acousticness by genre.</p><div id=chartGenreProfile class=chart></div></div>
+    <div class='chart-card span-5'><h3>Explicit Content Rate by Genre</h3><p>Genres with the highest share of explicit tracks.</p><div id=chartExplicitGenre class=chart></div></div>
+    <div class='chart-card span-5'><h3>Average Duration by Genre</h3><p>Average song length in minutes for leading genres.</p><div id=chartDurationGenre class=chart></div></div>
+    <div class='chart-card span-7'><h3>Correlation Heatmap</h3><p>How major quantitative variables move together.</p><div id=chartCorrelation class=chart></div></div>
+    <div class='table-card span-12'><h3>Top Popular Tracks</h3><p>Highest popularity tracks within the live filtered view.</p><div style=overflow:auto; max-height:320px>

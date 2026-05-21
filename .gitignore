@@ -1,0 +1,19 @@
+# Block caches anywhere in the project folders
+**/.vite/
+**/node_modules/
+**/__pycache__/
+
+# Block all compiled binaries globally
+**/*.dll
+**/*.pyd
+**/*.lib
+**/*.pth
+**/*.so
+**/*.exe
+
+# Block archives and large document dumps
+**/archive/
+**/archive.zip
+**/DOCUMENTS OF MINOR/
+**/*.txt
+**/*.csv

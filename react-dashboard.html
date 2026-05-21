@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LegalAI React Dashboard</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { 
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState } = React;
+
+        // Lucide React Icons (simplified)
+        const LayoutDashboard = () => <span>🏠</span>;
+        const Search = () => <span>🔍</span>;
+        const FileText = () => <span>📄</span>;
+        const Users = () => <span>👥</span>;
+        const Calendar = () => <span>📅</span>;
+        const TrendingUp = () => <span>📈</span>;
+        const Settings = () => <span>⚙️</span>;
+        const User = () => <span>👤</span>;
+
+        const menuItems = [
+            { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard, color: 'text-blue-400' },
+            { id: 'case-search', label: 'Case Search', icon: Search, color: 'text-green-400' },
+            { id: 'document-analysis', label: 'Document Analysis', icon: FileText, color: 'text-purple-400' },
+            { id: 'lawyer-directory', label: 'Lawyer Directory', icon: Users, color: 'text-orange-400' },
+            { id: 'appointments', label: 'Appointments', icon: Calendar, color: 'text-pink-400' },
+            { id: 'case-prediction', label: 'Case Prediction', icon: TrendingUp, color: 'text-cyan-400' },
+            { id: 'role-management', label: 'Role Management', icon: Settings, color: 'text-gray-400' },
+            { id: 'settings', label: 'Settings', icon: Settings, color: 'text-gray-400' },
+        ];
+
+        const UserProfile = () => {
+            return (
+                <div className="p-4 border-t border-gray-700">
+                    <div className="flex items-center space-x-3">
+                        <div className="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center text-black font-bold">
+                            JD
+                        </div>
+                        <div>
+                            <p className="text-sm font-medium text-white">John Doe</p>
+                            <p className="text-xs text-gray-400">Senior Lawyer</p>
+                        </div>
+                    </div>
+                </div>
+            );
+        };
+
+        const Sidebar = () => {
+            const [activeItem, setActiveItem] = useState('dashboard');
+
+            return (
+                <div className="w-64 bg-black text-white flex flex-col h-full">
+                    <div className="p-6">
+                        <div className="flex items-center space-x-2">
+                            <span className="text-2xl">⚖️</span>
+                            <h1 className="text-xl font-bold">LegalAI</h1>
+                        </div>
+                    </div>
+                    <nav className="flex-1 px-4">
+                        <ul className="space-y-2">
+                            {menuItems.map((item) => {
+                                const Icon = item.icon;
+                                const isActive = activeItem === item.id;
+                                return (
+                                    <li key={item.id}>
+                                        <button
+                                            onClick={() => setActiveItem(item.id)}
+                                            className={`w-full flex items-center px-4 py-3 rounded-lg transition-colors duration-200 ${
+                                                isActive
+                                                    ? 'bg-gray-800 border-l-4 border-yellow-400'
+                                                    : 'hover:bg-gray-800'
+                                            }`}
+                                        >
+                                            <span className={`w-5 h-5 mr-3 ${item.color} text-lg`}>
+                                                <Icon />
+                                            </span>
+                                            <span className="text-sm font-medium">{item.label}</span>
+                                        </button>
+                                    </li>
+                                );
+                            })}
+                        </ul>
+                    </nav>
+                    <UserProfile />
+                </div>
+            );
+        };
+
+        const MainContent = () => {
+            return (
+                <div className="flex-1 bg-gray-100 p-6">
+                    <div className="bg-white rounded-lg shadow-lg p-6 mb-6">
+                        <h1 className="text-3xl font-bold text-gray-900 mb-2">Legal Case Analysis Dashboard</h1>
+                        <p className="text-gray-600">Welcome to your comprehensive legal management system</p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+                        <div className="bg-white rounded-lg shadow-lg p-6">
+                            <div className="flex items-center">
+                                <div className="bg-blue-500 rounded-lg p-3">
+                                    <span className="text-2xl text-white">📊</span>
+                                </div>
+                                <div className="ml-4">
+                                    <p className="text-sm font-medium text-gray-600">Active Cases</p>
+                                    <p className="text-2xl font-bold text-gray-900">24</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="bg-white rounded-lg shadow-lg p-6">
+                            <div className="flex items-center">
+                                <div className="bg-green-500 rounded-lg p-3">
+                                    <span className="text-2xl text-white">👥</span>
+                                </div>
+                                <div className="ml-4">
+                                    <p className="text-sm font-medium text-gray-600">Total Clients</p>
+                                    <p className="text-2xl font-bold text-gray-900">156</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="bg-white rounded-lg shadow-lg p-6">
+                            <div className="flex items-center">
+                                <div className="bg-yellow-500 rounded-lg p-3">
+                                    <span className="text-2xl text-white">📅</span>
+                                </div>
+                                <div className="ml-4">
+                                    <p className="text-sm font-medium text-gray-600">Appointments</p>
+                                    <p className="text-2xl font-bold text-gray-900">8</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="bg-white rounded-lg shadow-lg p-6">
+                            <div className="flex items-center">
+                                <div className="bg-purple-500 rounded-lg p-3">
+                                    <span className="text-2xl text-white">📈</span>
+                                </div>
+                                <div className="ml-4">
+                                    <p className="text-sm font-medium text-gray-600">Success Rate</p>
+                                    <p className="text-2xl font-bold text-gray-900">94%</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <div className="bg-white rounded-lg shadow-lg p-6">
+                            <h2 className="text-xl font-bold text-gray-900 mb-4">Recent Cases</h2>
+                            <div className="space-y-3">
+                                {[1, 2, 3].map((i) => (
+                                    <div key={i} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                                        <div>
+                                            <p className="font-medium text-gray-900">Case #{i}001</p>
+                                            <p className="text-sm text-gray-600">Contract Dispute</p>
+                                        </div>
+                                        <span className="px-2 py-1 text-xs font-medium bg-blue-100 text-blue-800 rounded-full">
+                                            Active
+                                        </span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        <div className="bg-white rounded-lg shadow-lg p-6">
+                            <h2 className="text-xl font-bold text-gray-900 mb-4">Upcoming Appointments</h2>
+                            <div className="space-y-3">
+                                {[1, 2, 3].map((i) => (
+                                    <div key={i} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                                        <div>
+                                            <p className="font-medium text-gray-900">Client Meeting</p>
+                                            <p className="text-sm text-gray-600">Today, 2:00 PM</p>
+                                        </div>
+                                        <span className="px-2 py-1 text-xs font-medium bg-green-100 text-green-800 rounded-full">
+                                            Confirmed
+                                        </span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            );
+        };
+
+        const App = () => {
+            return (
+                <div className="flex h-screen bg-gray-100">
+                    <Sidebar />
+                    <MainContent />
+                </div>
+            );
+        };
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>
