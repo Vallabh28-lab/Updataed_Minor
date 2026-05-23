@@ -1,11 +1,11 @@
 const express = require('express');
-const { registerUser, login } = require('../controllers/authController');
+const { registerUser, login, forgotPassword } = require('../controllers/authController');
 
 const router = express.Router();
 
-// Use the controller functions
 router.post('/signup', registerUser);
 router.post('/login', login);
+router.post('/forgot-password', forgotPassword);
 
 // Health check endpoint
 router.get('/ping', (req, res) => {
