@@ -7,58 +7,75 @@ const fetch = require('node-fetch');
 const hearingRoutes = require('./src/routes/hearingRoutes');
 
 const API_KEY = process.env.GOOGLE_PLACES_API_KEY;
+const PORT = process.env.PORT || 5000;
+const app = express();
 
-// Connect to MongoDB
+// 1. Strict, Production-Grade CORS Configuration
+const allowedOrigins = [
+  'http://localhost:5173', // Vite Default local port
+  'http://localhost:3000', 
+  process.env.FRONTEND_PRODUCTION_URL // Your deployed website domain link
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    // Allow server-to-server or curl requests (origin is undefined)
+    if (!origin) return callback(null, true);
+    
+    if (allowedOrigins.indexOf(origin) !== -1 || process.env.NODE_ENV === 'development') {
+      callback(null, true);
+    } else {
+      callback(new Error('Blocked by security rules (CORS Validation Error)'));
+    }
+  },
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'Accept']
+}));
+
+// 2. Optimized Database Initialization Connection Strategy
 mongoose.connect(process.env.MONGO_URI, {
   serverSelectionTimeoutMS: 5000,
   socketTimeoutMS: 45000,
 })
-  .then(() => console.log("MongoDB connected"))
-  .catch(err => console.log(err));
+.then(() => console.log("📁 MongoDB Database Pipeline Connected Successfully."))
+.catch(err => {
+  console.error("❌ MongoDB Connection Disaster:", err.message);
+  process.exit(1); // Force shutdown on initialization failure to alert system admins
+});
 
-const app = express();
-const PORT = process.env.PORT || 5000;
+// Database state listeners
+mongoose.connection.on('error', err => console.error('💥 Running DB Instance Error:', err));
+mongoose.connection.on('disconnected', () => console.warn('⚠️ Lost connection to MongoDB database cluster.'));
 
-// Middleware (CORS must be first!)
-app.use(cors());
+// 3. Parser Middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Google Places API route for lawyers
-app.get('/api/lawyers', async (req, res) => {
+// 4. Google Places API Route for Legal Professionals
+app.get('/api/lawyers', async (req, res, next) => {
   const { lat, lng } = req.query;
-  const radius = req.query.radius || 3000; // Fix: Default radius
-
-  console.log('🔍 API Request received:', { lat, lng, radius });
-  console.log('🔑 API Key exists:', !!API_KEY);
-  console.log('🔑 API Key preview:', API_KEY ? API_KEY.substring(0, 10) + '...' : 'MISSING');
+  const radius = req.query.radius || 3000;
 
   if (!lat || !lng) {
-    return res.status(400).json({ error: 'Missing lat or lng parameters' });
+    return res.status(400).json({ success: false, error: 'Missing geographic coordinates (lat/lng parameters)' });
   }
 
   try {
     const url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${lng}&radius=${radius}&type=lawyer&key=${API_KEY}`;
-    console.log('🌐 Calling Google Places API:', url);
     
     const response = await fetch(url);
-    console.log('📡 Fetch response status:', response.status);
-    
     const data = await response.json();
-    console.log('📊 Full Google API Response:', JSON.stringify(data, null, 2));
     
     if (data.status !== 'OK') {
-      console.error('❌ Google API Error Status:', data.status);
-      console.error('❌ Google API Error Details:', data);
       return res.status(400).json({ 
+        success: false,
         error: `Google Places API Error: ${data.status}`, 
-        details: data.error_message || data.status,
-        status: data.status
+        details: data.error_message || data.status
       });
     }
 
     if (!data.results || data.results.length === 0) {
-      console.log('⚠️ No results found');
       return res.json([]);
     }
 
@@ -69,35 +86,52 @@ app.get('/api/lawyers', async (req, res) => {
       phone: place.international_phone_number || "Not available"
     }));
 
-    console.log('✅ Sending results:', lawyers.length, 'lawyers');
-    console.log('✅ Sample result:', lawyers[0]);
     res.json(lawyers);
 
   } catch (err) {
-    console.error('💥 Server Error:', err.message);
-    console.error('💥 Full Error:', err);
-    console.error('💥 Stack trace:', err.stack);
-    res.status(500).json({ 
-      error: "Server error occurred", 
-      details: err.message,
-      type: err.name
-    });
+    next(err); // Hands error safely off to global error middleware without crashing process
   }
 });
 
-// Routes
+// 5. System Route Definitions Setup
 app.use('/api/auth', require('./src/routes/auth'));
 app.use('/api/hearings', hearingRoutes);
 app.use('/api/upload', require('./src/routes/uploadRoutes'));
+app.use('/api/documents', require('./src/routes/documents'));
 
-// Serve static files from uploads directory
+// Serve static assets securely
 app.use('/uploads', express.static('uploads'));
 
-// Health check
+// Health Check API
 app.get('/api/health', (req, res) => {
-  res.json({ message: 'Legal Dashboard API is running!' });
+  res.json({ 
+    status: 'Online', 
+    timestamp: new Date(), 
+    environment: process.env.NODE_ENV || 'development' 
+  });
 });
 
+// 404 Route Catcher
+app.use((req, res, next) => {
+  res.status(404).json({ success: false, message: "Requested backend API path does not exist." });
+});
+
+// 6. Centralized Production Error Handling Middleware (Defensive Architecture)
+app.use((err, req, res, next) => {
+  console.error('❌ System Intercepted Unhandled Error Event:', err.stack);
+  
+  const status = err.status || 500;
+  const devMessage = err.message;
+  
+  res.status(status).json({
+    success: false,
+    message: 'An unexpected internal gateway operational exception occurred.',
+    // Only expose actual stack traces in local development environments
+    error: process.env.NODE_ENV === 'development' ? devMessage : 'Internal Server Error'
+  });
+});
+
+// 7. Engine Ignition Launch
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`🌐 Application instance actively listening via Network Interface Port: ${PORT}`);
 });

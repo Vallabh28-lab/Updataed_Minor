@@ -1,8 +1,13 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "paths": {
-      "@/*": ["./frontend/src/*"]
+      "@/*": ["./src/*"]
     }
-  }
+  },
+  "exclude": ["node_modules", "dist"]
 }

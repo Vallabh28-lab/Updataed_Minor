@@ -18,20 +18,31 @@ import AreaRiskScore from './pages/AreaRiskScore'
 import KnowYourRights from './pages/KnowYourRights'
 
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false)
+  const [isAuthenticated, setIsAuthenticated] = useState(() => {
+    // Check local storage on startup to avoid login dropouts on reload
+    return !!localStorage.getItem('auth_token')
+  })
+  
   const [showSignup, setShowSignup] = useState(false)
-  const [user, setUser] = useState(null)
+  const [showForgot, setShowForgot] = useState(false) // 🚀 Added missing conditional UI state controller
+  
+  const [user, setUser] = useState(() => {
+    const savedUser = localStorage.getItem('user_profile')
+    return savedUser ? JSON.parse(savedUser) : null
+  })
   const [currentPage, setCurrentPage] = useState('dashboard')
   const [sidebarOpen, setSidebarOpen] = useState(true)
 
   const handleLogin = (userData) => {
-    // Set user data from backend response
-    setUser(userData)
+    setUser(userData.user || userData)
     setIsAuthenticated(true)
+    if (userData.token) {
+      localStorage.setItem('auth_token', userData.token)
+    }
+    localStorage.setItem('user_profile', JSON.stringify(userData.user || userData))
   }
 
   const handleSignup = (signupData) => {
-    // Signup handled in Signup component, just switch to login
     setShowSignup(false)
   }
 
@@ -39,7 +50,10 @@ function App() {
     setIsAuthenticated(false)
     setUser(null)
     setShowSignup(false)
+    setShowForgot(false)
     setCurrentPage('dashboard')
+    localStorage.removeItem('auth_token')
+    localStorage.removeItem('user_profile')
   }
 
   const handleNavigation = (page) => {
@@ -84,16 +98,18 @@ function App() {
         isOpen={sidebarOpen}
         onToggle={() => setSidebarOpen(!sidebarOpen)}
       />
-      <div className="flex-1 flex flex-col">
-        <div className="topbar p-4">
+      <div className="flex-1 flex flex-col overflow-hidden">
+        <div className="topbar p-4 bg-gray-900 flex items-center">
           <button
             onClick={() => setSidebarOpen(!sidebarOpen)}
-            className="btn p-2 rounded-lg text-gray-300 hover:text-white"
+            className="p-2 rounded-lg text-gray-300 hover:text-white focus:outline-none"
           >
             <span className="text-xl">☰</span>
           </button>
         </div>
-        {renderCurrentPage()}
+        <div className="flex-1 overflow-y-auto">
+          {renderCurrentPage()}
+        </div>
       </div>
     </div>
   )
@@ -106,6 +122,7 @@ function App() {
           path="/login"
           element={
             !isAuthenticated ? (
+              /* Handle modal/view overrides if the user is clicking across auth states */
               showSignup ? (
                 <Signup
                   onSignup={handleSignup}
@@ -114,7 +131,10 @@ function App() {
               ) : (
                 <Login
                   onLogin={handleLogin}
-                  onSwitchToSignup={() => setShowSignup(true)}
+                  onSwitchToSignup={() => {
+                    setShowSignup(true);
+                    setShowForgot(false);
+                  }}
                 />
               )
             ) : (
