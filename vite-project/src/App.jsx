@@ -15,7 +15,7 @@ function App() {
     <div>
       <h1>Legal Directory - Nearby Lawyers</h1>
 
-      <LoadScript googleMapsApiKey={import.meta.env.AIzaSyB36BJxilWHU9WAHENhQbOLH2v_F9s0_2U}>
+      <LoadScript googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
         <GoogleMap
           mapContainerStyle={containerStyle}
           center={center}

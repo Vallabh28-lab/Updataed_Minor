@@ -67,6 +67,40 @@ const api = {
     }
 
     return data;
+  },
+
+  // Past Cases / Archive endpoints
+  searchPastCases: async (params) => {
+    const queryParams = new URLSearchParams();
+    if (params.category) queryParams.append('category', params.category);
+    if (params.startYear) queryParams.append('startYear', params.startYear);
+    if (params.endYear) queryParams.append('endYear', params.endYear);
+    if (params.keyword) queryParams.append('keyword', params.keyword);
+    if (params.page) queryParams.append('page', params.page);
+    if (params.limit) queryParams.append('limit', params.limit);
+
+    const response = await fetch(`${API_BASE_URL}/past-cases?${queryParams.toString()}`);
+    if (!response.ok) throw new Error('Failed to fetch past cases');
+    return await response.json();
+  },
+
+  getArchiveStats: async () => {
+    const response = await fetch(`${API_BASE_URL}/past-cases/stats`);
+    if (!response.ok) throw new Error('Failed to fetch stats');
+    return await response.json();
+  },
+
+  addCaseToArchive: async (caseData) => {
+    const response = await fetch(`${API_BASE_URL}/past-cases`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(caseData)
+    });
+
+    if (!response.ok) throw new Error('Failed to add case to archive');
+    return await response.json();
   }
 };
 

@@ -22,11 +22,11 @@ function UserProfile({ user, onLogout, isOpen }) {
         <>
           <div className="flex items-center mb-3">
             <div className="w-10 h-10 bg-gray-600 rounded-full flex items-center justify-center mr-3">
-              <span className="text-white font-semibold">{getInitials(user?.name || 'Vallabh Sardesai')}</span>
+              <span className="text-white font-semibold">{getInitials(user?.name)}</span>
             </div>
             <div>
-              <p className="text-sm font-medium">{user?.name || 'Vallabh Sardesai'}</p>
-              <p className="text-xs text-gray-400">{getProfessionLabel(user?.profession || 'practitioner')}</p>
+              <p className="text-sm font-medium">{user?.name || 'User'}</p>
+              <p className="text-xs text-gray-400">{getProfessionLabel(user?.profession || 'citizen')}</p>
               {user?.age && <p className="text-xs text-gray-500">Age: {user.age}</p>}
             </div>
           </div>

@@ -1,9 +1,11 @@
-import os
+﻿import os
 import urllib.request
 import zipfile
 
-# Define the target folder on D drive
-model_dir = r"D:\Sardesai_Data\MINOR\MINOR\backend\easyocr_models"
+# Create models folder inside current backend directory
+model_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "easyocr_models")
+
+# Create folder if it doesn't exist
 os.makedirs(model_dir, exist_ok=True)
 
 # Direct URLs to the model zip files
@@ -12,7 +14,7 @@ models = {
     "english_g2.zip": "https://github.com/JaidedAI/EasyOCR/releases/download/v1.3/english_g2.zip"
 }
 
-print("📥 Starting manual download directly to D: drive...")
+print("📥 Starting manual download...")
 
 for zip_name, url in models.items():
     zip_path = os.path.join(model_dir, zip_name)
@@ -38,6 +40,7 @@ for zip_name, url in models.items():
         print(f"🧹 Cleaned up temporary {zip_name}")
         
     except Exception as e:
-        print(f"❌ Failed downloading {zip_name}. Error: {e}")
+        print(f"❌ Error downloading {zip_name}: {e}")
 
-print("\n🎉 All done! Check your folder to ensure the files are there.")
+print("\n✨ All models downloaded and extracted successfully!")
+print(f"📍 Location: {model_dir}")

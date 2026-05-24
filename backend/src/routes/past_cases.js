@@ -1,6 +1,19 @@
 const express = require("express");
 const router = express.Router();
-const PastCase = require("../models/PastCase");
+const PastCase = require("../models/past_case");
+
+// 👉 GET STATS
+router.get("/stats", async (req, res) => {
+  try {
+    const total = await PastCase.countDocuments();
+    const byCategory = await PastCase.aggregate([
+      { $group: { _id: "$Category", count: { $sum: 1 } } }
+    ]);
+    res.json({ total, byCategory });
+  } catch (err) {
+    res.status(500).json({ error: "Server Error" });
+  }
+});
 
 // 👉 SEARCH BY CATEGORY (optional case-insensitive)
 router.get("/category/:cat", async (req, res) => {
@@ -62,6 +75,31 @@ router.get("/", async (req, res) => {
       .limit(Number(limit));
 
     res.json(data);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Server Error" });
+  }
+});
+
+// 👉 ADD NEW CASE TO ARCHIVE
+router.post("/", async (req, res) => {
+  try {
+    const { Category, Year, Summary_text, Case_Title_text, Keywords_text } = req.body;
+    
+    if (!Case_Title_text || !Category) {
+      return res.status(400).json({ error: "Title and Category are required" });
+    }
+
+    const newCase = new PastCase({
+      Category,
+      Year,
+      Summary_text,
+      Case_Title_text,
+      Keywords_text
+    });
+
+    const savedCase = await newCase.save();
+    res.status(201).json(savedCase);
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Server Error" });

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+﻿import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import Sidebar from './components/Sidebar'
 import MainContent from './components/MainContent'
@@ -19,73 +19,61 @@ import KnowYourRights from './pages/KnowYourRights'
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(() => {
-    // Check local storage on startup to avoid login dropouts on reload
-    return !!localStorage.getItem('auth_token')
+    return localStorage.getItem('isAuthenticated') === 'true'
+  })
+  
+  const [user, setUser] = useState(() => {
+    const savedUser = localStorage.getItem('user')
+    try {
+      return savedUser ? JSON.parse(savedUser) : null
+    } catch (e) {
+      return null
+    }
   })
   
   const [showSignup, setShowSignup] = useState(false)
-  const [showForgot, setShowForgot] = useState(false) // 🚀 Added missing conditional UI state controller
-  
-  const [user, setUser] = useState(() => {
-    const savedUser = localStorage.getItem('user_profile')
-    return savedUser ? JSON.parse(savedUser) : null
-  })
   const [currentPage, setCurrentPage] = useState('dashboard')
   const [sidebarOpen, setSidebarOpen] = useState(true)
+
+  useEffect(() => {
+    localStorage.setItem('isAuthenticated', isAuthenticated)
+    if (user) {
+      localStorage.setItem('user', JSON.stringify(user))
+    } else {
+      localStorage.removeItem('user')
+    }
+  }, [isAuthenticated, user])
 
   const handleLogin = (userData) => {
     setUser(userData.user || userData)
     setIsAuthenticated(true)
-    if (userData.token) {
-      localStorage.setItem('auth_token', userData.token)
-    }
-    localStorage.setItem('user_profile', JSON.stringify(userData.user || userData))
-  }
-
-  const handleSignup = (signupData) => {
-    setShowSignup(false)
   }
 
   const handleLogout = () => {
     setIsAuthenticated(false)
     setUser(null)
-    setShowSignup(false)
-    setShowForgot(false)
     setCurrentPage('dashboard')
+    localStorage.removeItem('isAuthenticated')
+    localStorage.removeItem('user')
     localStorage.removeItem('auth_token')
-    localStorage.removeItem('user_profile')
   }
 
-  const handleNavigation = (page) => {
-    setCurrentPage(page)
-  }
+  const handleNavigation = (page) => setCurrentPage(page)
 
   const renderCurrentPage = () => {
     switch (currentPage) {
-      case 'case-search':
-        return <CaseSearch />
-      case 'document-analysis':
-        return <DocumentAnalysis />
-      case 'lawyer-directory':
-        return <LawyerDirectory />
-      case 'consultation-options':
-        return <ConsultationOptions />
-      case 'appointments':
-        return <Appointments />
-      case 'case-prediction':
-        return <CasePrediction />
-      case 'past-cases':
-        return <PastCases />
-      case 'strategy-insights':
-        return <CaseStrategyInsights />
-      case 'smart-crime-search':
-        return <SmartCrimeSearch />
-      case 'area-risk-score':
-        return <AreaRiskScore />
-      case 'rights-panel':
-        return <KnowYourRights />
-      default:
-        return <MainContent user={user} onNavigate={handleNavigation} />
+      case 'case-search': return <CaseSearch />
+      case 'document-analysis': return <DocumentAnalysis />
+      case 'lawyer-directory': return <LawyerDirectory />
+      case 'consultation-options': return <ConsultationOptions />
+      case 'appointments': return <Appointments />
+      case 'case-prediction': return <CasePrediction />
+      case 'past-cases': return <PastCases />
+      case 'strategy-insights': return <CaseStrategyInsights />
+      case 'smart-crime-search': return <SmartCrimeSearch />
+      case 'area-risk-score': return <AreaRiskScore />
+      case 'rights-panel': return <KnowYourRights />
+      default: return <MainContent user={user} onNavigate={handleNavigation} />
     }
   }
 
@@ -118,34 +106,14 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Landing />} />
-        <Route
-          path="/login"
-          element={
-            !isAuthenticated ? (
-              /* Handle modal/view overrides if the user is clicking across auth states */
-              showSignup ? (
-                <Signup
-                  onSignup={handleSignup}
-                  onSwitchToLogin={() => setShowSignup(false)}
-                />
-              ) : (
-                <Login
-                  onLogin={handleLogin}
-                  onSwitchToSignup={() => {
-                    setShowSignup(true);
-                    setShowForgot(false);
-                  }}
-                />
-              )
-            ) : (
-              <Navigate to="/dashboard" replace />
-            )
-          }
-        />
-        <Route
-          path="/dashboard"
-          element={isAuthenticated ? <DashboardLayout /> : <Navigate to="/login" replace />}
-        />
+        <Route path="/login" element={
+          !isAuthenticated ? (
+            showSignup ? 
+              <Signup onSignup={() => setShowSignup(false)} onSwitchToLogin={() => setShowSignup(false)} /> :
+              <Login onLogin={handleLogin} onSwitchToSignup={() => setShowSignup(true)} />
+          ) : <Navigate to="/dashboard" replace />
+        } />
+        <Route path="/dashboard" element={isAuthenticated ? <DashboardLayout /> : <Navigate to="/login" replace />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>
