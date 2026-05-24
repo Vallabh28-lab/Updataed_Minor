@@ -1,0 +1,548 @@
+[
+  {
+    "category": "Violent Crimes",
+    "offense": "Murder – Killing someone intentionally",
+    "ipc": "Section 302",
+    "bns": "Section 103",
+    "description": ""
+  },
+  {
+    "category": "Violent Crimes",
+    "offense": "Attempted Murder – Trying to kill someone",
+    "ipc": "Section 307",
+    "bns": "Section 109",
+    "description": ""
+  },
+  {
+    "category": "Violent Crimes",
+    "offense": "Culpable Homicide – Causing death without full intent",
+    "ipc": "Section 299 / 304",
+    "bns": "Section 100 / 105",
+    "description": ""
+  },
+  {
+    "category": "Property Crimes",
+    "offense": "Theft – Stealing someone's belongings",
+    "ipc": "Section 378 / 379",
+    "bns": "Section 303",
+    "description": ""
+  },
+  {
+    "category": "Property Crimes",
+    "offense": "Burglary – Breaking into a house to steal",
+    "ipc": "Section 443 / 447",
+    "bns": "Section 329",
+    "description": ""
+  },
+  {
+    "category": "Property Crimes",
+    "offense": "Robbery – Stealing using force or threat",
+    "ipc": "Section 390 / 392",
+    "bns": "Section 309",
+    "description": ""
+  },
+  {
+    "category": "Property Crimes",
+    "offense": "Dacoity – Gang robbery by 5 or more people",
+    "ipc": "Section 391 / 395",
+    "bns": "Section 310",
+    "description": ""
+  },
+  {
+    "category": "White-Collar Crimes",
+    "offense": "Fraud / Cheating – Deceiving someone for money or gain",
+    "ipc": "Section 415 / 420",
+    "bns": "Section 318",
+    "description": ""
+  },
+  {
+    "category": "White-Collar Crimes",
+    "offense": "Cybercrime / Identity Theft – Online fraud or stealing someone's personal info",
+    "ipc": "IT Act Section 66C/D",
+    "bns": "Section 318/319 + IT Act",
+    "description": ""
+  },
+  {
+    "category": "Domestic Crimes",
+    "offense": "Domestic Violence / Cruelty – Abuse or harassment within the family",
+    "ipc": "Section 498A",
+    "bns": "Section 85",
+    "description": ""
+  },
+  {
+    "category": "Domestic Crimes",
+    "offense": "Assault – Physically attacking or threatening someone",
+    "ipc": "Section 351",
+    "bns": "Section 131",
+    "description": ""
+  },
+  {
+    "category": "Domestic Crimes",
+    "offense": "Harassment – Stalking or outraging someone's modesty",
+    "ipc": "Section 354 / 354D",
+    "bns": "Section 74 / 78",
+    "description": ""
+  },
+  {
+    "category": "Torts / Civil Wrongs",
+    "offense": "Defamation – Damaging someone's reputation by false statements",
+    "ipc": "Section 499 / 500",
+    "bns": "Section 356",
+    "description": ""
+  },
+  {
+    "category": "Domestic Crimes",
+    "offense": "Dowry Death (Suspicious death of a bride due to harassment by in-laws within 7 years of marriage)",
+    "ipc": "Section 304B",
+    "bns": "Section 80",
+    "description": ""
+  },
+  {
+    "category": "Domestic Crimes",
+    "offense": "Abetment of Suicide (Forcing or provoking a spouse/dependent into ending their own life via harassment)",
+    "ipc": "Section 306",
+    "bns": "Section 108",
+    "description": ""
+  },
+  {
+    "category": "Domestic Crimes",
+    "offense": "Domestic Hurt (Physical household violence like slapping, kicking, or hitting)",
+    "ipc": "Section 323",
+    "bns": "Section 115",
+    "description": ""
+  },
+  {
+    "category": "Domestic Crimes",
+    "offense": "Grievous Domestic Hurt (Intentionally breaking bones or causing permanent injury to a family member)",
+    "ipc": "Section 325",
+    "bns": "Section 117",
+    "description": ""
+  },
+  {
+    "category": "Domestic Crimes",
+    "offense": "Acid Attack (Throwing acidic chemicals to burn or disfigure a partner out of domestic revenge)",
+    "ipc": "Section 326A",
+    "bns": "Section 124(1)",
+    "description": ""
+  },
+  {
+    "category": "Domestic Crimes",
+    "offense": "Sexual Intercourse During Separation (Forcing non-consensual relations with a wife living under a legal separation order)",
+    "ipc": "Section 376B",
+    "bns": "Section 67",
+    "description": ""
+  },
+  {
+    "category": "Domestic Crimes",
+    "offense": "Deceitful Promise of Marriage (Tricking someone into a relationship using a false promise of marriage or hidden true identity)",
+    "ipc": "Section 90 / 417 (Combined)",
+    "bns": "Section 69",
+    "description": ""
+  },
+  {
+    "category": "Domestic Crimes",
+    "offense": "Bigamy (Marrying a second person while your first marriage is still legally valid)",
+    "ipc": "Section 494",
+    "bns": "Section 82(1)",
+    "description": ""
+  },
+  {
+    "category": "Domestic Crimes",
+    "offense": "Mock Marriage Fraud (Tricking a partner into believing they are legally married via a fake or deceptive ceremony)",
+    "ipc": "Section 496",
+    "bns": "Section 84",
+    "description": ""
+  },
+  {
+    "category": "Domestic Crimes",
+    "offense": "Stridhan Misappropriation (Husband or in-laws illegally locking away or refusing to return a bride's personal marriage gifts)",
+    "ipc": "Section 406",
+    "bns": "Section 316",
+    "description": ""
+  },
+  {
+    "category": "Violent Crimes",
+    "offense": "Dowry Death",
+    "ipc": "Section 304B",
+    "bns": "Section 80",
+    "description": "Causing the death of a woman by burns, bodily injury, or cruelty by husband/relatives within 7 years of marriage over dowry demands."
+  },
+  {
+    "category": "Violent Crimes",
+    "offense": "Abetment of Suicide",
+    "ipc": "Section 306",
+    "bns": "Section 108",
+    "description": "Instigating, conspiring, or intentionally aiding a person into committing suicide."
+  },
+  {
+    "category": "Violent Crimes",
+    "offense": "Voluntarily Causing Grievous Hurt",
+    "ipc": "Section 325",
+    "bns": "Section 117",
+    "description": "Intentionally causing severe bodily damage (e.g., bone fractures, permanent loss of sight/hearing, disfigurement)."
+  },
+  {
+    "category": "Violent Crimes",
+    "offense": "Grievous Hurt by Acid Attack",
+    "ipc": "Section 326A",
+    "bns": "Section 124(1)",
+    "description": "Permanently or partially disfiguring, burning, or maiming a person using acidic corrosive substances."
+  },
+  {
+    "category": "Violent Crimes",
+    "offense": "Kidnapping / Abduction",
+    "ipc": "Section 359 / 362",
+    "bns": "Section 137 / 138",
+    "description": "Forcefully or deceitfully taking a person away from their lawful guardianship or location without consent."
+  },
+  {
+    "category": "Violent Crimes",
+    "offense": "Rape",
+    "ipc": "Section 375 / 376",
+    "bns": "Section 63 / 64",
+    "description": "Committing non-consensual sexual acts against a person through force, coercion, or misrepresentation."
+  },
+  {
+    "category": "Violent Crimes",
+    "offense": "Gang Rape",
+    "ipc": "Section 376D",
+    "bns": "Section 70",
+    "description": "Where a sexual assault or rape is committed by one or more persons acting in furtherance of a common intention."
+  },
+  {
+    "category": "Violent Crimes",
+    "offense": "Robbery",
+    "ipc": "Section 390 / 392",
+    "bns": "Section 309",
+    "description": "Committing theft or extortion by intentionally causing (or threatening to cause) instant death, hurt, or wrongful restraint."
+  },
+  {
+    "category": "Violent Crimes",
+    "offense": "Dacoity",
+    "ipc": "Section 391 / 395",
+    "bns": "Section 310",
+    "description": "An aggravated form of robbery committed jointly by a gang of five or more armed individuals."
+  },
+  {
+    "category": "Violent Crimes",
+    "offense": "Mob Lynching",
+    "ipc": "No specific IPC",
+    "bns": "Section 103(2)",
+    "description": "A new individual offense created when a group of 5 or more people acts together to commit murder/hurt based on race, caste, sex, or belief."
+  },
+  {
+    "category": "Violent Crimes",
+    "offense": "Organized Crime (Gang/Syndicate)",
+    "ipc": "No specific IPC",
+    "bns": "Section 111",
+    "description": "Executing continuous unlawful violent acts (like contract killing, extortion, or land grabbing) as a member of a crime syndicate."
+  },
+  {
+    "category": "Violent Crimes",
+    "offense": "Murder (Intentional killing)",
+    "ipc": "Section 302",
+    "bns": "Section 103(1)",
+    "description": ""
+  },
+  {
+    "category": "Violent Crimes",
+    "offense": "Mob Lynching (Murder by a group of 5+ people based on identity)",
+    "ipc": "No specific IPC",
+    "bns": "Section 103(2)",
+    "description": ""
+  },
+  {
+    "category": "Violent Crimes",
+    "offense": "Attempt to Murder (Trying to kill someone but failing)",
+    "ipc": "Section 307",
+    "bns": "Section 109",
+    "description": ""
+  },
+  {
+    "category": "Violent Crimes",
+    "offense": "Culpable Homicide (Causing death without full intent/premeditation)",
+    "ipc": "Section 299 / 304",
+    "bns": "Section 100 / 105",
+    "description": ""
+  },
+  {
+    "category": "Violent Crimes",
+    "offense": "Dowry Death (Suspicious death of a bride due to cruelty/harassment)",
+    "ipc": "Section 304B",
+    "bns": "Section 80",
+    "description": ""
+  },
+  {
+    "category": "Violent Crimes",
+    "offense": "Abetment of Suicide (Instigating or assisting someone to end their life)",
+    "ipc": "Section 306",
+    "bns": "Section 108",
+    "description": ""
+  },
+  {
+    "category": "Violent Crimes",
+    "offense": "Grievous Hurt (On-purpose severe injury like bone fractures)",
+    "ipc": "Section 325",
+    "bns": "Section 117",
+    "description": ""
+  },
+  {
+    "category": "Violent Crimes",
+    "offense": "Acid Attack (Throwing chemicals to disfigure or burn someone)",
+    "ipc": "Section 326A",
+    "bns": "Section 124(1)",
+    "description": ""
+  },
+  {
+    "category": "Violent Crimes",
+    "offense": "Kidnapping & Abduction (Taking someone away against their will)",
+    "ipc": "Section 359 / 362",
+    "bns": "Section 137 / 138",
+    "description": ""
+  },
+  {
+    "category": "Violent Crimes",
+    "offense": "Sexual Assault / Rape (Non-consensual sexual acts)",
+    "ipc": "Section 375 / 376",
+    "bns": "Section 63 / 64",
+    "description": ""
+  },
+  {
+    "category": "Violent Crimes",
+    "offense": "Gang Rape (Sexual assault committed by multiple people)",
+    "ipc": "Section 376D",
+    "bns": "Section 70",
+    "description": ""
+  },
+  {
+    "category": "Violent Crimes",
+    "offense": "Organized Crime (Continuous gang violence, extortion, or syndicates)",
+    "ipc": "No specific IPC",
+    "bns": "Section 111",
+    "description": ""
+  },
+  {
+    "category": "Property Crimes",
+    "offense": "Theft (Stealing someone's belongings when they aren't looking)",
+    "ipc": "Section 378 / 379",
+    "bns": "Section 303",
+    "description": ""
+  },
+  {
+    "category": "Property Crimes",
+    "offense": "Extortion (Blackmailing or threatening someone to force a payout)",
+    "ipc": "Section 383 / 384",
+    "bns": "Section 308",
+    "description": ""
+  },
+  {
+    "category": "Property Crimes",
+    "offense": "Robbery (Stealing from someone face-to-face using force or threats)",
+    "ipc": "Section 390 / 392",
+    "bns": "Section 309",
+    "description": ""
+  },
+  {
+    "category": "Property Crimes",
+    "offense": "Dacoity (Armed gang robbery by 5 or more individuals)",
+    "ipc": "Section 391 / 395",
+    "bns": "Section 310",
+    "description": ""
+  },
+  {
+    "category": "Property Crimes",
+    "offense": "Criminal Misappropriation (Keeping lost money/property for yourself)",
+    "ipc": "Section 403",
+    "bns": "Section 314",
+    "description": ""
+  },
+  {
+    "category": "Property Crimes",
+    "offense": "Criminal Breach of Trust (Embezzling assets you were trusted to manage)",
+    "ipc": "Section 405 / 406",
+    "bns": "Section 316",
+    "description": ""
+  },
+  {
+    "category": "Property Crimes",
+    "offense": "Receiving Stolen Property (Buying or holding items you know are stolen)",
+    "ipc": "Section 411",
+    "bns": "Section 317",
+    "description": ""
+  },
+  {
+    "category": "Property Crimes",
+    "offense": "Cheating (Tricking or scamming someone out of money using deception)",
+    "ipc": "Section 415 / 420",
+    "bns": "Section 318",
+    "description": ""
+  },
+  {
+    "category": "Property Crimes",
+    "offense": "Mischief (Intentionally damaging or breaking someone else's property)",
+    "ipc": "Section 425 / 426",
+    "bns": "Section 324",
+    "description": ""
+  },
+  {
+    "category": "Property Crimes",
+    "offense": "Arson / Mischief by Fire (Destroying property using fire/explosives)",
+    "ipc": "Section 436",
+    "bns": "Section 326(f)",
+    "description": ""
+  },
+  {
+    "category": "Property Crimes",
+    "offense": "Criminal Trespass & Burglary (Breaking into property without permission)",
+    "ipc": "Section 441 / 447",
+    "bns": "Section 329",
+    "description": ""
+  },
+  {
+    "category": "Property Crimes",
+    "offense": "House-Breaking by Night (Forced entry into a house between sunset and sunrise)",
+    "ipc": "Section 446 / 456",
+    "bns": "Section 331",
+    "description": ""
+  },
+  {
+    "category": "Torts / Civil Wrongs",
+    "offense": "Physical Attack / Shoving",
+    "ipc": "Section 350",
+    "bns": "Section 128 & 131",
+    "description": "Actually hitting, pushing, slapping, or throwing something at someone without their permission."
+  },
+  {
+    "category": "Torts / Civil Wrongs",
+    "offense": "Making a Move to Hit / Threatening",
+    "ipc": "Section 351",
+    "bns": "Section 130",
+    "description": "You haven’t touched them yet, but you raise your fist or weapon to make them think you are about to strike."
+  },
+  {
+    "category": "Torts / Civil Wrongs",
+    "offense": "Locking Someone Up",
+    "ipc": "Section 340",
+    "bns": "Section 127",
+    "description": "Completely trapping someone within a closed space (like a room or a car) so they cannot escape."
+  },
+  {
+    "category": "Torts / Civil Wrongs",
+    "offense": "Ghuspaith (Illegal Entry)",
+    "ipc": "Section 441",
+    "bns": "Section 329",
+    "description": "Walking into or staying on someone's private property without their permission."
+  },
+  {
+    "category": "Torts / Civil Wrongs",
+    "offense": "Filing a Fake Case",
+    "ipc": "Section 211",
+    "bns": "Section 248",
+    "description": "Dragging someone to court or the police station with completely fabricated lies just to ruin their life."
+  },
+  {
+    "category": "Torts / Civil Wrongs",
+    "offense": "Disturbing the Neighborhood",
+    "ipc": "Section 268",
+    "bns": "Section 270",
+    "description": "Doing things that cause general annoyance or danger to everyone around (like blasting music at 3 AM or dumping trash on the street)."
+  },
+  {
+    "category": "Torts / Civil Wrongs",
+    "offense": "Keeping Someone's Belongings",
+    "ipc": "Section 403",
+    "bns": "Section 314",
+    "description": "Taking someone's personal items (like a laptop or a bike) and treating it like your own or refusing to return it."
+  },
+  {
+    "category": "Torts / Civil Wrongs",
+    "offense": "Extreme Carelessness",
+    "ipc": "Section 304A",
+    "bns": "Section 106",
+    "description": "Being so recklessly careless that your actions cause a major accident or kill someone (like extreme drunk driving)."
+  },
+  {
+    "category": "Torts / Civil Wrongs",
+    "offense": "Abusing to Humiliate",
+    "ipc": "Section 504",
+    "bns": "Section 352",
+    "description": "Using deeply offensive, abusive words face-to-face to break someone's mental peace and provoke a fight."
+  },
+  {
+    "category": "Torts / Civil Wrongs",
+    "offense": "Scam / Cheating",
+    "ipc": "Section 415",
+    "bns": "Section 318",
+    "description": "Tricking someone with smooth lies or fake promises to get them to hand over their hard-earned money."
+  },
+  {
+    "category": "White-Collar Crimes",
+    "offense": "Criminal Breach of Trust (Embezzling or stealing funds you were legally trusted to protect/manage)",
+    "ipc": "Section 405 / 406",
+    "bns": "Section 316",
+    "description": ""
+  },
+  {
+    "category": "White-Collar Crimes",
+    "offense": "Forgery (Creating a fake document, electronic record, or altering signatures to scam someone)",
+    "ipc": "Section 463 / 465",
+    "bns": "Section 336",
+    "description": ""
+  },
+  {
+    "category": "White-Collar Crimes",
+    "offense": "Forgery for Cheating (Making fake legal papers or corporate IDs specifically to execute a financial fraud)",
+    "ipc": "Section 468",
+    "bns": "Section 340(2)",
+    "description": ""
+  },
+  {
+    "category": "White-Collar Crimes",
+    "offense": "Using a Forged Document as Genuine (Knowingly presenting fake business invoices, bills, or wills as real)",
+    "ipc": "Section 471",
+    "bns": "Section 342",
+    "description": ""
+  },
+  {
+    "category": "White-Collar Crimes",
+    "offense": "Falsification of Accounts (An employee altering or destroying office bookkeeping/ledgers to hide missing cash)",
+    "ipc": "Section 477A",
+    "bns": "Section 343",
+    "description": ""
+  },
+  {
+    "category": "White-Collar Crimes",
+    "offense": "Counterfeiting Currency or Bank Notes (Printing fake physical money or bonds with the intent to pass them off as real)",
+    "ipc": "Section 489A / 489C",
+    "bns": "Section 178 / 180",
+    "description": ""
+  },
+  {
+    "category": "White-Collar Crimes",
+    "offense": "Bribery by Public Servants (A government official accepting an illegal payout to manipulate a legal duty)",
+    "ipc": "Section 161–165A (Repealed, shifted to PCA)",
+    "bns": "Prevention of Corruption Act (PCA) Sec 7",
+    "description": ""
+  },
+  {
+    "category": "White-Collar Crimes",
+    "offense": "Money Laundering (Disguising illegally earned money as legitimate, untraceable income through asset tracking)",
+    "ipc": "Governed via Special Acts",
+    "bns": "PMLA, 2002 (Section 3 / 4)",
+    "description": ""
+  },
+  {
+    "category": "White-Collar Crimes",
+    "offense": "Corporate Fraud (Deceiving company shareholders or the public to gain unfair business/monetary advantages)",
+    "ipc": "Governed via Special Acts",
+    "bns": "Companies Act, 2013 (Section 447)",
+    "description": ""
+  },
+  {
+    "category": "White-Collar Crimes",
+    "offense": "Tax Evasion (Intentionally making false statements or fabricating receipts to avoid paying mandatory taxes)",
+    "ipc": "Governed via Special Acts",
+    "bns": "Income Tax Act, 1961 (Section 276C)",
+    "description": ""
+  }
+]

@@ -1,45 +1,38 @@
 import React, { useState } from 'react'
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api'
+
 function Signup({ onSignup, onSwitchToLogin }) {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
 
   const handleSignup = async () => {
-    // Basic validation
-    if (!email || !password) {
-      alert('Please fill all fields')
-      return
-    }
-
-    if (password.length < 6) {
-      alert('Password must be at least 6 characters')
-      return
-    }
-
+    setError('')
+    if (!email || !password) { setError('Please fill all fields'); return }
+    if (password.length < 6) { setError('Password must be at least 6 characters'); return }
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    if (!emailRegex.test(email)) {
-      alert('Please enter a valid email address')
-      return
-    }
+    if (!emailRegex.test(email)) { setError('Please enter a valid email address'); return }
 
     setLoading(true)
-
-    const res = await fetch('http://localhost:5000/api/auth/signup', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, password })
-    })
-
-    const data = await res.json()
-
-    if (res.ok) {
-      onSwitchToLogin()
-    } else {
-      alert(data.message)
+    try {
+      const res = await fetch(`${API_URL}/auth/signup`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email.trim().toLowerCase(), password })
+      })
+      const data = await res.json()
+      if (res.ok) {
+        onSwitchToLogin()
+      } else {
+        setError(data.message || 'Signup failed. Please try again.')
+      }
+    } catch {
+      setError('Unable to reach server. Please check your connection.')
+    } finally {
+      setLoading(false)
     }
-
-    setLoading(false)
   }
 
   const handleSubmit = (e) => {
@@ -66,6 +59,11 @@ function Signup({ onSignup, onSwitchToLogin }) {
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
         <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
           <form className="space-y-6" onSubmit={handleSubmit}>
+            {error && (
+              <div className="bg-red-50 border border-red-300 text-red-700 px-4 py-3 rounded-lg text-sm">
+                {error}
+              </div>
+            )}
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700">
                 Email Address

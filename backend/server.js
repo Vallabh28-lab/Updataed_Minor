@@ -40,8 +40,8 @@ mongoose.connect(process.env.MONGO_URI, {
 })
 .then(() => console.log("📁 MongoDB Database Pipeline Connected Successfully."))
 .catch(err => {
-  console.error("❌ MongoDB Connection Disaster:", err.message);
-  process.exit(1); // Force shutdown on initialization failure to alert system admins
+  console.error("❌ MongoDB Connection Error:", err.message);
+  console.warn("⚠️ Server continuing without MongoDB - auth features will not work.");
 });
 
 // Database state listeners
@@ -98,6 +98,7 @@ app.use('/api/auth', require('./src/routes/auth'));
 app.use('/api/hearings', hearingRoutes);
 app.use('/api/upload', require('./src/routes/uploadRoutes'));
 app.use('/api/documents', require('./src/routes/documents'));
+app.use('/api/statutes', require('./src/routes/statutes'));
 
 // Serve static assets securely
 app.use('/uploads', express.static('uploads'));

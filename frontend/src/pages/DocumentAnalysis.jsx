@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 
-const backendBaseUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000'
+const backendBaseUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api'
 
 const LANGUAGES = [
   { code: 'en', label: 'English', flag: '🇬🇧' },
@@ -38,7 +38,7 @@ function DocumentAnalysis() {
     formData.append('document', file)
 
     try {
-      const response = await axios.post(`${backendBaseUrl}/api/documents/analyze`, formData, {
+      const response = await axios.post(`${backendBaseUrl}/documents/analyze`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       })
 
@@ -74,7 +74,7 @@ function DocumentAnalysis() {
 
     setIsTranslating(true)
     try {
-      const res = await axios.post(`${backendBaseUrl}/api/documents/translate`, {
+      const res = await axios.post(`${backendBaseUrl}/documents/translate`, {
         text:   analysisResults.ocrText,
         target: langCode
       })
@@ -187,9 +187,27 @@ function DocumentAnalysis() {
                   </div>
                 ) : (
                   <div>
-                    <div className="text-6xl mb-4">✨</div>
-                    <h3 className="text-lg font-medium text-gray-900 mb-2">Processing Complete!</h3>
-                    <p className="text-gray-600 mb-6">Document has been successfully analyzed.</p>
+                    <div className="flex items-center justify-center mb-6">
+                      <div className="relative w-28 h-28">
+                        <svg className="w-28 h-28" viewBox="0 0 100 100">
+                          <defs>
+                            <linearGradient id="successGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                              <stop offset="0%" stopColor="#16a34a"/>
+                              <stop offset="100%" stopColor="#15803d"/>
+                            </linearGradient>
+                          </defs>
+                          <circle cx="50" cy="50" r="50" fill="url(#successGrad)"/>
+                          <circle cx="50" cy="50" r="50" fill="none" stroke="#bbf7d0" strokeWidth="1.5" opacity="0.4"/>
+                        </svg>
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M5 13l4 4L19 7"/>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-1">File processing successful.</h3>
+                    <p className="text-gray-500 mb-6">Output generated.</p>
                     <button onClick={() => setActiveTab('results')}
                       className="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors shadow">
                       View Results

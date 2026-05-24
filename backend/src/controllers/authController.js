@@ -9,13 +9,13 @@ const registerUser = async (req, res) => {
             return res.status(400).json({ message: "Email and password are required" });
         }
 
-        const existing = await User.findOne({ email });
+        const normalizedEmail = email.trim().toLowerCase();
+        const existing = await User.findOne({ email: normalizedEmail });
         if (existing) {
             return res.status(409).json({ message: "Email already registered" });
         }
 
-        // Password hashing is handled by the User model's pre-save hook
-        const user = await User.create({ email, password });
+        const user = await User.create({ email: normalizedEmail, password });
 
         res.status(201).json({ message: "User created!", status: "success" });
     } catch (error) {
@@ -32,8 +32,7 @@ const login = async (req, res) => {
             return res.status(400).json({ message: "Email and password are required" });
         }
 
-        // Find user by email
-        const user = await User.findOne({ email });
+        const user = await User.findOne({ email: email.trim().toLowerCase() });
 
         if (user) {
             // This is the CRITICAL part:
@@ -78,7 +77,7 @@ const forgotPassword = async (req, res) => {
             return res.status(400).json({ message: "Password must be at least 6 characters" });
         }
 
-        const user = await User.findOne({ email });
+        const user = await User.findOne({ email: email.trim().toLowerCase() });
         if (!user) {
             return res.status(404).json({ message: "No account found with this email", status: "error" });
         }
