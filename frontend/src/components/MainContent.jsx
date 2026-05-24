@@ -2,7 +2,7 @@ import React from 'react'
 import { Card, CardContent } from './ui/card'
 import { Button } from './ui/button'
 import Sparkline from './ui/sparkline'
-import { Plus, Calendar, BarChart3, Search } from 'lucide-react'
+import { Plus, Calendar, BarChart3, Search, Users } from 'lucide-react'
 
 function MainContent({ user, onNavigate }) {
   const stats = [
@@ -225,6 +225,19 @@ function MainContent({ user, onNavigate }) {
                   <div className="flex-1 text-left">
                     <div className="font-medium">Search</div>
                     <div className="text-xs text-muted-foreground">Find cases & docs</div>
+                  </div>
+                </Button>
+
+                <Button
+                  variant="outline"
+                  className="w-full justify-start h-12 text-left"
+                  size="lg"
+                  onClick={() => onNavigate('lawyer-directory')}
+                >
+                  <Users className="w-5 h-5" />
+                  <div className="flex-1 text-left">
+                    <div className="font-medium">Nearby Lawyer</div>
+                    <div className="text-xs text-muted-foreground">Find local specialists</div>
                   </div>
                 </Button>
               </div>

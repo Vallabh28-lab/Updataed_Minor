@@ -2,21 +2,33 @@ const bcrypt = require('bcryptjs'); // or 'bcrypt'
 const User = require('../models/User');
 
 const registerUser = async (req, res) => {
-    const { email, password } = req.body;
+    try {
+        const { email, password, name, profession, age } = req.body;
 
-    // 1. Generate a salt (10-12 rounds is standard)
-    const salt = await bcrypt.genSalt(10);
-    
-    // 2. Hash the password
-    const hashedPassword = await bcrypt.hash(password, salt);
+        // Check if user already exists
+        const existingUser = await User.findOne({ email });
+        if (existingUser) {
+            return res.status(400).json({ message: "User already exists", status: "error" });
+        }
 
-    // 3. Save to DB with the HASHED password
-    const user = await User.create({
-        email,
-        password: hashedPassword // Save the scrambled version!
-    });
-    
-    res.status(201).json({ message: "User created!" });
+        // Save to DB (The User model will handle hashing automatically)
+        const user = await User.create({
+            email,
+            password,
+            name,
+            profession,
+            age
+        });
+        
+        res.status(201).json({ 
+            message: "User created!", 
+            status: "success",
+            user: { email: user.email, name: user.name } 
+        });
+    } catch (error) {
+        console.error("Registration error:", error);
+        res.status(500).json({ message: "Server error", status: "error" });
+    }
 };
 
 const login = async (req, res) => {
@@ -31,8 +43,11 @@ const login = async (req, res) => {
         const user = await User.findOne({ email });
 
         if (user) {
-            // This is the CRITICAL part:
+            console.log("🔍 [LOGIN DEBUG] User found:", user.email);
+            console.log("🔍 [LOGIN DEBUG] Stored Hash:", user.password);
+            
             const isPasswordCorrect = await bcrypt.compare(password, user.password);
+            console.log("🔍 [LOGIN DEBUG] Password match result:", isPasswordCorrect);
 
             if (isPasswordCorrect) {
                 // Successful login - don't send password back

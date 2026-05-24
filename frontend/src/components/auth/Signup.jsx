@@ -3,12 +3,15 @@ import React, { useState } from 'react'
 function Signup({ onSignup, onSwitchToLogin }) {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [name, setName] = useState('')
+  const [profession, setProfession] = useState('citizen')
+  const [age, setAge] = useState('')
   const [loading, setLoading] = useState(false)
 
   const handleSignup = async () => {
     // Basic validation
-    if (!email || !password) {
-      alert('Please fill all fields')
+    if (!email || !password || !name) {
+      alert('Please fill email, password and name')
       return
     }
 
@@ -28,7 +31,7 @@ function Signup({ onSignup, onSwitchToLogin }) {
     const res = await fetch('http://localhost:5000/api/auth/signup', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, password })
+      body: JSON.stringify({ email, password, name, profession, age: parseInt(age) || 0 })
     })
 
     const data = await res.json()
@@ -67,6 +70,24 @@ function Signup({ onSignup, onSwitchToLogin }) {
         <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
           <form className="space-y-6" onSubmit={handleSubmit}>
             <div>
+              <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+                Full Name
+              </label>
+              <div className="mt-1">
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  required
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                  placeholder="Enter your full name"
+                />
+              </div>
+            </div>
+
+            <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700">
                 Email Address
               </label>
@@ -84,8 +105,47 @@ function Signup({ onSignup, onSwitchToLogin }) {
               </div>
             </div>
 
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <label htmlFor="profession" className="block text-sm font-medium text-gray-700">
+                  Profession
+                </label>
+                <div className="mt-1">
+                  <select
+                    id="profession"
+                    name="profession"
+                    value={profession}
+                    onChange={(e) => setProfession(e.target.value)}
+                    className="block w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                  >
+                    <option value="citizen">Citizen</option>
+                    <option value="lawyer">Lawyer</option>
+                    <option value="practitioner">Law Practitioner</option>
+                    <option value="student">Law Student</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label htmlFor="age" className="block text-sm font-medium text-gray-700">
+                  Age
+                </label>
+                <div className="mt-1">
+                  <input
+                    id="age"
+                    name="age"
+                    type="number"
+                    value={age}
+                    onChange={(e) => setAge(e.target.value)}
+                    className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                    placeholder="Age"
+                  />
+                </div>
+              </div>
+            </div>
+
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="password" title="At least 6 characters" className="block text-sm font-medium text-gray-700">
                 Password
               </label>
               <div className="mt-1">

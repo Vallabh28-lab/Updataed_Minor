@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import LegalMap from '../components/LegalMap';
 
 function LawyerDirectory() {
   const [lawyers, setLawyers] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const initialSearch = queryParams.get('search') || '';
 
   return (
     <div className="flex-1 bg-[#F8FAFC] overflow-y-auto">
@@ -59,7 +64,7 @@ function LawyerDirectory() {
                 </h3>
               </div>
               <div className="p-4">
-                <LegalMap />
+                <LegalMap prefillSearch={initialSearch} />
               </div>
             </div>
           </div>

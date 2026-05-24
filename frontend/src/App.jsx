@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import Sidebar from './components/Sidebar'
 import MainContent from './components/MainContent'
@@ -18,11 +18,29 @@ import AreaRiskScore from './pages/AreaRiskScore'
 import KnowYourRights from './pages/KnowYourRights'
 
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false)
+  const [isAuthenticated, setIsAuthenticated] = useState(() => {
+    return localStorage.getItem('isAuthenticated') === 'true'
+  })
   const [showSignup, setShowSignup] = useState(false)
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState(() => {
+    const savedUser = localStorage.getItem('user')
+    try {
+      return savedUser ? JSON.parse(savedUser) : null
+    } catch (e) {
+      return null
+    }
+  })
   const [currentPage, setCurrentPage] = useState('dashboard')
   const [sidebarOpen, setSidebarOpen] = useState(true)
+
+  useEffect(() => {
+    localStorage.setItem('isAuthenticated', isAuthenticated)
+    if (user) {
+      localStorage.setItem('user', JSON.stringify(user))
+    } else {
+      localStorage.removeItem('user')
+    }
+  }, [isAuthenticated, user])
 
   const handleLogin = (userData) => {
     // Set user data from backend response
@@ -40,6 +58,8 @@ function App() {
     setUser(null)
     setShowSignup(false)
     setCurrentPage('dashboard')
+    localStorage.removeItem('isAuthenticated')
+    localStorage.removeItem('user')
   }
 
   const handleNavigation = (page) => {
