@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+﻿import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import Sidebar from './components/Sidebar'
 import MainContent from './components/MainContent'
@@ -21,7 +21,7 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(() => {
     return localStorage.getItem('isAuthenticated') === 'true'
   })
-  const [showSignup, setShowSignup] = useState(false)
+  
   const [user, setUser] = useState(() => {
     const savedUser = localStorage.getItem('user')
     try {
@@ -30,6 +30,8 @@ function App() {
       return null
     }
   })
+  
+  const [showSignup, setShowSignup] = useState(false)
   const [currentPage, setCurrentPage] = useState('dashboard')
   const [sidebarOpen, setSidebarOpen] = useState(true)
 
@@ -43,55 +45,35 @@ function App() {
   }, [isAuthenticated, user])
 
   const handleLogin = (userData) => {
-    // Set user data from backend response
-    setUser(userData)
+    setUser(userData.user || userData)
     setIsAuthenticated(true)
-  }
-
-  const handleSignup = (signupData) => {
-    // Signup handled in Signup component, just switch to login
-    setShowSignup(false)
   }
 
   const handleLogout = () => {
     setIsAuthenticated(false)
     setUser(null)
-    setShowSignup(false)
     setCurrentPage('dashboard')
     localStorage.removeItem('isAuthenticated')
     localStorage.removeItem('user')
+    localStorage.removeItem('auth_token')
   }
 
-  const handleNavigation = (page) => {
-    setCurrentPage(page)
-  }
+  const handleNavigation = (page) => setCurrentPage(page)
 
   const renderCurrentPage = () => {
     switch (currentPage) {
-      case 'case-search':
-        return <CaseSearch />
-      case 'document-analysis':
-        return <DocumentAnalysis />
-      case 'lawyer-directory':
-        return <LawyerDirectory />
-      case 'consultation-options':
-        return <ConsultationOptions />
-      case 'appointments':
-        return <Appointments />
-      case 'case-prediction':
-        return <CasePrediction />
-      case 'past-cases':
-        return <PastCases />
-      case 'strategy-insights':
-        return <CaseStrategyInsights />
-      case 'smart-crime-search':
-        return <SmartCrimeSearch />
-      case 'area-risk-score':
-        return <AreaRiskScore />
-      case 'rights-panel':
-        return <KnowYourRights />
-      default:
-        return <MainContent user={user} onNavigate={handleNavigation} />
+      case 'case-search': return <CaseSearch />
+      case 'document-analysis': return <DocumentAnalysis />
+      case 'lawyer-directory': return <LawyerDirectory />
+      case 'consultation-options': return <ConsultationOptions />
+      case 'appointments': return <Appointments />
+      case 'case-prediction': return <CasePrediction />
+      case 'past-cases': return <PastCases />
+      case 'strategy-insights': return <CaseStrategyInsights />
+      case 'smart-crime-search': return <SmartCrimeSearch />
+      case 'area-risk-score': return <AreaRiskScore />
+      case 'rights-panel': return <KnowYourRights />
+      default: return <MainContent user={user} onNavigate={handleNavigation} />
     }
   }
 
@@ -104,16 +86,18 @@ function App() {
         isOpen={sidebarOpen}
         onToggle={() => setSidebarOpen(!sidebarOpen)}
       />
-      <div className="flex-1 flex flex-col">
-        <div className="topbar p-4">
+      <div className="flex-1 flex flex-col overflow-hidden">
+        <div className="topbar p-4 bg-gray-900 flex items-center">
           <button
             onClick={() => setSidebarOpen(!sidebarOpen)}
-            className="btn p-2 rounded-lg text-gray-300 hover:text-white"
+            className="p-2 rounded-lg text-gray-300 hover:text-white focus:outline-none"
           >
             <span className="text-xl">☰</span>
           </button>
         </div>
-        {renderCurrentPage()}
+        <div className="flex-1 overflow-y-auto">
+          {renderCurrentPage()}
+        </div>
       </div>
     </div>
   )
@@ -122,30 +106,14 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Landing />} />
-        <Route
-          path="/login"
-          element={
-            !isAuthenticated ? (
-              showSignup ? (
-                <Signup
-                  onSignup={handleSignup}
-                  onSwitchToLogin={() => setShowSignup(false)}
-                />
-              ) : (
-                <Login
-                  onLogin={handleLogin}
-                  onSwitchToSignup={() => setShowSignup(true)}
-                />
-              )
-            ) : (
-              <Navigate to="/dashboard" replace />
-            )
-          }
-        />
-        <Route
-          path="/dashboard"
-          element={isAuthenticated ? <DashboardLayout /> : <Navigate to="/login" replace />}
-        />
+        <Route path="/login" element={
+          !isAuthenticated ? (
+            showSignup ? 
+              <Signup onSignup={() => setShowSignup(false)} onSwitchToLogin={() => setShowSignup(false)} /> :
+              <Login onLogin={handleLogin} onSwitchToSignup={() => setShowSignup(true)} />
+          ) : <Navigate to="/dashboard" replace />
+        } />
+        <Route path="/dashboard" element={isAuthenticated ? <DashboardLayout /> : <Navigate to="/login" replace />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>

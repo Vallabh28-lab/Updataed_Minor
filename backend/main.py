@@ -1,18 +1,20 @@
 import os
 import io
+import pytesseract
+from PIL import Image
 from fastapi import FastAPI, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
-from PIL import Image
-import easyocr
+from pydantic import BaseModel
+from deep_translator import GoogleTranslator
 
-# Advanced Image Processing Libraries
-import cv2
-import numpy as np
+# Point pytesseract to the local Tesseract-OCR binary in the project folder
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+pytesseract.pytesseract.tesseract_cmd = os.path.join(
+    BASE_DIR, '..', 'Tesseract-OCR', 'tesseract.exe'
+)
 
-# 1. Initialize the FastAPI instance
-app = FastAPI(title="Minor Project OCR API")
+app = FastAPI(title="LegalAI OCR API - Tesseract Engine")
 
-# 2. Setup CORS Middleware (Allows your frontend to communicate with this backend)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -21,76 +23,79 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# 3. Setup Model Path and Load Reader
-MODEL_DIR = os.path.join(os.path.dirname(__file__), "easyocr_models")
-print("🔄 Loading EasyOCR engine into server memory...")
-reader = easyocr.Reader(['en'], gpu=False, model_storage_directory=MODEL_DIR)
-print("✅ OCR Server Ready!")
+print("✅ Tesseract OCR engine ready.")
 
-# 4. Endpoints
+
 @app.get("/")
 def home():
-    return {"status": "Online", "message": "OCR Backend API is running perfectly with Max-Accuracy pipeline."}
+    return {"status": "Online", "message": "Tesseract OCR backend is running."}
+
 
 @app.post("/api/extract-text")
 async def extract_text(file: UploadFile = File(...)):
+    contents = await file.read()
+    filename = file.filename.lower()
+    extracted_lines = []
+
     try:
-        # Read the uploaded image file directly into memory bytes
-        image_bytes = await file.read()
-        
-        # Load raw image array from bytes using OpenCV
-        nparr = np.frombuffer(image_bytes, np.uint8)
-        img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
+        # Build language string based on available traineddata files
+        tessdata_dir = os.path.join(BASE_DIR, '..', 'Tesseract-OCR', 'tessdata')
+        available_langs = ['eng']
+        for lang_code in ['hin', 'mar']:
+            if os.path.exists(os.path.join(tessdata_dir, f'{lang_code}.traineddata')):
+                available_langs.append(lang_code)
+        lang_str = '+'.join(available_langs)
+        print(f"🌐 OCR languages active: {lang_str}")
 
-        # ==========================================================
-        # 🔥 ADVANCED OPENCV PREPROCESSING FOR MAXIMUM ACCURACY
-        # ==========================================================
-        
-        # 1. UPSCALE: Make small or pixelated text 2x larger to reveal structural loops
-        img_large = cv2.resize(img, None, fx=2, fy=2, interpolation=cv2.INTER_CUBIC)
+        if filename.endswith(".pdf"):
+            from pdf2image import convert_from_bytes
+            poppler_path = os.path.join(BASE_DIR, '..', 'poppler', 'bin')
+            pages = convert_from_bytes(
+                contents,
+                dpi=300,
+                poppler_path=poppler_path if os.path.exists(poppler_path) else None
+            )
+            for page in pages:
+                text = pytesseract.image_to_string(page, lang=lang_str, config='--psm 6')
+                extracted_lines.extend([l for l in text.splitlines() if l.strip()])
+        else:
+            img = Image.open(io.BytesIO(contents)).convert('RGB')
+            text = pytesseract.image_to_string(img, lang=lang_str, config='--psm 6')
+            extracted_lines = [l for l in text.splitlines() if l.strip()]
 
-        # 2. GRAYSCALE: Drop color data to isolate structural details and reduce noise
-        gray = cv2.cvtColor(img_large, cv2.COLOR_BGR2GRAY)
+        full_text = "\n".join(extracted_lines)
 
-        # 3. BILATERAL FILTER: Smooth background pixel texture without blurring letter boundaries
-        filtered = cv2.bilateralFilter(gray, 9, 75, 75)
+        # Save output to file for debugging
+        output_path = os.path.join(BASE_DIR, "extracted_output.txt")
+        with open(output_path, "w", encoding="utf-8") as f:
+            f.write(f"EXTRACTED FROM: {file.filename}\n{'='*40}\n{full_text}\n{'='*40}\n")
 
-        # 4. ADAPTIVE THRESHOLDING: Create absolute black/white mask tailored to localized lighting
-        binary_img = cv2.adaptiveThreshold(
-            filtered, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, 
-            cv2.THRESH_BINARY, 11, 2
-        )
-        # ==========================================================
-        
-        # Pass the heavily optimized binary image array straight into EasyOCR
-        # paragraph=True uses sentence structures to contextually auto-correct typos
-        result = reader.readtext(binary_img, paragraph=True)
-        
-        # Format the text outputs cleanly
-        extracted_lines = []
-        for item in result:
-            extracted_lines.append(item[1])  # item[1] contains the string text
-            
-        full_text = " ".join(extracted_lines)
-        
-        # Write the text directly to a file in VS Code
-        output_file_path = os.path.join(os.path.dirname(__file__), "extracted_output.txt")
-        with open(output_file_path, "w", encoding="utf-8") as f:
-            f.write(f"📄 EXTRACTED FROM: {file.filename}\n")
-            f.write("="*40 + "\n")
-            f.write(full_text)
-            f.write("\n" + "="*40 + "\n")
-            
-        print(f"📝 Output file updated successfully at: {output_file_path}")
-            
         return {
             "success": True,
             "filename": file.filename,
             "text_lines": extracted_lines,
             "full_text": full_text,
-            "saved_to_file": "extracted_output.txt"
         }
-        
+
     except Exception as e:
-        print(f"❌ Error encountered during execution: {str(e)}")
+        print(f"❌ OCR Error: {e}")
         return {"success": False, "error": str(e)}
+
+
+class TranslateRequest(BaseModel):
+    text: str
+    target: str  # 'hi' for Hindi, 'mr' for Marathi, 'en' for English
+
+@app.post("/api/translate")
+def translate_text(req: TranslateRequest):
+    try:
+        chunks = [req.text[i:i+4500] for i in range(0, len(req.text), 4500)]
+        translated = [GoogleTranslator(source='auto', target=req.target).translate(c) for c in chunks]
+        return {"success": True, "translated_text": ' '.join(translated)}
+    except Exception as e:
+        return {"success": False, "error": str(e)}
+
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)

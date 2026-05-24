@@ -1,19 +1,42 @@
-# Block caches anywhere in the project folders
+# =========================================================================
+# SYSTEM & ENVIRONMENT SECRETS (CRITICAL FOR AUTHENTICATION SECURITY)
+# =========================================================================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+**/.env
+**/.env.local
+
+# =========================================================================
+# SYSTEM RUNTIME CACHES
+# =========================================================================
 **/.vite/
 **/node_modules/
 **/__pycache__/
+**/.DS_Store
+Thumbs.db
 
-# Block all compiled binaries globally
+# =========================================================================
+# COMPILED BINARIES & SYSTEM EXECUTABLES
+# =========================================================================
 **/*.dll
 **/*.pyd
 **/*.lib
 **/*.pth
 **/*.so
 **/*.exe
+**/*.pyc
 
-# Block archives and large document dumps
+# =========================================================================
+# DATA STORAGE & PROJECT ARCHIVES
+# =========================================================================
 **/archive/
 **/archive.zip
 **/DOCUMENTS OF MINOR/
 **/*.txt
 **/*.csv
+
+# Allow explicit documentation tracking while blocking raw transaction text dumps
+!README.md

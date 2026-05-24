@@ -1,8 +1,33 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
+    "target": "ES2022",
+    "useDefineForClassFields": true,
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],
+    "module": "NodeNext",
+    "skipLibCheck": true,
+
+    /* Bundler resolution setup */
+    "moduleResolution": "NodeNext",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+
+    /* Strict Type-Checking Rules */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+
+    /* Absolute Path Alias Mapping Configuration */
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "paths": {
       "@/*": ["./frontend/src/*"]
     }
-  }
+  },
+  "include": ["frontend/src/**/*"],
+  "exclude": ["node_modules", "frontend/node_modules", "frontend/dist", "backend"]
 }
