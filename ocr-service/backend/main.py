@@ -7,11 +7,12 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from deep_translator import GoogleTranslator
 
-# Point pytesseract to the local Tesseract-OCR binary in the project folder
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-pytesseract.pytesseract.tesseract_cmd = os.path.join(
-    BASE_DIR, '..', 'Tesseract-OCR', 'tesseract.exe'
-)
+
+# Resolve Tesseract binary — check project-local copy first, fall back to system install
+_local_tess = os.path.join(BASE_DIR, '..', 'Tesseract-OCR', 'tesseract.exe')
+_system_tess = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+pytesseract.pytesseract.tesseract_cmd = _local_tess if os.path.exists(_local_tess) else _system_tess
 
 app = FastAPI(title="LegalAI OCR API - Tesseract Engine")
 
@@ -38,8 +39,9 @@ async def extract_text(file: UploadFile = File(...)):
     extracted_lines = []
 
     try:
-        # Build language string based on available traineddata files
-        tessdata_dir = os.path.join(BASE_DIR, '..', 'Tesseract-OCR', 'tessdata')
+        # Resolve tessdata directory
+        _local_tessdata = os.path.join(BASE_DIR, '..', 'Tesseract-OCR', 'tessdata')
+        tessdata_dir = _local_tessdata if os.path.exists(_local_tessdata) else r'C:\Program Files\Tesseract-OCR\tessdata'
         available_langs = ['eng']
         for lang_code in ['hin', 'mar']:
             if os.path.exists(os.path.join(tessdata_dir, f'{lang_code}.traineddata')):

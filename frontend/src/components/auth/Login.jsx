@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import AuthMessage from './AuthMessage'
 
 function Login({ onLogin, onSwitchToSignup }) {
   const [email, setEmail] = useState('')
@@ -40,7 +39,6 @@ function Login({ onLogin, onSwitchToSignup }) {
 
       if (res.ok) {
         onLogin(data.user || { email })
-        localStorage.setItem('auth_token', data.token) // Hold session safely across tabs
         navigate('/dashboard')
       } else {
         setLoginError(data.message || 'Invalid email or password structure.')
@@ -121,8 +119,9 @@ function Login({ onLogin, onSwitchToSignup }) {
           
           {/* Dynamic error notification display banner */}
           {loginError && (
-            <div className="mb-4">
-              <AuthMessage type="error" text={loginError} />
+            <div className="mb-4 bg-red-50 border border-red-200 text-red-800 rounded-lg px-4 py-3 text-sm flex justify-between items-start">
+              <span>❌ {loginError}</span>
+              <button onClick={() => setLoginError(null)} className="ml-3 text-red-400 hover:text-red-600">✕</button>
             </div>
           )}
 
@@ -250,8 +249,12 @@ function Login({ onLogin, onSwitchToSignup }) {
 
               {/* Status context alerts rendered inside modal framework */}
               {forgotStatus && (
-                <div className="mt-2">
-                  <AuthMessage type={forgotStatus.type} text={forgotStatus.text} />
+                <div className={`mt-2 px-4 py-3 rounded-lg text-sm border ${
+                  forgotStatus.type === 'success'
+                    ? 'bg-green-50 border-green-200 text-green-800'
+                    : 'bg-red-50 border-red-200 text-red-800'
+                }`}>
+                  {forgotStatus.type === 'success' ? '✅' : '❌'} {forgotStatus.text}
                 </div>
               )}
 

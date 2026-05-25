@@ -100,6 +100,21 @@ app.use('/api/upload', require('./src/routes/uploadRoutes'));
 app.use('/api/documents', require('./src/routes/documents'));
 app.use('/api/statutes', require('./src/routes/statutes'));
 
+// Proxy prediction requests to Python FastAPI
+app.post('/api/predict', async (req, res) => {
+  try {
+    const response = await fetch('http://127.0.0.1:8000/api/predict', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(req.body)
+    });
+    const data = await response.json();
+    res.json(data);
+  } catch (err) {
+    res.status(502).json({ success: false, error: 'Prediction service unavailable: ' + err.message });
+  }
+});
+
 // Serve static assets securely
 app.use('/uploads', express.static('uploads'));
 

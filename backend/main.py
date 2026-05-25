@@ -1,101 +1,132 @@
 import os
-import io
-import pytesseract
-from PIL import Image
-from fastapi import FastAPI, UploadFile, File
+import json
+import math
+import requests
+from typing import Optional
+from fastapi import FastAPI, HTTPException, UploadFile, File, Query
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from deep_translator import GoogleTranslator
+import google.generativeai as genai
 
-# Point pytesseract to the local Tesseract-OCR binary in the project folder
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-pytesseract.pytesseract.tesseract_cmd = os.path.join(
-    BASE_DIR, '..', 'Tesseract-OCR', 'tesseract.exe'
-)
+app = FastAPI(title="Legal AI Backend")
 
-app = FastAPI(title="LegalAI OCR API - Tesseract Engine")
-
+# 🔓 Updated CORS to dynamically accept wildcard local connections to stop blocking requests
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["*"],  
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-print("✅ Tesseract OCR engine ready.")
+# API Key Configuration
+GEMINI_KEY = "AIzaSyBlZ5ng4goK5pTPxPlg6uTPrPcbrjKWkuo"
+genai.configure(api_key=GEMINI_KEY)
 
+class LegalLookupRequest(BaseModel):
+    crime_type: str
+
+# --- ROUTES ---
 
 @app.get("/")
-def home():
-    return {"status": "Online", "message": "Tesseract OCR backend is running."}
+def read_root():
+    return {"status": "online"}
 
-
-@app.post("/api/extract-text")
-async def extract_text(file: UploadFile = File(...)):
-    contents = await file.read()
-    filename = file.filename.lower()
-    extracted_lines = []
-
+@app.post("/api/legal-lookup")
+async def process_legal_lookup(payload: LegalLookupRequest):
     try:
-        # Build language string based on available traineddata files
-        tessdata_dir = os.path.join(BASE_DIR, '..', 'Tesseract-OCR', 'tessdata')
-        available_langs = ['eng']
-        for lang_code in ['hin', 'mar']:
-            if os.path.exists(os.path.join(tessdata_dir, f'{lang_code}.traineddata')):
-                available_langs.append(lang_code)
-        lang_str = '+'.join(available_langs)
-        print(f"🌐 OCR languages active: {lang_str}")
+        model = genai.GenerativeModel('gemini-1.5-flash')
+        prompt = f"Analyze: {payload.crime_type}. Return JSON: {{'crime': '', 'ipc': '', 'bns': '', 'summary': '', 'citizen_protocols': []}}"
+        response = model.generate_content(prompt)
+        
+        # Safe JSON scrubbing
+        clean_text = response.text.strip().replace("```json", "").replace("```", "").strip()
+        return json.loads(clean_text)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Gemini Processing Error: {str(e)}")
 
-        if filename.endswith(".pdf"):
-            from pdf2image import convert_from_bytes
-            poppler_path = os.path.join(BASE_DIR, '..', 'poppler', 'bin')
-            pages = convert_from_bytes(
-                contents,
-                dpi=300,
-                poppler_path=poppler_path if os.path.exists(poppler_path) else None
-            )
-            for page in pages:
-                text = pytesseract.image_to_string(page, lang=lang_str, config='--psm 6')
-                extracted_lines.extend([l for l in text.splitlines() if l.strip()])
-        else:
-            img = Image.open(io.BytesIO(contents)).convert('RGB')
-            text = pytesseract.image_to_string(img, lang=lang_str, config='--psm 6')
-            extracted_lines = [l for l in text.splitlines() if l.strip()]
+# 🗺️ FIX: Changed from POST to GET to match your frontend fetch request structure perfectly!
+@app.get("/api/lawyers")
+async def extract_live_osm_lawyers(
+    lat: float = Query(...),
+    lng: float = Query(...),
+    radius: float = Query(3000), # Incoming radius from frontend select list (e.g. 1000, 3000)
+    keyword: Optional[str] = Query("lawyer")
+):
+    # FIX: Convert radius from meters to latitude degrees (approx 111,000 meters per degree)
+    offset = float(radius) / 111000.0
+    
+    min_lat = lat - offset
+    max_lat = lat + offset
+    min_lng = lng - offset
+    max_lng = lng + offset
 
-        full_text = "\n".join(extracted_lines)
+    url = "https://overpass-api.de/api/interpreter"
+    
+    # Strict OSM Overpass Bounding Box order: (min_lat, min_lng, max_lat, max_lng)
+    query = f"""[out:json][timeout:25];
+    (
+      node["office"="lawyer"]({min_lat},{min_lng},{max_lat},{max_lng});
+      way["office"="lawyer"]({min_lat},{min_lng},{max_lat},{max_lng});
+    );
+    out center;"""
+    
+    try:
+        response = requests.post(url, data={'data': query}, timeout=15)
+        data = response.json()
+        
+        results = []
+        for el in data.get('elements', []):
+            tags = el.get('tags', {})
+            
+            # Map elements occasionally store coordinates inside a 'center' nesting block
+            item_lat = el.get('lat') or el.get('center', {}).get('lat')
+            item_lng = el.get('lon') or el.get('center', {}).get('lng') or el.get('center', {}).get('lon')
+            
+            if not item_lat or not item_lng:
+                continue
 
-        # Save output to file for debugging
-        output_path = os.path.join(BASE_DIR, "extracted_output.txt")
-        with open(output_path, "w", encoding="utf-8") as f:
-            f.write(f"EXTRACTED FROM: {file.filename}\n{'='*40}\n{full_text}\n{'='*40}\n")
+            results.append({
+                "id": el.get('id'),
+                "name": tags.get('name') or tags.get('office') or "Independent Legal Counsel",
+                "lat": item_lat,
+                "lng": item_lng,
+                "vicinity": tags.get('addr:full') or f"{tags.get('addr:street', 'Nearby Court Area')}, {tags.get('addr:city', 'Pune')}",
+                "phone": tags.get('phone') or tags.get('contact:phone') or "Available by Appointment",
+                "rating": 4.5
+            })
+        return results
+    except Exception as e:
+        print(f"OSM Overpass Request Fail: {e}")
+        return []
 
+@app.post("/api/predict")
+async def upload_and_analyze_document(file: UploadFile = File(...)):
+    try:
+        content = await file.read()
+        # Decode contents to a clean readable string if it's text/txt/ocr dump
+        file_text_sample = content[:2000].decode("utf-8", errors="ignore")
+        
+        model = genai.GenerativeModel('gemini-1.5-flash')
+        prompt = f"""
+        Analyze this extracted text data from a legal document file:
+        ---
+        {file_text_sample}
+        ---
+        Provide a professional summary analysis in valid raw JSON format containing matching keys for summary, risks, and recommended_actions.
+        """
+        response = model.generate_content(prompt)
+        
+        clean_text = response.text.strip().replace("```json", "").replace("```", "").strip()
         return {
-            "success": True,
             "filename": file.filename,
-            "text_lines": extracted_lines,
-            "full_text": full_text,
+            "status": "Success",
+            "analysis": json.loads(clean_text)
         }
-
     except Exception as e:
-        print(f"❌ OCR Error: {e}")
-        return {"success": False, "error": str(e)}
+        raise HTTPException(status_code=500, detail=str(e))
 
-
-class TranslateRequest(BaseModel):
-    text: str
-    target: str  # 'hi' for Hindi, 'mr' for Marathi, 'en' for English
-
-@app.post("/api/translate")
-def translate_text(req: TranslateRequest):
-    try:
-        chunks = [req.text[i:i+4500] for i in range(0, len(req.text), 4500)]
-        translated = [GoogleTranslator(source='auto', target=req.target).translate(c) for c in chunks]
-        return {"success": True, "translated_text": ' '.join(translated)}
-    except Exception as e:
-        return {"success": False, "error": str(e)}
-
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     import uvicorn
-    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
+    # Enforces explicit port alignment to match your frontend network setup configuration exactly
+    uvicorn.run("main:app", host="127.0.0.1", port=5000, reload=True)

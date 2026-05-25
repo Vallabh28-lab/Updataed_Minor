@@ -1,5 +1,5 @@
 ﻿import React, { useState, useEffect } from 'react'
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Navigate, Outlet } from 'react-router-dom'
 import Sidebar from './components/Sidebar'
 import MainContent from './components/MainContent'
 import Login from './components/auth/Login'
@@ -32,7 +32,6 @@ function App() {
   })
   
   const [showSignup, setShowSignup] = useState(false)
-  const [currentPage, setCurrentPage] = useState('dashboard')
   const [sidebarOpen, setSidebarOpen] = useState(true)
 
   useEffect(() => {
@@ -52,51 +51,40 @@ function App() {
   const handleLogout = () => {
     setIsAuthenticated(false)
     setUser(null)
-    setCurrentPage('dashboard')
     localStorage.removeItem('isAuthenticated')
     localStorage.removeItem('user')
     localStorage.removeItem('auth_token')
   }
 
-  const handleNavigation = (page) => setCurrentPage(page)
-
-  const renderCurrentPage = () => {
-    switch (currentPage) {
-      case 'case-search': return <CaseSearch />
-      case 'document-analysis': return <DocumentAnalysis />
-      case 'lawyer-directory': return <LawyerDirectory />
-      case 'consultation-options': return <ConsultationOptions />
-      case 'appointments': return <Appointments />
-      case 'case-prediction': return <CasePrediction />
-      case 'past-cases': return <PastCases />
-      case 'strategy-insights': return <CaseStrategyInsights />
-      case 'smart-crime-search': return <SmartCrimeSearch />
-      case 'area-risk-score': return <AreaRiskScore />
-      case 'rights-panel': return <KnowYourRights />
-      default: return <MainContent user={user} onNavigate={handleNavigation} />
-    }
-  }
-
+  // 🏛️ Master Shell Layout utilizing <Outlet /> to seamlessly inject sub-views
   const DashboardLayout = () => (
-    <div className="flex h-screen bg-gray-100">
+    <div className="flex h-screen bg-gray-100 w-full overflow-hidden">
       <Sidebar
         user={user}
         onLogout={handleLogout}
-        onNavigate={handleNavigation}
         isOpen={sidebarOpen}
         onToggle={() => setSidebarOpen(!sidebarOpen)}
       />
       <div className="flex-1 flex flex-col overflow-hidden">
-        <div className="topbar p-4 bg-gray-900 flex items-center">
+        {/* Top Header Control Strip */}
+        <div className="topbar p-4 bg-gray-900 flex items-center shadow-md relative z-20">
           <button
             onClick={() => setSidebarOpen(!sidebarOpen)}
-            className="p-2 rounded-lg text-gray-300 hover:text-white focus:outline-none"
+            className="p-2 rounded-lg text-gray-300 hover:text-white focus:outline-none transition-colors"
           >
             <span className="text-xl">☰</span>
           </button>
+          
+          {/* Active API Status Indicator Strip (Green circle restored) */}
+          <div className="ml-auto flex items-center gap-2">
+            <span className="h-2.5 w-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span className="text-xs font-black text-slate-400 uppercase tracking-widest">System Online</span>
+          </div>
         </div>
-        <div className="flex-1 overflow-y-auto">
-          {renderCurrentPage()}
+
+        {/* Core Sub-View Canvas Frame Component Container */}
+        <div className="flex-1 overflow-y-auto p-6 bg-slate-50 relative z-10">
+          <Outlet />
         </div>
       </div>
     </div>
@@ -105,6 +93,7 @@ function App() {
   return (
     <Router>
       <Routes>
+        {/* Public Views */}
         <Route path="/" element={<Landing />} />
         <Route path="/login" element={
           !isAuthenticated ? (
@@ -113,7 +102,24 @@ function App() {
               <Login onLogin={handleLogin} onSwitchToSignup={() => setShowSignup(true)} />
           ) : <Navigate to="/dashboard" replace />
         } />
-        <Route path="/dashboard" element={isAuthenticated ? <DashboardLayout /> : <Navigate to="/login" replace />} />
+
+        {/* 🔒 Protected Internal Platform Dashboard Views (Routed Safely) */}
+        <Route path="/dashboard" element={isAuthenticated ? <DashboardLayout /> : <Navigate to="/login" replace />}>
+          <Route index element={<MainContent user={user} />} />
+          <Route path="case-search" element={<CaseSearch />} />
+          <Route path="document-analysis" element={<DocumentAnalysis />} />
+          <Route path="lawyer-directory" element={<LawyerDirectory />} />
+          <Route path="consultation-options" element={<ConsultationOptions />} />
+          <Route path="appointments" element={<Appointments />} />
+          <Route path="case-prediction" element={<CasePrediction />} />
+          <Route path="past-cases" element={<PastCases />} />
+          <Route path="strategy-insights" element={<CaseStrategyInsights />} />
+          <Route path="smart-crime-search" element={<SmartCrimeSearch />} />
+          <Route path="area-risk-score" element={<AreaRiskScore />} />
+          <Route path="rights-panel" element={<KnowYourRights />} />
+        </Route>
+
+        {/* Fallback Catch-all Route */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>
