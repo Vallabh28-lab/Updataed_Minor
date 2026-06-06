@@ -1,0 +1,188 @@
+[INFO] [2026-06-05 22:19:57] Starting Legal AI Backend server
+[INFO] [2026-06-05 22:24:32] Job 57263c0f-8e07-4993-9377-e968c3df908f: Received upload request for SampleContract-Shuttle.pdf
+[INFO] [2026-06-05 22:24:32] Job 57263c0f-8e07-4993-9377-e968c3df908f: File saved (49647 bytes), queuing for processing
+[INFO] [2026-06-05 22:24:32] Job 57263c0f-8e07-4993-9377-e968c3df908f: Started processing 57263c0f-8e07-4993-9377-e968c3df908f_SampleContract-Shuttle.pdf
+[INFO] [2026-06-05 22:24:32] Job 57263c0f-8e07-4993-9377-e968c3df908f: Extracting text from document
+[INFO] [2026-06-05 22:24:33] Job 57263c0f-8e07-4993-9377-e968c3df908f: Processing PDF with 10 pages
+[INFO] [2026-06-05 22:24:33] Job 57263c0f-8e07-4993-9377-e968c3df908f: Extracted 32936 total characters
+[INFO] [2026-06-05 22:24:33] Job 57263c0f-8e07-4993-9377-e968c3df908f: Sending to Gemini AI for analysis
+[ERROR] [2026-06-05 22:25:10] Job 57263c0f-8e07-4993-9377-e968c3df908f: Processing failed - 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-3.5-flash
+Please retry in 47.588329183s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-3.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 5
+}
+, retry_delay {
+  seconds: 47
+}
+]
+[INFO] [2026-06-05 22:25:10] Job 57263c0f-8e07-4993-9377-e968c3df908f: Cleaned up file 57263c0f-8e07-4993-9377-e968c3df908f_SampleContract-Shuttle.pdf
+[INFO] [2026-06-05 22:27:36] Job a5fdc4f3-3150-40e9-89ee-4dedbd7ecfb0: Received upload request for SampleContract-Shuttle.pdf
+[INFO] [2026-06-05 22:27:36] Job a5fdc4f3-3150-40e9-89ee-4dedbd7ecfb0: File saved (49647 bytes), queuing for processing
+[INFO] [2026-06-05 22:27:36] Job a5fdc4f3-3150-40e9-89ee-4dedbd7ecfb0: Started processing a5fdc4f3-3150-40e9-89ee-4dedbd7ecfb0_SampleContract-Shuttle.pdf
+[INFO] [2026-06-05 22:27:36] Job a5fdc4f3-3150-40e9-89ee-4dedbd7ecfb0: Extracting text from document
+[INFO] [2026-06-05 22:27:36] Job a5fdc4f3-3150-40e9-89ee-4dedbd7ecfb0: Processing PDF with 10 pages
+[INFO] [2026-06-05 22:27:36] Job a5fdc4f3-3150-40e9-89ee-4dedbd7ecfb0: Extracted 32936 total characters
+[INFO] [2026-06-05 22:27:36] Job a5fdc4f3-3150-40e9-89ee-4dedbd7ecfb0: Sending to Gemini AI for analysis
+[ERROR] [2026-06-05 22:28:14] Job a5fdc4f3-3150-40e9-89ee-4dedbd7ecfb0: Processing failed - 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-3.5-flash
+Please retry in 43.864527168s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-3.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 5
+}
+, retry_delay {
+  seconds: 43
+}
+]
+[INFO] [2026-06-05 22:28:14] Job a5fdc4f3-3150-40e9-89ee-4dedbd7ecfb0: Cleaned up file a5fdc4f3-3150-40e9-89ee-4dedbd7ecfb0_SampleContract-Shuttle.pdf
+[INFO] [2026-06-05 22:32:02] Job 09422a81-c5ef-473e-9ab3-bb2f5ce995f4: Received upload request for SampleContract-Shuttle.pdf
+[INFO] [2026-06-05 22:32:02] Job 09422a81-c5ef-473e-9ab3-bb2f5ce995f4: File saved (49647 bytes), queuing for processing
+[INFO] [2026-06-05 22:32:02] Job 09422a81-c5ef-473e-9ab3-bb2f5ce995f4: Started processing 09422a81-c5ef-473e-9ab3-bb2f5ce995f4_SampleContract-Shuttle.pdf
+[INFO] [2026-06-05 22:32:02] Job 09422a81-c5ef-473e-9ab3-bb2f5ce995f4: Extracting text from document
+[INFO] [2026-06-05 22:32:02] Job 09422a81-c5ef-473e-9ab3-bb2f5ce995f4: Processing PDF with 10 pages
+[INFO] [2026-06-05 22:32:02] Job 09422a81-c5ef-473e-9ab3-bb2f5ce995f4: Extracted 32936 total characters
+[INFO] [2026-06-05 22:32:02] Job 09422a81-c5ef-473e-9ab3-bb2f5ce995f4: Sending to Gemini AI for analysis
+[ERROR] [2026-06-05 22:32:40] Job 09422a81-c5ef-473e-9ab3-bb2f5ce995f4: Processing failed - 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 17.138588995s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-3.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 17
+}
+]
+[INFO] [2026-06-05 22:32:40] Job 09422a81-c5ef-473e-9ab3-bb2f5ce995f4: Cleaned up file 09422a81-c5ef-473e-9ab3-bb2f5ce995f4_SampleContract-Shuttle.pdf
+[INFO] [2026-06-05 22:34:30] Job 97d00d6e-82dc-4733-b0ae-f6dc9db24d5d: Received upload request for SampleContract-Shuttle.pdf
+[INFO] [2026-06-05 22:34:30] Job 97d00d6e-82dc-4733-b0ae-f6dc9db24d5d: File saved (49647 bytes), queuing for processing
+[INFO] [2026-06-05 22:34:30] Job 97d00d6e-82dc-4733-b0ae-f6dc9db24d5d: Started processing 97d00d6e-82dc-4733-b0ae-f6dc9db24d5d_SampleContract-Shuttle.pdf
+[INFO] [2026-06-05 22:34:30] Job 97d00d6e-82dc-4733-b0ae-f6dc9db24d5d: Extracting text from document
+[INFO] [2026-06-05 22:34:30] Job 97d00d6e-82dc-4733-b0ae-f6dc9db24d5d: Processing PDF with 10 pages
+[INFO] [2026-06-05 22:34:30] Job 97d00d6e-82dc-4733-b0ae-f6dc9db24d5d: Extracted 32936 total characters
+[INFO] [2026-06-05 22:34:30] Job 97d00d6e-82dc-4733-b0ae-f6dc9db24d5d: Sending to Gemini AI for analysis
+[ERROR] [2026-06-05 22:34:31] Job 97d00d6e-82dc-4733-b0ae-f6dc9db24d5d: Processing failed - 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 26.865734299s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-3.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 26
+}
+]
+[INFO] [2026-06-05 22:34:31] Job 97d00d6e-82dc-4733-b0ae-f6dc9db24d5d: Cleaned up file 97d00d6e-82dc-4733-b0ae-f6dc9db24d5d_SampleContract-Shuttle.pdf
+[INFO] [2026-06-05 22:46:03] Starting Legal AI Backend server
+[INFO] [2026-06-05 22:49:09] Job fac8dcee-cefc-4c58-a315-eb3373ffd9bf: Received upload request for SampleContract-Shuttle.pdf
+[INFO] [2026-06-05 22:49:09] Job fac8dcee-cefc-4c58-a315-eb3373ffd9bf: File saved (49647 bytes), queuing for processing
+[INFO] [2026-06-05 22:49:09] Job fac8dcee-cefc-4c58-a315-eb3373ffd9bf: Started processing fac8dcee-cefc-4c58-a315-eb3373ffd9bf_SampleContract-Shuttle.pdf
+[INFO] [2026-06-05 22:49:09] Job fac8dcee-cefc-4c58-a315-eb3373ffd9bf: Extracting text from document
+[INFO] [2026-06-05 22:49:10] Job fac8dcee-cefc-4c58-a315-eb3373ffd9bf: Processing PDF with 10 pages
+[INFO] [2026-06-05 22:49:10] Job fac8dcee-cefc-4c58-a315-eb3373ffd9bf: Extracted 32936 total characters
+[INFO] [2026-06-05 22:49:10] Job fac8dcee-cefc-4c58-a315-eb3373ffd9bf: Sending to Gemini AI for analysis
+[ERROR] [2026-06-05 22:49:11] Job fac8dcee-cefc-4c58-a315-eb3373ffd9bf: Processing failed - 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 46.129453186s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-3.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 46
+}
+]
+[INFO] [2026-06-05 22:49:11] Job fac8dcee-cefc-4c58-a315-eb3373ffd9bf: Cleaned up file fac8dcee-cefc-4c58-a315-eb3373ffd9bf_SampleContract-Shuttle.pdf
+[INFO] [2026-06-05 22:49:26] Job 97176d4c-b0ea-4cb3-91cc-8a7937a56091: Received upload request for SampleContract-Shuttle.pdf
+[INFO] [2026-06-05 22:49:26] Job 97176d4c-b0ea-4cb3-91cc-8a7937a56091: File saved (49647 bytes), queuing for processing
+[INFO] [2026-06-05 22:49:26] Job 97176d4c-b0ea-4cb3-91cc-8a7937a56091: Started processing 97176d4c-b0ea-4cb3-91cc-8a7937a56091_SampleContract-Shuttle.pdf
+[INFO] [2026-06-05 22:49:26] Job 97176d4c-b0ea-4cb3-91cc-8a7937a56091: Extracting text from document
+[INFO] [2026-06-05 22:49:26] Job 97176d4c-b0ea-4cb3-91cc-8a7937a56091: Processing PDF with 10 pages
+[INFO] [2026-06-05 22:49:26] Job 97176d4c-b0ea-4cb3-91cc-8a7937a56091: Extracted 32936 total characters
+[INFO] [2026-06-05 22:49:26] Job 97176d4c-b0ea-4cb3-91cc-8a7937a56091: Sending to Gemini AI for analysis
+[ERROR] [2026-06-05 22:49:27] Job 97176d4c-b0ea-4cb3-91cc-8a7937a56091: Processing failed - 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 30.993831436s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-3.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 30
+}
+]
+[INFO] [2026-06-05 22:49:27] Job 97176d4c-b0ea-4cb3-91cc-8a7937a56091: Cleaned up file 97176d4c-b0ea-4cb3-91cc-8a7937a56091_SampleContract-Shuttle.pdf

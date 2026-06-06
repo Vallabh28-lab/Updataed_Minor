@@ -69,39 +69,111 @@ function LegalMap({ initialLat, initialLng, prefillSearch }) {
     });
   };
 
-  // 🚀 Rule-Based Category Detection
+  // 🚀 Enhanced Category Detection with Backend API Mapping
   const detectCategory = (text) => {
     const input = text.toLowerCase();
-    if (input.includes("divorce") || input.includes("marriage")) return { category: "family lawyer", msg: "Searching for family law specialists..." };
-    if (input.includes("land") || input.includes("rent") || input.includes("property")) return { category: "property lawyer", msg: "Searching for property legal experts..." };
-    if (input.includes("police") || input.includes("arrest")) return { category: "criminal lawyer", msg: "Searching for criminal defense counsel..." };
-    if (input.includes("fraud") || input.includes("hacking")) return { category: "cyber crime lawyer", msg: "Finding cyber law experts..." };
-    if (input.includes("business") || input.includes("company")) return { category: "corporate lawyer", msg: "Searching for corporate legal advisors..." };
-    return { category: "lawyer", msg: "Finding general legal professionals near you." };
+    
+    // Map user input to backend legal categories
+    if (input.includes("divorce") || input.includes("marriage") || input.includes("custody")) 
+      return { category: "family lawyer", backendCategory: "Family Law", msg: "Searching for family law specialists..." };
+    
+    if (input.includes("land") || input.includes("rent") || input.includes("property") || input.includes("lease")) 
+      return { category: "property lawyer", backendCategory: "Real Estate", msg: "Searching for property legal experts..." };
+    
+    if (input.includes("police") || input.includes("arrest") || input.includes("criminal") || input.includes("bail")) 
+      return { category: "criminal lawyer", backendCategory: "Criminal", msg: "Searching for criminal defense counsel..." };
+    
+    if (input.includes("fraud") || input.includes("hacking") || input.includes("cyber")) 
+      return { category: "cyber crime lawyer", backendCategory: "Cyber Law", msg: "Finding cyber law experts..." };
+    
+    if (input.includes("business") || input.includes("company") || input.includes("corporate") || input.includes("contract")) 
+      return { category: "corporate lawyer", backendCategory: "Corporate", msg: "Searching for corporate legal advisors..." };
+    
+    if (input.includes("employment") || input.includes("labor") || input.includes("workplace")) 
+      return { category: "employment lawyer", backendCategory: "Employment", msg: "Finding employment law specialists..." };
+    
+    if (input.includes("patent") || input.includes("trademark") || input.includes("copyright") || input.includes("ip")) 
+      return { category: "IP lawyer", backendCategory: "Intellectual Property", msg: "Finding IP law specialists..." };
+    
+    return { category: "lawyer", backendCategory: null, msg: "Finding general legal professionals near you." };
   };
 
   const handleAiSearch = () => {
     if (!userInput) return;
-    const { category, msg } = detectCategory(userInput);
+    const { category, backendCategory, msg } = detectCategory(userInput);
     setAiMessage(msg);
     
     navigator.geolocation.getCurrentPosition((pos) => {
       const lat = pos.coords.latitude;
       const lng = pos.coords.longitude;
       setCenter({ lat, lng });
-      // FIX: Now explicitly passes detected category keyword down to request handler
-      fetchLawyers(lat, lng, radius, category);
+      // Pass backendCategory to trigger backend recommendation API
+      fetchLawyers(lat, lng, radius, category, backendCategory);
     }, () => {
-      fetchLawyers(center.lat, center.lng, radius, category);
+      fetchLawyers(center.lat, center.lng, radius, category, backendCategory);
     });
   };
 
-  // 🌐 Dynamic Fetch Handler - Aligned with FastAPI main.py GET Structure
-  const fetchLawyers = (lat, lng, currentRadius, keyword = "lawyer") => {
+  // 🌐 Dynamic Fetch Handler - Supports both OpenStreetMap AND Backend Recommendation API
+  const fetchLawyers = (lat, lng, currentRadius, keyword = "lawyer", legalCategory = null) => {
     setLoading(true);
     const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
     
-    // Shifted route target from '/lawyers/nearby' POST to '/lawyers' GET structure with query parameters
+    // If legalCategory is provided, use the backend recommendation system
+    if (legalCategory) {
+      console.log("📡 Fetching lawyers from backend recommendation API with category:", legalCategory);
+      
+      fetch(`${API_URL}/recommend-lawyers`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          legalCategory: legalCategory,
+          latitude: lat,
+          longitude: lng,
+          radius: currentRadius
+        })
+      })
+        .then(res => {
+          if (!res.ok) throw new Error("Backend recommendation API error");
+          return res.json();
+        })
+        .then(data => {
+          if (data.status === "success" && Array.isArray(data.lawyers)) {
+            // Map backend response to match map marker structure
+            const mappedLawyers = data.lawyers.map(l => ({
+              id: l.id,
+              name: l.name,
+              lat: l.latitude || l.lat,
+              lng: l.longitude || l.lng,
+              phone: l.phone,
+              address: `${l.specialization} • ${l.experience_years} years exp`,
+              rating: "Verified",
+              specialization: l.specialization
+            }));
+            setLawyers(mappedLawyers);
+          } else {
+            setLawyers([]);
+          }
+        })
+        .catch(err => {
+          console.error("Backend recommendation API failure:", err);
+          // Fallback to OpenStreetMap
+          fetchFromOpenStreetMap(lat, lng, currentRadius, keyword);
+        })
+        .finally(() => {
+          setLoading(false);
+        });
+    } else {
+      // Default: Use OpenStreetMap
+      fetchFromOpenStreetMap(lat, lng, currentRadius, keyword);
+    }
+  };
+
+  // Original OpenStreetMap fetch logic (extracted as fallback)
+  const fetchFromOpenStreetMap = (lat, lng, currentRadius, keyword) => {
+    const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
     const url = `${API_URL}/lawyers?lat=${lat}&lng=${lng}&radius=${currentRadius}&keyword=${encodeURIComponent(keyword)}`;
     
     console.log("📡 Fetching live Overpass elements from:", url);

@@ -14,8 +14,7 @@ import CasePrediction from './pages/CasePrediction'
 import PastCases from './pages/PastCases'
 import CaseStrategyInsights from './pages/CaseStrategyInsights'
 import SmartCrimeSearch from './pages/SmartCrimeSearch'
-import AreaRiskScore from './pages/AreaRiskScore'
-import KnowYourRights from './pages/KnowYourRights'
+import SanhitaTransit from './pages/SanhitaTransit'
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(() => {
@@ -115,8 +114,7 @@ function App() {
           <Route path="past-cases" element={<PastCases />} />
           <Route path="strategy-insights" element={<CaseStrategyInsights />} />
           <Route path="smart-crime-search" element={<SmartCrimeSearch />} />
-          <Route path="area-risk-score" element={<AreaRiskScore />} />
-          <Route path="rights-panel" element={<KnowYourRights />} />
+          <Route path="sanhita-transit" element={<SanhitaTransit />} />
         </Route>
 
         {/* Fallback Catch-all Route */}

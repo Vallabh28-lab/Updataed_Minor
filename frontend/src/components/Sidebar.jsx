@@ -11,8 +11,7 @@ import {
   Scale,
   Briefcase,
   BarChart3,
-  Map,
-  Shield
+  Zap
 } from 'lucide-react'
 import UserProfile from './UserProfile'
 import { Tooltip } from './ui/tooltip'
@@ -31,8 +30,7 @@ const menuItems = [
 const crimeIQItems = [
   { id: 'strategy-insights', label: 'Case Strategy Insights', icon: BarChart3, description: '' },
   { id: 'smart-crime-search', label: 'Smart Crime Search', icon: Search, description: '(By Law Sections)' },
-  { id: 'area-risk-score', label: 'Area Risk Score', icon: Map, description: '(Safety Index)' },
-  { id: 'rights-panel', label: 'Know Your Rights', icon: Shield, description: 'Panel' },
+  { id: 'sanhita-transit', label: 'Sanhita Transit', icon: Zap, description: 'IPC → BNS Engine' },
 ]
 
 function Sidebar({ user, onLogout, isOpen, onToggle }) {

@@ -1,0 +1,323 @@
+[INFO] [2026-06-03 21:08:57] Starting Legal AI Backend server
+[INFO] [2026-06-03 21:10:43] Job 0eae2800-f0a9-4f7e-b927-006b449b0f81: Received upload request for SampleContract-Shuttle.pdf
+[INFO] [2026-06-03 21:10:43] Job 0eae2800-f0a9-4f7e-b927-006b449b0f81: File saved (49647 bytes), queuing for processing
+[INFO] [2026-06-03 21:10:43] Job 0eae2800-f0a9-4f7e-b927-006b449b0f81: Started processing 0eae2800-f0a9-4f7e-b927-006b449b0f81_SampleContract-Shuttle.pdf
+[INFO] [2026-06-03 21:10:43] Job 0eae2800-f0a9-4f7e-b927-006b449b0f81: Extracting text from document
+[INFO] [2026-06-03 21:10:43] Job 0eae2800-f0a9-4f7e-b927-006b449b0f81: Processing PDF with 10 pages
+[INFO] [2026-06-03 21:10:43] Job 0eae2800-f0a9-4f7e-b927-006b449b0f81: Extracted 32936 total characters
+[INFO] [2026-06-03 21:10:43] Job 0eae2800-f0a9-4f7e-b927-006b449b0f81: Sending to Gemini AI for analysis
+[INFO] [2026-06-03 21:10:45] Job 403e96f3-ba53-4d12-a7ce-7e3f686da825: Received upload request for SampleContract-Shuttle.pdf
+[INFO] [2026-06-03 21:10:45] Job 403e96f3-ba53-4d12-a7ce-7e3f686da825: File saved (49647 bytes), queuing for processing
+[INFO] [2026-06-03 21:10:45] Job 403e96f3-ba53-4d12-a7ce-7e3f686da825: Started processing 403e96f3-ba53-4d12-a7ce-7e3f686da825_SampleContract-Shuttle.pdf
+[INFO] [2026-06-03 21:10:45] Job 403e96f3-ba53-4d12-a7ce-7e3f686da825: Extracting text from document
+[INFO] [2026-06-03 21:10:45] Job 403e96f3-ba53-4d12-a7ce-7e3f686da825: Processing PDF with 10 pages
+[INFO] [2026-06-03 21:10:45] Job 403e96f3-ba53-4d12-a7ce-7e3f686da825: Extracted 32936 total characters
+[INFO] [2026-06-03 21:10:45] Job 403e96f3-ba53-4d12-a7ce-7e3f686da825: Sending to Gemini AI for analysis
+[ERROR] [2026-06-03 21:10:54] Job 0eae2800-f0a9-4f7e-b927-006b449b0f81: Processing failed - 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-3.5-flash
+Please retry in 5.948025917s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-3.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 5
+}
+, retry_delay {
+  seconds: 5
+}
+]
+[INFO] [2026-06-03 21:10:54] Job 0eae2800-f0a9-4f7e-b927-006b449b0f81: Cleaned up file 0eae2800-f0a9-4f7e-b927-006b449b0f81_SampleContract-Shuttle.pdf
+[ERROR] [2026-06-03 21:10:57] Job 403e96f3-ba53-4d12-a7ce-7e3f686da825: Validation failed - 2 validation errors for LegalAnalysis
+importantDates.0
+  Input should be a valid string [type=string_type, input_value={'date': 'Within 45 calen...on's Contract Manager."}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+importantDates.1
+  Input should be a valid string [type=string_type, input_value={'date': 'Within 60 calen...mit the final invoice.'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+[INFO] [2026-06-03 21:10:57] Job 403e96f3-ba53-4d12-a7ce-7e3f686da825: Cleaned up file 403e96f3-ba53-4d12-a7ce-7e3f686da825_SampleContract-Shuttle.pdf
+[INFO] [2026-06-03 21:32:29] Starting Legal AI Backend server
+[INFO] [2026-06-03 21:33:25] Job 161c3bda-da5f-4744-97f3-9767d2596ceb: Received upload request for SampleContract-Shuttle.pdf
+[INFO] [2026-06-03 21:33:25] Job 161c3bda-da5f-4744-97f3-9767d2596ceb: File saved (49647 bytes), queuing for processing
+[INFO] [2026-06-03 21:33:25] Job 161c3bda-da5f-4744-97f3-9767d2596ceb: Started processing 161c3bda-da5f-4744-97f3-9767d2596ceb_SampleContract-Shuttle.pdf
+[INFO] [2026-06-03 21:33:25] Job 161c3bda-da5f-4744-97f3-9767d2596ceb: Extracting text from document
+[INFO] [2026-06-03 21:33:26] Job 161c3bda-da5f-4744-97f3-9767d2596ceb: Processing PDF with 10 pages
+[INFO] [2026-06-03 21:33:26] Job 161c3bda-da5f-4744-97f3-9767d2596ceb: Extracted 32936 total characters
+[INFO] [2026-06-03 21:33:26] Job 161c3bda-da5f-4744-97f3-9767d2596ceb: Sending to Gemini AI for analysis
+[INFO] [2026-06-03 21:33:27] Job 0fb9283c-b4c4-4ed0-ad70-966ec1fd361c: Received upload request for SampleContract-Shuttle.pdf
+[INFO] [2026-06-03 21:33:27] Job 0fb9283c-b4c4-4ed0-ad70-966ec1fd361c: File saved (49647 bytes), queuing for processing
+[INFO] [2026-06-03 21:33:27] Job 0fb9283c-b4c4-4ed0-ad70-966ec1fd361c: Started processing 0fb9283c-b4c4-4ed0-ad70-966ec1fd361c_SampleContract-Shuttle.pdf
+[INFO] [2026-06-03 21:33:27] Job 0fb9283c-b4c4-4ed0-ad70-966ec1fd361c: Extracting text from document
+[INFO] [2026-06-03 21:33:27] Job 0fb9283c-b4c4-4ed0-ad70-966ec1fd361c: Processing PDF with 10 pages
+[INFO] [2026-06-03 21:33:27] Job 0fb9283c-b4c4-4ed0-ad70-966ec1fd361c: Extracted 32936 total characters
+[INFO] [2026-06-03 21:33:27] Job 0fb9283c-b4c4-4ed0-ad70-966ec1fd361c: Sending to Gemini AI for analysis
+[ERROR] [2026-06-03 21:33:40] Job 0fb9283c-b4c4-4ed0-ad70-966ec1fd361c: Processing failed - 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-3.5-flash
+Please retry in 20.143779545s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-3.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 5
+}
+, retry_delay {
+  seconds: 20
+}
+]
+[INFO] [2026-06-03 21:33:40] Job 0fb9283c-b4c4-4ed0-ad70-966ec1fd361c: Cleaned up file 0fb9283c-b4c4-4ed0-ad70-966ec1fd361c_SampleContract-Shuttle.pdf
+[ERROR] [2026-06-03 21:33:42] Job 161c3bda-da5f-4744-97f3-9767d2596ceb: Processing failed - 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-3.5-flash
+Please retry in 18.182144073s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-3.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 5
+}
+, retry_delay {
+  seconds: 18
+}
+]
+[INFO] [2026-06-03 21:33:42] Job 161c3bda-da5f-4744-97f3-9767d2596ceb: Cleaned up file 161c3bda-da5f-4744-97f3-9767d2596ceb_SampleContract-Shuttle.pdf
+[INFO] [2026-06-03 22:20:51] Starting Legal AI Backend server
+[INFO] [2026-06-03 22:21:37] Job 05dea0c7-da38-4768-a358-b62e0a421068: Received upload request for SampleContract-Shuttle.pdf
+[INFO] [2026-06-03 22:21:37] Job 05dea0c7-da38-4768-a358-b62e0a421068: File saved (49647 bytes), queuing for processing
+[INFO] [2026-06-03 22:21:37] Job 05dea0c7-da38-4768-a358-b62e0a421068: Started processing 05dea0c7-da38-4768-a358-b62e0a421068_SampleContract-Shuttle.pdf
+[INFO] [2026-06-03 22:21:37] Job 05dea0c7-da38-4768-a358-b62e0a421068: Extracting text from document
+[INFO] [2026-06-03 22:21:37] Job 05dea0c7-da38-4768-a358-b62e0a421068: Processing PDF with 10 pages
+[INFO] [2026-06-03 22:21:37] Job 05dea0c7-da38-4768-a358-b62e0a421068: Extracted 32936 total characters
+[INFO] [2026-06-03 22:21:37] Job 05dea0c7-da38-4768-a358-b62e0a421068: Sending to Gemini AI for analysis
+[INFO] [2026-06-03 22:21:43] Job 6ab5b97a-650f-4fdf-acbb-deaec13e07bd: Received upload request for SampleContract-Shuttle.pdf
+[INFO] [2026-06-03 22:21:43] Job 6ab5b97a-650f-4fdf-acbb-deaec13e07bd: File saved (49647 bytes), queuing for processing
+[INFO] [2026-06-03 22:21:43] Job 6ab5b97a-650f-4fdf-acbb-deaec13e07bd: Started processing 6ab5b97a-650f-4fdf-acbb-deaec13e07bd_SampleContract-Shuttle.pdf
+[INFO] [2026-06-03 22:21:43] Job 6ab5b97a-650f-4fdf-acbb-deaec13e07bd: Extracting text from document
+[INFO] [2026-06-03 22:21:43] Job 6ab5b97a-650f-4fdf-acbb-deaec13e07bd: Processing PDF with 10 pages
+[INFO] [2026-06-03 22:21:43] Job 6ab5b97a-650f-4fdf-acbb-deaec13e07bd: Extracted 32936 total characters
+[INFO] [2026-06-03 22:21:43] Job 6ab5b97a-650f-4fdf-acbb-deaec13e07bd: Sending to Gemini AI for analysis
+[ERROR] [2026-06-03 22:21:50] Job 05dea0c7-da38-4768-a358-b62e0a421068: Validation failed - 2 validation errors for LegalAnalysis
+importantDates.0
+  Input should be a valid dictionary [type=dict_type, input_value='Within 45 calendar days ...rk (Invoicing deadline)', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/dict_type
+importantDates.1
+  Input should be a valid dictionary [type=dict_type, input_value='Within 60 calendar days ...Final invoice deadline)', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/dict_type
+[INFO] [2026-06-03 22:21:50] Job 05dea0c7-da38-4768-a358-b62e0a421068: Cleaned up file 05dea0c7-da38-4768-a358-b62e0a421068_SampleContract-Shuttle.pdf
+[ERROR] [2026-06-03 22:21:52] Job 6ab5b97a-650f-4fdf-acbb-deaec13e07bd: Validation failed - 2 validation errors for LegalAnalysis
+importantDates.0
+  Input should be a valid dictionary [type=dict_type, input_value='Within 45 calendar days ...thly progress invoices)', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/dict_type
+importantDates.1
+  Input should be a valid dictionary [type=dict_type, input_value='Within 60 calendar days ...ting the final invoice)', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/dict_type
+[INFO] [2026-06-03 22:21:52] Job 6ab5b97a-650f-4fdf-acbb-deaec13e07bd: Cleaned up file 6ab5b97a-650f-4fdf-acbb-deaec13e07bd_SampleContract-Shuttle.pdf
+[INFO] [2026-06-03 22:26:43] Starting Legal AI Backend server
+[INFO] [2026-06-03 22:27:09] Job 3875a75e-eb3e-47b9-8595-cc53da073c2f: Received upload request for SampleContract-Shuttle.pdf
+[INFO] [2026-06-03 22:27:09] Job 3875a75e-eb3e-47b9-8595-cc53da073c2f: File saved (49647 bytes), queuing for processing
+[INFO] [2026-06-03 22:27:09] Job 3875a75e-eb3e-47b9-8595-cc53da073c2f: Started processing 3875a75e-eb3e-47b9-8595-cc53da073c2f_SampleContract-Shuttle.pdf
+[INFO] [2026-06-03 22:27:09] Job 3875a75e-eb3e-47b9-8595-cc53da073c2f: Extracting text from document
+[INFO] [2026-06-03 22:27:09] Job 3875a75e-eb3e-47b9-8595-cc53da073c2f: Processing PDF with 10 pages
+[INFO] [2026-06-03 22:27:09] Job 3875a75e-eb3e-47b9-8595-cc53da073c2f: Extracted 32936 total characters
+[INFO] [2026-06-03 22:27:09] Job 3875a75e-eb3e-47b9-8595-cc53da073c2f: Sending to Gemini AI for analysis
+[INFO] [2026-06-03 22:27:12] Job 1fe2a089-1b3f-4d7c-9644-d53b62af8f34: Received upload request for SampleContract-Shuttle.pdf
+[INFO] [2026-06-03 22:27:12] Job 1fe2a089-1b3f-4d7c-9644-d53b62af8f34: File saved (49647 bytes), queuing for processing
+[INFO] [2026-06-03 22:27:12] Job 1fe2a089-1b3f-4d7c-9644-d53b62af8f34: Started processing 1fe2a089-1b3f-4d7c-9644-d53b62af8f34_SampleContract-Shuttle.pdf
+[INFO] [2026-06-03 22:27:12] Job 1fe2a089-1b3f-4d7c-9644-d53b62af8f34: Extracting text from document
+[INFO] [2026-06-03 22:27:12] Job 1fe2a089-1b3f-4d7c-9644-d53b62af8f34: Processing PDF with 10 pages
+[INFO] [2026-06-03 22:27:12] Job 1fe2a089-1b3f-4d7c-9644-d53b62af8f34: Extracted 32936 total characters
+[INFO] [2026-06-03 22:27:12] Job 1fe2a089-1b3f-4d7c-9644-d53b62af8f34: Sending to Gemini AI for analysis
+[INFO] [2026-06-03 22:27:21] Job 3875a75e-eb3e-47b9-8595-cc53da073c2f: Gemini returned: {
+    "summary": "A template for a Professional Services Agreement between the Santa Cruz County Regional Transportation Commission (COMMISSION) and an unnamed Consultant. It outlines the scope of work, requirements for key personnel, progress reporting, and strict invoicing and compensation terms.",
+    "legalCategory": "Corporate",
+    "urgencyLevel": "Low",
+    "riskScore": 35,
+    "importantDates": [],
+    "keywords": [
+        "Professional Services Agreement",
+        "Commission",
+        "Consultant",
+        "Compensation",
+        "Key Personnel",
+        "Scope of Services",
+        "Invoicing"
+    ],
+    "riskyClauses": [
+        {
+            "clauseType": "Key Personnel Restrictions",
+            "riskLevel": "Medium",
+            "reason": "Section 1.C prohibits the Consultant from replacing or removing designated key personnel without the Commission's prior written consent. This restricts operational flexibility in managing project staffing."
+        },
+        {
+            "clauseType": "Payment Delay and Termination Risk",
+            "riskLevel": "Medium",
+            "reason": "Section 2.E grants the Commission the power to delay payments or terminate the contract if the Consultant fails to submit deliverables on schedule, representing a financial and performance risk."
+        },
+        {
+            "clauseType": "No Retroactive Compensation",
+            "riskLevel": "Medium",
+            "reason": "Section 2.F states that no payment will be made for work performed prior to the approval of the Agreement. This poses a loss of revenue risk if any preparatory or urgent work is initiated early."
+        },
+        {
+            "clauseType": "Strict Invoicing Deadlines",
+            "riskLevel": "Low",
+            "reason": "Section 2.H enforces strict administrative timelines, requiring invoices to be submitted within 45 calendar days of work performance and the final invoice within 60 calendar days of work acceptance."
+        }
+    ]
+}
+[INFO] [2026-06-03 22:27:21] Job 3875a75e-eb3e-47b9-8595-cc53da073c2f: Analysis completed successfully
+[INFO] [2026-06-03 22:27:21] Job 3875a75e-eb3e-47b9-8595-cc53da073c2f: Cleaned up file 3875a75e-eb3e-47b9-8595-cc53da073c2f_SampleContract-Shuttle.pdf
+[INFO] [2026-06-03 22:27:24] Job 1fe2a089-1b3f-4d7c-9644-d53b62af8f34: Gemini returned: {
+    "summary": "This is a template Professional Services Agreement between the Santa Cruz County Regional Transportation Commission and a Consultant. It outlines the scope of services, restrictions on key personnel replacement, reporting requirements, and detailed terms of compensation and billing.",
+    "legalCategory": "Corporate",
+    "urgencyLevel": "Low",
+    "riskScore": 35,
+    "importantDates": [
+        "Invoices must be submitted within 45 calendar days after the performance of work",
+        "Final invoice must be submitted within 60 calendar days after acceptance of work"
+    ],
+    "keywords": [
+        "Professional Services Agreement",
+        "Key Personnel",
+        "Compensation",
+        "Progress Reports",
+        "Invoices",
+        "Prevailing Wage"
+    ],
+    "riskyClauses": [
+        {
+            "clauseType": "Key Personnel Restrictions",
+            "riskLevel": "Medium",
+            "reason": "Section 1.C prohibits the Consultant from replacing or changing the function of key personnel without prior written consent. This restricts operational flexibility and could cause delays if key staff leave unexpectedly."
+        },
+        {
+            "clauseType": "Payment Delay and Termination",
+            "riskLevel": "Medium",
+            "reason": "Section 2.E allows the Commission to delay payments and/or terminate the Agreement if deliverables are not submitted on schedule. This provides unilateral leverage to withhold funds without an explicit clause requiring a cure period first."
+        },
+        {
+            "clauseType": "No Payment for Pre-Approval Work",
+            "riskLevel": "Low",
+            "reason": "Section 2.F explicitly states that no payments will be made for work performed prior to the formal approval of the Agreement, risking non-payment if the Consultant begins work early."
+        }
+    ]
+}
+[INFO] [2026-06-03 22:27:24] Job 1fe2a089-1b3f-4d7c-9644-d53b62af8f34: Analysis completed successfully
+[INFO] [2026-06-03 22:27:24] Job 1fe2a089-1b3f-4d7c-9644-d53b62af8f34: Cleaned up file 1fe2a089-1b3f-4d7c-9644-d53b62af8f34_SampleContract-Shuttle.pdf
+[INFO] [2026-06-03 22:53:20] Starting Legal AI Backend server
+[INFO] [2026-06-03 23:01:42] Job 595ede28-4426-4025-b0d2-54617c496db1: Received upload request for SampleContract-Shuttle.pdf
+[INFO] [2026-06-03 23:01:42] Job 595ede28-4426-4025-b0d2-54617c496db1: File saved (49647 bytes), queuing for processing
+[INFO] [2026-06-03 23:01:42] Job 595ede28-4426-4025-b0d2-54617c496db1: Started processing 595ede28-4426-4025-b0d2-54617c496db1_SampleContract-Shuttle.pdf
+[INFO] [2026-06-03 23:01:42] Job 595ede28-4426-4025-b0d2-54617c496db1: Extracting text from document
+[INFO] [2026-06-03 23:01:42] Job 595ede28-4426-4025-b0d2-54617c496db1: Processing PDF with 10 pages
+[INFO] [2026-06-03 23:01:42] Job 595ede28-4426-4025-b0d2-54617c496db1: Extracted 32936 total characters
+[INFO] [2026-06-03 23:01:42] Job 595ede28-4426-4025-b0d2-54617c496db1: Sending to Gemini AI for analysis
+[INFO] [2026-06-03 23:01:44] Job 7599f3c7-e194-4499-87c7-589c1908d183: Received upload request for SampleContract-Shuttle.pdf
+[INFO] [2026-06-03 23:01:44] Job 7599f3c7-e194-4499-87c7-589c1908d183: File saved (49647 bytes), queuing for processing
+[INFO] [2026-06-03 23:01:44] Job 7599f3c7-e194-4499-87c7-589c1908d183: Started processing 7599f3c7-e194-4499-87c7-589c1908d183_SampleContract-Shuttle.pdf
+[INFO] [2026-06-03 23:01:44] Job 7599f3c7-e194-4499-87c7-589c1908d183: Extracting text from document
+[INFO] [2026-06-03 23:01:44] Job 7599f3c7-e194-4499-87c7-589c1908d183: Processing PDF with 10 pages
+[INFO] [2026-06-03 23:01:44] Job 7599f3c7-e194-4499-87c7-589c1908d183: Extracted 32936 total characters
+[INFO] [2026-06-03 23:01:44] Job 7599f3c7-e194-4499-87c7-589c1908d183: Sending to Gemini AI for analysis
+[INFO] [2026-06-03 23:01:51] Job 595ede28-4426-4025-b0d2-54617c496db1: Gemini returned: {
+    "summary": "A template Professional Services Agreement between the Santa Cruz County Regional Transportation Commission (COMMISSION) and an unnamed Consultant, detailing scope of services, key personnel requirements, and strict progress payment and invoicing procedures.",
+    "legalCategory": "Corporate",
+    "urgencyLevel": "Medium",
+    "riskScore": 45,
+    "importantDates": [
+        "Within 45 calendar days after the performance of work (invoice submission deadline)",
+        "Within 60 calendar days after acceptance of the work (final invoice submission deadline)"
+    ],
+    "keywords": [
+        "Professional Services Agreement",
+        "Consultant",
+        "Key Personnel",
+        "Compensation",
+        "Invoices",
+        "Progress Reports",
+        "Prevailing Wage"
+    ],
+    "riskyClauses": [
+        {
+            "clauseType": "Key Personnel Restriction",
+            "riskLevel": "Medium",
+            "reason": "Clause 1.C prohibits the Consultant from removing, replacing, or changing the functions of designated key personnel without prior written consent from the Commission, which limits operational flexibility and staffing management."
+        },
+        {
+            "clauseType": "Payment Withholding and Termination",
+            "riskLevel": "Medium",
+            "reason": "Clause 2.E allows the Commission to delay payments and/or terminate the Agreement if the Consultant fails to submit deliverables on schedule, creating financial and performance risk for minor delays."
+        },
+        {
+            "clauseType": "Strict Invoicing Deadlines",
+            "riskLevel": "Medium",
+            "reason": "Clause 2.H imposes strict deadlines for invoice submission (45 days post-performance for regular invoices, 60 days post-acceptance for final invoice), which could result in delayed or forfeited compensation if administrative delays occur."
+        }
+    ]
+}
+[INFO] [2026-06-03 23:01:51] Job 595ede28-4426-4025-b0d2-54617c496db1: Analysis completed successfully
+[INFO] [2026-06-03 23:01:51] Job 595ede28-4426-4025-b0d2-54617c496db1: Cleaned up file 595ede28-4426-4025-b0d2-54617c496db1_SampleContract-Shuttle.pdf
+[INFO] [2026-06-03 23:01:54] Job 7599f3c7-e194-4499-87c7-589c1908d183: Gemini returned: {
+    "summary": "A Professional Services Agreement between the Santa Cruz County Regional Transportation Commission (COMMISSION) and an unnamed Consultant, detailing terms of service, key personnel constraints, and reimbursement rules.",
+    "legalCategory": "Corporate",
+    "urgencyLevel": "Medium",
+    "riskScore": 45,
+    "importantDates": [
+        "Within 45 calendar days after the performance of work (invoice submission deadline)",
+        "Within 60 calendar days after acceptance of work (final invoice submission deadline)"
+    ],
+    "keywords": [
+        "Professional Services Agreement",
+        "Key Personnel",
+        "Compensation",
+        "Invoices",
+        "Progress Reports",
+        "Reimbursable Expenses"
+    ],
+    "riskyClauses": [
+        {
+            "clauseType": "Key Personnel Restriction",
+            "riskLevel": "Medium",
+            "reason": "Clause 1.C prohibits the Consultant from removing or replacing designated key personnel, or altering their functions, without the Commission's prior written consent, which could hinder operational flexibility if staff turnover occurs."
+        },
+        {
+            "clauseType": "Payment Delay and Termination for Schedule Slippage",
+            "riskLevel": "Medium",
+            "reason": "Clause 2.E allows the Commission to withhold progress payments or terminate the contract if the Consultant fails to submit deliverables on schedule, representing a potential cash-flow risk."
+        },
+        {
+            "clauseType": "Strict Billing Deadlines",
+            "riskLevel": "Medium",
+            "reason": "Clause 2.H mandates that invoices must be submitted within 45 days of work performance and final invoices within 60 days of project acceptance. Failure to meet these deadlines could result in unpaid services."
+        }
+    ]
+}
+[INFO] [2026-06-03 23:01:54] Job 7599f3c7-e194-4499-87c7-589c1908d183: Analysis completed successfully
+[INFO] [2026-06-03 23:01:54] Job 7599f3c7-e194-4499-87c7-589c1908d183: Cleaned up file 7599f3c7-e194-4499-87c7-589c1908d183_SampleContract-Shuttle.pdf
