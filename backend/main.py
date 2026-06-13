@@ -9,6 +9,7 @@ import numpy as np
 import uuid
 import logging
 import httpx
+import google.generativeai as genai
 
 from sqlalchemy import create_engine, text
 
@@ -20,7 +21,7 @@ from fastapi import FastAPI, HTTPException, UploadFile, File, BackgroundTasks, Q
 from fastapi.middleware.cors import CORSMiddleware
 from PIL import Image
 from dotenv import load_dotenv
-import google.generativeai as genai
+from database.database import suggest_lawyer_types
 
 #------------------------------------------------------------------------------------------
 # PostgreSQL Connection
@@ -56,6 +57,13 @@ class RiskyClause(BaseModel):
     riskLevel: str
     reason: str
 
+class RecommendedLawyerType(BaseModel):
+    lawyer_type: str
+    legal_domain: str
+    match_percentage: int
+    matched_items: List[str]
+    match_count: int
+
 class LegalAnalysis(BaseModel):
     summary: str
     legalCategory: str
@@ -72,29 +80,10 @@ class JobResponse(BaseModel):
 class JobStatus(BaseModel):
     status: str
     analysis: Optional[LegalAnalysis] = None
+    recommendedLawyerTypes: Optional[List[RecommendedLawyerType]] = []
     error: Optional[str] = None
 
-class LawyerRequest(BaseModel):
-    legalCategory: str
-    latitude: float
-    longitude: float
-    radius: float = 5000
-    specializationTypes: Optional[List[str]] = None
 
-class LawyerLocation(BaseModel):
-    name: str
-    address: Optional[str] = None
-    city: Optional[str] = None
-    distance: Optional[int] = None
-    lat: float
-    lon: float
-    specialization: Optional[str] = None
-
-class NearbyLawyersResponse(BaseModel):
-    count: int
-    lawyers: List[LawyerLocation]
-    category: str
-    recommendedSpecializations: List[str]
 
 
 app.add_middleware(
@@ -105,6 +94,16 @@ app.add_middleware(
 )
 
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+
+# Test available models on startup
+try:
+    available_models = genai.list_models()
+    logger.info("Available Gemini models:")
+    for model in available_models:
+        if 'generateContent' in model.supported_generation_methods:
+            logger.info(f"  - {model.name}")
+except Exception as e:
+    logger.warning(f"Could not list models: {e}")
 
 # Job storage and executor
 jobs = {}
@@ -193,29 +192,55 @@ def get_high_accuracy_ocr(pix, page_num=None):
 def extract_text(file_bytes, job_id=None):
     """Hybrid extraction: Native text first, OCR fallback if empty."""
     try:
+        logger.info(f"Job {job_id}: Opening PDF document")
+        print(f"DEBUG: Opening PDF document for job {job_id}")
+        
         doc = fitz.open(stream=file_bytes, filetype="pdf")
         total_pages = len(doc)
+        
         logger.info(f"Job {job_id}: Processing PDF with {total_pages} pages")
+        print(f"DEBUG: PDF has {total_pages} pages")
         
         full_text = ""
         
         for page_num, page in enumerate(doc, start=1):
             try:
                 text = page.get_text()
+                
+                logger.info(f"Job {job_id}: Page {page_num} native text: {len(text)} chars")
+                print(f"DEBUG: Page {page_num} native extraction: {len(text)} chars")
+                
                 # Fallback to OCR if page has little to no text layer
                 if len(text.strip()) < 50:
                     logger.info(f"Job {job_id}: Page {page_num} has minimal text, using OCR")
+                    print(f"DEBUG: Page {page_num} switching to OCR")
+                    
                     pix = page.get_pixmap(dpi=300) 
                     text = get_high_accuracy_ocr(pix, page_num)
+                    
+                    logger.info(f"Job {job_id}: Page {page_num} OCR result: {len(text)} chars")
+                    print(f"DEBUG: Page {page_num} OCR extraction: {len(text)} chars")
+                
                 full_text += text
+                
             except Exception as e:
                 logger.error(f"Job {job_id}: Failed to process page {page_num}: {str(e)}")
+                print(f"DEBUG ERROR: Page {page_num} failed: {str(e)}")
                 continue
         
         logger.info(f"Job {job_id}: Extracted {len(full_text)} total characters")
+        print(f"DEBUG: Total extracted text: {len(full_text)} characters")
+        
+        if full_text:
+            print(f"DEBUG: Sample text (first 300 chars): {full_text[:300]}")
+        else:
+            print(f"DEBUG WARNING: No text extracted from any page!")
+        
         return full_text
+        
     except Exception as e:
         logger.error(f"Job {job_id}: PDF extraction failed: {str(e)}")
+        print(f"DEBUG CRITICAL ERROR: PDF extraction completely failed: {str(e)}")
         raise
 
 def process_document(job_id: str, file_path: str):
@@ -226,17 +251,37 @@ def process_document(job_id: str, file_path: str):
         with open(file_path, 'rb') as f:
             file_bytes = f.read()
         
+        logger.info(f"Job {job_id}: Read {len(file_bytes)} bytes from file")
+        print(f"DEBUG: Read {len(file_bytes)} bytes from file")
+        
         jobs[job_id]["status"] = "extracting_text"
         logger.info(f"Job {job_id}: Extracting text from document")
+        
+        # 1. ALWAYS call extract_text function first
         file_text = extract_text(file_bytes, job_id)[:5000]
         
-        if not file_text.strip():
-            logger.warning(f"Job {job_id}: No readable text extracted")
-            jobs[job_id] = {"status": "failed", "error": "No readable text"}
+        # 2. Add debug print statement
+        print(f"DEBUG: Extracted {len(file_text)} characters.")
+        logger.info(f"Job {job_id}: Extracted text length: {len(file_text)} characters")
+        
+        # 3. Only proceed if file_text has content
+        if len(file_text) < 50:
+            logger.warning(f"Job {job_id}: Insufficient text extracted (only {len(file_text)} characters)")
+            print(f"DEBUG: Document appears empty or is a bad scan. Only {len(file_text)} characters extracted.")
+            jobs[job_id] = {
+                "status": "failed", 
+                "error": f"Document appears empty or is a bad scan. Only {len(file_text)} characters extracted."
+            }
             return
+        
+        # Log first 200 characters for debugging
+        logger.info(f"Job {job_id}: First 200 chars: {file_text[:200]}")
+        print(f"DEBUG: First 200 chars: {file_text[:200]}")
         
         jobs[job_id]["status"] = "analyzing"
         logger.info(f"Job {job_id}: Sending to Gemini AI for analysis")
+        # Try the most common working model name
+        # Change from 'models/gemini-1.5-flash' to:
         model = genai.GenerativeModel('gemini-3.5-flash')
         
 #-------------------------------------------------------------------------------------------------------        
@@ -316,10 +361,70 @@ def process_document(job_id: str, file_path: str):
         
         # Parse and validate with Pydantic
         try:
-            
                     parsed_data = json.loads(clean_text)
 
                     analysis = LegalAnalysis(**parsed_data)
+                    
+                    logger.info(f"Job {job_id}: Gemini analysis completed successfully")
+
+                    # ═══════════════════════════════════════════════════════════════
+                    # LAWYER TYPE RECOMMENDATION (DATABASE MATCHING)
+                    # ═══════════════════════════════════════════════════════════════
+                    
+                    logger.info(f"Job {job_id}: Building document context for lawyer matching")
+                    
+                    try:
+                        # Build search context from AI analysis results
+                        document_context = []
+                        
+                        # Add summary
+                        if analysis.summary:
+                            document_context.append(analysis.summary)
+                        
+                        # Add keywords
+                        if analysis.keywords:
+                            document_context.extend(analysis.keywords)
+                        
+                        # Add risky clauses
+                        if analysis.riskyClauses:
+                            for clause in analysis.riskyClauses:
+                                document_context.append(clause.clauseType)
+                                document_context.append(clause.reason)
+                        
+                        # Combine into searchable text
+                        search_text = " ".join(document_context)
+                        
+                        logger.info(
+                            f"Job {job_id}: Document context prepared "
+                            f"({len(search_text)} chars, {len(document_context)} components)"
+                        )
+                        
+                        # Search database for matching lawyer types
+                        logger.info(f"Job {job_id}: Searching lawyer_mapping table")
+                        recommended_lawyers = suggest_lawyer_types(search_text, top_n=5)
+                        
+                        logger.info(
+                            f"Job {job_id}: Found {len(recommended_lawyers)} matching lawyer types"
+                        )
+                        
+                        if recommended_lawyers:
+                            top = recommended_lawyers[0]
+                            logger.info(
+                                f"Job {job_id}: Top recommendation: {top['lawyer_type']} "
+                                f"({top['match_percentage']}% match)"
+                            )
+                        
+                    except Exception as e:
+                        logger.error(
+                            f"Job {job_id}: Lawyer matching failed - {str(e)}",
+                            exc_info=True
+                        )
+                        recommended_lawyers = []
+                        logger.warning(f"Job {job_id}: Continuing without lawyer recommendations")
+                    
+                    # ═══════════════════════════════════════════════════════════════
+                    # END LAWYER MATCHING
+                    # ═══════════════════════════════════════════════════════════════
 
                     with engine.connect() as conn:
 
@@ -355,10 +460,14 @@ def process_document(job_id: str, file_path: str):
 
                     jobs[job_id] = {
                         "status": "completed",
-                        "analysis": analysis.model_dump()
+                        "analysis": analysis.model_dump(),
+                        "recommendedLawyerTypes": recommended_lawyers
                     }
 
-                    logger.info(f"Job {job_id}: Analysis completed successfully")
+                    logger.info(
+                        f"Job {job_id}: Complete pipeline finished successfully. "
+                        f"Analysis saved, {len(recommended_lawyers)} lawyer types recommended"
+                    )
 
 
         except ValidationError as ve:
@@ -387,6 +496,11 @@ async def upload_and_analyze_document(file: UploadFile = File(...)):
     
     # Save file asynchronously
     content = await file.read()
+    
+    # DEBUG: Log file size
+    logger.info(f"Job {job_id}: File size: {len(content)} bytes")
+    print(f"DEBUG: File size: {len(content)} bytes")
+    
     with open(file_path, 'wb') as f:
         f.write(content)
     
@@ -408,132 +522,7 @@ async def get_job_status(job_id: str):
     return jobs[job_id]
 
 
-@app.post("/api/recommend-lawyers")
-async def recommend_lawyers(request: LawyerRequest):
-    """Recommend lawyers from database based on category and location"""
-    logger.info(f"Recommending {request.legalCategory} lawyers near ({request.latitude}, {request.longitude}) within {request.radius}m")
 
-    try:
-        # Get specializations for this category
-        specializations = SPECIALIZATION_MAP.get(request.legalCategory, SPECIALIZATION_MAP["Other"])
-        
-        query = text("""
-        SELECT
-            id,
-            name,
-            specialization,
-            experience_years,
-            phone,
-            ST_Distance(
-                location,
-                ST_GeogFromText(:user_point)
-            ) AS distance
-        FROM lawyers
-        WHERE specialization = :category
-        AND ST_DWithin(
-            location,
-            ST_GeogFromText(:user_point),
-            :radius
-        )
-        ORDER BY distance
-        LIMIT 10;
-        """)
-
-        user_point = f"POINT({request.longitude} {request.latitude})"
-
-        with engine.connect() as conn:
-            result = conn.execute(
-                query,
-                {
-                    "category": request.legalCategory,
-                    "user_point": user_point,
-                    "radius": request.radius
-                }
-            )
-
-            lawyers = []
-            for row in result:
-                lawyers.append(dict(row._mapping))
-        
-        logger.info(f"Found {len(lawyers)} {request.legalCategory} lawyers within {request.radius}m")
-        
-        return {
-            "status": "success",
-            "lawyers": lawyers,
-            "category": request.legalCategory,
-            "recommendedSpecializations": specializations
-        }
-
-    except Exception as e:
-        logger.error(f"Lawyer recommendation failed: {str(e)}")
-        raise HTTPException(status_code=500, detail=str(e))
-
-@app.get("/api/lawyers/nearby", response_model=NearbyLawyersResponse)
-async def get_nearby_lawyers(
-    lat: float = Query(..., description="Latitude"),
-    lng: float = Query(..., description="Longitude"),
-    radius: int = Query(5000, description="Search radius in meters"),
-    category: Optional[str] = Query(None, description="Legal category filter")
-):
-    """
-    Find nearby lawyers using Geoapify Places API.
-    Example: /api/lawyers/nearby?lat=19.0760&lng=72.8777&radius=5000&category=Corporate
-    """
-    api_key = os.getenv("GEOAPIFY_API_KEY")
-    
-    if not api_key:
-        logger.error("GEOAPIFY_API_KEY not configured")
-        raise HTTPException(status_code=500, detail="Location service not configured")
-    
-    logger.info(f"Searching lawyers near ({lat}, {lng}) within {radius}m, category: {category}")
-    
-    try:
-        url = "https://api.geoapify.com/v2/places"
-        params = {
-            "categories": "service.legal",
-            "filter": f"circle:{lng},{lat},{radius}",
-            "bias": f"proximity:{lng},{lat}",
-            "limit": 20,
-            "apiKey": api_key
-        }
-        
-        async with httpx.AsyncClient(timeout=10.0) as client:
-            response = await client.get(url, params=params)
-            response.raise_for_status()
-            data = response.json()
-        
-        lawyers = [
-            LawyerLocation(
-                name=f.get("properties", {}).get("name", "Law Office"),
-                address=f.get("properties", {}).get("address_line2"),
-                city=f.get("properties", {}).get("city"),
-                distance=round(f.get("properties", {}).get("distance", 0)),
-                lat=f.get("properties", {}).get("lat"),
-                lon=f.get("properties", {}).get("lon")
-            )
-            for f in data.get("features", [])
-        ]
-        
-        # Get specializations for category
-        category = category or "Other"
-        specializations = SPECIALIZATION_MAP.get(category, SPECIALIZATION_MAP["Other"])
-        
-        logger.info(f"Found {len(lawyers)} lawyers nearby for category: {category}")
-        
-        return NearbyLawyersResponse(
-            count=len(lawyers),
-            lawyers=lawyers,
-            category=category,
-            recommendedSpecializations=specializations
-        )
-        
-    except httpx.HTTPError as e:
-        logger.error(f"Geoapify API error: {str(e)}")
-        raise HTTPException(status_code=500, detail="Failed to fetch nearby lawyers")
-    except Exception as e:
-        logger.error(f"Unexpected error in lawyer search: {str(e)}")
-        raise HTTPException(status_code=500, detail=str(e))
-    
 
 if __name__ == '__main__':
     logger.info("Starting Legal AI Backend server")
