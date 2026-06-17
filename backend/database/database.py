@@ -9,111 +9,89 @@ DATABASE_URL = "postgresql://postgres:vallabh@localhost:5432/lawyerdb"
 engine = create_engine(DATABASE_URL, pool_size=10, max_overflow=20)
 
 
-def suggest_lawyer_types(document_text: str, top_n: int = 5) -> List[Dict]:
-    """
-    Search lawyer_mapping table and rank lawyer types by document relevance.
-    
-    Args:
-        document_text: Combined text from OCR + AI analysis
-        top_n: Number of results to return
-        
-    Returns:
-        List of lawyer types with match percentages
-        
-    Example:
-        [
-            {
-                "lawyer_type": "Corporate Lawyer",
-                "legal_domain": "Corporate Law",
-                "match_percentage": 94,
-                "matched_items": ["payment clause", "liability clause", "compensation"]
-            }
-        ]
-    """
-    logger.info(f"Searching lawyer types for document ({len(document_text)} chars)")
-    
-    if not document_text or len(document_text.strip()) < 10:
-        logger.warning("Document text too short for matching")
-        return []
-    
-    # Normalize text
-    search_text = document_text.lower()
-    
-    try:
-        with engine.connect() as conn:
-            # Fetch all lawyer mappings
-            query = text("""
-                SELECT 
-                    lawyer_type,
-                    legal_domain,
-                    common_legal_terms,
-                    common_clauses,
-                    risk_keywords
-                FROM lawyer_mapping
+def suggest_lawyer_types(search_text):
+
+    print("\n========== INPUT ==========")
+    print(search_text)
+
+    with engine.connect() as conn:
+
+        rows = conn.execute(
+            text("""
+            SELECT
+                lawyer_type,
+                legal_domain AS domain,
+                common_legal_terms AS common_terms,
+                common_clauses,
+                risk_keywords
+            FROM lawyer_mapping
             """)
-            
-            result = conn.execute(query)
-            rows = result.fetchall()
-            
-            if not rows:
-                logger.error("No lawyer mappings found in database")
-                return []
-            
-            logger.info(f"Loaded {len(rows)} lawyer types from database")
-            
-            # Score each lawyer type
-            scored_lawyers = []
-            
-            for row in rows:
-                lawyer_type = row[0]
-                legal_domain = row[1]
-                legal_terms = row[2] or ""
-                clauses = row[3] or ""
-                risks = row[4] or ""
-                
-                # Calculate match score
-                score_data = _calculate_match_score(
-                    search_text,
-                    legal_terms,
-                    clauses,
-                    risks
-                )
-                
-                # Skip if no matches
-                if score_data['total_score'] == 0:
+        ).fetchall()
+
+        print("\n========== DB ROW COUNT ==========")
+        print(len(rows))
+
+        results = []
+
+        txt = search_text.lower()
+
+        for row in rows:
+
+            combined = (
+                str(row.common_terms)
+                + " "
+                + str(row.common_clauses)
+                + " "
+                + str(row.risk_keywords)
+            ).lower()
+
+            matched = []
+
+            score = 0
+
+            for word in set(txt.split()):
+
+                word = word.strip()
+
+                if len(word) < 5:
                     continue
-                
-                scored_lawyers.append({
-                    "lawyer_type": lawyer_type,
-                    "legal_domain": legal_domain,
-                    "match_percentage": score_data['percentage'],
-                    "matched_items": score_data['matched_items'],
-                    "match_count": score_data['match_count'],
-                    "score": score_data['total_score']
-                })
-            
-            # Sort by percentage (descending)
-            scored_lawyers.sort(key=lambda x: x['match_percentage'], reverse=True)
-            
-            # Return top N
-            top_results = scored_lawyers[:top_n]
-            
-            logger.info(
-                f"Found {len(scored_lawyers)} matching lawyer types, "
-                f"returning top {len(top_results)}"
-            )
-            
-            if top_results:
-                logger.info(
-                    f"Top match: {top_results[0]['lawyer_type']} "
-                    f"({top_results[0]['match_percentage']}%)"
+
+                if word in combined:
+
+                    matched.append(word)
+                    score += 10
+
+            # Ignore weak matches
+            if score >= 30:
+
+                results.append(
+                    {
+                        "lawyer_type": row.lawyer_type,
+
+                        "domain": row.domain,
+
+                        "score": min(score, 100),
+
+                        "matched_terms": matched,
+
+                        "matched_clauses": [],
+
+                        "matched_risks": []
+                    }
                 )
-            
-            return top_results
-            
-    except Exception as e:
-        logger.error(f"Database error during lawyer matching: {str(e)}")
-        raise
+
+        results.sort(
+            key=lambda x: (
+                x["score"],
+                len(x["matched_terms"])
+            ),
+            reverse=True
+        )
+
+        print("\n========== RESULTS ==========")
+        print(results)
+
+        return results[:5]
 
 
 def _calculate_match_score(

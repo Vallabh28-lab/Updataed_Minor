@@ -183,6 +183,16 @@ def suggest_lawyer_types(document_text):
             reverse=True,
         )
 
+        results = recommendations
+        print("\nINPUT WORDS:")
+        print(words)
+
+        print("\nRESULTS BEFORE SORT:")
+        print(results)
+
+        print("\nFINAL:")
+        print(final[:5])
+
         return final[:5]
 
     except Exception as e:

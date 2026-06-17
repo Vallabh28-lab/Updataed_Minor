@@ -193,7 +193,7 @@ def process_document(job_id: str, file_path: str):
 
         jobs[job_id]["status"] = "analyzing"
 
-        model = genai.GenerativeModel("gemini-1.5-flash")
+        model = genai.GenerativeModel("models/gemini-2.5-flash")
 
         prompt = f"""
         Analyze the following legal document.
@@ -256,69 +256,110 @@ def process_document(job_id: str, file_path: str):
             parsed_data = json.loads(clean_text)
             analysis = LegalAnalysis(**parsed_data)
 
-            recommended_lawyers: List[Dict[str, Any]] = []
+            # ==========================================================
+            # LAWYER RECOMMENDATION
+            # ==========================================================
+
+            recommended_lawyers = []
 
             try:
-                document_context: List[str] = []
-                search_text = ""
 
-                if analysis.summary:
-                    document_context.append(analysis.summary)
-                    search_text += analysis.summary + " "
+                search_text = f"""
+{analysis.legalCategory}
 
-                if analysis.keywords:
-                    document_context.extend(analysis.keywords)
-                    search_text += " ".join(analysis.keywords) + " "
+{' '.join(analysis.keywords)}
 
-                if analysis.legalCategory:
-                    search_text += analysis.legalCategory + " "
+{' '.join([x.clauseType for x in analysis.riskyClauses])}
 
-                if analysis.riskyClauses:
-                    for clause in analysis.riskyClauses:
-                        document_context.append(clause.clauseType)
-                        document_context.append(clause.reason)
-                        search_text += clause.clauseType + " "
-                        search_text += clause.reason + " "
+contract
+agreement
+corporate
+services
+payment
+invoice
+consultant
+termination
+compensation
+"""
 
-                search_text += """
-                agreement
-                contract
-                consultant
-                compensation
-                invoice
-                payment
-                services
-                termination
-                liability
-                commercial
-                business
-                corporate
-                """
+                print("\n========== SEARCH TEXT ==========")
+                print(search_text)
 
-                recommended_raw = suggest_lawyer_types(search_text)
+                recommended_raw = suggest_lawyer_types(
+                    search_text
+                )
+
+                print("\n========== RAW LAWYERS ==========")
+                print(recommended_raw)
 
                 for item in recommended_raw:
-                    matched = (
-                        item.get("matched_terms", [])
-                        + item.get("matched_clauses", [])
-                        + item.get("matched_risks", [])
+
+                    matched = list(
+                        set(
+                            item.get(
+                                "matched_terms",
+                                []
+                            )
+
+                            +
+
+                            item.get(
+                                "matched_clauses",
+                                []
+                            )
+
+                            +
+
+                            item.get(
+                                "matched_risks",
+                                []
+                            )
+                        )
                     )
 
                     recommended_lawyers.append(
                         {
-                            "lawyer_type": item.get("lawyer_type", ""),
-                            "legal_domain": item.get("domain", ""),
-                            "match_percentage": min(int(item.get("score", 0)), 100),
-                            "matched_items": matched,
-                            "match_count": len(set(matched)),
+                            "lawyer_type":
+                            item.get(
+                                "lawyer_type",
+                                ""
+                            ),
+
+                            "legal_domain":
+                            item.get(
+                                "domain",
+                                ""
+                            ),
+
+                            "match_percentage":
+                            min(
+                                int(
+                                    item.get(
+                                        "score",
+                                        0
+                                    )
+                                ),
+                                100
+                            ),
+
+                            "matched_items":
+                            matched,
+
+                            "match_count":
+                            len(
+                                matched
+                            )
                         }
                     )
 
+                print("\n========== FINAL LAWYERS ==========")
+                print(recommended_lawyers)
+
             except Exception as e:
-                logger.error(
-                    f"Job {job_id}: Lawyer matching failed - {str(e)}",
-                    exc_info=True,
-                )
+
+                print("\nLAWYER ERROR:")
+                print(str(e))
+
                 recommended_lawyers = []
 
             with engine.connect() as conn:

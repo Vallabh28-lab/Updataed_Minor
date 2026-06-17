@@ -340,3 +340,1715 @@
 [INFO] [2026-06-17 11:45:37]   - models/deep-research-max-preview-04-2026
 [INFO] [2026-06-17 11:45:37]   - models/deep-research-preview-04-2026
 [INFO] [2026-06-17 11:45:37]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-17 14:49:32] Available Gemini models:
+[INFO] [2026-06-17 14:49:32]   - models/gemini-2.5-flash
+[INFO] [2026-06-17 14:49:32]   - models/gemini-2.5-pro
+[INFO] [2026-06-17 14:49:32]   - models/gemini-2.0-flash
+[INFO] [2026-06-17 14:49:32]   - models/gemini-2.0-flash-001
+[INFO] [2026-06-17 14:49:32]   - models/gemini-2.0-flash-lite-001
+[INFO] [2026-06-17 14:49:32]   - models/gemini-2.0-flash-lite
+[INFO] [2026-06-17 14:49:32]   - models/gemini-2.5-flash-preview-tts
+[INFO] [2026-06-17 14:49:32]   - models/gemini-2.5-pro-preview-tts
+[INFO] [2026-06-17 14:49:32]   - models/gemma-4-26b-a4b-it
+[INFO] [2026-06-17 14:49:32]   - models/gemma-4-31b-it
+[INFO] [2026-06-17 14:49:32]   - models/gemini-flash-latest
+[INFO] [2026-06-17 14:49:32]   - models/gemini-flash-lite-latest
+[INFO] [2026-06-17 14:49:32]   - models/gemini-pro-latest
+[INFO] [2026-06-17 14:49:32]   - models/gemini-2.5-flash-lite
+[INFO] [2026-06-17 14:49:32]   - models/gemini-2.5-flash-image
+[INFO] [2026-06-17 14:49:32]   - models/gemini-3-pro-preview
+[INFO] [2026-06-17 14:49:32]   - models/gemini-3-flash-preview
+[INFO] [2026-06-17 14:49:32]   - models/gemini-3.1-pro-preview
+[INFO] [2026-06-17 14:49:32]   - models/gemini-3.1-pro-preview-customtools
+[INFO] [2026-06-17 14:49:32]   - models/gemini-3.1-flash-lite-preview
+[INFO] [2026-06-17 14:49:32]   - models/gemini-3.1-flash-lite
+[INFO] [2026-06-17 14:49:32]   - models/gemini-3-pro-image-preview
+[INFO] [2026-06-17 14:49:32]   - models/gemini-3-pro-image
+[INFO] [2026-06-17 14:49:32]   - models/nano-banana-pro-preview
+[INFO] [2026-06-17 14:49:32]   - models/gemini-3.1-flash-image-preview
+[INFO] [2026-06-17 14:49:32]   - models/gemini-3.1-flash-image
+[INFO] [2026-06-17 14:49:32]   - models/gemini-3.5-flash
+[INFO] [2026-06-17 14:49:32]   - models/lyria-3-clip-preview
+[INFO] [2026-06-17 14:49:32]   - models/lyria-3-pro-preview
+[INFO] [2026-06-17 14:49:32]   - models/gemini-3.1-flash-tts-preview
+[INFO] [2026-06-17 14:49:32]   - models/gemini-robotics-er-1.5-preview
+[INFO] [2026-06-17 14:49:32]   - models/gemini-robotics-er-1.6-preview
+[INFO] [2026-06-17 14:49:32]   - models/gemini-2.5-computer-use-preview-10-2025
+[INFO] [2026-06-17 14:49:32]   - models/antigravity-preview-05-2026
+[INFO] [2026-06-17 14:49:32]   - models/deep-research-max-preview-04-2026
+[INFO] [2026-06-17 14:49:32]   - models/deep-research-preview-04-2026
+[INFO] [2026-06-17 14:49:32]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-17 14:49:33] Starting Legal AI Backend server
+[INFO] [2026-06-17 14:49:33] Available Gemini models:
+[INFO] [2026-06-17 14:49:33]   - models/gemini-2.5-flash
+[INFO] [2026-06-17 14:49:33]   - models/gemini-2.5-pro
+[INFO] [2026-06-17 14:49:33]   - models/gemini-2.0-flash
+[INFO] [2026-06-17 14:49:33]   - models/gemini-2.0-flash-001
+[INFO] [2026-06-17 14:49:33]   - models/gemini-2.0-flash-lite-001
+[INFO] [2026-06-17 14:49:33]   - models/gemini-2.0-flash-lite
+[INFO] [2026-06-17 14:49:33]   - models/gemini-2.5-flash-preview-tts
+[INFO] [2026-06-17 14:49:33]   - models/gemini-2.5-pro-preview-tts
+[INFO] [2026-06-17 14:49:33]   - models/gemma-4-26b-a4b-it
+[INFO] [2026-06-17 14:49:33]   - models/gemma-4-31b-it
+[INFO] [2026-06-17 14:49:33]   - models/gemini-flash-latest
+[INFO] [2026-06-17 14:49:33]   - models/gemini-flash-lite-latest
+[INFO] [2026-06-17 14:49:33]   - models/gemini-pro-latest
+[INFO] [2026-06-17 14:49:33]   - models/gemini-2.5-flash-lite
+[INFO] [2026-06-17 14:49:33]   - models/gemini-2.5-flash-image
+[INFO] [2026-06-17 14:49:33]   - models/gemini-3-pro-preview
+[INFO] [2026-06-17 14:49:33]   - models/gemini-3-flash-preview
+[INFO] [2026-06-17 14:49:33]   - models/gemini-3.1-pro-preview
+[INFO] [2026-06-17 14:49:33]   - models/gemini-3.1-pro-preview-customtools
+[INFO] [2026-06-17 14:49:33]   - models/gemini-3.1-flash-lite-preview
+[INFO] [2026-06-17 14:49:33]   - models/gemini-3.1-flash-lite
+[INFO] [2026-06-17 14:49:33]   - models/gemini-3-pro-image-preview
+[INFO] [2026-06-17 14:49:33]   - models/gemini-3-pro-image
+[INFO] [2026-06-17 14:49:33]   - models/nano-banana-pro-preview
+[INFO] [2026-06-17 14:49:33]   - models/gemini-3.1-flash-image-preview
+[INFO] [2026-06-17 14:49:33]   - models/gemini-3.1-flash-image
+[INFO] [2026-06-17 14:49:33]   - models/gemini-3.5-flash
+[INFO] [2026-06-17 14:49:33]   - models/lyria-3-clip-preview
+[INFO] [2026-06-17 14:49:33]   - models/lyria-3-pro-preview
+[INFO] [2026-06-17 14:49:33]   - models/gemini-3.1-flash-tts-preview
+[INFO] [2026-06-17 14:49:33]   - models/gemini-robotics-er-1.5-preview
+[INFO] [2026-06-17 14:49:33]   - models/gemini-robotics-er-1.6-preview
+[INFO] [2026-06-17 14:49:33]   - models/gemini-2.5-computer-use-preview-10-2025
+[INFO] [2026-06-17 14:49:33]   - models/antigravity-preview-05-2026
+[INFO] [2026-06-17 14:49:33]   - models/deep-research-max-preview-04-2026
+[INFO] [2026-06-17 14:49:33]   - models/deep-research-preview-04-2026
+[INFO] [2026-06-17 14:49:33]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-17 14:49:40] Available Gemini models:
+[INFO] [2026-06-17 14:49:40]   - models/gemini-2.5-flash
+[INFO] [2026-06-17 14:49:40]   - models/gemini-2.5-pro
+[INFO] [2026-06-17 14:49:40]   - models/gemini-2.0-flash
+[INFO] [2026-06-17 14:49:40]   - models/gemini-2.0-flash-001
+[INFO] [2026-06-17 14:49:40]   - models/gemini-2.0-flash-lite-001
+[INFO] [2026-06-17 14:49:40]   - models/gemini-2.0-flash-lite
+[INFO] [2026-06-17 14:49:40]   - models/gemini-2.5-flash-preview-tts
+[INFO] [2026-06-17 14:49:40]   - models/gemini-2.5-pro-preview-tts
+[INFO] [2026-06-17 14:49:40]   - models/gemma-4-26b-a4b-it
+[INFO] [2026-06-17 14:49:40]   - models/gemma-4-31b-it
+[INFO] [2026-06-17 14:49:40]   - models/gemini-flash-latest
+[INFO] [2026-06-17 14:49:40]   - models/gemini-flash-lite-latest
+[INFO] [2026-06-17 14:49:40]   - models/gemini-pro-latest
+[INFO] [2026-06-17 14:49:40]   - models/gemini-2.5-flash-lite
+[INFO] [2026-06-17 14:49:40]   - models/gemini-2.5-flash-image
+[INFO] [2026-06-17 14:49:40]   - models/gemini-3-pro-preview
+[INFO] [2026-06-17 14:49:40]   - models/gemini-3-flash-preview
+[INFO] [2026-06-17 14:49:40]   - models/gemini-3.1-pro-preview
+[INFO] [2026-06-17 14:49:40]   - models/gemini-3.1-pro-preview-customtools
+[INFO] [2026-06-17 14:49:40]   - models/gemini-3.1-flash-lite-preview
+[INFO] [2026-06-17 14:49:40]   - models/gemini-3.1-flash-lite
+[INFO] [2026-06-17 14:49:40]   - models/gemini-3-pro-image-preview
+[INFO] [2026-06-17 14:49:40]   - models/gemini-3-pro-image
+[INFO] [2026-06-17 14:49:40]   - models/nano-banana-pro-preview
+[INFO] [2026-06-17 14:49:40]   - models/gemini-3.1-flash-image-preview
+[INFO] [2026-06-17 14:49:40]   - models/gemini-3.1-flash-image
+[INFO] [2026-06-17 14:49:40]   - models/gemini-3.5-flash
+[INFO] [2026-06-17 14:49:40]   - models/lyria-3-clip-preview
+[INFO] [2026-06-17 14:49:40]   - models/lyria-3-pro-preview
+[INFO] [2026-06-17 14:49:40]   - models/gemini-3.1-flash-tts-preview
+[INFO] [2026-06-17 14:49:40]   - models/gemini-robotics-er-1.5-preview
+[INFO] [2026-06-17 14:49:40]   - models/gemini-robotics-er-1.6-preview
+[INFO] [2026-06-17 14:49:40]   - models/gemini-2.5-computer-use-preview-10-2025
+[INFO] [2026-06-17 14:49:40]   - models/antigravity-preview-05-2026
+[INFO] [2026-06-17 14:49:40]   - models/deep-research-max-preview-04-2026
+[INFO] [2026-06-17 14:49:40]   - models/deep-research-preview-04-2026
+[INFO] [2026-06-17 14:49:40]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-17 14:49:41] Available Gemini models:
+[INFO] [2026-06-17 14:49:41]   - models/gemini-2.5-flash
+[INFO] [2026-06-17 14:49:41]   - models/gemini-2.5-pro
+[INFO] [2026-06-17 14:49:41]   - models/gemini-2.0-flash
+[INFO] [2026-06-17 14:49:41]   - models/gemini-2.0-flash-001
+[INFO] [2026-06-17 14:49:41]   - models/gemini-2.0-flash-lite-001
+[INFO] [2026-06-17 14:49:41]   - models/gemini-2.0-flash-lite
+[INFO] [2026-06-17 14:49:41]   - models/gemini-2.5-flash-preview-tts
+[INFO] [2026-06-17 14:49:41]   - models/gemini-2.5-pro-preview-tts
+[INFO] [2026-06-17 14:49:41]   - models/gemma-4-26b-a4b-it
+[INFO] [2026-06-17 14:49:41]   - models/gemma-4-31b-it
+[INFO] [2026-06-17 14:49:41]   - models/gemini-flash-latest
+[INFO] [2026-06-17 14:49:41]   - models/gemini-flash-lite-latest
+[INFO] [2026-06-17 14:49:41]   - models/gemini-pro-latest
+[INFO] [2026-06-17 14:49:41]   - models/gemini-2.5-flash-lite
+[INFO] [2026-06-17 14:49:41]   - models/gemini-2.5-flash-image
+[INFO] [2026-06-17 14:49:41]   - models/gemini-3-pro-preview
+[INFO] [2026-06-17 14:49:41]   - models/gemini-3-flash-preview
+[INFO] [2026-06-17 14:49:41]   - models/gemini-3.1-pro-preview
+[INFO] [2026-06-17 14:49:41]   - models/gemini-3.1-pro-preview-customtools
+[INFO] [2026-06-17 14:49:41]   - models/gemini-3.1-flash-lite-preview
+[INFO] [2026-06-17 14:49:41]   - models/gemini-3.1-flash-lite
+[INFO] [2026-06-17 14:49:41]   - models/gemini-3-pro-image-preview
+[INFO] [2026-06-17 14:49:41]   - models/gemini-3-pro-image
+[INFO] [2026-06-17 14:49:41]   - models/nano-banana-pro-preview
+[INFO] [2026-06-17 14:49:41]   - models/gemini-3.1-flash-image-preview
+[INFO] [2026-06-17 14:49:41]   - models/gemini-3.1-flash-image
+[INFO] [2026-06-17 14:49:41]   - models/gemini-3.5-flash
+[INFO] [2026-06-17 14:49:41]   - models/lyria-3-clip-preview
+[INFO] [2026-06-17 14:49:41]   - models/lyria-3-pro-preview
+[INFO] [2026-06-17 14:49:41]   - models/gemini-3.1-flash-tts-preview
+[INFO] [2026-06-17 14:49:41]   - models/gemini-robotics-er-1.5-preview
+[INFO] [2026-06-17 14:49:41]   - models/gemini-robotics-er-1.6-preview
+[INFO] [2026-06-17 14:49:41]   - models/gemini-2.5-computer-use-preview-10-2025
+[INFO] [2026-06-17 14:49:41]   - models/antigravity-preview-05-2026
+[INFO] [2026-06-17 14:49:41]   - models/deep-research-max-preview-04-2026
+[INFO] [2026-06-17 14:49:41]   - models/deep-research-preview-04-2026
+[INFO] [2026-06-17 14:49:41]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-17 22:03:39] Available Gemini models:
+[INFO] [2026-06-17 22:03:39]   - models/gemini-2.5-flash
+[INFO] [2026-06-17 22:03:39]   - models/gemini-2.5-pro
+[INFO] [2026-06-17 22:03:39]   - models/gemini-2.0-flash
+[INFO] [2026-06-17 22:03:39]   - models/gemini-2.0-flash-001
+[INFO] [2026-06-17 22:03:39]   - models/gemini-2.0-flash-lite-001
+[INFO] [2026-06-17 22:03:39]   - models/gemini-2.0-flash-lite
+[INFO] [2026-06-17 22:03:39]   - models/gemini-2.5-flash-preview-tts
+[INFO] [2026-06-17 22:03:39]   - models/gemini-2.5-pro-preview-tts
+[INFO] [2026-06-17 22:03:39]   - models/gemma-4-26b-a4b-it
+[INFO] [2026-06-17 22:03:39]   - models/gemma-4-31b-it
+[INFO] [2026-06-17 22:03:39]   - models/gemini-flash-latest
+[INFO] [2026-06-17 22:03:39]   - models/gemini-flash-lite-latest
+[INFO] [2026-06-17 22:03:39]   - models/gemini-pro-latest
+[INFO] [2026-06-17 22:03:39]   - models/gemini-2.5-flash-lite
+[INFO] [2026-06-17 22:03:39]   - models/gemini-2.5-flash-image
+[INFO] [2026-06-17 22:03:39]   - models/gemini-3-pro-preview
+[INFO] [2026-06-17 22:03:39]   - models/gemini-3-flash-preview
+[INFO] [2026-06-17 22:03:39]   - models/gemini-3.1-pro-preview
+[INFO] [2026-06-17 22:03:39]   - models/gemini-3.1-pro-preview-customtools
+[INFO] [2026-06-17 22:03:39]   - models/gemini-3.1-flash-lite-preview
+[INFO] [2026-06-17 22:03:39]   - models/gemini-3.1-flash-lite
+[INFO] [2026-06-17 22:03:39]   - models/gemini-3-pro-image-preview
+[INFO] [2026-06-17 22:03:39]   - models/gemini-3-pro-image
+[INFO] [2026-06-17 22:03:39]   - models/nano-banana-pro-preview
+[INFO] [2026-06-17 22:03:39]   - models/gemini-3.1-flash-image-preview
+[INFO] [2026-06-17 22:03:39]   - models/gemini-3.1-flash-image
+[INFO] [2026-06-17 22:03:39]   - models/gemini-3.5-flash
+[INFO] [2026-06-17 22:03:39]   - models/lyria-3-clip-preview
+[INFO] [2026-06-17 22:03:39]   - models/lyria-3-pro-preview
+[INFO] [2026-06-17 22:03:39]   - models/gemini-3.1-flash-tts-preview
+[INFO] [2026-06-17 22:03:39]   - models/gemini-robotics-er-1.5-preview
+[INFO] [2026-06-17 22:03:39]   - models/gemini-robotics-er-1.6-preview
+[INFO] [2026-06-17 22:03:39]   - models/gemini-2.5-computer-use-preview-10-2025
+[INFO] [2026-06-17 22:03:39]   - models/antigravity-preview-05-2026
+[INFO] [2026-06-17 22:03:39]   - models/deep-research-max-preview-04-2026
+[INFO] [2026-06-17 22:03:39]   - models/deep-research-preview-04-2026
+[INFO] [2026-06-17 22:03:39]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-17 22:03:40] Starting Legal AI Backend server
+[INFO] [2026-06-17 22:03:40] Available Gemini models:
+[INFO] [2026-06-17 22:03:40]   - models/gemini-2.5-flash
+[INFO] [2026-06-17 22:03:40]   - models/gemini-2.5-pro
+[INFO] [2026-06-17 22:03:40]   - models/gemini-2.0-flash
+[INFO] [2026-06-17 22:03:40]   - models/gemini-2.0-flash-001
+[INFO] [2026-06-17 22:03:40]   - models/gemini-2.0-flash-lite-001
+[INFO] [2026-06-17 22:03:40]   - models/gemini-2.0-flash-lite
+[INFO] [2026-06-17 22:03:40]   - models/gemini-2.5-flash-preview-tts
+[INFO] [2026-06-17 22:03:40]   - models/gemini-2.5-pro-preview-tts
+[INFO] [2026-06-17 22:03:40]   - models/gemma-4-26b-a4b-it
+[INFO] [2026-06-17 22:03:40]   - models/gemma-4-31b-it
+[INFO] [2026-06-17 22:03:40]   - models/gemini-flash-latest
+[INFO] [2026-06-17 22:03:40]   - models/gemini-flash-lite-latest
+[INFO] [2026-06-17 22:03:40]   - models/gemini-pro-latest
+[INFO] [2026-06-17 22:03:40]   - models/gemini-2.5-flash-lite
+[INFO] [2026-06-17 22:03:40]   - models/gemini-2.5-flash-image
+[INFO] [2026-06-17 22:03:40]   - models/gemini-3-pro-preview
+[INFO] [2026-06-17 22:03:40]   - models/gemini-3-flash-preview
+[INFO] [2026-06-17 22:03:40]   - models/gemini-3.1-pro-preview
+[INFO] [2026-06-17 22:03:40]   - models/gemini-3.1-pro-preview-customtools
+[INFO] [2026-06-17 22:03:40]   - models/gemini-3.1-flash-lite-preview
+[INFO] [2026-06-17 22:03:40]   - models/gemini-3.1-flash-lite
+[INFO] [2026-06-17 22:03:40]   - models/gemini-3-pro-image-preview
+[INFO] [2026-06-17 22:03:40]   - models/gemini-3-pro-image
+[INFO] [2026-06-17 22:03:40]   - models/nano-banana-pro-preview
+[INFO] [2026-06-17 22:03:40]   - models/gemini-3.1-flash-image-preview
+[INFO] [2026-06-17 22:03:40]   - models/gemini-3.1-flash-image
+[INFO] [2026-06-17 22:03:40]   - models/gemini-3.5-flash
+[INFO] [2026-06-17 22:03:40]   - models/lyria-3-clip-preview
+[INFO] [2026-06-17 22:03:40]   - models/lyria-3-pro-preview
+[INFO] [2026-06-17 22:03:40]   - models/gemini-3.1-flash-tts-preview
+[INFO] [2026-06-17 22:03:40]   - models/gemini-robotics-er-1.5-preview
+[INFO] [2026-06-17 22:03:40]   - models/gemini-robotics-er-1.6-preview
+[INFO] [2026-06-17 22:03:40]   - models/gemini-2.5-computer-use-preview-10-2025
+[INFO] [2026-06-17 22:03:40]   - models/antigravity-preview-05-2026
+[INFO] [2026-06-17 22:03:40]   - models/deep-research-max-preview-04-2026
+[INFO] [2026-06-17 22:03:40]   - models/deep-research-preview-04-2026
+[INFO] [2026-06-17 22:03:40]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-17 22:03:45] Available Gemini models:
+[INFO] [2026-06-17 22:03:45]   - models/gemini-2.5-flash
+[INFO] [2026-06-17 22:03:45]   - models/gemini-2.5-pro
+[INFO] [2026-06-17 22:03:45]   - models/gemini-2.0-flash
+[INFO] [2026-06-17 22:03:45]   - models/gemini-2.0-flash-001
+[INFO] [2026-06-17 22:03:45]   - models/gemini-2.0-flash-lite-001
+[INFO] [2026-06-17 22:03:45]   - models/gemini-2.0-flash-lite
+[INFO] [2026-06-17 22:03:45]   - models/gemini-2.5-flash-preview-tts
+[INFO] [2026-06-17 22:03:45]   - models/gemini-2.5-pro-preview-tts
+[INFO] [2026-06-17 22:03:45]   - models/gemma-4-26b-a4b-it
+[INFO] [2026-06-17 22:03:45]   - models/gemma-4-31b-it
+[INFO] [2026-06-17 22:03:45]   - models/gemini-flash-latest
+[INFO] [2026-06-17 22:03:45]   - models/gemini-flash-lite-latest
+[INFO] [2026-06-17 22:03:45]   - models/gemini-pro-latest
+[INFO] [2026-06-17 22:03:45]   - models/gemini-2.5-flash-lite
+[INFO] [2026-06-17 22:03:45]   - models/gemini-2.5-flash-image
+[INFO] [2026-06-17 22:03:45]   - models/gemini-3-pro-preview
+[INFO] [2026-06-17 22:03:45]   - models/gemini-3-flash-preview
+[INFO] [2026-06-17 22:03:45]   - models/gemini-3.1-pro-preview
+[INFO] [2026-06-17 22:03:45]   - models/gemini-3.1-pro-preview-customtools
+[INFO] [2026-06-17 22:03:45]   - models/gemini-3.1-flash-lite-preview
+[INFO] [2026-06-17 22:03:45]   - models/gemini-3.1-flash-lite
+[INFO] [2026-06-17 22:03:45]   - models/gemini-3-pro-image-preview
+[INFO] [2026-06-17 22:03:45]   - models/gemini-3-pro-image
+[INFO] [2026-06-17 22:03:45]   - models/nano-banana-pro-preview
+[INFO] [2026-06-17 22:03:45]   - models/gemini-3.1-flash-image-preview
+[INFO] [2026-06-17 22:03:45]   - models/gemini-3.1-flash-image
+[INFO] [2026-06-17 22:03:45]   - models/gemini-3.5-flash
+[INFO] [2026-06-17 22:03:45]   - models/lyria-3-clip-preview
+[INFO] [2026-06-17 22:03:45]   - models/lyria-3-pro-preview
+[INFO] [2026-06-17 22:03:45]   - models/gemini-3.1-flash-tts-preview
+[INFO] [2026-06-17 22:03:45]   - models/gemini-robotics-er-1.5-preview
+[INFO] [2026-06-17 22:03:45]   - models/gemini-robotics-er-1.6-preview
+[INFO] [2026-06-17 22:03:45]   - models/gemini-2.5-computer-use-preview-10-2025
+[INFO] [2026-06-17 22:03:45]   - models/antigravity-preview-05-2026
+[INFO] [2026-06-17 22:03:45]   - models/deep-research-max-preview-04-2026
+[INFO] [2026-06-17 22:03:45]   - models/deep-research-preview-04-2026
+[INFO] [2026-06-17 22:03:45]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-17 22:03:46] Available Gemini models:
+[INFO] [2026-06-17 22:03:46]   - models/gemini-2.5-flash
+[INFO] [2026-06-17 22:03:46]   - models/gemini-2.5-pro
+[INFO] [2026-06-17 22:03:46]   - models/gemini-2.0-flash
+[INFO] [2026-06-17 22:03:46]   - models/gemini-2.0-flash-001
+[INFO] [2026-06-17 22:03:46]   - models/gemini-2.0-flash-lite-001
+[INFO] [2026-06-17 22:03:46]   - models/gemini-2.0-flash-lite
+[INFO] [2026-06-17 22:03:46]   - models/gemini-2.5-flash-preview-tts
+[INFO] [2026-06-17 22:03:46]   - models/gemini-2.5-pro-preview-tts
+[INFO] [2026-06-17 22:03:46]   - models/gemma-4-26b-a4b-it
+[INFO] [2026-06-17 22:03:46]   - models/gemma-4-31b-it
+[INFO] [2026-06-17 22:03:46]   - models/gemini-flash-latest
+[INFO] [2026-06-17 22:03:46]   - models/gemini-flash-lite-latest
+[INFO] [2026-06-17 22:03:46]   - models/gemini-pro-latest
+[INFO] [2026-06-17 22:03:46]   - models/gemini-2.5-flash-lite
+[INFO] [2026-06-17 22:03:46]   - models/gemini-2.5-flash-image
+[INFO] [2026-06-17 22:03:46]   - models/gemini-3-pro-preview
+[INFO] [2026-06-17 22:03:46]   - models/gemini-3-flash-preview
+[INFO] [2026-06-17 22:03:46]   - models/gemini-3.1-pro-preview
+[INFO] [2026-06-17 22:03:46]   - models/gemini-3.1-pro-preview-customtools
+[INFO] [2026-06-17 22:03:46]   - models/gemini-3.1-flash-lite-preview
+[INFO] [2026-06-17 22:03:46]   - models/gemini-3.1-flash-lite
+[INFO] [2026-06-17 22:03:46]   - models/gemini-3-pro-image-preview
+[INFO] [2026-06-17 22:03:46]   - models/gemini-3-pro-image
+[INFO] [2026-06-17 22:03:46]   - models/nano-banana-pro-preview
+[INFO] [2026-06-17 22:03:46]   - models/gemini-3.1-flash-image-preview
+[INFO] [2026-06-17 22:03:46]   - models/gemini-3.1-flash-image
+[INFO] [2026-06-17 22:03:46]   - models/gemini-3.5-flash
+[INFO] [2026-06-17 22:03:46]   - models/lyria-3-clip-preview
+[INFO] [2026-06-17 22:03:46]   - models/lyria-3-pro-preview
+[INFO] [2026-06-17 22:03:46]   - models/gemini-3.1-flash-tts-preview
+[INFO] [2026-06-17 22:03:46]   - models/gemini-robotics-er-1.5-preview
+[INFO] [2026-06-17 22:03:46]   - models/gemini-robotics-er-1.6-preview
+[INFO] [2026-06-17 22:03:46]   - models/gemini-2.5-computer-use-preview-10-2025
+[INFO] [2026-06-17 22:03:46]   - models/antigravity-preview-05-2026
+[INFO] [2026-06-17 22:03:46]   - models/deep-research-max-preview-04-2026
+[INFO] [2026-06-17 22:03:46]   - models/deep-research-preview-04-2026
+[INFO] [2026-06-17 22:03:46]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-17 22:05:31] Job 6b5c710b-1b27-494b-aca6-ff94f3b8402d: Received upload request for SampleContract-Shuttle.pdf
+[INFO] [2026-06-17 22:05:31] Job 6b5c710b-1b27-494b-aca6-ff94f3b8402d: File size: 49647 bytes
+[INFO] [2026-06-17 22:05:31] Job 6b5c710b-1b27-494b-aca6-ff94f3b8402d: File saved (49647 bytes), queuing for processing
+[INFO] [2026-06-17 22:05:31] Job 6b5c710b-1b27-494b-aca6-ff94f3b8402d: Started processing 6b5c710b-1b27-494b-aca6-ff94f3b8402d_SampleContract-Shuttle.pdf
+[INFO] [2026-06-17 22:05:31] Job 6b5c710b-1b27-494b-aca6-ff94f3b8402d: Opening PDF document
+[INFO] [2026-06-17 22:05:31] Job 6b5c710b-1b27-494b-aca6-ff94f3b8402d: Processing PDF with 10 pages
+[INFO] [2026-06-17 22:05:31] Job 6b5c710b-1b27-494b-aca6-ff94f3b8402d: Page 1 native text: 2847 chars
+[INFO] [2026-06-17 22:05:31] Job 6b5c710b-1b27-494b-aca6-ff94f3b8402d: Page 2 native text: 3353 chars
+[INFO] [2026-06-17 22:05:31] Job 6b5c710b-1b27-494b-aca6-ff94f3b8402d: Page 3 native text: 3663 chars
+[INFO] [2026-06-17 22:05:31] Job 6b5c710b-1b27-494b-aca6-ff94f3b8402d: Page 4 native text: 3429 chars
+[INFO] [2026-06-17 22:05:31] Job 6b5c710b-1b27-494b-aca6-ff94f3b8402d: Page 5 native text: 3625 chars
+[INFO] [2026-06-17 22:05:31] Job 6b5c710b-1b27-494b-aca6-ff94f3b8402d: Page 6 native text: 4012 chars
+[INFO] [2026-06-17 22:05:31] Job 6b5c710b-1b27-494b-aca6-ff94f3b8402d: Page 7 native text: 3771 chars
+[INFO] [2026-06-17 22:05:31] Job 6b5c710b-1b27-494b-aca6-ff94f3b8402d: Page 8 native text: 3667 chars
+[INFO] [2026-06-17 22:05:31] Job 6b5c710b-1b27-494b-aca6-ff94f3b8402d: Page 9 native text: 3210 chars
+[INFO] [2026-06-17 22:05:31] Job 6b5c710b-1b27-494b-aca6-ff94f3b8402d: Page 10 native text: 1359 chars
+[INFO] [2026-06-17 22:05:31] Job 6b5c710b-1b27-494b-aca6-ff94f3b8402d: Extracted 32936 total characters
+[ERROR] [2026-06-17 22:05:32] Job 6b5c710b-1b27-494b-aca6-ff94f3b8402d: Processing failed - 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+[INFO] [2026-06-17 22:05:32] Job 6b5c710b-1b27-494b-aca6-ff94f3b8402d: Cleaned up file 6b5c710b-1b27-494b-aca6-ff94f3b8402d_SampleContract-Shuttle.pdf
+[INFO] [2026-06-17 22:05:33] Job 19839de8-25a1-4b08-ab5f-76360ee03b32: Received upload request for SampleContract-Shuttle.pdf
+[INFO] [2026-06-17 22:05:33] Job 19839de8-25a1-4b08-ab5f-76360ee03b32: File size: 49647 bytes
+[INFO] [2026-06-17 22:05:33] Job 19839de8-25a1-4b08-ab5f-76360ee03b32: File saved (49647 bytes), queuing for processing
+[INFO] [2026-06-17 22:05:33] Job 19839de8-25a1-4b08-ab5f-76360ee03b32: Started processing 19839de8-25a1-4b08-ab5f-76360ee03b32_SampleContract-Shuttle.pdf
+[INFO] [2026-06-17 22:05:33] Job 19839de8-25a1-4b08-ab5f-76360ee03b32: Opening PDF document
+[INFO] [2026-06-17 22:05:33] Job 19839de8-25a1-4b08-ab5f-76360ee03b32: Processing PDF with 10 pages
+[INFO] [2026-06-17 22:05:33] Job 19839de8-25a1-4b08-ab5f-76360ee03b32: Page 1 native text: 2847 chars
+[INFO] [2026-06-17 22:05:33] Job 19839de8-25a1-4b08-ab5f-76360ee03b32: Page 2 native text: 3353 chars
+[INFO] [2026-06-17 22:05:33] Job 19839de8-25a1-4b08-ab5f-76360ee03b32: Page 3 native text: 3663 chars
+[INFO] [2026-06-17 22:05:33] Job 19839de8-25a1-4b08-ab5f-76360ee03b32: Page 4 native text: 3429 chars
+[INFO] [2026-06-17 22:05:33] Job 19839de8-25a1-4b08-ab5f-76360ee03b32: Page 5 native text: 3625 chars
+[INFO] [2026-06-17 22:05:33] Job 19839de8-25a1-4b08-ab5f-76360ee03b32: Page 6 native text: 4012 chars
+[INFO] [2026-06-17 22:05:33] Job 19839de8-25a1-4b08-ab5f-76360ee03b32: Page 7 native text: 3771 chars
+[INFO] [2026-06-17 22:05:33] Job 19839de8-25a1-4b08-ab5f-76360ee03b32: Page 8 native text: 3667 chars
+[INFO] [2026-06-17 22:05:33] Job 19839de8-25a1-4b08-ab5f-76360ee03b32: Page 9 native text: 3210 chars
+[INFO] [2026-06-17 22:05:33] Job 19839de8-25a1-4b08-ab5f-76360ee03b32: Page 10 native text: 1359 chars
+[INFO] [2026-06-17 22:05:33] Job 19839de8-25a1-4b08-ab5f-76360ee03b32: Extracted 32936 total characters
+[ERROR] [2026-06-17 22:05:33] Job 19839de8-25a1-4b08-ab5f-76360ee03b32: Processing failed - 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+[INFO] [2026-06-17 22:05:33] Job 19839de8-25a1-4b08-ab5f-76360ee03b32: Cleaned up file 19839de8-25a1-4b08-ab5f-76360ee03b32_SampleContract-Shuttle.pdf
+[INFO] [2026-06-17 22:07:10] Available Gemini models:
+[INFO] [2026-06-17 22:07:10]   - models/gemini-2.5-flash
+[INFO] [2026-06-17 22:07:10]   - models/gemini-2.5-pro
+[INFO] [2026-06-17 22:07:10]   - models/gemini-2.0-flash
+[INFO] [2026-06-17 22:07:10]   - models/gemini-2.0-flash-001
+[INFO] [2026-06-17 22:07:10]   - models/gemini-2.0-flash-lite-001
+[INFO] [2026-06-17 22:07:10]   - models/gemini-2.0-flash-lite
+[INFO] [2026-06-17 22:07:10]   - models/gemini-2.5-flash-preview-tts
+[INFO] [2026-06-17 22:07:10]   - models/gemini-2.5-pro-preview-tts
+[INFO] [2026-06-17 22:07:10]   - models/gemma-4-26b-a4b-it
+[INFO] [2026-06-17 22:07:10]   - models/gemma-4-31b-it
+[INFO] [2026-06-17 22:07:10]   - models/gemini-flash-latest
+[INFO] [2026-06-17 22:07:10]   - models/gemini-flash-lite-latest
+[INFO] [2026-06-17 22:07:10]   - models/gemini-pro-latest
+[INFO] [2026-06-17 22:07:10]   - models/gemini-2.5-flash-lite
+[INFO] [2026-06-17 22:07:10]   - models/gemini-2.5-flash-image
+[INFO] [2026-06-17 22:07:10]   - models/gemini-3-pro-preview
+[INFO] [2026-06-17 22:07:10]   - models/gemini-3-flash-preview
+[INFO] [2026-06-17 22:07:10]   - models/gemini-3.1-pro-preview
+[INFO] [2026-06-17 22:07:10]   - models/gemini-3.1-pro-preview-customtools
+[INFO] [2026-06-17 22:07:10]   - models/gemini-3.1-flash-lite-preview
+[INFO] [2026-06-17 22:07:10]   - models/gemini-3.1-flash-lite
+[INFO] [2026-06-17 22:07:10]   - models/gemini-3-pro-image-preview
+[INFO] [2026-06-17 22:07:10]   - models/gemini-3-pro-image
+[INFO] [2026-06-17 22:07:10]   - models/nano-banana-pro-preview
+[INFO] [2026-06-17 22:07:10]   - models/gemini-3.1-flash-image-preview
+[INFO] [2026-06-17 22:07:10]   - models/gemini-3.1-flash-image
+[INFO] [2026-06-17 22:07:10]   - models/gemini-3.5-flash
+[INFO] [2026-06-17 22:07:10]   - models/lyria-3-clip-preview
+[INFO] [2026-06-17 22:07:10]   - models/lyria-3-pro-preview
+[INFO] [2026-06-17 22:07:10]   - models/gemini-3.1-flash-tts-preview
+[INFO] [2026-06-17 22:07:10]   - models/gemini-robotics-er-1.5-preview
+[INFO] [2026-06-17 22:07:10]   - models/gemini-robotics-er-1.6-preview
+[INFO] [2026-06-17 22:07:10]   - models/gemini-2.5-computer-use-preview-10-2025
+[INFO] [2026-06-17 22:07:10]   - models/antigravity-preview-05-2026
+[INFO] [2026-06-17 22:07:10]   - models/deep-research-max-preview-04-2026
+[INFO] [2026-06-17 22:07:10]   - models/deep-research-preview-04-2026
+[INFO] [2026-06-17 22:07:10]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-17 22:07:11] Available Gemini models:
+[INFO] [2026-06-17 22:07:11]   - models/gemini-2.5-flash
+[INFO] [2026-06-17 22:07:11]   - models/gemini-2.5-pro
+[INFO] [2026-06-17 22:07:11]   - models/gemini-2.0-flash
+[INFO] [2026-06-17 22:07:11]   - models/gemini-2.0-flash-001
+[INFO] [2026-06-17 22:07:11]   - models/gemini-2.0-flash-lite-001
+[INFO] [2026-06-17 22:07:11]   - models/gemini-2.0-flash-lite
+[INFO] [2026-06-17 22:07:11]   - models/gemini-2.5-flash-preview-tts
+[INFO] [2026-06-17 22:07:11]   - models/gemini-2.5-pro-preview-tts
+[INFO] [2026-06-17 22:07:11]   - models/gemma-4-26b-a4b-it
+[INFO] [2026-06-17 22:07:11]   - models/gemma-4-31b-it
+[INFO] [2026-06-17 22:07:11]   - models/gemini-flash-latest
+[INFO] [2026-06-17 22:07:11]   - models/gemini-flash-lite-latest
+[INFO] [2026-06-17 22:07:11]   - models/gemini-pro-latest
+[INFO] [2026-06-17 22:07:11]   - models/gemini-2.5-flash-lite
+[INFO] [2026-06-17 22:07:11]   - models/gemini-2.5-flash-image
+[INFO] [2026-06-17 22:07:11]   - models/gemini-3-pro-preview
+[INFO] [2026-06-17 22:07:11]   - models/gemini-3-flash-preview
+[INFO] [2026-06-17 22:07:11]   - models/gemini-3.1-pro-preview
+[INFO] [2026-06-17 22:07:11]   - models/gemini-3.1-pro-preview-customtools
+[INFO] [2026-06-17 22:07:11]   - models/gemini-3.1-flash-lite-preview
+[INFO] [2026-06-17 22:07:11]   - models/gemini-3.1-flash-lite
+[INFO] [2026-06-17 22:07:11]   - models/gemini-3-pro-image-preview
+[INFO] [2026-06-17 22:07:11]   - models/gemini-3-pro-image
+[INFO] [2026-06-17 22:07:11]   - models/nano-banana-pro-preview
+[INFO] [2026-06-17 22:07:11]   - models/gemini-3.1-flash-image-preview
+[INFO] [2026-06-17 22:07:11]   - models/gemini-3.1-flash-image
+[INFO] [2026-06-17 22:07:11]   - models/gemini-3.5-flash
+[INFO] [2026-06-17 22:07:11]   - models/lyria-3-clip-preview
+[INFO] [2026-06-17 22:07:11]   - models/lyria-3-pro-preview
+[INFO] [2026-06-17 22:07:11]   - models/gemini-3.1-flash-tts-preview
+[INFO] [2026-06-17 22:07:11]   - models/gemini-robotics-er-1.5-preview
+[INFO] [2026-06-17 22:07:11]   - models/gemini-robotics-er-1.6-preview
+[INFO] [2026-06-17 22:07:11]   - models/gemini-2.5-computer-use-preview-10-2025
+[INFO] [2026-06-17 22:07:11]   - models/antigravity-preview-05-2026
+[INFO] [2026-06-17 22:07:11]   - models/deep-research-max-preview-04-2026
+[INFO] [2026-06-17 22:07:11]   - models/deep-research-preview-04-2026
+[INFO] [2026-06-17 22:07:11]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-17 22:08:11] Available Gemini models:
+[INFO] [2026-06-17 22:08:12]   - models/gemini-2.5-flash
+[INFO] [2026-06-17 22:08:12]   - models/gemini-2.5-pro
+[INFO] [2026-06-17 22:08:12]   - models/gemini-2.0-flash
+[INFO] [2026-06-17 22:08:12]   - models/gemini-2.0-flash-001
+[INFO] [2026-06-17 22:08:12]   - models/gemini-2.0-flash-lite-001
+[INFO] [2026-06-17 22:08:12]   - models/gemini-2.0-flash-lite
+[INFO] [2026-06-17 22:08:12]   - models/gemini-2.5-flash-preview-tts
+[INFO] [2026-06-17 22:08:12]   - models/gemini-2.5-pro-preview-tts
+[INFO] [2026-06-17 22:08:12]   - models/gemma-4-26b-a4b-it
+[INFO] [2026-06-17 22:08:12]   - models/gemma-4-31b-it
+[INFO] [2026-06-17 22:08:12]   - models/gemini-flash-latest
+[INFO] [2026-06-17 22:08:12]   - models/gemini-flash-lite-latest
+[INFO] [2026-06-17 22:08:12]   - models/gemini-pro-latest
+[INFO] [2026-06-17 22:08:12]   - models/gemini-2.5-flash-lite
+[INFO] [2026-06-17 22:08:12]   - models/gemini-2.5-flash-image
+[INFO] [2026-06-17 22:08:12]   - models/gemini-3-pro-preview
+[INFO] [2026-06-17 22:08:12]   - models/gemini-3-flash-preview
+[INFO] [2026-06-17 22:08:12]   - models/gemini-3.1-pro-preview
+[INFO] [2026-06-17 22:08:12]   - models/gemini-3.1-pro-preview-customtools
+[INFO] [2026-06-17 22:08:12]   - models/gemini-3.1-flash-lite-preview
+[INFO] [2026-06-17 22:08:12]   - models/gemini-3.1-flash-lite
+[INFO] [2026-06-17 22:08:12]   - models/gemini-3-pro-image-preview
+[INFO] [2026-06-17 22:08:12]   - models/gemini-3-pro-image
+[INFO] [2026-06-17 22:08:12]   - models/nano-banana-pro-preview
+[INFO] [2026-06-17 22:08:12]   - models/gemini-3.1-flash-image-preview
+[INFO] [2026-06-17 22:08:12]   - models/gemini-3.1-flash-image
+[INFO] [2026-06-17 22:08:12]   - models/gemini-3.5-flash
+[INFO] [2026-06-17 22:08:12]   - models/lyria-3-clip-preview
+[INFO] [2026-06-17 22:08:12]   - models/lyria-3-pro-preview
+[INFO] [2026-06-17 22:08:12]   - models/gemini-3.1-flash-tts-preview
+[INFO] [2026-06-17 22:08:12]   - models/gemini-robotics-er-1.5-preview
+[INFO] [2026-06-17 22:08:12]   - models/gemini-robotics-er-1.6-preview
+[INFO] [2026-06-17 22:08:12]   - models/gemini-2.5-computer-use-preview-10-2025
+[INFO] [2026-06-17 22:08:12]   - models/antigravity-preview-05-2026
+[INFO] [2026-06-17 22:08:12]   - models/deep-research-max-preview-04-2026
+[INFO] [2026-06-17 22:08:12]   - models/deep-research-preview-04-2026
+[INFO] [2026-06-17 22:08:12]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-17 22:08:12] Available Gemini models:
+[INFO] [2026-06-17 22:08:12]   - models/gemini-2.5-flash
+[INFO] [2026-06-17 22:08:12]   - models/gemini-2.5-pro
+[INFO] [2026-06-17 22:08:12]   - models/gemini-2.0-flash
+[INFO] [2026-06-17 22:08:12]   - models/gemini-2.0-flash-001
+[INFO] [2026-06-17 22:08:12]   - models/gemini-2.0-flash-lite-001
+[INFO] [2026-06-17 22:08:12]   - models/gemini-2.0-flash-lite
+[INFO] [2026-06-17 22:08:12]   - models/gemini-2.5-flash-preview-tts
+[INFO] [2026-06-17 22:08:12]   - models/gemini-2.5-pro-preview-tts
+[INFO] [2026-06-17 22:08:12]   - models/gemma-4-26b-a4b-it
+[INFO] [2026-06-17 22:08:12]   - models/gemma-4-31b-it
+[INFO] [2026-06-17 22:08:12]   - models/gemini-flash-latest
+[INFO] [2026-06-17 22:08:12]   - models/gemini-flash-lite-latest
+[INFO] [2026-06-17 22:08:12]   - models/gemini-pro-latest
+[INFO] [2026-06-17 22:08:12]   - models/gemini-2.5-flash-lite
+[INFO] [2026-06-17 22:08:12]   - models/gemini-2.5-flash-image
+[INFO] [2026-06-17 22:08:12]   - models/gemini-3-pro-preview
+[INFO] [2026-06-17 22:08:12]   - models/gemini-3-flash-preview
+[INFO] [2026-06-17 22:08:12]   - models/gemini-3.1-pro-preview
+[INFO] [2026-06-17 22:08:12]   - models/gemini-3.1-pro-preview-customtools
+[INFO] [2026-06-17 22:08:12]   - models/gemini-3.1-flash-lite-preview
+[INFO] [2026-06-17 22:08:12]   - models/gemini-3.1-flash-lite
+[INFO] [2026-06-17 22:08:12]   - models/gemini-3-pro-image-preview
+[INFO] [2026-06-17 22:08:12]   - models/gemini-3-pro-image
+[INFO] [2026-06-17 22:08:12]   - models/nano-banana-pro-preview
+[INFO] [2026-06-17 22:08:12]   - models/gemini-3.1-flash-image-preview
+[INFO] [2026-06-17 22:08:12]   - models/gemini-3.1-flash-image
+[INFO] [2026-06-17 22:08:12]   - models/gemini-3.5-flash
+[INFO] [2026-06-17 22:08:12]   - models/lyria-3-clip-preview
+[INFO] [2026-06-17 22:08:12]   - models/lyria-3-pro-preview
+[INFO] [2026-06-17 22:08:12]   - models/gemini-3.1-flash-tts-preview
+[INFO] [2026-06-17 22:08:12]   - models/gemini-robotics-er-1.5-preview
+[INFO] [2026-06-17 22:08:12]   - models/gemini-robotics-er-1.6-preview
+[INFO] [2026-06-17 22:08:12]   - models/gemini-2.5-computer-use-preview-10-2025
+[INFO] [2026-06-17 22:08:12]   - models/antigravity-preview-05-2026
+[INFO] [2026-06-17 22:08:12]   - models/deep-research-max-preview-04-2026
+[INFO] [2026-06-17 22:08:12]   - models/deep-research-preview-04-2026
+[INFO] [2026-06-17 22:08:12]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-17 22:10:45] Job 01591df2-0fce-4224-9c67-83de087a0b47: Received upload request for SampleContract-Shuttle.pdf
+[INFO] [2026-06-17 22:10:45] Job 01591df2-0fce-4224-9c67-83de087a0b47: File size: 49647 bytes
+[INFO] [2026-06-17 22:10:45] Job 01591df2-0fce-4224-9c67-83de087a0b47: File saved (49647 bytes), queuing for processing
+[INFO] [2026-06-17 22:10:45] Job 01591df2-0fce-4224-9c67-83de087a0b47: Started processing 01591df2-0fce-4224-9c67-83de087a0b47_SampleContract-Shuttle.pdf
+[INFO] [2026-06-17 22:10:45] Job 01591df2-0fce-4224-9c67-83de087a0b47: Opening PDF document
+[INFO] [2026-06-17 22:10:45] Job 01591df2-0fce-4224-9c67-83de087a0b47: Processing PDF with 10 pages
+[INFO] [2026-06-17 22:10:45] Job 01591df2-0fce-4224-9c67-83de087a0b47: Page 1 native text: 2847 chars
+[INFO] [2026-06-17 22:10:45] Job 01591df2-0fce-4224-9c67-83de087a0b47: Page 2 native text: 3353 chars
+[INFO] [2026-06-17 22:10:45] Job 01591df2-0fce-4224-9c67-83de087a0b47: Page 3 native text: 3663 chars
+[INFO] [2026-06-17 22:10:45] Job 01591df2-0fce-4224-9c67-83de087a0b47: Page 4 native text: 3429 chars
+[INFO] [2026-06-17 22:10:45] Job 01591df2-0fce-4224-9c67-83de087a0b47: Page 5 native text: 3625 chars
+[INFO] [2026-06-17 22:10:45] Job 01591df2-0fce-4224-9c67-83de087a0b47: Page 6 native text: 4012 chars
+[INFO] [2026-06-17 22:10:45] Job 01591df2-0fce-4224-9c67-83de087a0b47: Page 7 native text: 3771 chars
+[INFO] [2026-06-17 22:10:45] Job 01591df2-0fce-4224-9c67-83de087a0b47: Page 8 native text: 3667 chars
+[INFO] [2026-06-17 22:10:45] Job 01591df2-0fce-4224-9c67-83de087a0b47: Page 9 native text: 3210 chars
+[INFO] [2026-06-17 22:10:45] Job 01591df2-0fce-4224-9c67-83de087a0b47: Page 10 native text: 1359 chars
+[INFO] [2026-06-17 22:10:45] Job 01591df2-0fce-4224-9c67-83de087a0b47: Extracted 32936 total characters
+[INFO] [2026-06-17 22:10:57] Searching lawyer types for document (2322 chars)
+[INFO] [2026-06-17 22:10:57] Loaded 60 lawyer types from database
+[INFO] [2026-06-17 22:10:57] Found 0 matching lawyer types, returning top 0
+[INFO] [2026-06-17 22:10:58] Job 01591df2-0fce-4224-9c67-83de087a0b47: Complete pipeline finished successfully. Analysis saved, 0 lawyer types recommended
+[INFO] [2026-06-17 22:10:58] Job 01591df2-0fce-4224-9c67-83de087a0b47: Cleaned up file 01591df2-0fce-4224-9c67-83de087a0b47_SampleContract-Shuttle.pdf
+[INFO] [2026-06-17 22:14:24] Available Gemini models:
+[INFO] [2026-06-17 22:14:25]   - models/gemini-2.5-flash
+[INFO] [2026-06-17 22:14:25]   - models/gemini-2.5-pro
+[INFO] [2026-06-17 22:14:25]   - models/gemini-2.0-flash
+[INFO] [2026-06-17 22:14:25]   - models/gemini-2.0-flash-001
+[INFO] [2026-06-17 22:14:25]   - models/gemini-2.0-flash-lite-001
+[INFO] [2026-06-17 22:14:25]   - models/gemini-2.0-flash-lite
+[INFO] [2026-06-17 22:14:25]   - models/gemini-2.5-flash-preview-tts
+[INFO] [2026-06-17 22:14:25]   - models/gemini-2.5-pro-preview-tts
+[INFO] [2026-06-17 22:14:25]   - models/gemma-4-26b-a4b-it
+[INFO] [2026-06-17 22:14:25]   - models/gemma-4-31b-it
+[INFO] [2026-06-17 22:14:25]   - models/gemini-flash-latest
+[INFO] [2026-06-17 22:14:25]   - models/gemini-flash-lite-latest
+[INFO] [2026-06-17 22:14:25]   - models/gemini-pro-latest
+[INFO] [2026-06-17 22:14:25]   - models/gemini-2.5-flash-lite
+[INFO] [2026-06-17 22:14:25]   - models/gemini-2.5-flash-image
+[INFO] [2026-06-17 22:14:25]   - models/gemini-3-pro-preview
+[INFO] [2026-06-17 22:14:25]   - models/gemini-3-flash-preview
+[INFO] [2026-06-17 22:14:25]   - models/gemini-3.1-pro-preview
+[INFO] [2026-06-17 22:14:25]   - models/gemini-3.1-pro-preview-customtools
+[INFO] [2026-06-17 22:14:25]   - models/gemini-3.1-flash-lite-preview
+[INFO] [2026-06-17 22:14:25]   - models/gemini-3.1-flash-lite
+[INFO] [2026-06-17 22:14:25]   - models/gemini-3-pro-image-preview
+[INFO] [2026-06-17 22:14:25]   - models/gemini-3-pro-image
+[INFO] [2026-06-17 22:14:25]   - models/nano-banana-pro-preview
+[INFO] [2026-06-17 22:14:25]   - models/gemini-3.1-flash-image-preview
+[INFO] [2026-06-17 22:14:25]   - models/gemini-3.1-flash-image
+[INFO] [2026-06-17 22:14:25]   - models/gemini-3.5-flash
+[INFO] [2026-06-17 22:14:25]   - models/lyria-3-clip-preview
+[INFO] [2026-06-17 22:14:25]   - models/lyria-3-pro-preview
+[INFO] [2026-06-17 22:14:25]   - models/gemini-3.1-flash-tts-preview
+[INFO] [2026-06-17 22:14:25]   - models/gemini-robotics-er-1.5-preview
+[INFO] [2026-06-17 22:14:25]   - models/gemini-robotics-er-1.6-preview
+[INFO] [2026-06-17 22:14:25]   - models/gemini-2.5-computer-use-preview-10-2025
+[INFO] [2026-06-17 22:14:25]   - models/antigravity-preview-05-2026
+[INFO] [2026-06-17 22:14:25]   - models/deep-research-max-preview-04-2026
+[INFO] [2026-06-17 22:14:25]   - models/deep-research-preview-04-2026
+[INFO] [2026-06-17 22:14:25]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-17 22:14:25] Available Gemini models:
+[INFO] [2026-06-17 22:14:25]   - models/gemini-2.5-flash
+[INFO] [2026-06-17 22:14:25]   - models/gemini-2.5-pro
+[INFO] [2026-06-17 22:14:25]   - models/gemini-2.0-flash
+[INFO] [2026-06-17 22:14:25]   - models/gemini-2.0-flash-001
+[INFO] [2026-06-17 22:14:25]   - models/gemini-2.0-flash-lite-001
+[INFO] [2026-06-17 22:14:25]   - models/gemini-2.0-flash-lite
+[INFO] [2026-06-17 22:14:25]   - models/gemini-2.5-flash-preview-tts
+[INFO] [2026-06-17 22:14:25]   - models/gemini-2.5-pro-preview-tts
+[INFO] [2026-06-17 22:14:25]   - models/gemma-4-26b-a4b-it
+[INFO] [2026-06-17 22:14:25]   - models/gemma-4-31b-it
+[INFO] [2026-06-17 22:14:25]   - models/gemini-flash-latest
+[INFO] [2026-06-17 22:14:25]   - models/gemini-flash-lite-latest
+[INFO] [2026-06-17 22:14:25]   - models/gemini-pro-latest
+[INFO] [2026-06-17 22:14:25]   - models/gemini-2.5-flash-lite
+[INFO] [2026-06-17 22:14:25]   - models/gemini-2.5-flash-image
+[INFO] [2026-06-17 22:14:25]   - models/gemini-3-pro-preview
+[INFO] [2026-06-17 22:14:25]   - models/gemini-3-flash-preview
+[INFO] [2026-06-17 22:14:25]   - models/gemini-3.1-pro-preview
+[INFO] [2026-06-17 22:14:25]   - models/gemini-3.1-pro-preview-customtools
+[INFO] [2026-06-17 22:14:25]   - models/gemini-3.1-flash-lite-preview
+[INFO] [2026-06-17 22:14:25]   - models/gemini-3.1-flash-lite
+[INFO] [2026-06-17 22:14:25]   - models/gemini-3-pro-image-preview
+[INFO] [2026-06-17 22:14:25]   - models/gemini-3-pro-image
+[INFO] [2026-06-17 22:14:25]   - models/nano-banana-pro-preview
+[INFO] [2026-06-17 22:14:25]   - models/gemini-3.1-flash-image-preview
+[INFO] [2026-06-17 22:14:25]   - models/gemini-3.1-flash-image
+[INFO] [2026-06-17 22:14:25]   - models/gemini-3.5-flash
+[INFO] [2026-06-17 22:14:25]   - models/lyria-3-clip-preview
+[INFO] [2026-06-17 22:14:25]   - models/lyria-3-pro-preview
+[INFO] [2026-06-17 22:14:25]   - models/gemini-3.1-flash-tts-preview
+[INFO] [2026-06-17 22:14:25]   - models/gemini-robotics-er-1.5-preview
+[INFO] [2026-06-17 22:14:25]   - models/gemini-robotics-er-1.6-preview
+[INFO] [2026-06-17 22:14:25]   - models/gemini-2.5-computer-use-preview-10-2025
+[INFO] [2026-06-17 22:14:25]   - models/antigravity-preview-05-2026
+[INFO] [2026-06-17 22:14:25]   - models/deep-research-max-preview-04-2026
+[INFO] [2026-06-17 22:14:25]   - models/deep-research-preview-04-2026
+[INFO] [2026-06-17 22:14:25]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-17 22:14:49] Available Gemini models:
+[INFO] [2026-06-17 22:14:49]   - models/gemini-2.5-flash
+[INFO] [2026-06-17 22:14:49]   - models/gemini-2.5-pro
+[INFO] [2026-06-17 22:14:49]   - models/gemini-2.0-flash
+[INFO] [2026-06-17 22:14:49]   - models/gemini-2.0-flash-001
+[INFO] [2026-06-17 22:14:49]   - models/gemini-2.0-flash-lite-001
+[INFO] [2026-06-17 22:14:49]   - models/gemini-2.0-flash-lite
+[INFO] [2026-06-17 22:14:49]   - models/gemini-2.5-flash-preview-tts
+[INFO] [2026-06-17 22:14:49]   - models/gemini-2.5-pro-preview-tts
+[INFO] [2026-06-17 22:14:49]   - models/gemma-4-26b-a4b-it
+[INFO] [2026-06-17 22:14:49]   - models/gemma-4-31b-it
+[INFO] [2026-06-17 22:14:49]   - models/gemini-flash-latest
+[INFO] [2026-06-17 22:14:49]   - models/gemini-flash-lite-latest
+[INFO] [2026-06-17 22:14:49]   - models/gemini-pro-latest
+[INFO] [2026-06-17 22:14:49]   - models/gemini-2.5-flash-lite
+[INFO] [2026-06-17 22:14:49]   - models/gemini-2.5-flash-image
+[INFO] [2026-06-17 22:14:49]   - models/gemini-3-pro-preview
+[INFO] [2026-06-17 22:14:49]   - models/gemini-3-flash-preview
+[INFO] [2026-06-17 22:14:49]   - models/gemini-3.1-pro-preview
+[INFO] [2026-06-17 22:14:49]   - models/gemini-3.1-pro-preview-customtools
+[INFO] [2026-06-17 22:14:49]   - models/gemini-3.1-flash-lite-preview
+[INFO] [2026-06-17 22:14:49]   - models/gemini-3.1-flash-lite
+[INFO] [2026-06-17 22:14:49]   - models/gemini-3-pro-image-preview
+[INFO] [2026-06-17 22:14:49]   - models/gemini-3-pro-image
+[INFO] [2026-06-17 22:14:49]   - models/nano-banana-pro-preview
+[INFO] [2026-06-17 22:14:49]   - models/gemini-3.1-flash-image-preview
+[INFO] [2026-06-17 22:14:49]   - models/gemini-3.1-flash-image
+[INFO] [2026-06-17 22:14:49]   - models/gemini-3.5-flash
+[INFO] [2026-06-17 22:14:49]   - models/lyria-3-clip-preview
+[INFO] [2026-06-17 22:14:49]   - models/lyria-3-pro-preview
+[INFO] [2026-06-17 22:14:49]   - models/gemini-3.1-flash-tts-preview
+[INFO] [2026-06-17 22:14:49]   - models/gemini-robotics-er-1.5-preview
+[INFO] [2026-06-17 22:14:49]   - models/gemini-robotics-er-1.6-preview
+[INFO] [2026-06-17 22:14:49]   - models/gemini-2.5-computer-use-preview-10-2025
+[INFO] [2026-06-17 22:14:49]   - models/antigravity-preview-05-2026
+[INFO] [2026-06-17 22:14:49]   - models/deep-research-max-preview-04-2026
+[INFO] [2026-06-17 22:14:49]   - models/deep-research-preview-04-2026
+[INFO] [2026-06-17 22:14:49]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-17 22:14:50] Available Gemini models:
+[INFO] [2026-06-17 22:14:50]   - models/gemini-2.5-flash
+[INFO] [2026-06-17 22:14:50]   - models/gemini-2.5-pro
+[INFO] [2026-06-17 22:14:50]   - models/gemini-2.0-flash
+[INFO] [2026-06-17 22:14:50]   - models/gemini-2.0-flash-001
+[INFO] [2026-06-17 22:14:50]   - models/gemini-2.0-flash-lite-001
+[INFO] [2026-06-17 22:14:50]   - models/gemini-2.0-flash-lite
+[INFO] [2026-06-17 22:14:50]   - models/gemini-2.5-flash-preview-tts
+[INFO] [2026-06-17 22:14:50]   - models/gemini-2.5-pro-preview-tts
+[INFO] [2026-06-17 22:14:50]   - models/gemma-4-26b-a4b-it
+[INFO] [2026-06-17 22:14:50]   - models/gemma-4-31b-it
+[INFO] [2026-06-17 22:14:50]   - models/gemini-flash-latest
+[INFO] [2026-06-17 22:14:50]   - models/gemini-flash-lite-latest
+[INFO] [2026-06-17 22:14:50]   - models/gemini-pro-latest
+[INFO] [2026-06-17 22:14:50]   - models/gemini-2.5-flash-lite
+[INFO] [2026-06-17 22:14:50]   - models/gemini-2.5-flash-image
+[INFO] [2026-06-17 22:14:50]   - models/gemini-3-pro-preview
+[INFO] [2026-06-17 22:14:50]   - models/gemini-3-flash-preview
+[INFO] [2026-06-17 22:14:50]   - models/gemini-3.1-pro-preview
+[INFO] [2026-06-17 22:14:50]   - models/gemini-3.1-pro-preview-customtools
+[INFO] [2026-06-17 22:14:50]   - models/gemini-3.1-flash-lite-preview
+[INFO] [2026-06-17 22:14:50]   - models/gemini-3.1-flash-lite
+[INFO] [2026-06-17 22:14:50]   - models/gemini-3-pro-image-preview
+[INFO] [2026-06-17 22:14:50]   - models/gemini-3-pro-image
+[INFO] [2026-06-17 22:14:50]   - models/nano-banana-pro-preview
+[INFO] [2026-06-17 22:14:50]   - models/gemini-3.1-flash-image-preview
+[INFO] [2026-06-17 22:14:50]   - models/gemini-3.1-flash-image
+[INFO] [2026-06-17 22:14:50]   - models/gemini-3.5-flash
+[INFO] [2026-06-17 22:14:50]   - models/lyria-3-clip-preview
+[INFO] [2026-06-17 22:14:50]   - models/lyria-3-pro-preview
+[INFO] [2026-06-17 22:14:50]   - models/gemini-3.1-flash-tts-preview
+[INFO] [2026-06-17 22:14:50]   - models/gemini-robotics-er-1.5-preview
+[INFO] [2026-06-17 22:14:50]   - models/gemini-robotics-er-1.6-preview
+[INFO] [2026-06-17 22:14:50]   - models/gemini-2.5-computer-use-preview-10-2025
+[INFO] [2026-06-17 22:14:50]   - models/antigravity-preview-05-2026
+[INFO] [2026-06-17 22:14:50]   - models/deep-research-max-preview-04-2026
+[INFO] [2026-06-17 22:14:50]   - models/deep-research-preview-04-2026
+[INFO] [2026-06-17 22:14:50]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-17 22:16:37] Available Gemini models:
+[INFO] [2026-06-17 22:16:38]   - models/gemini-2.5-flash
+[INFO] [2026-06-17 22:16:38]   - models/gemini-2.5-pro
+[INFO] [2026-06-17 22:16:38]   - models/gemini-2.0-flash
+[INFO] [2026-06-17 22:16:38]   - models/gemini-2.0-flash-001
+[INFO] [2026-06-17 22:16:38]   - models/gemini-2.0-flash-lite-001
+[INFO] [2026-06-17 22:16:38]   - models/gemini-2.0-flash-lite
+[INFO] [2026-06-17 22:16:38]   - models/gemini-2.5-flash-preview-tts
+[INFO] [2026-06-17 22:16:38]   - models/gemini-2.5-pro-preview-tts
+[INFO] [2026-06-17 22:16:38]   - models/gemma-4-26b-a4b-it
+[INFO] [2026-06-17 22:16:38]   - models/gemma-4-31b-it
+[INFO] [2026-06-17 22:16:38]   - models/gemini-flash-latest
+[INFO] [2026-06-17 22:16:38]   - models/gemini-flash-lite-latest
+[INFO] [2026-06-17 22:16:38]   - models/gemini-pro-latest
+[INFO] [2026-06-17 22:16:38]   - models/gemini-2.5-flash-lite
+[INFO] [2026-06-17 22:16:38]   - models/gemini-2.5-flash-image
+[INFO] [2026-06-17 22:16:38]   - models/gemini-3-pro-preview
+[INFO] [2026-06-17 22:16:38]   - models/gemini-3-flash-preview
+[INFO] [2026-06-17 22:16:38]   - models/gemini-3.1-pro-preview
+[INFO] [2026-06-17 22:16:38]   - models/gemini-3.1-pro-preview-customtools
+[INFO] [2026-06-17 22:16:38]   - models/gemini-3.1-flash-lite-preview
+[INFO] [2026-06-17 22:16:38]   - models/gemini-3.1-flash-lite
+[INFO] [2026-06-17 22:16:38]   - models/gemini-3-pro-image-preview
+[INFO] [2026-06-17 22:16:38]   - models/gemini-3-pro-image
+[INFO] [2026-06-17 22:16:38]   - models/nano-banana-pro-preview
+[INFO] [2026-06-17 22:16:38]   - models/gemini-3.1-flash-image-preview
+[INFO] [2026-06-17 22:16:38]   - models/gemini-3.1-flash-image
+[INFO] [2026-06-17 22:16:38]   - models/gemini-3.5-flash
+[INFO] [2026-06-17 22:16:38]   - models/lyria-3-clip-preview
+[INFO] [2026-06-17 22:16:38]   - models/lyria-3-pro-preview
+[INFO] [2026-06-17 22:16:38]   - models/gemini-3.1-flash-tts-preview
+[INFO] [2026-06-17 22:16:38]   - models/gemini-robotics-er-1.5-preview
+[INFO] [2026-06-17 22:16:38]   - models/gemini-robotics-er-1.6-preview
+[INFO] [2026-06-17 22:16:38]   - models/gemini-2.5-computer-use-preview-10-2025
+[INFO] [2026-06-17 22:16:38]   - models/antigravity-preview-05-2026
+[INFO] [2026-06-17 22:16:38]   - models/deep-research-max-preview-04-2026
+[INFO] [2026-06-17 22:16:38]   - models/deep-research-preview-04-2026
+[INFO] [2026-06-17 22:16:38]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-17 22:16:38] Starting Legal AI Backend server
+[INFO] [2026-06-17 22:16:38] Available Gemini models:
+[INFO] [2026-06-17 22:16:38]   - models/gemini-2.5-flash
+[INFO] [2026-06-17 22:16:38]   - models/gemini-2.5-pro
+[INFO] [2026-06-17 22:16:38]   - models/gemini-2.0-flash
+[INFO] [2026-06-17 22:16:38]   - models/gemini-2.0-flash-001
+[INFO] [2026-06-17 22:16:38]   - models/gemini-2.0-flash-lite-001
+[INFO] [2026-06-17 22:16:38]   - models/gemini-2.0-flash-lite
+[INFO] [2026-06-17 22:16:38]   - models/gemini-2.5-flash-preview-tts
+[INFO] [2026-06-17 22:16:38]   - models/gemini-2.5-pro-preview-tts
+[INFO] [2026-06-17 22:16:38]   - models/gemma-4-26b-a4b-it
+[INFO] [2026-06-17 22:16:38]   - models/gemma-4-31b-it
+[INFO] [2026-06-17 22:16:38]   - models/gemini-flash-latest
+[INFO] [2026-06-17 22:16:38]   - models/gemini-flash-lite-latest
+[INFO] [2026-06-17 22:16:38]   - models/gemini-pro-latest
+[INFO] [2026-06-17 22:16:38]   - models/gemini-2.5-flash-lite
+[INFO] [2026-06-17 22:16:38]   - models/gemini-2.5-flash-image
+[INFO] [2026-06-17 22:16:38]   - models/gemini-3-pro-preview
+[INFO] [2026-06-17 22:16:38]   - models/gemini-3-flash-preview
+[INFO] [2026-06-17 22:16:38]   - models/gemini-3.1-pro-preview
+[INFO] [2026-06-17 22:16:38]   - models/gemini-3.1-pro-preview-customtools
+[INFO] [2026-06-17 22:16:38]   - models/gemini-3.1-flash-lite-preview
+[INFO] [2026-06-17 22:16:38]   - models/gemini-3.1-flash-lite
+[INFO] [2026-06-17 22:16:38]   - models/gemini-3-pro-image-preview
+[INFO] [2026-06-17 22:16:38]   - models/gemini-3-pro-image
+[INFO] [2026-06-17 22:16:38]   - models/nano-banana-pro-preview
+[INFO] [2026-06-17 22:16:38]   - models/gemini-3.1-flash-image-preview
+[INFO] [2026-06-17 22:16:38]   - models/gemini-3.1-flash-image
+[INFO] [2026-06-17 22:16:38]   - models/gemini-3.5-flash
+[INFO] [2026-06-17 22:16:38]   - models/lyria-3-clip-preview
+[INFO] [2026-06-17 22:16:38]   - models/lyria-3-pro-preview
+[INFO] [2026-06-17 22:16:38]   - models/gemini-3.1-flash-tts-preview
+[INFO] [2026-06-17 22:16:38]   - models/gemini-robotics-er-1.5-preview
+[INFO] [2026-06-17 22:16:38]   - models/gemini-robotics-er-1.6-preview
+[INFO] [2026-06-17 22:16:38]   - models/gemini-2.5-computer-use-preview-10-2025
+[INFO] [2026-06-17 22:16:38]   - models/antigravity-preview-05-2026
+[INFO] [2026-06-17 22:16:38]   - models/deep-research-max-preview-04-2026
+[INFO] [2026-06-17 22:16:38]   - models/deep-research-preview-04-2026
+[INFO] [2026-06-17 22:16:38]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-17 22:16:43] Available Gemini models:
+[INFO] [2026-06-17 22:16:43]   - models/gemini-2.5-flash
+[INFO] [2026-06-17 22:16:43]   - models/gemini-2.5-pro
+[INFO] [2026-06-17 22:16:43]   - models/gemini-2.0-flash
+[INFO] [2026-06-17 22:16:43]   - models/gemini-2.0-flash-001
+[INFO] [2026-06-17 22:16:43]   - models/gemini-2.0-flash-lite-001
+[INFO] [2026-06-17 22:16:43]   - models/gemini-2.0-flash-lite
+[INFO] [2026-06-17 22:16:43]   - models/gemini-2.5-flash-preview-tts
+[INFO] [2026-06-17 22:16:43]   - models/gemini-2.5-pro-preview-tts
+[INFO] [2026-06-17 22:16:43]   - models/gemma-4-26b-a4b-it
+[INFO] [2026-06-17 22:16:43]   - models/gemma-4-31b-it
+[INFO] [2026-06-17 22:16:43]   - models/gemini-flash-latest
+[INFO] [2026-06-17 22:16:43]   - models/gemini-flash-lite-latest
+[INFO] [2026-06-17 22:16:43]   - models/gemini-pro-latest
+[INFO] [2026-06-17 22:16:43]   - models/gemini-2.5-flash-lite
+[INFO] [2026-06-17 22:16:43]   - models/gemini-2.5-flash-image
+[INFO] [2026-06-17 22:16:43]   - models/gemini-3-pro-preview
+[INFO] [2026-06-17 22:16:43]   - models/gemini-3-flash-preview
+[INFO] [2026-06-17 22:16:43]   - models/gemini-3.1-pro-preview
+[INFO] [2026-06-17 22:16:43]   - models/gemini-3.1-pro-preview-customtools
+[INFO] [2026-06-17 22:16:43]   - models/gemini-3.1-flash-lite-preview
+[INFO] [2026-06-17 22:16:43]   - models/gemini-3.1-flash-lite
+[INFO] [2026-06-17 22:16:43]   - models/gemini-3-pro-image-preview
+[INFO] [2026-06-17 22:16:43]   - models/gemini-3-pro-image
+[INFO] [2026-06-17 22:16:43]   - models/nano-banana-pro-preview
+[INFO] [2026-06-17 22:16:43]   - models/gemini-3.1-flash-image-preview
+[INFO] [2026-06-17 22:16:43]   - models/gemini-3.1-flash-image
+[INFO] [2026-06-17 22:16:43]   - models/gemini-3.5-flash
+[INFO] [2026-06-17 22:16:43]   - models/lyria-3-clip-preview
+[INFO] [2026-06-17 22:16:43]   - models/lyria-3-pro-preview
+[INFO] [2026-06-17 22:16:43]   - models/gemini-3.1-flash-tts-preview
+[INFO] [2026-06-17 22:16:43]   - models/gemini-robotics-er-1.5-preview
+[INFO] [2026-06-17 22:16:43]   - models/gemini-robotics-er-1.6-preview
+[INFO] [2026-06-17 22:16:43]   - models/gemini-2.5-computer-use-preview-10-2025
+[INFO] [2026-06-17 22:16:43]   - models/antigravity-preview-05-2026
+[INFO] [2026-06-17 22:16:43]   - models/deep-research-max-preview-04-2026
+[INFO] [2026-06-17 22:16:43]   - models/deep-research-preview-04-2026
+[INFO] [2026-06-17 22:16:43]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-17 22:16:43] Available Gemini models:
+[INFO] [2026-06-17 22:16:44]   - models/gemini-2.5-flash
+[INFO] [2026-06-17 22:16:44]   - models/gemini-2.5-pro
+[INFO] [2026-06-17 22:16:44]   - models/gemini-2.0-flash
+[INFO] [2026-06-17 22:16:44]   - models/gemini-2.0-flash-001
+[INFO] [2026-06-17 22:16:44]   - models/gemini-2.0-flash-lite-001
+[INFO] [2026-06-17 22:16:44]   - models/gemini-2.0-flash-lite
+[INFO] [2026-06-17 22:16:44]   - models/gemini-2.5-flash-preview-tts
+[INFO] [2026-06-17 22:16:44]   - models/gemini-2.5-pro-preview-tts
+[INFO] [2026-06-17 22:16:44]   - models/gemma-4-26b-a4b-it
+[INFO] [2026-06-17 22:16:44]   - models/gemma-4-31b-it
+[INFO] [2026-06-17 22:16:44]   - models/gemini-flash-latest
+[INFO] [2026-06-17 22:16:44]   - models/gemini-flash-lite-latest
+[INFO] [2026-06-17 22:16:44]   - models/gemini-pro-latest
+[INFO] [2026-06-17 22:16:44]   - models/gemini-2.5-flash-lite
+[INFO] [2026-06-17 22:16:44]   - models/gemini-2.5-flash-image
+[INFO] [2026-06-17 22:16:44]   - models/gemini-3-pro-preview
+[INFO] [2026-06-17 22:16:44]   - models/gemini-3-flash-preview
+[INFO] [2026-06-17 22:16:44]   - models/gemini-3.1-pro-preview
+[INFO] [2026-06-17 22:16:44]   - models/gemini-3.1-pro-preview-customtools
+[INFO] [2026-06-17 22:16:44]   - models/gemini-3.1-flash-lite-preview
+[INFO] [2026-06-17 22:16:44]   - models/gemini-3.1-flash-lite
+[INFO] [2026-06-17 22:16:44]   - models/gemini-3-pro-image-preview
+[INFO] [2026-06-17 22:16:44]   - models/gemini-3-pro-image
+[INFO] [2026-06-17 22:16:44]   - models/nano-banana-pro-preview
+[INFO] [2026-06-17 22:16:44]   - models/gemini-3.1-flash-image-preview
+[INFO] [2026-06-17 22:16:44]   - models/gemini-3.1-flash-image
+[INFO] [2026-06-17 22:16:44]   - models/gemini-3.5-flash
+[INFO] [2026-06-17 22:16:44]   - models/lyria-3-clip-preview
+[INFO] [2026-06-17 22:16:44]   - models/lyria-3-pro-preview
+[INFO] [2026-06-17 22:16:44]   - models/gemini-3.1-flash-tts-preview
+[INFO] [2026-06-17 22:16:44]   - models/gemini-robotics-er-1.5-preview
+[INFO] [2026-06-17 22:16:44]   - models/gemini-robotics-er-1.6-preview
+[INFO] [2026-06-17 22:16:44]   - models/gemini-2.5-computer-use-preview-10-2025
+[INFO] [2026-06-17 22:16:44]   - models/antigravity-preview-05-2026
+[INFO] [2026-06-17 22:16:44]   - models/deep-research-max-preview-04-2026
+[INFO] [2026-06-17 22:16:44]   - models/deep-research-preview-04-2026
+[INFO] [2026-06-17 22:16:44]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-17 22:17:31] Job e233fdf4-67fd-4525-87d7-a00cca3d3daf: Received upload request for SampleContract-Shuttle.pdf
+[INFO] [2026-06-17 22:17:31] Job e233fdf4-67fd-4525-87d7-a00cca3d3daf: File size: 49647 bytes
+[INFO] [2026-06-17 22:17:31] Job e233fdf4-67fd-4525-87d7-a00cca3d3daf: File saved (49647 bytes), queuing for processing
+[INFO] [2026-06-17 22:17:31] Job e233fdf4-67fd-4525-87d7-a00cca3d3daf: Started processing e233fdf4-67fd-4525-87d7-a00cca3d3daf_SampleContract-Shuttle.pdf
+[INFO] [2026-06-17 22:17:31] Job e233fdf4-67fd-4525-87d7-a00cca3d3daf: Opening PDF document
+[INFO] [2026-06-17 22:17:31] Job e233fdf4-67fd-4525-87d7-a00cca3d3daf: Processing PDF with 10 pages
+[INFO] [2026-06-17 22:17:31] Job e233fdf4-67fd-4525-87d7-a00cca3d3daf: Page 1 native text: 2847 chars
+[INFO] [2026-06-17 22:17:31] Job e233fdf4-67fd-4525-87d7-a00cca3d3daf: Page 2 native text: 3353 chars
+[INFO] [2026-06-17 22:17:31] Job e233fdf4-67fd-4525-87d7-a00cca3d3daf: Page 3 native text: 3663 chars
+[INFO] [2026-06-17 22:17:31] Job e233fdf4-67fd-4525-87d7-a00cca3d3daf: Page 4 native text: 3429 chars
+[INFO] [2026-06-17 22:17:31] Job e233fdf4-67fd-4525-87d7-a00cca3d3daf: Page 5 native text: 3625 chars
+[INFO] [2026-06-17 22:17:31] Job e233fdf4-67fd-4525-87d7-a00cca3d3daf: Page 6 native text: 4012 chars
+[INFO] [2026-06-17 22:17:31] Job e233fdf4-67fd-4525-87d7-a00cca3d3daf: Page 7 native text: 3771 chars
+[INFO] [2026-06-17 22:17:31] Job e233fdf4-67fd-4525-87d7-a00cca3d3daf: Page 8 native text: 3667 chars
+[INFO] [2026-06-17 22:17:31] Job e233fdf4-67fd-4525-87d7-a00cca3d3daf: Page 9 native text: 3210 chars
+[INFO] [2026-06-17 22:17:31] Job e233fdf4-67fd-4525-87d7-a00cca3d3daf: Page 10 native text: 1359 chars
+[INFO] [2026-06-17 22:17:31] Job e233fdf4-67fd-4525-87d7-a00cca3d3daf: Extracted 32936 total characters
+[INFO] [2026-06-17 22:17:44] ========== LAWYER SEARCH ==========
+[INFO] [2026-06-17 22:17:44] Searching lawyer types for document (2932 chars)
+[INFO] [2026-06-17 22:17:44] Loaded 60 lawyer types from database
+[INFO] [2026-06-17 22:17:44] Found 0 matching lawyer types, returning top 0
+[INFO] [2026-06-17 22:17:44] Job e233fdf4-67fd-4525-87d7-a00cca3d3daf: Complete pipeline finished successfully. Analysis saved, 0 lawyer types recommended
+[INFO] [2026-06-17 22:17:44] Job e233fdf4-67fd-4525-87d7-a00cca3d3daf: Cleaned up file e233fdf4-67fd-4525-87d7-a00cca3d3daf_SampleContract-Shuttle.pdf
+[INFO] [2026-06-17 22:20:33] Available Gemini models:
+[INFO] [2026-06-17 22:20:33]   - models/gemini-2.5-flash
+[INFO] [2026-06-17 22:20:33]   - models/gemini-2.5-pro
+[INFO] [2026-06-17 22:20:33]   - models/gemini-2.0-flash
+[INFO] [2026-06-17 22:20:33]   - models/gemini-2.0-flash-001
+[INFO] [2026-06-17 22:20:33]   - models/gemini-2.0-flash-lite-001
+[INFO] [2026-06-17 22:20:33]   - models/gemini-2.0-flash-lite
+[INFO] [2026-06-17 22:20:33]   - models/gemini-2.5-flash-preview-tts
+[INFO] [2026-06-17 22:20:33]   - models/gemini-2.5-pro-preview-tts
+[INFO] [2026-06-17 22:20:33]   - models/gemma-4-26b-a4b-it
+[INFO] [2026-06-17 22:20:33]   - models/gemma-4-31b-it
+[INFO] [2026-06-17 22:20:33]   - models/gemini-flash-latest
+[INFO] [2026-06-17 22:20:33]   - models/gemini-flash-lite-latest
+[INFO] [2026-06-17 22:20:33]   - models/gemini-pro-latest
+[INFO] [2026-06-17 22:20:33]   - models/gemini-2.5-flash-lite
+[INFO] [2026-06-17 22:20:33]   - models/gemini-2.5-flash-image
+[INFO] [2026-06-17 22:20:33]   - models/gemini-3-pro-preview
+[INFO] [2026-06-17 22:20:33]   - models/gemini-3-flash-preview
+[INFO] [2026-06-17 22:20:33]   - models/gemini-3.1-pro-preview
+[INFO] [2026-06-17 22:20:33]   - models/gemini-3.1-pro-preview-customtools
+[INFO] [2026-06-17 22:20:33]   - models/gemini-3.1-flash-lite-preview
+[INFO] [2026-06-17 22:20:33]   - models/gemini-3.1-flash-lite
+[INFO] [2026-06-17 22:20:33]   - models/gemini-3-pro-image-preview
+[INFO] [2026-06-17 22:20:33]   - models/gemini-3-pro-image
+[INFO] [2026-06-17 22:20:33]   - models/nano-banana-pro-preview
+[INFO] [2026-06-17 22:20:33]   - models/gemini-3.1-flash-image-preview
+[INFO] [2026-06-17 22:20:33]   - models/gemini-3.1-flash-image
+[INFO] [2026-06-17 22:20:33]   - models/gemini-3.5-flash
+[INFO] [2026-06-17 22:20:33]   - models/lyria-3-clip-preview
+[INFO] [2026-06-17 22:20:33]   - models/lyria-3-pro-preview
+[INFO] [2026-06-17 22:20:33]   - models/gemini-3.1-flash-tts-preview
+[INFO] [2026-06-17 22:20:33]   - models/gemini-robotics-er-1.5-preview
+[INFO] [2026-06-17 22:20:33]   - models/gemini-robotics-er-1.6-preview
+[INFO] [2026-06-17 22:20:33]   - models/gemini-2.5-computer-use-preview-10-2025
+[INFO] [2026-06-17 22:20:33]   - models/antigravity-preview-05-2026
+[INFO] [2026-06-17 22:20:33]   - models/deep-research-max-preview-04-2026
+[INFO] [2026-06-17 22:20:33]   - models/deep-research-preview-04-2026
+[INFO] [2026-06-17 22:20:33]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-17 22:20:33] Available Gemini models:
+[INFO] [2026-06-17 22:20:34]   - models/gemini-2.5-flash
+[INFO] [2026-06-17 22:20:34]   - models/gemini-2.5-pro
+[INFO] [2026-06-17 22:20:34]   - models/gemini-2.0-flash
+[INFO] [2026-06-17 22:20:34]   - models/gemini-2.0-flash-001
+[INFO] [2026-06-17 22:20:34]   - models/gemini-2.0-flash-lite-001
+[INFO] [2026-06-17 22:20:34]   - models/gemini-2.0-flash-lite
+[INFO] [2026-06-17 22:20:34]   - models/gemini-2.5-flash-preview-tts
+[INFO] [2026-06-17 22:20:34]   - models/gemini-2.5-pro-preview-tts
+[INFO] [2026-06-17 22:20:34]   - models/gemma-4-26b-a4b-it
+[INFO] [2026-06-17 22:20:34]   - models/gemma-4-31b-it
+[INFO] [2026-06-17 22:20:34]   - models/gemini-flash-latest
+[INFO] [2026-06-17 22:20:34]   - models/gemini-flash-lite-latest
+[INFO] [2026-06-17 22:20:34]   - models/gemini-pro-latest
+[INFO] [2026-06-17 22:20:34]   - models/gemini-2.5-flash-lite
+[INFO] [2026-06-17 22:20:34]   - models/gemini-2.5-flash-image
+[INFO] [2026-06-17 22:20:34]   - models/gemini-3-pro-preview
+[INFO] [2026-06-17 22:20:34]   - models/gemini-3-flash-preview
+[INFO] [2026-06-17 22:20:34]   - models/gemini-3.1-pro-preview
+[INFO] [2026-06-17 22:20:34]   - models/gemini-3.1-pro-preview-customtools
+[INFO] [2026-06-17 22:20:34]   - models/gemini-3.1-flash-lite-preview
+[INFO] [2026-06-17 22:20:34]   - models/gemini-3.1-flash-lite
+[INFO] [2026-06-17 22:20:34]   - models/gemini-3-pro-image-preview
+[INFO] [2026-06-17 22:20:34]   - models/gemini-3-pro-image
+[INFO] [2026-06-17 22:20:34]   - models/nano-banana-pro-preview
+[INFO] [2026-06-17 22:20:34]   - models/gemini-3.1-flash-image-preview
+[INFO] [2026-06-17 22:20:34]   - models/gemini-3.1-flash-image
+[INFO] [2026-06-17 22:20:34]   - models/gemini-3.5-flash
+[INFO] [2026-06-17 22:20:34]   - models/lyria-3-clip-preview
+[INFO] [2026-06-17 22:20:34]   - models/lyria-3-pro-preview
+[INFO] [2026-06-17 22:20:34]   - models/gemini-3.1-flash-tts-preview
+[INFO] [2026-06-17 22:20:34]   - models/gemini-robotics-er-1.5-preview
+[INFO] [2026-06-17 22:20:34]   - models/gemini-robotics-er-1.6-preview
+[INFO] [2026-06-17 22:20:34]   - models/gemini-2.5-computer-use-preview-10-2025
+[INFO] [2026-06-17 22:20:34]   - models/antigravity-preview-05-2026
+[INFO] [2026-06-17 22:20:34]   - models/deep-research-max-preview-04-2026
+[INFO] [2026-06-17 22:20:34]   - models/deep-research-preview-04-2026
+[INFO] [2026-06-17 22:20:34]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-17 22:26:35] Job 45d86322-8f93-4c5f-bf12-c05b92321431: Received upload request for SampleContract-Shuttle.pdf
+[INFO] [2026-06-17 22:26:35] Job 45d86322-8f93-4c5f-bf12-c05b92321431: File size: 49647 bytes
+[INFO] [2026-06-17 22:26:35] Job 45d86322-8f93-4c5f-bf12-c05b92321431: File saved (49647 bytes), queuing for processing
+[INFO] [2026-06-17 22:26:35] Job 45d86322-8f93-4c5f-bf12-c05b92321431: Started processing 45d86322-8f93-4c5f-bf12-c05b92321431_SampleContract-Shuttle.pdf
+[INFO] [2026-06-17 22:26:35] Job 45d86322-8f93-4c5f-bf12-c05b92321431: Opening PDF document
+[INFO] [2026-06-17 22:26:35] Job 45d86322-8f93-4c5f-bf12-c05b92321431: Processing PDF with 10 pages
+[INFO] [2026-06-17 22:26:35] Job 45d86322-8f93-4c5f-bf12-c05b92321431: Page 1 native text: 2847 chars
+[INFO] [2026-06-17 22:26:35] Job 45d86322-8f93-4c5f-bf12-c05b92321431: Page 2 native text: 3353 chars
+[INFO] [2026-06-17 22:26:35] Job 45d86322-8f93-4c5f-bf12-c05b92321431: Page 3 native text: 3663 chars
+[INFO] [2026-06-17 22:26:35] Job 45d86322-8f93-4c5f-bf12-c05b92321431: Page 4 native text: 3429 chars
+[INFO] [2026-06-17 22:26:35] Job 45d86322-8f93-4c5f-bf12-c05b92321431: Page 5 native text: 3625 chars
+[INFO] [2026-06-17 22:26:35] Job 45d86322-8f93-4c5f-bf12-c05b92321431: Page 6 native text: 4012 chars
+[INFO] [2026-06-17 22:26:35] Job 45d86322-8f93-4c5f-bf12-c05b92321431: Page 7 native text: 3771 chars
+[INFO] [2026-06-17 22:26:35] Job 45d86322-8f93-4c5f-bf12-c05b92321431: Page 8 native text: 3667 chars
+[INFO] [2026-06-17 22:26:35] Job 45d86322-8f93-4c5f-bf12-c05b92321431: Page 9 native text: 3210 chars
+[INFO] [2026-06-17 22:26:35] Job 45d86322-8f93-4c5f-bf12-c05b92321431: Page 10 native text: 1359 chars
+[INFO] [2026-06-17 22:26:35] Job 45d86322-8f93-4c5f-bf12-c05b92321431: Extracted 32936 total characters
+[INFO] [2026-06-17 22:26:47] ========== LAWYER SEARCH ==========
+[INFO] [2026-06-17 22:26:47] Searching lawyer types for document (1915 chars)
+[INFO] [2026-06-17 22:26:47] Loaded 60 lawyer types from database
+[INFO] [2026-06-17 22:26:47] Found 0 matching lawyer types, returning top 0
+[INFO] [2026-06-17 22:26:47] Job 45d86322-8f93-4c5f-bf12-c05b92321431: Complete pipeline finished successfully. Analysis saved, 0 lawyer types recommended
+[INFO] [2026-06-17 22:26:47] Job 45d86322-8f93-4c5f-bf12-c05b92321431: Cleaned up file 45d86322-8f93-4c5f-bf12-c05b92321431_SampleContract-Shuttle.pdf
+[INFO] [2026-06-17 22:28:07] Available Gemini models:
+[INFO] [2026-06-17 22:28:08]   - models/gemini-2.5-flash
+[INFO] [2026-06-17 22:28:08]   - models/gemini-2.5-pro
+[INFO] [2026-06-17 22:28:08]   - models/gemini-2.0-flash
+[INFO] [2026-06-17 22:28:08]   - models/gemini-2.0-flash-001
+[INFO] [2026-06-17 22:28:08]   - models/gemini-2.0-flash-lite-001
+[INFO] [2026-06-17 22:28:08]   - models/gemini-2.0-flash-lite
+[INFO] [2026-06-17 22:28:08]   - models/gemini-2.5-flash-preview-tts
+[INFO] [2026-06-17 22:28:08]   - models/gemini-2.5-pro-preview-tts
+[INFO] [2026-06-17 22:28:08]   - models/gemma-4-26b-a4b-it
+[INFO] [2026-06-17 22:28:08]   - models/gemma-4-31b-it
+[INFO] [2026-06-17 22:28:08]   - models/gemini-flash-latest
+[INFO] [2026-06-17 22:28:08]   - models/gemini-flash-lite-latest
+[INFO] [2026-06-17 22:28:08]   - models/gemini-pro-latest
+[INFO] [2026-06-17 22:28:08]   - models/gemini-2.5-flash-lite
+[INFO] [2026-06-17 22:28:08]   - models/gemini-2.5-flash-image
+[INFO] [2026-06-17 22:28:08]   - models/gemini-3-pro-preview
+[INFO] [2026-06-17 22:28:08]   - models/gemini-3-flash-preview
+[INFO] [2026-06-17 22:28:08]   - models/gemini-3.1-pro-preview
+[INFO] [2026-06-17 22:28:08]   - models/gemini-3.1-pro-preview-customtools
+[INFO] [2026-06-17 22:28:08]   - models/gemini-3.1-flash-lite-preview
+[INFO] [2026-06-17 22:28:08]   - models/gemini-3.1-flash-lite
+[INFO] [2026-06-17 22:28:08]   - models/gemini-3-pro-image-preview
+[INFO] [2026-06-17 22:28:08]   - models/gemini-3-pro-image
+[INFO] [2026-06-17 22:28:08]   - models/nano-banana-pro-preview
+[INFO] [2026-06-17 22:28:08]   - models/gemini-3.1-flash-image-preview
+[INFO] [2026-06-17 22:28:08]   - models/gemini-3.1-flash-image
+[INFO] [2026-06-17 22:28:08]   - models/gemini-3.5-flash
+[INFO] [2026-06-17 22:28:08]   - models/lyria-3-clip-preview
+[INFO] [2026-06-17 22:28:08]   - models/lyria-3-pro-preview
+[INFO] [2026-06-17 22:28:08]   - models/gemini-3.1-flash-tts-preview
+[INFO] [2026-06-17 22:28:08]   - models/gemini-robotics-er-1.5-preview
+[INFO] [2026-06-17 22:28:08]   - models/gemini-robotics-er-1.6-preview
+[INFO] [2026-06-17 22:28:08]   - models/gemini-2.5-computer-use-preview-10-2025
+[INFO] [2026-06-17 22:28:08]   - models/antigravity-preview-05-2026
+[INFO] [2026-06-17 22:28:08]   - models/deep-research-max-preview-04-2026
+[INFO] [2026-06-17 22:28:08]   - models/deep-research-preview-04-2026
+[INFO] [2026-06-17 22:28:08]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-17 22:28:08] Available Gemini models:
+[INFO] [2026-06-17 22:28:08]   - models/gemini-2.5-flash
+[INFO] [2026-06-17 22:28:08]   - models/gemini-2.5-pro
+[INFO] [2026-06-17 22:28:08]   - models/gemini-2.0-flash
+[INFO] [2026-06-17 22:28:08]   - models/gemini-2.0-flash-001
+[INFO] [2026-06-17 22:28:08]   - models/gemini-2.0-flash-lite-001
+[INFO] [2026-06-17 22:28:08]   - models/gemini-2.0-flash-lite
+[INFO] [2026-06-17 22:28:08]   - models/gemini-2.5-flash-preview-tts
+[INFO] [2026-06-17 22:28:08]   - models/gemini-2.5-pro-preview-tts
+[INFO] [2026-06-17 22:28:08]   - models/gemma-4-26b-a4b-it
+[INFO] [2026-06-17 22:28:08]   - models/gemma-4-31b-it
+[INFO] [2026-06-17 22:28:08]   - models/gemini-flash-latest
+[INFO] [2026-06-17 22:28:08]   - models/gemini-flash-lite-latest
+[INFO] [2026-06-17 22:28:08]   - models/gemini-pro-latest
+[INFO] [2026-06-17 22:28:08]   - models/gemini-2.5-flash-lite
+[INFO] [2026-06-17 22:28:08]   - models/gemini-2.5-flash-image
+[INFO] [2026-06-17 22:28:08]   - models/gemini-3-pro-preview
+[INFO] [2026-06-17 22:28:08]   - models/gemini-3-flash-preview
+[INFO] [2026-06-17 22:28:08]   - models/gemini-3.1-pro-preview
+[INFO] [2026-06-17 22:28:08]   - models/gemini-3.1-pro-preview-customtools
+[INFO] [2026-06-17 22:28:08]   - models/gemini-3.1-flash-lite-preview
+[INFO] [2026-06-17 22:28:08]   - models/gemini-3.1-flash-lite
+[INFO] [2026-06-17 22:28:08]   - models/gemini-3-pro-image-preview
+[INFO] [2026-06-17 22:28:08]   - models/gemini-3-pro-image
+[INFO] [2026-06-17 22:28:08]   - models/nano-banana-pro-preview
+[INFO] [2026-06-17 22:28:08]   - models/gemini-3.1-flash-image-preview
+[INFO] [2026-06-17 22:28:08]   - models/gemini-3.1-flash-image
+[INFO] [2026-06-17 22:28:08]   - models/gemini-3.5-flash
+[INFO] [2026-06-17 22:28:08]   - models/lyria-3-clip-preview
+[INFO] [2026-06-17 22:28:08]   - models/lyria-3-pro-preview
+[INFO] [2026-06-17 22:28:08]   - models/gemini-3.1-flash-tts-preview
+[INFO] [2026-06-17 22:28:08]   - models/gemini-robotics-er-1.5-preview
+[INFO] [2026-06-17 22:28:08]   - models/gemini-robotics-er-1.6-preview
+[INFO] [2026-06-17 22:28:08]   - models/gemini-2.5-computer-use-preview-10-2025
+[INFO] [2026-06-17 22:28:08]   - models/antigravity-preview-05-2026
+[INFO] [2026-06-17 22:28:08]   - models/deep-research-max-preview-04-2026
+[INFO] [2026-06-17 22:28:08]   - models/deep-research-preview-04-2026
+[INFO] [2026-06-17 22:28:08]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-17 22:28:21] Available Gemini models:
+[INFO] [2026-06-17 22:28:21]   - models/gemini-2.5-flash
+[INFO] [2026-06-17 22:28:21]   - models/gemini-2.5-pro
+[INFO] [2026-06-17 22:28:21]   - models/gemini-2.0-flash
+[INFO] [2026-06-17 22:28:21]   - models/gemini-2.0-flash-001
+[INFO] [2026-06-17 22:28:21]   - models/gemini-2.0-flash-lite-001
+[INFO] [2026-06-17 22:28:21]   - models/gemini-2.0-flash-lite
+[INFO] [2026-06-17 22:28:21]   - models/gemini-2.5-flash-preview-tts
+[INFO] [2026-06-17 22:28:21]   - models/gemini-2.5-pro-preview-tts
+[INFO] [2026-06-17 22:28:21]   - models/gemma-4-26b-a4b-it
+[INFO] [2026-06-17 22:28:21]   - models/gemma-4-31b-it
+[INFO] [2026-06-17 22:28:21]   - models/gemini-flash-latest
+[INFO] [2026-06-17 22:28:21]   - models/gemini-flash-lite-latest
+[INFO] [2026-06-17 22:28:21]   - models/gemini-pro-latest
+[INFO] [2026-06-17 22:28:21]   - models/gemini-2.5-flash-lite
+[INFO] [2026-06-17 22:28:21]   - models/gemini-2.5-flash-image
+[INFO] [2026-06-17 22:28:21]   - models/gemini-3-pro-preview
+[INFO] [2026-06-17 22:28:21]   - models/gemini-3-flash-preview
+[INFO] [2026-06-17 22:28:21]   - models/gemini-3.1-pro-preview
+[INFO] [2026-06-17 22:28:21]   - models/gemini-3.1-pro-preview-customtools
+[INFO] [2026-06-17 22:28:21]   - models/gemini-3.1-flash-lite-preview
+[INFO] [2026-06-17 22:28:21]   - models/gemini-3.1-flash-lite
+[INFO] [2026-06-17 22:28:21]   - models/gemini-3-pro-image-preview
+[INFO] [2026-06-17 22:28:21]   - models/gemini-3-pro-image
+[INFO] [2026-06-17 22:28:21]   - models/nano-banana-pro-preview
+[INFO] [2026-06-17 22:28:21]   - models/gemini-3.1-flash-image-preview
+[INFO] [2026-06-17 22:28:21]   - models/gemini-3.1-flash-image
+[INFO] [2026-06-17 22:28:21]   - models/gemini-3.5-flash
+[INFO] [2026-06-17 22:28:21]   - models/lyria-3-clip-preview
+[INFO] [2026-06-17 22:28:21]   - models/lyria-3-pro-preview
+[INFO] [2026-06-17 22:28:21]   - models/gemini-3.1-flash-tts-preview
+[INFO] [2026-06-17 22:28:21]   - models/gemini-robotics-er-1.5-preview
+[INFO] [2026-06-17 22:28:21]   - models/gemini-robotics-er-1.6-preview
+[INFO] [2026-06-17 22:28:21]   - models/gemini-2.5-computer-use-preview-10-2025
+[INFO] [2026-06-17 22:28:21]   - models/antigravity-preview-05-2026
+[INFO] [2026-06-17 22:28:21]   - models/deep-research-max-preview-04-2026
+[INFO] [2026-06-17 22:28:21]   - models/deep-research-preview-04-2026
+[INFO] [2026-06-17 22:28:21]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-17 22:30:02] Job 8edaa646-ee1f-4689-8ffc-9d92e6721df4: Received upload request for SampleContract-Shuttle.pdf
+[INFO] [2026-06-17 22:30:02] Job 8edaa646-ee1f-4689-8ffc-9d92e6721df4: File size: 49647 bytes
+[INFO] [2026-06-17 22:30:02] Job 8edaa646-ee1f-4689-8ffc-9d92e6721df4: File saved (49647 bytes), queuing for processing
+[INFO] [2026-06-17 22:30:02] Job 8edaa646-ee1f-4689-8ffc-9d92e6721df4: Started processing 8edaa646-ee1f-4689-8ffc-9d92e6721df4_SampleContract-Shuttle.pdf
+[INFO] [2026-06-17 22:30:02] Job 8edaa646-ee1f-4689-8ffc-9d92e6721df4: Opening PDF document
+[INFO] [2026-06-17 22:30:02] Job 8edaa646-ee1f-4689-8ffc-9d92e6721df4: Processing PDF with 10 pages
+[INFO] [2026-06-17 22:30:02] Job 8edaa646-ee1f-4689-8ffc-9d92e6721df4: Page 1 native text: 2847 chars
+[INFO] [2026-06-17 22:30:02] Job 8edaa646-ee1f-4689-8ffc-9d92e6721df4: Page 2 native text: 3353 chars
+[INFO] [2026-06-17 22:30:02] Job 8edaa646-ee1f-4689-8ffc-9d92e6721df4: Page 3 native text: 3663 chars
+[INFO] [2026-06-17 22:30:02] Job 8edaa646-ee1f-4689-8ffc-9d92e6721df4: Page 4 native text: 3429 chars
+[INFO] [2026-06-17 22:30:02] Job 8edaa646-ee1f-4689-8ffc-9d92e6721df4: Page 5 native text: 3625 chars
+[INFO] [2026-06-17 22:30:02] Job 8edaa646-ee1f-4689-8ffc-9d92e6721df4: Page 6 native text: 4012 chars
+[INFO] [2026-06-17 22:30:02] Job 8edaa646-ee1f-4689-8ffc-9d92e6721df4: Page 7 native text: 3771 chars
+[INFO] [2026-06-17 22:30:02] Job 8edaa646-ee1f-4689-8ffc-9d92e6721df4: Page 8 native text: 3667 chars
+[INFO] [2026-06-17 22:30:02] Job 8edaa646-ee1f-4689-8ffc-9d92e6721df4: Page 9 native text: 3210 chars
+[INFO] [2026-06-17 22:30:02] Job 8edaa646-ee1f-4689-8ffc-9d92e6721df4: Page 10 native text: 1359 chars
+[INFO] [2026-06-17 22:30:02] Job 8edaa646-ee1f-4689-8ffc-9d92e6721df4: Extracted 32936 total characters
+[INFO] [2026-06-17 22:30:14] ========== LAWYER SEARCH ==========
+[INFO] [2026-06-17 22:30:14] Searching lawyer types for document (2553 chars)
+[INFO] [2026-06-17 22:30:14] Loaded 60 lawyer types from database
+[INFO] [2026-06-17 22:30:14] Found 0 matching lawyer types, returning top 0
+[INFO] [2026-06-17 22:30:14] Job 8edaa646-ee1f-4689-8ffc-9d92e6721df4: Complete pipeline finished successfully. Analysis saved, 0 lawyer types recommended
+[INFO] [2026-06-17 22:30:14] Job 8edaa646-ee1f-4689-8ffc-9d92e6721df4: Cleaned up file 8edaa646-ee1f-4689-8ffc-9d92e6721df4_SampleContract-Shuttle.pdf
+[INFO] [2026-06-17 22:32:22] Available Gemini models:
+[INFO] [2026-06-17 22:32:22]   - models/gemini-2.5-flash
+[INFO] [2026-06-17 22:32:22]   - models/gemini-2.5-pro
+[INFO] [2026-06-17 22:32:22]   - models/gemini-2.0-flash
+[INFO] [2026-06-17 22:32:22]   - models/gemini-2.0-flash-001
+[INFO] [2026-06-17 22:32:22]   - models/gemini-2.0-flash-lite-001
+[INFO] [2026-06-17 22:32:22]   - models/gemini-2.0-flash-lite
+[INFO] [2026-06-17 22:32:22]   - models/gemini-2.5-flash-preview-tts
+[INFO] [2026-06-17 22:32:22]   - models/gemini-2.5-pro-preview-tts
+[INFO] [2026-06-17 22:32:22]   - models/gemma-4-26b-a4b-it
+[INFO] [2026-06-17 22:32:22]   - models/gemma-4-31b-it
+[INFO] [2026-06-17 22:32:22]   - models/gemini-flash-latest
+[INFO] [2026-06-17 22:32:22]   - models/gemini-flash-lite-latest
+[INFO] [2026-06-17 22:32:22]   - models/gemini-pro-latest
+[INFO] [2026-06-17 22:32:22]   - models/gemini-2.5-flash-lite
+[INFO] [2026-06-17 22:32:22]   - models/gemini-2.5-flash-image
+[INFO] [2026-06-17 22:32:22]   - models/gemini-3-pro-preview
+[INFO] [2026-06-17 22:32:22]   - models/gemini-3-flash-preview
+[INFO] [2026-06-17 22:32:22]   - models/gemini-3.1-pro-preview
+[INFO] [2026-06-17 22:32:22]   - models/gemini-3.1-pro-preview-customtools
+[INFO] [2026-06-17 22:32:22]   - models/gemini-3.1-flash-lite-preview
+[INFO] [2026-06-17 22:32:22]   - models/gemini-3.1-flash-lite
+[INFO] [2026-06-17 22:32:22]   - models/gemini-3-pro-image-preview
+[INFO] [2026-06-17 22:32:22]   - models/gemini-3-pro-image
+[INFO] [2026-06-17 22:32:22]   - models/nano-banana-pro-preview
+[INFO] [2026-06-17 22:32:22]   - models/gemini-3.1-flash-image-preview
+[INFO] [2026-06-17 22:32:22]   - models/gemini-3.1-flash-image
+[INFO] [2026-06-17 22:32:22]   - models/gemini-3.5-flash
+[INFO] [2026-06-17 22:32:22]   - models/lyria-3-clip-preview
+[INFO] [2026-06-17 22:32:22]   - models/lyria-3-pro-preview
+[INFO] [2026-06-17 22:32:22]   - models/gemini-3.1-flash-tts-preview
+[INFO] [2026-06-17 22:32:22]   - models/gemini-robotics-er-1.5-preview
+[INFO] [2026-06-17 22:32:22]   - models/gemini-robotics-er-1.6-preview
+[INFO] [2026-06-17 22:32:22]   - models/gemini-2.5-computer-use-preview-10-2025
+[INFO] [2026-06-17 22:32:22]   - models/antigravity-preview-05-2026
+[INFO] [2026-06-17 22:32:22]   - models/deep-research-max-preview-04-2026
+[INFO] [2026-06-17 22:32:22]   - models/deep-research-preview-04-2026
+[INFO] [2026-06-17 22:32:22]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-17 22:32:23] Available Gemini models:
+[INFO] [2026-06-17 22:32:23]   - models/gemini-2.5-flash
+[INFO] [2026-06-17 22:32:23]   - models/gemini-2.5-pro
+[INFO] [2026-06-17 22:32:23]   - models/gemini-2.0-flash
+[INFO] [2026-06-17 22:32:23]   - models/gemini-2.0-flash-001
+[INFO] [2026-06-17 22:32:23]   - models/gemini-2.0-flash-lite-001
+[INFO] [2026-06-17 22:32:23]   - models/gemini-2.0-flash-lite
+[INFO] [2026-06-17 22:32:23]   - models/gemini-2.5-flash-preview-tts
+[INFO] [2026-06-17 22:32:23]   - models/gemini-2.5-pro-preview-tts
+[INFO] [2026-06-17 22:32:23]   - models/gemma-4-26b-a4b-it
+[INFO] [2026-06-17 22:32:23]   - models/gemma-4-31b-it
+[INFO] [2026-06-17 22:32:23]   - models/gemini-flash-latest
+[INFO] [2026-06-17 22:32:23]   - models/gemini-flash-lite-latest
+[INFO] [2026-06-17 22:32:23]   - models/gemini-pro-latest
+[INFO] [2026-06-17 22:32:23]   - models/gemini-2.5-flash-lite
+[INFO] [2026-06-17 22:32:23]   - models/gemini-2.5-flash-image
+[INFO] [2026-06-17 22:32:23]   - models/gemini-3-pro-preview
+[INFO] [2026-06-17 22:32:23]   - models/gemini-3-flash-preview
+[INFO] [2026-06-17 22:32:23]   - models/gemini-3.1-pro-preview
+[INFO] [2026-06-17 22:32:23]   - models/gemini-3.1-pro-preview-customtools
+[INFO] [2026-06-17 22:32:23]   - models/gemini-3.1-flash-lite-preview
+[INFO] [2026-06-17 22:32:23]   - models/gemini-3.1-flash-lite
+[INFO] [2026-06-17 22:32:23]   - models/gemini-3-pro-image-preview
+[INFO] [2026-06-17 22:32:23]   - models/gemini-3-pro-image
+[INFO] [2026-06-17 22:32:23]   - models/nano-banana-pro-preview
+[INFO] [2026-06-17 22:32:23]   - models/gemini-3.1-flash-image-preview
+[INFO] [2026-06-17 22:32:23]   - models/gemini-3.1-flash-image
+[INFO] [2026-06-17 22:32:23]   - models/gemini-3.5-flash
+[INFO] [2026-06-17 22:32:23]   - models/lyria-3-clip-preview
+[INFO] [2026-06-17 22:32:23]   - models/lyria-3-pro-preview
+[INFO] [2026-06-17 22:32:23]   - models/gemini-3.1-flash-tts-preview
+[INFO] [2026-06-17 22:32:23]   - models/gemini-robotics-er-1.5-preview
+[INFO] [2026-06-17 22:32:23]   - models/gemini-robotics-er-1.6-preview
+[INFO] [2026-06-17 22:32:23]   - models/gemini-2.5-computer-use-preview-10-2025
+[INFO] [2026-06-17 22:32:23]   - models/antigravity-preview-05-2026
+[INFO] [2026-06-17 22:32:23]   - models/deep-research-max-preview-04-2026
+[INFO] [2026-06-17 22:32:23]   - models/deep-research-preview-04-2026
+[INFO] [2026-06-17 22:32:23]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-17 22:32:24] Available Gemini models:
+[INFO] [2026-06-17 22:32:24]   - models/gemini-2.5-flash
+[INFO] [2026-06-17 22:32:24]   - models/gemini-2.5-pro
+[INFO] [2026-06-17 22:32:24]   - models/gemini-2.0-flash
+[INFO] [2026-06-17 22:32:24]   - models/gemini-2.0-flash-001
+[INFO] [2026-06-17 22:32:24]   - models/gemini-2.0-flash-lite-001
+[INFO] [2026-06-17 22:32:24]   - models/gemini-2.0-flash-lite
+[INFO] [2026-06-17 22:32:24]   - models/gemini-2.5-flash-preview-tts
+[INFO] [2026-06-17 22:32:24]   - models/gemini-2.5-pro-preview-tts
+[INFO] [2026-06-17 22:32:24]   - models/gemma-4-26b-a4b-it
+[INFO] [2026-06-17 22:32:24]   - models/gemma-4-31b-it
+[INFO] [2026-06-17 22:32:24]   - models/gemini-flash-latest
+[INFO] [2026-06-17 22:32:24]   - models/gemini-flash-lite-latest
+[INFO] [2026-06-17 22:32:24]   - models/gemini-pro-latest
+[INFO] [2026-06-17 22:32:24]   - models/gemini-2.5-flash-lite
+[INFO] [2026-06-17 22:32:24]   - models/gemini-2.5-flash-image
+[INFO] [2026-06-17 22:32:24]   - models/gemini-3-pro-preview
+[INFO] [2026-06-17 22:32:24]   - models/gemini-3-flash-preview
+[INFO] [2026-06-17 22:32:24]   - models/gemini-3.1-pro-preview
+[INFO] [2026-06-17 22:32:24]   - models/gemini-3.1-pro-preview-customtools
+[INFO] [2026-06-17 22:32:24]   - models/gemini-3.1-flash-lite-preview
+[INFO] [2026-06-17 22:32:24]   - models/gemini-3.1-flash-lite
+[INFO] [2026-06-17 22:32:24]   - models/gemini-3-pro-image-preview
+[INFO] [2026-06-17 22:32:24]   - models/gemini-3-pro-image
+[INFO] [2026-06-17 22:32:24]   - models/nano-banana-pro-preview
+[INFO] [2026-06-17 22:32:24]   - models/gemini-3.1-flash-image-preview
+[INFO] [2026-06-17 22:32:24]   - models/gemini-3.1-flash-image
+[INFO] [2026-06-17 22:32:24]   - models/gemini-3.5-flash
+[INFO] [2026-06-17 22:32:24]   - models/lyria-3-clip-preview
+[INFO] [2026-06-17 22:32:24]   - models/lyria-3-pro-preview
+[INFO] [2026-06-17 22:32:24]   - models/gemini-3.1-flash-tts-preview
+[INFO] [2026-06-17 22:32:24]   - models/gemini-robotics-er-1.5-preview
+[INFO] [2026-06-17 22:32:24]   - models/gemini-robotics-er-1.6-preview
+[INFO] [2026-06-17 22:32:24]   - models/gemini-2.5-computer-use-preview-10-2025
+[INFO] [2026-06-17 22:32:24]   - models/antigravity-preview-05-2026
+[INFO] [2026-06-17 22:32:24]   - models/deep-research-max-preview-04-2026
+[INFO] [2026-06-17 22:32:24]   - models/deep-research-preview-04-2026
+[INFO] [2026-06-17 22:32:24]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-17 22:34:06] Job f60931f6-4fd0-40ee-8c50-7f027896bf62: Received upload request for SampleContract-Shuttle.pdf
+[INFO] [2026-06-17 22:34:06] Job f60931f6-4fd0-40ee-8c50-7f027896bf62: File size: 49647 bytes
+[INFO] [2026-06-17 22:34:06] Job f60931f6-4fd0-40ee-8c50-7f027896bf62: File saved (49647 bytes), queuing for processing
+[INFO] [2026-06-17 22:34:06] Job f60931f6-4fd0-40ee-8c50-7f027896bf62: Started processing f60931f6-4fd0-40ee-8c50-7f027896bf62_SampleContract-Shuttle.pdf
+[INFO] [2026-06-17 22:34:06] Job f60931f6-4fd0-40ee-8c50-7f027896bf62: Opening PDF document
+[INFO] [2026-06-17 22:34:06] Job f60931f6-4fd0-40ee-8c50-7f027896bf62: Processing PDF with 10 pages
+[INFO] [2026-06-17 22:34:06] Job f60931f6-4fd0-40ee-8c50-7f027896bf62: Page 1 native text: 2847 chars
+[INFO] [2026-06-17 22:34:06] Job f60931f6-4fd0-40ee-8c50-7f027896bf62: Page 2 native text: 3353 chars
+[INFO] [2026-06-17 22:34:06] Job f60931f6-4fd0-40ee-8c50-7f027896bf62: Page 3 native text: 3663 chars
+[INFO] [2026-06-17 22:34:06] Job f60931f6-4fd0-40ee-8c50-7f027896bf62: Page 4 native text: 3429 chars
+[INFO] [2026-06-17 22:34:06] Job f60931f6-4fd0-40ee-8c50-7f027896bf62: Page 5 native text: 3625 chars
+[INFO] [2026-06-17 22:34:06] Job f60931f6-4fd0-40ee-8c50-7f027896bf62: Page 6 native text: 4012 chars
+[INFO] [2026-06-17 22:34:06] Job f60931f6-4fd0-40ee-8c50-7f027896bf62: Page 7 native text: 3771 chars
+[INFO] [2026-06-17 22:34:06] Job f60931f6-4fd0-40ee-8c50-7f027896bf62: Page 8 native text: 3667 chars
+[INFO] [2026-06-17 22:34:06] Job f60931f6-4fd0-40ee-8c50-7f027896bf62: Page 9 native text: 3210 chars
+[INFO] [2026-06-17 22:34:06] Job f60931f6-4fd0-40ee-8c50-7f027896bf62: Page 10 native text: 1359 chars
+[INFO] [2026-06-17 22:34:06] Job f60931f6-4fd0-40ee-8c50-7f027896bf62: Extracted 32936 total characters
+[INFO] [2026-06-17 22:34:16] Searching lawyer types for document (2738 chars)
+[INFO] [2026-06-17 22:34:17] Loaded 60 lawyer types from database
+[INFO] [2026-06-17 22:34:17] Found 0 matching lawyer types, returning top 0
+[INFO] [2026-06-17 22:34:17] Job f60931f6-4fd0-40ee-8c50-7f027896bf62: Complete pipeline finished successfully. Analysis saved, 0 lawyer types recommended
+[INFO] [2026-06-17 22:34:17] Job f60931f6-4fd0-40ee-8c50-7f027896bf62: Cleaned up file f60931f6-4fd0-40ee-8c50-7f027896bf62_SampleContract-Shuttle.pdf
+[INFO] [2026-06-17 22:36:15] Available Gemini models:
+[INFO] [2026-06-17 22:36:15]   - models/gemini-2.5-flash
+[INFO] [2026-06-17 22:36:15]   - models/gemini-2.5-pro
+[INFO] [2026-06-17 22:36:15]   - models/gemini-2.0-flash
+[INFO] [2026-06-17 22:36:15]   - models/gemini-2.0-flash-001
+[INFO] [2026-06-17 22:36:15]   - models/gemini-2.0-flash-lite-001
+[INFO] [2026-06-17 22:36:15]   - models/gemini-2.0-flash-lite
+[INFO] [2026-06-17 22:36:15]   - models/gemini-2.5-flash-preview-tts
+[INFO] [2026-06-17 22:36:15]   - models/gemini-2.5-pro-preview-tts
+[INFO] [2026-06-17 22:36:15]   - models/gemma-4-26b-a4b-it
+[INFO] [2026-06-17 22:36:15]   - models/gemma-4-31b-it
+[INFO] [2026-06-17 22:36:15]   - models/gemini-flash-latest
+[INFO] [2026-06-17 22:36:15]   - models/gemini-flash-lite-latest
+[INFO] [2026-06-17 22:36:15]   - models/gemini-pro-latest
+[INFO] [2026-06-17 22:36:15]   - models/gemini-2.5-flash-lite
+[INFO] [2026-06-17 22:36:15]   - models/gemini-2.5-flash-image
+[INFO] [2026-06-17 22:36:15]   - models/gemini-3-pro-preview
+[INFO] [2026-06-17 22:36:15]   - models/gemini-3-flash-preview
+[INFO] [2026-06-17 22:36:15]   - models/gemini-3.1-pro-preview
+[INFO] [2026-06-17 22:36:15]   - models/gemini-3.1-pro-preview-customtools
+[INFO] [2026-06-17 22:36:15]   - models/gemini-3.1-flash-lite-preview
+[INFO] [2026-06-17 22:36:15]   - models/gemini-3.1-flash-lite
+[INFO] [2026-06-17 22:36:15]   - models/gemini-3-pro-image-preview
+[INFO] [2026-06-17 22:36:15]   - models/gemini-3-pro-image
+[INFO] [2026-06-17 22:36:15]   - models/nano-banana-pro-preview
+[INFO] [2026-06-17 22:36:15]   - models/gemini-3.1-flash-image-preview
+[INFO] [2026-06-17 22:36:15]   - models/gemini-3.1-flash-image
+[INFO] [2026-06-17 22:36:15]   - models/gemini-3.5-flash
+[INFO] [2026-06-17 22:36:15]   - models/lyria-3-clip-preview
+[INFO] [2026-06-17 22:36:15]   - models/lyria-3-pro-preview
+[INFO] [2026-06-17 22:36:15]   - models/gemini-3.1-flash-tts-preview
+[INFO] [2026-06-17 22:36:15]   - models/gemini-robotics-er-1.5-preview
+[INFO] [2026-06-17 22:36:15]   - models/gemini-robotics-er-1.6-preview
+[INFO] [2026-06-17 22:36:15]   - models/gemini-2.5-computer-use-preview-10-2025
+[INFO] [2026-06-17 22:36:15]   - models/antigravity-preview-05-2026
+[INFO] [2026-06-17 22:36:15]   - models/deep-research-max-preview-04-2026
+[INFO] [2026-06-17 22:36:15]   - models/deep-research-preview-04-2026
+[INFO] [2026-06-17 22:36:15]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-17 22:36:16] Available Gemini models:
+[INFO] [2026-06-17 22:36:16]   - models/gemini-2.5-flash
+[INFO] [2026-06-17 22:36:16]   - models/gemini-2.5-pro
+[INFO] [2026-06-17 22:36:16]   - models/gemini-2.0-flash
+[INFO] [2026-06-17 22:36:16]   - models/gemini-2.0-flash-001
+[INFO] [2026-06-17 22:36:16]   - models/gemini-2.0-flash-lite-001
+[INFO] [2026-06-17 22:36:16]   - models/gemini-2.0-flash-lite
+[INFO] [2026-06-17 22:36:16]   - models/gemini-2.5-flash-preview-tts
+[INFO] [2026-06-17 22:36:16]   - models/gemini-2.5-pro-preview-tts
+[INFO] [2026-06-17 22:36:16]   - models/gemma-4-26b-a4b-it
+[INFO] [2026-06-17 22:36:16]   - models/gemma-4-31b-it
+[INFO] [2026-06-17 22:36:16]   - models/gemini-flash-latest
+[INFO] [2026-06-17 22:36:16]   - models/gemini-flash-lite-latest
+[INFO] [2026-06-17 22:36:16]   - models/gemini-pro-latest
+[INFO] [2026-06-17 22:36:16]   - models/gemini-2.5-flash-lite
+[INFO] [2026-06-17 22:36:16]   - models/gemini-2.5-flash-image
+[INFO] [2026-06-17 22:36:16]   - models/gemini-3-pro-preview
+[INFO] [2026-06-17 22:36:16]   - models/gemini-3-flash-preview
+[INFO] [2026-06-17 22:36:16]   - models/gemini-3.1-pro-preview
+[INFO] [2026-06-17 22:36:16]   - models/gemini-3.1-pro-preview-customtools
+[INFO] [2026-06-17 22:36:16]   - models/gemini-3.1-flash-lite-preview
+[INFO] [2026-06-17 22:36:16]   - models/gemini-3.1-flash-lite
+[INFO] [2026-06-17 22:36:16]   - models/gemini-3-pro-image-preview
+[INFO] [2026-06-17 22:36:16]   - models/gemini-3-pro-image
+[INFO] [2026-06-17 22:36:16]   - models/nano-banana-pro-preview
+[INFO] [2026-06-17 22:36:16]   - models/gemini-3.1-flash-image-preview
+[INFO] [2026-06-17 22:36:16]   - models/gemini-3.1-flash-image
+[INFO] [2026-06-17 22:36:16]   - models/gemini-3.5-flash
+[INFO] [2026-06-17 22:36:16]   - models/lyria-3-clip-preview
+[INFO] [2026-06-17 22:36:16]   - models/lyria-3-pro-preview
+[INFO] [2026-06-17 22:36:16]   - models/gemini-3.1-flash-tts-preview
+[INFO] [2026-06-17 22:36:16]   - models/gemini-robotics-er-1.5-preview
+[INFO] [2026-06-17 22:36:16]   - models/gemini-robotics-er-1.6-preview
+[INFO] [2026-06-17 22:36:16]   - models/gemini-2.5-computer-use-preview-10-2025
+[INFO] [2026-06-17 22:36:16]   - models/antigravity-preview-05-2026
+[INFO] [2026-06-17 22:36:16]   - models/deep-research-max-preview-04-2026
+[INFO] [2026-06-17 22:36:16]   - models/deep-research-preview-04-2026
+[INFO] [2026-06-17 22:36:16]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-17 22:36:20] Available Gemini models:
+[INFO] [2026-06-17 22:36:20]   - models/gemini-2.5-flash
+[INFO] [2026-06-17 22:36:20]   - models/gemini-2.5-pro
+[INFO] [2026-06-17 22:36:20]   - models/gemini-2.0-flash
+[INFO] [2026-06-17 22:36:20]   - models/gemini-2.0-flash-001
+[INFO] [2026-06-17 22:36:20]   - models/gemini-2.0-flash-lite-001
+[INFO] [2026-06-17 22:36:20]   - models/gemini-2.0-flash-lite
+[INFO] [2026-06-17 22:36:20]   - models/gemini-2.5-flash-preview-tts
+[INFO] [2026-06-17 22:36:20]   - models/gemini-2.5-pro-preview-tts
+[INFO] [2026-06-17 22:36:20]   - models/gemma-4-26b-a4b-it
+[INFO] [2026-06-17 22:36:20]   - models/gemma-4-31b-it
+[INFO] [2026-06-17 22:36:20]   - models/gemini-flash-latest
+[INFO] [2026-06-17 22:36:20]   - models/gemini-flash-lite-latest
+[INFO] [2026-06-17 22:36:20]   - models/gemini-pro-latest
+[INFO] [2026-06-17 22:36:20]   - models/gemini-2.5-flash-lite
+[INFO] [2026-06-17 22:36:20]   - models/gemini-2.5-flash-image
+[INFO] [2026-06-17 22:36:20]   - models/gemini-3-pro-preview
+[INFO] [2026-06-17 22:36:20]   - models/gemini-3-flash-preview
+[INFO] [2026-06-17 22:36:20]   - models/gemini-3.1-pro-preview
+[INFO] [2026-06-17 22:36:20]   - models/gemini-3.1-pro-preview-customtools
+[INFO] [2026-06-17 22:36:20]   - models/gemini-3.1-flash-lite-preview
+[INFO] [2026-06-17 22:36:20]   - models/gemini-3.1-flash-lite
+[INFO] [2026-06-17 22:36:20]   - models/gemini-3-pro-image-preview
+[INFO] [2026-06-17 22:36:20]   - models/gemini-3-pro-image
+[INFO] [2026-06-17 22:36:20]   - models/nano-banana-pro-preview
+[INFO] [2026-06-17 22:36:20]   - models/gemini-3.1-flash-image-preview
+[INFO] [2026-06-17 22:36:20]   - models/gemini-3.1-flash-image
+[INFO] [2026-06-17 22:36:20]   - models/gemini-3.5-flash
+[INFO] [2026-06-17 22:36:20]   - models/lyria-3-clip-preview
+[INFO] [2026-06-17 22:36:20]   - models/lyria-3-pro-preview
+[INFO] [2026-06-17 22:36:20]   - models/gemini-3.1-flash-tts-preview
+[INFO] [2026-06-17 22:36:20]   - models/gemini-robotics-er-1.5-preview
+[INFO] [2026-06-17 22:36:20]   - models/gemini-robotics-er-1.6-preview
+[INFO] [2026-06-17 22:36:20]   - models/gemini-2.5-computer-use-preview-10-2025
+[INFO] [2026-06-17 22:36:20]   - models/antigravity-preview-05-2026
+[INFO] [2026-06-17 22:36:20]   - models/deep-research-max-preview-04-2026
+[INFO] [2026-06-17 22:36:20]   - models/deep-research-preview-04-2026
+[INFO] [2026-06-17 22:36:20]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-17 22:36:31] Available Gemini models:
+[INFO] [2026-06-17 22:36:32]   - models/gemini-2.5-flash
+[INFO] [2026-06-17 22:36:32]   - models/gemini-2.5-pro
+[INFO] [2026-06-17 22:36:32]   - models/gemini-2.0-flash
+[INFO] [2026-06-17 22:36:32]   - models/gemini-2.0-flash-001
+[INFO] [2026-06-17 22:36:32]   - models/gemini-2.0-flash-lite-001
+[INFO] [2026-06-17 22:36:32]   - models/gemini-2.0-flash-lite
+[INFO] [2026-06-17 22:36:32]   - models/gemini-2.5-flash-preview-tts
+[INFO] [2026-06-17 22:36:32]   - models/gemini-2.5-pro-preview-tts
+[INFO] [2026-06-17 22:36:32]   - models/gemma-4-26b-a4b-it
+[INFO] [2026-06-17 22:36:32]   - models/gemma-4-31b-it
+[INFO] [2026-06-17 22:36:32]   - models/gemini-flash-latest
+[INFO] [2026-06-17 22:36:32]   - models/gemini-flash-lite-latest
+[INFO] [2026-06-17 22:36:32]   - models/gemini-pro-latest
+[INFO] [2026-06-17 22:36:32]   - models/gemini-2.5-flash-lite
+[INFO] [2026-06-17 22:36:32]   - models/gemini-2.5-flash-image
+[INFO] [2026-06-17 22:36:32]   - models/gemini-3-pro-preview
+[INFO] [2026-06-17 22:36:32]   - models/gemini-3-flash-preview
+[INFO] [2026-06-17 22:36:32]   - models/gemini-3.1-pro-preview
+[INFO] [2026-06-17 22:36:32]   - models/gemini-3.1-pro-preview-customtools
+[INFO] [2026-06-17 22:36:32]   - models/gemini-3.1-flash-lite-preview
+[INFO] [2026-06-17 22:36:32]   - models/gemini-3.1-flash-lite
+[INFO] [2026-06-17 22:36:32]   - models/gemini-3-pro-image-preview
+[INFO] [2026-06-17 22:36:32]   - models/gemini-3-pro-image
+[INFO] [2026-06-17 22:36:32]   - models/nano-banana-pro-preview
+[INFO] [2026-06-17 22:36:32]   - models/gemini-3.1-flash-image-preview
+[INFO] [2026-06-17 22:36:32]   - models/gemini-3.1-flash-image
+[INFO] [2026-06-17 22:36:32]   - models/gemini-3.5-flash
+[INFO] [2026-06-17 22:36:32]   - models/lyria-3-clip-preview
+[INFO] [2026-06-17 22:36:32]   - models/lyria-3-pro-preview
+[INFO] [2026-06-17 22:36:32]   - models/gemini-3.1-flash-tts-preview
+[INFO] [2026-06-17 22:36:32]   - models/gemini-robotics-er-1.5-preview
+[INFO] [2026-06-17 22:36:32]   - models/gemini-robotics-er-1.6-preview
+[INFO] [2026-06-17 22:36:32]   - models/gemini-2.5-computer-use-preview-10-2025
+[INFO] [2026-06-17 22:36:32]   - models/antigravity-preview-05-2026
+[INFO] [2026-06-17 22:36:32]   - models/deep-research-max-preview-04-2026
+[INFO] [2026-06-17 22:36:32]   - models/deep-research-preview-04-2026
+[INFO] [2026-06-17 22:36:32]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-17 22:36:32] Available Gemini models:
+[INFO] [2026-06-17 22:36:32]   - models/gemini-2.5-flash
+[INFO] [2026-06-17 22:36:32]   - models/gemini-2.5-pro
+[INFO] [2026-06-17 22:36:32]   - models/gemini-2.0-flash
+[INFO] [2026-06-17 22:36:32]   - models/gemini-2.0-flash-001
+[INFO] [2026-06-17 22:36:32]   - models/gemini-2.0-flash-lite-001
+[INFO] [2026-06-17 22:36:32]   - models/gemini-2.0-flash-lite
+[INFO] [2026-06-17 22:36:32]   - models/gemini-2.5-flash-preview-tts
+[INFO] [2026-06-17 22:36:32]   - models/gemini-2.5-pro-preview-tts
+[INFO] [2026-06-17 22:36:32]   - models/gemma-4-26b-a4b-it
+[INFO] [2026-06-17 22:36:32]   - models/gemma-4-31b-it
+[INFO] [2026-06-17 22:36:32]   - models/gemini-flash-latest
+[INFO] [2026-06-17 22:36:32]   - models/gemini-flash-lite-latest
+[INFO] [2026-06-17 22:36:32]   - models/gemini-pro-latest
+[INFO] [2026-06-17 22:36:32]   - models/gemini-2.5-flash-lite
+[INFO] [2026-06-17 22:36:32]   - models/gemini-2.5-flash-image
+[INFO] [2026-06-17 22:36:32]   - models/gemini-3-pro-preview
+[INFO] [2026-06-17 22:36:32]   - models/gemini-3-flash-preview
+[INFO] [2026-06-17 22:36:32]   - models/gemini-3.1-pro-preview
+[INFO] [2026-06-17 22:36:32]   - models/gemini-3.1-pro-preview-customtools
+[INFO] [2026-06-17 22:36:32]   - models/gemini-3.1-flash-lite-preview
+[INFO] [2026-06-17 22:36:32]   - models/gemini-3.1-flash-lite
+[INFO] [2026-06-17 22:36:32]   - models/gemini-3-pro-image-preview
+[INFO] [2026-06-17 22:36:32]   - models/gemini-3-pro-image
+[INFO] [2026-06-17 22:36:32]   - models/nano-banana-pro-preview
+[INFO] [2026-06-17 22:36:32]   - models/gemini-3.1-flash-image-preview
+[INFO] [2026-06-17 22:36:32]   - models/gemini-3.1-flash-image
+[INFO] [2026-06-17 22:36:32]   - models/gemini-3.5-flash
+[INFO] [2026-06-17 22:36:32]   - models/lyria-3-clip-preview
+[INFO] [2026-06-17 22:36:32]   - models/lyria-3-pro-preview
+[INFO] [2026-06-17 22:36:32]   - models/gemini-3.1-flash-tts-preview
+[INFO] [2026-06-17 22:36:32]   - models/gemini-robotics-er-1.5-preview
+[INFO] [2026-06-17 22:36:32]   - models/gemini-robotics-er-1.6-preview
+[INFO] [2026-06-17 22:36:32]   - models/gemini-2.5-computer-use-preview-10-2025
+[INFO] [2026-06-17 22:36:32]   - models/antigravity-preview-05-2026
+[INFO] [2026-06-17 22:36:32]   - models/deep-research-max-preview-04-2026
+[INFO] [2026-06-17 22:36:32]   - models/deep-research-preview-04-2026
+[INFO] [2026-06-17 22:36:32]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-17 22:44:41] Job 75f2d0a7-edab-4c97-9900-07addcb7d77e: Received upload request for SampleContract-Shuttle.pdf
+[INFO] [2026-06-17 22:44:41] Job 75f2d0a7-edab-4c97-9900-07addcb7d77e: File size: 49647 bytes
+[INFO] [2026-06-17 22:44:41] Job 75f2d0a7-edab-4c97-9900-07addcb7d77e: File saved (49647 bytes), queuing for processing
+[INFO] [2026-06-17 22:44:41] Job 75f2d0a7-edab-4c97-9900-07addcb7d77e: Started processing 75f2d0a7-edab-4c97-9900-07addcb7d77e_SampleContract-Shuttle.pdf
+[INFO] [2026-06-17 22:44:41] Job 75f2d0a7-edab-4c97-9900-07addcb7d77e: Opening PDF document
+[INFO] [2026-06-17 22:44:41] Job 75f2d0a7-edab-4c97-9900-07addcb7d77e: Processing PDF with 10 pages
+[INFO] [2026-06-17 22:44:41] Job 75f2d0a7-edab-4c97-9900-07addcb7d77e: Page 1 native text: 2847 chars
+[INFO] [2026-06-17 22:44:41] Job 75f2d0a7-edab-4c97-9900-07addcb7d77e: Page 2 native text: 3353 chars
+[INFO] [2026-06-17 22:44:41] Job 75f2d0a7-edab-4c97-9900-07addcb7d77e: Page 3 native text: 3663 chars
+[INFO] [2026-06-17 22:44:41] Job 75f2d0a7-edab-4c97-9900-07addcb7d77e: Page 4 native text: 3429 chars
+[INFO] [2026-06-17 22:44:41] Job 75f2d0a7-edab-4c97-9900-07addcb7d77e: Page 5 native text: 3625 chars
+[INFO] [2026-06-17 22:44:41] Job 75f2d0a7-edab-4c97-9900-07addcb7d77e: Page 6 native text: 4012 chars
+[INFO] [2026-06-17 22:44:41] Job 75f2d0a7-edab-4c97-9900-07addcb7d77e: Page 7 native text: 3771 chars
+[INFO] [2026-06-17 22:44:41] Job 75f2d0a7-edab-4c97-9900-07addcb7d77e: Page 8 native text: 3667 chars
+[INFO] [2026-06-17 22:44:41] Job 75f2d0a7-edab-4c97-9900-07addcb7d77e: Page 9 native text: 3210 chars
+[INFO] [2026-06-17 22:44:41] Job 75f2d0a7-edab-4c97-9900-07addcb7d77e: Page 10 native text: 1359 chars
+[INFO] [2026-06-17 22:44:41] Job 75f2d0a7-edab-4c97-9900-07addcb7d77e: Extracted 32936 total characters
+[INFO] [2026-06-17 22:44:56] Job 75f2d0a7-edab-4c97-9900-07addcb7d77e: Complete pipeline finished successfully. Analysis saved, 0 lawyer types recommended
+[INFO] [2026-06-17 22:44:56] Job 75f2d0a7-edab-4c97-9900-07addcb7d77e: Cleaned up file 75f2d0a7-edab-4c97-9900-07addcb7d77e_SampleContract-Shuttle.pdf
+[INFO] [2026-06-17 22:44:57] Job a6357e22-e68c-42a5-9015-7a8a2a2efebd: Received upload request for SampleContract-Shuttle.pdf
+[INFO] [2026-06-17 22:44:57] Job a6357e22-e68c-42a5-9015-7a8a2a2efebd: File size: 49647 bytes
+[INFO] [2026-06-17 22:44:57] Job a6357e22-e68c-42a5-9015-7a8a2a2efebd: File saved (49647 bytes), queuing for processing
+[INFO] [2026-06-17 22:44:57] Job a6357e22-e68c-42a5-9015-7a8a2a2efebd: Started processing a6357e22-e68c-42a5-9015-7a8a2a2efebd_SampleContract-Shuttle.pdf
+[INFO] [2026-06-17 22:44:57] Job a6357e22-e68c-42a5-9015-7a8a2a2efebd: Opening PDF document
+[INFO] [2026-06-17 22:44:57] Job a6357e22-e68c-42a5-9015-7a8a2a2efebd: Processing PDF with 10 pages
+[INFO] [2026-06-17 22:44:57] Job a6357e22-e68c-42a5-9015-7a8a2a2efebd: Page 1 native text: 2847 chars
+[INFO] [2026-06-17 22:44:57] Job a6357e22-e68c-42a5-9015-7a8a2a2efebd: Page 2 native text: 3353 chars
+[INFO] [2026-06-17 22:44:57] Job a6357e22-e68c-42a5-9015-7a8a2a2efebd: Page 3 native text: 3663 chars
+[INFO] [2026-06-17 22:44:57] Job a6357e22-e68c-42a5-9015-7a8a2a2efebd: Page 4 native text: 3429 chars
+[INFO] [2026-06-17 22:44:57] Job a6357e22-e68c-42a5-9015-7a8a2a2efebd: Page 5 native text: 3625 chars
+[INFO] [2026-06-17 22:44:57] Job a6357e22-e68c-42a5-9015-7a8a2a2efebd: Page 6 native text: 4012 chars
+[INFO] [2026-06-17 22:44:57] Job a6357e22-e68c-42a5-9015-7a8a2a2efebd: Page 7 native text: 3771 chars
+[INFO] [2026-06-17 22:44:57] Job a6357e22-e68c-42a5-9015-7a8a2a2efebd: Page 8 native text: 3667 chars
+[INFO] [2026-06-17 22:44:57] Job a6357e22-e68c-42a5-9015-7a8a2a2efebd: Page 9 native text: 3210 chars
+[INFO] [2026-06-17 22:44:57] Job a6357e22-e68c-42a5-9015-7a8a2a2efebd: Page 10 native text: 1359 chars
+[INFO] [2026-06-17 22:44:57] Job a6357e22-e68c-42a5-9015-7a8a2a2efebd: Extracted 32936 total characters
+[INFO] [2026-06-17 22:45:09] Job a6357e22-e68c-42a5-9015-7a8a2a2efebd: Complete pipeline finished successfully. Analysis saved, 0 lawyer types recommended
+[INFO] [2026-06-17 22:45:09] Job a6357e22-e68c-42a5-9015-7a8a2a2efebd: Cleaned up file a6357e22-e68c-42a5-9015-7a8a2a2efebd_SampleContract-Shuttle.pdf
+[INFO] [2026-06-17 22:46:29] Available Gemini models:
+[INFO] [2026-06-17 22:46:29]   - models/gemini-2.5-flash
+[INFO] [2026-06-17 22:46:29]   - models/gemini-2.5-pro
+[INFO] [2026-06-17 22:46:29]   - models/gemini-2.0-flash
+[INFO] [2026-06-17 22:46:29]   - models/gemini-2.0-flash-001
+[INFO] [2026-06-17 22:46:29]   - models/gemini-2.0-flash-lite-001
+[INFO] [2026-06-17 22:46:29]   - models/gemini-2.0-flash-lite
+[INFO] [2026-06-17 22:46:29]   - models/gemini-2.5-flash-preview-tts
+[INFO] [2026-06-17 22:46:29]   - models/gemini-2.5-pro-preview-tts
+[INFO] [2026-06-17 22:46:29]   - models/gemma-4-26b-a4b-it
+[INFO] [2026-06-17 22:46:29]   - models/gemma-4-31b-it
+[INFO] [2026-06-17 22:46:29]   - models/gemini-flash-latest
+[INFO] [2026-06-17 22:46:29]   - models/gemini-flash-lite-latest
+[INFO] [2026-06-17 22:46:29]   - models/gemini-pro-latest
+[INFO] [2026-06-17 22:46:29]   - models/gemini-2.5-flash-lite
+[INFO] [2026-06-17 22:46:29]   - models/gemini-2.5-flash-image
+[INFO] [2026-06-17 22:46:29]   - models/gemini-3-pro-preview
+[INFO] [2026-06-17 22:46:29]   - models/gemini-3-flash-preview
+[INFO] [2026-06-17 22:46:29]   - models/gemini-3.1-pro-preview
+[INFO] [2026-06-17 22:46:29]   - models/gemini-3.1-pro-preview-customtools
+[INFO] [2026-06-17 22:46:29]   - models/gemini-3.1-flash-lite-preview
+[INFO] [2026-06-17 22:46:29]   - models/gemini-3.1-flash-lite
+[INFO] [2026-06-17 22:46:29]   - models/gemini-3-pro-image-preview
+[INFO] [2026-06-17 22:46:29]   - models/gemini-3-pro-image
+[INFO] [2026-06-17 22:46:29]   - models/nano-banana-pro-preview
+[INFO] [2026-06-17 22:46:29]   - models/gemini-3.1-flash-image-preview
+[INFO] [2026-06-17 22:46:29]   - models/gemini-3.1-flash-image
+[INFO] [2026-06-17 22:46:29]   - models/gemini-3.5-flash
+[INFO] [2026-06-17 22:46:29]   - models/lyria-3-clip-preview
+[INFO] [2026-06-17 22:46:29]   - models/lyria-3-pro-preview
+[INFO] [2026-06-17 22:46:29]   - models/gemini-3.1-flash-tts-preview
+[INFO] [2026-06-17 22:46:29]   - models/gemini-robotics-er-1.5-preview
+[INFO] [2026-06-17 22:46:29]   - models/gemini-robotics-er-1.6-preview
+[INFO] [2026-06-17 22:46:29]   - models/gemini-2.5-computer-use-preview-10-2025
+[INFO] [2026-06-17 22:46:29]   - models/antigravity-preview-05-2026
+[INFO] [2026-06-17 22:46:29]   - models/deep-research-max-preview-04-2026
+[INFO] [2026-06-17 22:46:30]   - models/deep-research-preview-04-2026
+[INFO] [2026-06-17 22:46:30]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-17 22:46:30] Available Gemini models:
+[INFO] [2026-06-17 22:46:30]   - models/gemini-2.5-flash
+[INFO] [2026-06-17 22:46:30]   - models/gemini-2.5-pro
+[INFO] [2026-06-17 22:46:30]   - models/gemini-2.0-flash
+[INFO] [2026-06-17 22:46:30]   - models/gemini-2.0-flash-001
+[INFO] [2026-06-17 22:46:30]   - models/gemini-2.0-flash-lite-001
+[INFO] [2026-06-17 22:46:30]   - models/gemini-2.0-flash-lite
+[INFO] [2026-06-17 22:46:30]   - models/gemini-2.5-flash-preview-tts
+[INFO] [2026-06-17 22:46:30]   - models/gemini-2.5-pro-preview-tts
+[INFO] [2026-06-17 22:46:30]   - models/gemma-4-26b-a4b-it
+[INFO] [2026-06-17 22:46:30]   - models/gemma-4-31b-it
+[INFO] [2026-06-17 22:46:30]   - models/gemini-flash-latest
+[INFO] [2026-06-17 22:46:30]   - models/gemini-flash-lite-latest
+[INFO] [2026-06-17 22:46:30]   - models/gemini-pro-latest
+[INFO] [2026-06-17 22:46:30]   - models/gemini-2.5-flash-lite
+[INFO] [2026-06-17 22:46:30]   - models/gemini-2.5-flash-image
+[INFO] [2026-06-17 22:46:30]   - models/gemini-3-pro-preview
+[INFO] [2026-06-17 22:46:30]   - models/gemini-3-flash-preview
+[INFO] [2026-06-17 22:46:30]   - models/gemini-3.1-pro-preview
+[INFO] [2026-06-17 22:46:30]   - models/gemini-3.1-pro-preview-customtools
+[INFO] [2026-06-17 22:46:30]   - models/gemini-3.1-flash-lite-preview
+[INFO] [2026-06-17 22:46:30]   - models/gemini-3.1-flash-lite
+[INFO] [2026-06-17 22:46:30]   - models/gemini-3-pro-image-preview
+[INFO] [2026-06-17 22:46:30]   - models/gemini-3-pro-image
+[INFO] [2026-06-17 22:46:30]   - models/nano-banana-pro-preview
+[INFO] [2026-06-17 22:46:30]   - models/gemini-3.1-flash-image-preview
+[INFO] [2026-06-17 22:46:30]   - models/gemini-3.1-flash-image
+[INFO] [2026-06-17 22:46:30]   - models/gemini-3.5-flash
+[INFO] [2026-06-17 22:46:30]   - models/lyria-3-clip-preview
+[INFO] [2026-06-17 22:46:30]   - models/lyria-3-pro-preview
+[INFO] [2026-06-17 22:46:30]   - models/gemini-3.1-flash-tts-preview
+[INFO] [2026-06-17 22:46:30]   - models/gemini-robotics-er-1.5-preview
+[INFO] [2026-06-17 22:46:30]   - models/gemini-robotics-er-1.6-preview
+[INFO] [2026-06-17 22:46:30]   - models/gemini-2.5-computer-use-preview-10-2025
+[INFO] [2026-06-17 22:46:30]   - models/antigravity-preview-05-2026
+[INFO] [2026-06-17 22:46:30]   - models/deep-research-max-preview-04-2026
+[INFO] [2026-06-17 22:46:30]   - models/deep-research-preview-04-2026
+[INFO] [2026-06-17 22:46:30]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-17 22:46:41] Available Gemini models:
+[INFO] [2026-06-17 22:46:41]   - models/gemini-2.5-flash
+[INFO] [2026-06-17 22:46:41]   - models/gemini-2.5-pro
+[INFO] [2026-06-17 22:46:41]   - models/gemini-2.0-flash
+[INFO] [2026-06-17 22:46:41]   - models/gemini-2.0-flash-001
+[INFO] [2026-06-17 22:46:41]   - models/gemini-2.0-flash-lite-001
+[INFO] [2026-06-17 22:46:41]   - models/gemini-2.0-flash-lite
+[INFO] [2026-06-17 22:46:41]   - models/gemini-2.5-flash-preview-tts
+[INFO] [2026-06-17 22:46:41]   - models/gemini-2.5-pro-preview-tts
+[INFO] [2026-06-17 22:46:41]   - models/gemma-4-26b-a4b-it
+[INFO] [2026-06-17 22:46:41]   - models/gemma-4-31b-it
+[INFO] [2026-06-17 22:46:41]   - models/gemini-flash-latest
+[INFO] [2026-06-17 22:46:41]   - models/gemini-flash-lite-latest
+[INFO] [2026-06-17 22:46:41]   - models/gemini-pro-latest
+[INFO] [2026-06-17 22:46:41]   - models/gemini-2.5-flash-lite
+[INFO] [2026-06-17 22:46:41]   - models/gemini-2.5-flash-image
+[INFO] [2026-06-17 22:46:41]   - models/gemini-3-pro-preview
+[INFO] [2026-06-17 22:46:41]   - models/gemini-3-flash-preview
+[INFO] [2026-06-17 22:46:41]   - models/gemini-3.1-pro-preview
+[INFO] [2026-06-17 22:46:41]   - models/gemini-3.1-pro-preview-customtools
+[INFO] [2026-06-17 22:46:41]   - models/gemini-3.1-flash-lite-preview
+[INFO] [2026-06-17 22:46:41]   - models/gemini-3.1-flash-lite
+[INFO] [2026-06-17 22:46:41]   - models/gemini-3-pro-image-preview
+[INFO] [2026-06-17 22:46:41]   - models/gemini-3-pro-image
+[INFO] [2026-06-17 22:46:41]   - models/nano-banana-pro-preview
+[INFO] [2026-06-17 22:46:41]   - models/gemini-3.1-flash-image-preview
+[INFO] [2026-06-17 22:46:41]   - models/gemini-3.1-flash-image
+[INFO] [2026-06-17 22:46:41]   - models/gemini-3.5-flash
+[INFO] [2026-06-17 22:46:41]   - models/lyria-3-clip-preview
+[INFO] [2026-06-17 22:46:41]   - models/lyria-3-pro-preview
+[INFO] [2026-06-17 22:46:41]   - models/gemini-3.1-flash-tts-preview
+[INFO] [2026-06-17 22:46:41]   - models/gemini-robotics-er-1.5-preview
+[INFO] [2026-06-17 22:46:41]   - models/gemini-robotics-er-1.6-preview
+[INFO] [2026-06-17 22:46:41]   - models/gemini-2.5-computer-use-preview-10-2025
+[INFO] [2026-06-17 22:46:41]   - models/antigravity-preview-05-2026
+[INFO] [2026-06-17 22:46:41]   - models/deep-research-max-preview-04-2026
+[INFO] [2026-06-17 22:46:41]   - models/deep-research-preview-04-2026
+[INFO] [2026-06-17 22:46:41]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-17 22:47:37] Job 28653150-429e-4f00-8c26-4d324b7ebddc: Received upload request for SampleContract-Shuttle.pdf
+[INFO] [2026-06-17 22:47:37] Job 28653150-429e-4f00-8c26-4d324b7ebddc: File size: 49647 bytes
+[INFO] [2026-06-17 22:47:37] Job 28653150-429e-4f00-8c26-4d324b7ebddc: File saved (49647 bytes), queuing for processing
+[INFO] [2026-06-17 22:47:37] Job 28653150-429e-4f00-8c26-4d324b7ebddc: Started processing 28653150-429e-4f00-8c26-4d324b7ebddc_SampleContract-Shuttle.pdf
+[INFO] [2026-06-17 22:47:37] Job 28653150-429e-4f00-8c26-4d324b7ebddc: Opening PDF document
+[INFO] [2026-06-17 22:47:37] Job 28653150-429e-4f00-8c26-4d324b7ebddc: Processing PDF with 10 pages
+[INFO] [2026-06-17 22:47:37] Job 28653150-429e-4f00-8c26-4d324b7ebddc: Page 1 native text: 2847 chars
+[INFO] [2026-06-17 22:47:37] Job 28653150-429e-4f00-8c26-4d324b7ebddc: Page 2 native text: 3353 chars
+[INFO] [2026-06-17 22:47:37] Job 28653150-429e-4f00-8c26-4d324b7ebddc: Page 3 native text: 3663 chars
+[INFO] [2026-06-17 22:47:37] Job 28653150-429e-4f00-8c26-4d324b7ebddc: Page 4 native text: 3429 chars
+[INFO] [2026-06-17 22:47:37] Job 28653150-429e-4f00-8c26-4d324b7ebddc: Page 5 native text: 3625 chars
+[INFO] [2026-06-17 22:47:37] Job 28653150-429e-4f00-8c26-4d324b7ebddc: Page 6 native text: 4012 chars
+[INFO] [2026-06-17 22:47:37] Job 28653150-429e-4f00-8c26-4d324b7ebddc: Page 7 native text: 3771 chars
+[INFO] [2026-06-17 22:47:37] Job 28653150-429e-4f00-8c26-4d324b7ebddc: Page 8 native text: 3667 chars
+[INFO] [2026-06-17 22:47:37] Job 28653150-429e-4f00-8c26-4d324b7ebddc: Page 9 native text: 3210 chars
+[INFO] [2026-06-17 22:47:37] Job 28653150-429e-4f00-8c26-4d324b7ebddc: Page 10 native text: 1359 chars
+[INFO] [2026-06-17 22:47:37] Job 28653150-429e-4f00-8c26-4d324b7ebddc: Extracted 32936 total characters
+[INFO] [2026-06-17 22:47:48] Job 28653150-429e-4f00-8c26-4d324b7ebddc: Complete pipeline finished successfully. Analysis saved, 5 lawyer types recommended
+[INFO] [2026-06-17 22:47:48] Job 28653150-429e-4f00-8c26-4d324b7ebddc: Cleaned up file 28653150-429e-4f00-8c26-4d324b7ebddc_SampleContract-Shuttle.pdf
+[INFO] [2026-06-17 22:49:21] Available Gemini models:
+[INFO] [2026-06-17 22:49:21]   - models/gemini-2.5-flash
+[INFO] [2026-06-17 22:49:21]   - models/gemini-2.5-pro
+[INFO] [2026-06-17 22:49:21]   - models/gemini-2.0-flash
+[INFO] [2026-06-17 22:49:21]   - models/gemini-2.0-flash-001
+[INFO] [2026-06-17 22:49:21]   - models/gemini-2.0-flash-lite-001
+[INFO] [2026-06-17 22:49:21]   - models/gemini-2.0-flash-lite
+[INFO] [2026-06-17 22:49:21]   - models/gemini-2.5-flash-preview-tts
+[INFO] [2026-06-17 22:49:21]   - models/gemini-2.5-pro-preview-tts
+[INFO] [2026-06-17 22:49:21]   - models/gemma-4-26b-a4b-it
+[INFO] [2026-06-17 22:49:21]   - models/gemma-4-31b-it
+[INFO] [2026-06-17 22:49:21]   - models/gemini-flash-latest
+[INFO] [2026-06-17 22:49:21]   - models/gemini-flash-lite-latest
+[INFO] [2026-06-17 22:49:21]   - models/gemini-pro-latest
+[INFO] [2026-06-17 22:49:21]   - models/gemini-2.5-flash-lite
+[INFO] [2026-06-17 22:49:21]   - models/gemini-2.5-flash-image
+[INFO] [2026-06-17 22:49:21]   - models/gemini-3-pro-preview
+[INFO] [2026-06-17 22:49:21]   - models/gemini-3-flash-preview
+[INFO] [2026-06-17 22:49:21]   - models/gemini-3.1-pro-preview
+[INFO] [2026-06-17 22:49:21]   - models/gemini-3.1-pro-preview-customtools
+[INFO] [2026-06-17 22:49:21]   - models/gemini-3.1-flash-lite-preview
+[INFO] [2026-06-17 22:49:21]   - models/gemini-3.1-flash-lite
+[INFO] [2026-06-17 22:49:21]   - models/gemini-3-pro-image-preview
+[INFO] [2026-06-17 22:49:21]   - models/gemini-3-pro-image
+[INFO] [2026-06-17 22:49:21]   - models/nano-banana-pro-preview
+[INFO] [2026-06-17 22:49:21]   - models/gemini-3.1-flash-image-preview
+[INFO] [2026-06-17 22:49:21]   - models/gemini-3.1-flash-image
+[INFO] [2026-06-17 22:49:21]   - models/gemini-3.5-flash
+[INFO] [2026-06-17 22:49:21]   - models/lyria-3-clip-preview
+[INFO] [2026-06-17 22:49:21]   - models/lyria-3-pro-preview
+[INFO] [2026-06-17 22:49:21]   - models/gemini-3.1-flash-tts-preview
+[INFO] [2026-06-17 22:49:21]   - models/gemini-robotics-er-1.5-preview
+[INFO] [2026-06-17 22:49:21]   - models/gemini-robotics-er-1.6-preview
+[INFO] [2026-06-17 22:49:21]   - models/gemini-2.5-computer-use-preview-10-2025
+[INFO] [2026-06-17 22:49:21]   - models/antigravity-preview-05-2026
+[INFO] [2026-06-17 22:49:21]   - models/deep-research-max-preview-04-2026
+[INFO] [2026-06-17 22:49:21]   - models/deep-research-preview-04-2026
+[INFO] [2026-06-17 22:49:21]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-17 22:49:21] Available Gemini models:
+[INFO] [2026-06-17 22:49:22]   - models/gemini-2.5-flash
+[INFO] [2026-06-17 22:49:22]   - models/gemini-2.5-pro
+[INFO] [2026-06-17 22:49:22]   - models/gemini-2.0-flash
+[INFO] [2026-06-17 22:49:22]   - models/gemini-2.0-flash-001
+[INFO] [2026-06-17 22:49:22]   - models/gemini-2.0-flash-lite-001
+[INFO] [2026-06-17 22:49:22]   - models/gemini-2.0-flash-lite
+[INFO] [2026-06-17 22:49:22]   - models/gemini-2.5-flash-preview-tts
+[INFO] [2026-06-17 22:49:22]   - models/gemini-2.5-pro-preview-tts
+[INFO] [2026-06-17 22:49:22]   - models/gemma-4-26b-a4b-it
+[INFO] [2026-06-17 22:49:22]   - models/gemma-4-31b-it
+[INFO] [2026-06-17 22:49:22]   - models/gemini-flash-latest
+[INFO] [2026-06-17 22:49:22]   - models/gemini-flash-lite-latest
+[INFO] [2026-06-17 22:49:22]   - models/gemini-pro-latest
+[INFO] [2026-06-17 22:49:22]   - models/gemini-2.5-flash-lite
+[INFO] [2026-06-17 22:49:22]   - models/gemini-2.5-flash-image
+[INFO] [2026-06-17 22:49:22]   - models/gemini-3-pro-preview
+[INFO] [2026-06-17 22:49:22]   - models/gemini-3-flash-preview
+[INFO] [2026-06-17 22:49:22]   - models/gemini-3.1-pro-preview
+[INFO] [2026-06-17 22:49:22]   - models/gemini-3.1-pro-preview-customtools
+[INFO] [2026-06-17 22:49:22]   - models/gemini-3.1-flash-lite-preview
+[INFO] [2026-06-17 22:49:22]   - models/gemini-3.1-flash-lite
+[INFO] [2026-06-17 22:49:22]   - models/gemini-3-pro-image-preview
+[INFO] [2026-06-17 22:49:22]   - models/gemini-3-pro-image
+[INFO] [2026-06-17 22:49:22]   - models/nano-banana-pro-preview
+[INFO] [2026-06-17 22:49:22]   - models/gemini-3.1-flash-image-preview
+[INFO] [2026-06-17 22:49:22]   - models/gemini-3.1-flash-image
+[INFO] [2026-06-17 22:49:22]   - models/gemini-3.5-flash
+[INFO] [2026-06-17 22:49:22]   - models/lyria-3-clip-preview
+[INFO] [2026-06-17 22:49:22]   - models/lyria-3-pro-preview
+[INFO] [2026-06-17 22:49:22]   - models/gemini-3.1-flash-tts-preview
+[INFO] [2026-06-17 22:49:22]   - models/gemini-robotics-er-1.5-preview
+[INFO] [2026-06-17 22:49:22]   - models/gemini-robotics-er-1.6-preview
+[INFO] [2026-06-17 22:49:22]   - models/gemini-2.5-computer-use-preview-10-2025
+[INFO] [2026-06-17 22:49:22]   - models/antigravity-preview-05-2026
+[INFO] [2026-06-17 22:49:22]   - models/deep-research-max-preview-04-2026
+[INFO] [2026-06-17 22:49:22]   - models/deep-research-preview-04-2026
+[INFO] [2026-06-17 22:49:22]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-17 22:49:36] Available Gemini models:
+[INFO] [2026-06-17 22:49:36]   - models/gemini-2.5-flash
+[INFO] [2026-06-17 22:49:36]   - models/gemini-2.5-pro
+[INFO] [2026-06-17 22:49:36]   - models/gemini-2.0-flash
+[INFO] [2026-06-17 22:49:36]   - models/gemini-2.0-flash-001
+[INFO] [2026-06-17 22:49:36]   - models/gemini-2.0-flash-lite-001
+[INFO] [2026-06-17 22:49:36]   - models/gemini-2.0-flash-lite
+[INFO] [2026-06-17 22:49:36]   - models/gemini-2.5-flash-preview-tts
+[INFO] [2026-06-17 22:49:36]   - models/gemini-2.5-pro-preview-tts
+[INFO] [2026-06-17 22:49:36]   - models/gemma-4-26b-a4b-it
+[INFO] [2026-06-17 22:49:36]   - models/gemma-4-31b-it
+[INFO] [2026-06-17 22:49:36]   - models/gemini-flash-latest
+[INFO] [2026-06-17 22:49:36]   - models/gemini-flash-lite-latest
+[INFO] [2026-06-17 22:49:36]   - models/gemini-pro-latest
+[INFO] [2026-06-17 22:49:36]   - models/gemini-2.5-flash-lite
+[INFO] [2026-06-17 22:49:36]   - models/gemini-2.5-flash-image
+[INFO] [2026-06-17 22:49:36]   - models/gemini-3-pro-preview
+[INFO] [2026-06-17 22:49:36]   - models/gemini-3-flash-preview
+[INFO] [2026-06-17 22:49:36]   - models/gemini-3.1-pro-preview
+[INFO] [2026-06-17 22:49:36]   - models/gemini-3.1-pro-preview-customtools
+[INFO] [2026-06-17 22:49:36]   - models/gemini-3.1-flash-lite-preview
+[INFO] [2026-06-17 22:49:36]   - models/gemini-3.1-flash-lite
+[INFO] [2026-06-17 22:49:36]   - models/gemini-3-pro-image-preview
+[INFO] [2026-06-17 22:49:36]   - models/gemini-3-pro-image
+[INFO] [2026-06-17 22:49:36]   - models/nano-banana-pro-preview
+[INFO] [2026-06-17 22:49:36]   - models/gemini-3.1-flash-image-preview
+[INFO] [2026-06-17 22:49:36]   - models/gemini-3.1-flash-image
+[INFO] [2026-06-17 22:49:36]   - models/gemini-3.5-flash
+[INFO] [2026-06-17 22:49:36]   - models/lyria-3-clip-preview
+[INFO] [2026-06-17 22:49:36]   - models/lyria-3-pro-preview
+[INFO] [2026-06-17 22:49:36]   - models/gemini-3.1-flash-tts-preview
+[INFO] [2026-06-17 22:49:36]   - models/gemini-robotics-er-1.5-preview
+[INFO] [2026-06-17 22:49:36]   - models/gemini-robotics-er-1.6-preview
+[INFO] [2026-06-17 22:49:36]   - models/gemini-2.5-computer-use-preview-10-2025
+[INFO] [2026-06-17 22:49:36]   - models/antigravity-preview-05-2026
+[INFO] [2026-06-17 22:49:36]   - models/deep-research-max-preview-04-2026
+[INFO] [2026-06-17 22:49:36]   - models/deep-research-preview-04-2026
+[INFO] [2026-06-17 22:49:36]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-17 22:50:19] Job 9657d345-b396-4a28-a4f4-a26ab6ebfb38: Received upload request for SampleContract-Shuttle.pdf
+[INFO] [2026-06-17 22:50:19] Job 9657d345-b396-4a28-a4f4-a26ab6ebfb38: File size: 49647 bytes
+[INFO] [2026-06-17 22:50:19] Job 9657d345-b396-4a28-a4f4-a26ab6ebfb38: File saved (49647 bytes), queuing for processing
+[INFO] [2026-06-17 22:50:19] Job 9657d345-b396-4a28-a4f4-a26ab6ebfb38: Started processing 9657d345-b396-4a28-a4f4-a26ab6ebfb38_SampleContract-Shuttle.pdf
+[INFO] [2026-06-17 22:50:19] Job 9657d345-b396-4a28-a4f4-a26ab6ebfb38: Opening PDF document
+[INFO] [2026-06-17 22:50:19] Job 9657d345-b396-4a28-a4f4-a26ab6ebfb38: Processing PDF with 10 pages
+[INFO] [2026-06-17 22:50:19] Job 9657d345-b396-4a28-a4f4-a26ab6ebfb38: Page 1 native text: 2847 chars
+[INFO] [2026-06-17 22:50:19] Job 9657d345-b396-4a28-a4f4-a26ab6ebfb38: Page 2 native text: 3353 chars
+[INFO] [2026-06-17 22:50:19] Job 9657d345-b396-4a28-a4f4-a26ab6ebfb38: Page 3 native text: 3663 chars
+[INFO] [2026-06-17 22:50:19] Job 9657d345-b396-4a28-a4f4-a26ab6ebfb38: Page 4 native text: 3429 chars
+[INFO] [2026-06-17 22:50:19] Job 9657d345-b396-4a28-a4f4-a26ab6ebfb38: Page 5 native text: 3625 chars
+[INFO] [2026-06-17 22:50:19] Job 9657d345-b396-4a28-a4f4-a26ab6ebfb38: Page 6 native text: 4012 chars
+[INFO] [2026-06-17 22:50:19] Job 9657d345-b396-4a28-a4f4-a26ab6ebfb38: Page 7 native text: 3771 chars
+[INFO] [2026-06-17 22:50:19] Job 9657d345-b396-4a28-a4f4-a26ab6ebfb38: Page 8 native text: 3667 chars
+[INFO] [2026-06-17 22:50:19] Job 9657d345-b396-4a28-a4f4-a26ab6ebfb38: Page 9 native text: 3210 chars
+[INFO] [2026-06-17 22:50:19] Job 9657d345-b396-4a28-a4f4-a26ab6ebfb38: Page 10 native text: 1359 chars
+[INFO] [2026-06-17 22:50:19] Job 9657d345-b396-4a28-a4f4-a26ab6ebfb38: Extracted 32936 total characters
+[INFO] [2026-06-17 22:50:37] Job 9657d345-b396-4a28-a4f4-a26ab6ebfb38: Complete pipeline finished successfully. Analysis saved, 5 lawyer types recommended
+[INFO] [2026-06-17 22:50:37] Job 9657d345-b396-4a28-a4f4-a26ab6ebfb38: Cleaned up file 9657d345-b396-4a28-a4f4-a26ab6ebfb38_SampleContract-Shuttle.pdf
