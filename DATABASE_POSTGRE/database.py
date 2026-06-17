@@ -94,8 +94,17 @@ def calculate_score(words, terms, clauses, risks):
     risk_hits = words & clean_text(risks)
 
     total_hits = len(term_hits) + len(clause_hits) + len(risk_hits)
-    if total_hits < MIN_MATCH_COUNT:
-        return 0, set(), set(), set()
+    if (
+    len(clause_hits) == 0
+    and
+    len(risk_hits) < 2
+        ):
+        return (
+            0,
+            set(),
+            set(),
+            set()
+        )
 
     score = 0
     score += len(term_hits) * TERM_WEIGHT

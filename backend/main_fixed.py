@@ -156,6 +156,7 @@ def extract_text(file_bytes, job_id=None):
                     text = get_high_accuracy_ocr(pix, page_num)
 
                 full_text += text
+
             except Exception as e:
                 logger.error(
                     f"Job {job_id}: Failed to process page {page_num}: {str(e)}"
@@ -257,21 +258,20 @@ def process_document(job_id: str, file_path: str):
             analysis = LegalAnalysis(**parsed_data)
 
             recommended_lawyers: List[Dict[str, Any]] = []
+            search_text = ""
 
             try:
                 document_context: List[str] = []
-                search_text = ""
 
                 if analysis.summary:
                     document_context.append(analysis.summary)
-                    search_text += analysis.summary + " "
 
                 if analysis.keywords:
                     document_context.extend(analysis.keywords)
-                    search_text += " ".join(analysis.keywords) + " "
 
-                if analysis.legalCategory:
-                    search_text += analysis.legalCategory + " "
+                search_text += (analysis.summary or "") + " "
+                search_text += analysis.legalCategory + " "
+                search_text += " ".join(analysis.keywords or []) + " "
 
                 if analysis.riskyClauses:
                     for clause in analysis.riskyClauses:
@@ -359,28 +359,19 @@ def process_document(job_id: str, file_path: str):
                 "recommendedLawyerTypes": recommended_lawyers,
             }
 
-            logger.info(
-                f"Job {job_id}: Complete pipeline finished successfully. "
-                f"Analysis saved, {len(recommended_lawyers)} lawyer types recommended"
-            )
-
         except ValidationError as ve:
-            logger.error(f"Job {job_id}: Validation failed - {str(ve)}")
             jobs[job_id] = {"status": "failed", "error": f"Invalid response format: {str(ve)}"}
         except json.JSONDecodeError as je:
-            logger.error(f"Job {job_id}: JSON parsing failed - {str(je)}")
             jobs[job_id] = {"status": "failed", "error": f"Invalid JSON response: {str(je)}"}
 
     except Exception as e:
         logger.error(f"Job {job_id}: Processing failed - {str(e)}")
         jobs[job_id] = {"status": "failed", "error": str(e)}
-
     finally:
         try:
             os.remove(file_path)
-            logger.info(f"Job {job_id}: Cleaned up file {os.path.basename(file_path)}")
-        except Exception as e:
-            logger.warning(f"Job {job_id}: Failed to cleanup file - {str(e)}")
+        except Exception:
+            pass
 
 
 @app.post("/api/predict", response_model=JobResponse)
@@ -388,19 +379,11 @@ async def upload_and_analyze_document(file: UploadFile = File(...)):
     job_id = str(uuid.uuid4())
     file_path = os.path.join(UPLOAD_DIR, f"{job_id}_{file.filename}")
 
-    logger.info(f"Job {job_id}: Received upload request for {file.filename}")
-
     content = await file.read()
-
-    logger.info(f"Job {job_id}: File size: {len(content)} bytes")
-
     with open(file_path, "wb") as f:
         f.write(content)
 
-    logger.info(f"Job {job_id}: File saved ({len(content)} bytes), queuing for processing")
-
     jobs[job_id] = {"status": "queued"}
-
     executor.submit(process_document, job_id, file_path)
 
     return {"job_id": job_id, "status": "queued"}
@@ -409,12 +392,11 @@ async def upload_and_analyze_document(file: UploadFile = File(...)):
 @app.get("/api/status/{job_id}", response_model=JobStatus)
 async def get_job_status(job_id: str):
     if job_id not in jobs:
-        logger.warning(f"Status check for unknown job: {job_id}")
         raise HTTPException(status_code=404, detail="Job not found")
     return jobs[job_id]
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     logger.info("Starting Legal AI Backend server")
-    uvicorn.run("main:app", host="127.0.0.1", port=5000, reload=True)
+    uvicorn.run("main_fixed:app", host="127.0.0.1", port=5000, reload=True)
 

@@ -1,0 +1,732 @@
+[INFO] [2026-06-16 22:42:36] Available Gemini models:
+[INFO] [2026-06-16 22:42:37]   - models/gemini-2.5-flash
+[INFO] [2026-06-16 22:42:37]   - models/gemini-2.5-pro
+[INFO] [2026-06-16 22:42:37]   - models/gemini-2.0-flash
+[INFO] [2026-06-16 22:42:37]   - models/gemini-2.0-flash-001
+[INFO] [2026-06-16 22:42:37]   - models/gemini-2.0-flash-lite-001
+[INFO] [2026-06-16 22:42:37]   - models/gemini-2.0-flash-lite
+[INFO] [2026-06-16 22:42:37]   - models/gemini-2.5-flash-preview-tts
+[INFO] [2026-06-16 22:42:37]   - models/gemini-2.5-pro-preview-tts
+[INFO] [2026-06-16 22:42:37]   - models/gemma-4-26b-a4b-it
+[INFO] [2026-06-16 22:42:37]   - models/gemma-4-31b-it
+[INFO] [2026-06-16 22:42:37]   - models/gemini-flash-latest
+[INFO] [2026-06-16 22:42:37]   - models/gemini-flash-lite-latest
+[INFO] [2026-06-16 22:42:37]   - models/gemini-pro-latest
+[INFO] [2026-06-16 22:42:37]   - models/gemini-2.5-flash-lite
+[INFO] [2026-06-16 22:42:37]   - models/gemini-2.5-flash-image
+[INFO] [2026-06-16 22:42:37]   - models/gemini-3-pro-preview
+[INFO] [2026-06-16 22:42:37]   - models/gemini-3-flash-preview
+[INFO] [2026-06-16 22:42:37]   - models/gemini-3.1-pro-preview
+[INFO] [2026-06-16 22:42:37]   - models/gemini-3.1-pro-preview-customtools
+[INFO] [2026-06-16 22:42:37]   - models/gemini-3.1-flash-lite-preview
+[INFO] [2026-06-16 22:42:37]   - models/gemini-3.1-flash-lite
+[INFO] [2026-06-16 22:42:37]   - models/gemini-3-pro-image-preview
+[INFO] [2026-06-16 22:42:37]   - models/gemini-3-pro-image
+[INFO] [2026-06-16 22:42:37]   - models/nano-banana-pro-preview
+[INFO] [2026-06-16 22:42:37]   - models/gemini-3.1-flash-image-preview
+[INFO] [2026-06-16 22:42:37]   - models/gemini-3.1-flash-image
+[INFO] [2026-06-16 22:42:37]   - models/gemini-3.5-flash
+[INFO] [2026-06-16 22:42:37]   - models/lyria-3-clip-preview
+[INFO] [2026-06-16 22:42:37]   - models/lyria-3-pro-preview
+[INFO] [2026-06-16 22:42:37]   - models/gemini-3.1-flash-tts-preview
+[INFO] [2026-06-16 22:42:37]   - models/gemini-robotics-er-1.5-preview
+[INFO] [2026-06-16 22:42:37]   - models/gemini-robotics-er-1.6-preview
+[INFO] [2026-06-16 22:42:37]   - models/gemini-2.5-computer-use-preview-10-2025
+[INFO] [2026-06-16 22:42:37]   - models/antigravity-preview-05-2026
+[INFO] [2026-06-16 22:42:37]   - models/deep-research-max-preview-04-2026
+[INFO] [2026-06-16 22:42:37]   - models/deep-research-preview-04-2026
+[INFO] [2026-06-16 22:42:37]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-16 22:42:37] Starting Legal AI Backend server
+[INFO] [2026-06-16 22:42:37] Available Gemini models:
+[INFO] [2026-06-16 22:42:37]   - models/gemini-2.5-flash
+[INFO] [2026-06-16 22:42:37]   - models/gemini-2.5-pro
+[INFO] [2026-06-16 22:42:37]   - models/gemini-2.0-flash
+[INFO] [2026-06-16 22:42:37]   - models/gemini-2.0-flash-001
+[INFO] [2026-06-16 22:42:37]   - models/gemini-2.0-flash-lite-001
+[INFO] [2026-06-16 22:42:37]   - models/gemini-2.0-flash-lite
+[INFO] [2026-06-16 22:42:37]   - models/gemini-2.5-flash-preview-tts
+[INFO] [2026-06-16 22:42:37]   - models/gemini-2.5-pro-preview-tts
+[INFO] [2026-06-16 22:42:37]   - models/gemma-4-26b-a4b-it
+[INFO] [2026-06-16 22:42:37]   - models/gemma-4-31b-it
+[INFO] [2026-06-16 22:42:37]   - models/gemini-flash-latest
+[INFO] [2026-06-16 22:42:37]   - models/gemini-flash-lite-latest
+[INFO] [2026-06-16 22:42:37]   - models/gemini-pro-latest
+[INFO] [2026-06-16 22:42:37]   - models/gemini-2.5-flash-lite
+[INFO] [2026-06-16 22:42:37]   - models/gemini-2.5-flash-image
+[INFO] [2026-06-16 22:42:37]   - models/gemini-3-pro-preview
+[INFO] [2026-06-16 22:42:37]   - models/gemini-3-flash-preview
+[INFO] [2026-06-16 22:42:37]   - models/gemini-3.1-pro-preview
+[INFO] [2026-06-16 22:42:37]   - models/gemini-3.1-pro-preview-customtools
+[INFO] [2026-06-16 22:42:37]   - models/gemini-3.1-flash-lite-preview
+[INFO] [2026-06-16 22:42:37]   - models/gemini-3.1-flash-lite
+[INFO] [2026-06-16 22:42:37]   - models/gemini-3-pro-image-preview
+[INFO] [2026-06-16 22:42:37]   - models/gemini-3-pro-image
+[INFO] [2026-06-16 22:42:37]   - models/nano-banana-pro-preview
+[INFO] [2026-06-16 22:42:37]   - models/gemini-3.1-flash-image-preview
+[INFO] [2026-06-16 22:42:37]   - models/gemini-3.1-flash-image
+[INFO] [2026-06-16 22:42:37]   - models/gemini-3.5-flash
+[INFO] [2026-06-16 22:42:37]   - models/lyria-3-clip-preview
+[INFO] [2026-06-16 22:42:37]   - models/lyria-3-pro-preview
+[INFO] [2026-06-16 22:42:37]   - models/gemini-3.1-flash-tts-preview
+[INFO] [2026-06-16 22:42:37]   - models/gemini-robotics-er-1.5-preview
+[INFO] [2026-06-16 22:42:37]   - models/gemini-robotics-er-1.6-preview
+[INFO] [2026-06-16 22:42:37]   - models/gemini-2.5-computer-use-preview-10-2025
+[INFO] [2026-06-16 22:42:37]   - models/antigravity-preview-05-2026
+[INFO] [2026-06-16 22:42:37]   - models/deep-research-max-preview-04-2026
+[INFO] [2026-06-16 22:42:37]   - models/deep-research-preview-04-2026
+[INFO] [2026-06-16 22:42:37]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-16 22:42:42] Available Gemini models:
+[INFO] [2026-06-16 22:42:42]   - models/gemini-2.5-flash
+[INFO] [2026-06-16 22:42:42]   - models/gemini-2.5-pro
+[INFO] [2026-06-16 22:42:42]   - models/gemini-2.0-flash
+[INFO] [2026-06-16 22:42:42]   - models/gemini-2.0-flash-001
+[INFO] [2026-06-16 22:42:42]   - models/gemini-2.0-flash-lite-001
+[INFO] [2026-06-16 22:42:42]   - models/gemini-2.0-flash-lite
+[INFO] [2026-06-16 22:42:42]   - models/gemini-2.5-flash-preview-tts
+[INFO] [2026-06-16 22:42:42]   - models/gemini-2.5-pro-preview-tts
+[INFO] [2026-06-16 22:42:42]   - models/gemma-4-26b-a4b-it
+[INFO] [2026-06-16 22:42:42]   - models/gemma-4-31b-it
+[INFO] [2026-06-16 22:42:42]   - models/gemini-flash-latest
+[INFO] [2026-06-16 22:42:42]   - models/gemini-flash-lite-latest
+[INFO] [2026-06-16 22:42:42]   - models/gemini-pro-latest
+[INFO] [2026-06-16 22:42:42]   - models/gemini-2.5-flash-lite
+[INFO] [2026-06-16 22:42:42]   - models/gemini-2.5-flash-image
+[INFO] [2026-06-16 22:42:42]   - models/gemini-3-pro-preview
+[INFO] [2026-06-16 22:42:42]   - models/gemini-3-flash-preview
+[INFO] [2026-06-16 22:42:42]   - models/gemini-3.1-pro-preview
+[INFO] [2026-06-16 22:42:42]   - models/gemini-3.1-pro-preview-customtools
+[INFO] [2026-06-16 22:42:42]   - models/gemini-3.1-flash-lite-preview
+[INFO] [2026-06-16 22:42:42]   - models/gemini-3.1-flash-lite
+[INFO] [2026-06-16 22:42:42]   - models/gemini-3-pro-image-preview
+[INFO] [2026-06-16 22:42:42]   - models/gemini-3-pro-image
+[INFO] [2026-06-16 22:42:42]   - models/nano-banana-pro-preview
+[INFO] [2026-06-16 22:42:42]   - models/gemini-3.1-flash-image-preview
+[INFO] [2026-06-16 22:42:42]   - models/gemini-3.1-flash-image
+[INFO] [2026-06-16 22:42:42]   - models/gemini-3.5-flash
+[INFO] [2026-06-16 22:42:42]   - models/lyria-3-clip-preview
+[INFO] [2026-06-16 22:42:42]   - models/lyria-3-pro-preview
+[INFO] [2026-06-16 22:42:42]   - models/gemini-3.1-flash-tts-preview
+[INFO] [2026-06-16 22:42:42]   - models/gemini-robotics-er-1.5-preview
+[INFO] [2026-06-16 22:42:42]   - models/gemini-robotics-er-1.6-preview
+[INFO] [2026-06-16 22:42:42]   - models/gemini-2.5-computer-use-preview-10-2025
+[INFO] [2026-06-16 22:42:42]   - models/antigravity-preview-05-2026
+[INFO] [2026-06-16 22:42:42]   - models/deep-research-max-preview-04-2026
+[INFO] [2026-06-16 22:42:42]   - models/deep-research-preview-04-2026
+[INFO] [2026-06-16 22:42:42]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-16 22:42:43] Available Gemini models:
+[INFO] [2026-06-16 22:42:43]   - models/gemini-2.5-flash
+[INFO] [2026-06-16 22:42:43]   - models/gemini-2.5-pro
+[INFO] [2026-06-16 22:42:43]   - models/gemini-2.0-flash
+[INFO] [2026-06-16 22:42:43]   - models/gemini-2.0-flash-001
+[INFO] [2026-06-16 22:42:43]   - models/gemini-2.0-flash-lite-001
+[INFO] [2026-06-16 22:42:43]   - models/gemini-2.0-flash-lite
+[INFO] [2026-06-16 22:42:43]   - models/gemini-2.5-flash-preview-tts
+[INFO] [2026-06-16 22:42:43]   - models/gemini-2.5-pro-preview-tts
+[INFO] [2026-06-16 22:42:43]   - models/gemma-4-26b-a4b-it
+[INFO] [2026-06-16 22:42:43]   - models/gemma-4-31b-it
+[INFO] [2026-06-16 22:42:43]   - models/gemini-flash-latest
+[INFO] [2026-06-16 22:42:43]   - models/gemini-flash-lite-latest
+[INFO] [2026-06-16 22:42:43]   - models/gemini-pro-latest
+[INFO] [2026-06-16 22:42:43]   - models/gemini-2.5-flash-lite
+[INFO] [2026-06-16 22:42:43]   - models/gemini-2.5-flash-image
+[INFO] [2026-06-16 22:42:43]   - models/gemini-3-pro-preview
+[INFO] [2026-06-16 22:42:43]   - models/gemini-3-flash-preview
+[INFO] [2026-06-16 22:42:43]   - models/gemini-3.1-pro-preview
+[INFO] [2026-06-16 22:42:43]   - models/gemini-3.1-pro-preview-customtools
+[INFO] [2026-06-16 22:42:43]   - models/gemini-3.1-flash-lite-preview
+[INFO] [2026-06-16 22:42:43]   - models/gemini-3.1-flash-lite
+[INFO] [2026-06-16 22:42:43]   - models/gemini-3-pro-image-preview
+[INFO] [2026-06-16 22:42:43]   - models/gemini-3-pro-image
+[INFO] [2026-06-16 22:42:43]   - models/nano-banana-pro-preview
+[INFO] [2026-06-16 22:42:43]   - models/gemini-3.1-flash-image-preview
+[INFO] [2026-06-16 22:42:43]   - models/gemini-3.1-flash-image
+[INFO] [2026-06-16 22:42:43]   - models/gemini-3.5-flash
+[INFO] [2026-06-16 22:42:43]   - models/lyria-3-clip-preview
+[INFO] [2026-06-16 22:42:43]   - models/lyria-3-pro-preview
+[INFO] [2026-06-16 22:42:43]   - models/gemini-3.1-flash-tts-preview
+[INFO] [2026-06-16 22:42:43]   - models/gemini-robotics-er-1.5-preview
+[INFO] [2026-06-16 22:42:43]   - models/gemini-robotics-er-1.6-preview
+[INFO] [2026-06-16 22:42:43]   - models/gemini-2.5-computer-use-preview-10-2025
+[INFO] [2026-06-16 22:42:43]   - models/antigravity-preview-05-2026
+[INFO] [2026-06-16 22:42:43]   - models/deep-research-max-preview-04-2026
+[INFO] [2026-06-16 22:42:43]   - models/deep-research-preview-04-2026
+[INFO] [2026-06-16 22:42:43]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-16 22:56:12] Available Gemini models:
+[INFO] [2026-06-16 22:56:12]   - models/gemini-2.5-flash
+[INFO] [2026-06-16 22:56:12]   - models/gemini-2.5-pro
+[INFO] [2026-06-16 22:56:12]   - models/gemini-2.0-flash
+[INFO] [2026-06-16 22:56:12]   - models/gemini-2.0-flash-001
+[INFO] [2026-06-16 22:56:12]   - models/gemini-2.0-flash-lite-001
+[INFO] [2026-06-16 22:56:12]   - models/gemini-2.0-flash-lite
+[INFO] [2026-06-16 22:56:12]   - models/gemini-2.5-flash-preview-tts
+[INFO] [2026-06-16 22:56:12]   - models/gemini-2.5-pro-preview-tts
+[INFO] [2026-06-16 22:56:12]   - models/gemma-4-26b-a4b-it
+[INFO] [2026-06-16 22:56:12]   - models/gemma-4-31b-it
+[INFO] [2026-06-16 22:56:12]   - models/gemini-flash-latest
+[INFO] [2026-06-16 22:56:12]   - models/gemini-flash-lite-latest
+[INFO] [2026-06-16 22:56:12]   - models/gemini-pro-latest
+[INFO] [2026-06-16 22:56:12]   - models/gemini-2.5-flash-lite
+[INFO] [2026-06-16 22:56:12]   - models/gemini-2.5-flash-image
+[INFO] [2026-06-16 22:56:12]   - models/gemini-3-pro-preview
+[INFO] [2026-06-16 22:56:12]   - models/gemini-3-flash-preview
+[INFO] [2026-06-16 22:56:12]   - models/gemini-3.1-pro-preview
+[INFO] [2026-06-16 22:56:12]   - models/gemini-3.1-pro-preview-customtools
+[INFO] [2026-06-16 22:56:12]   - models/gemini-3.1-flash-lite-preview
+[INFO] [2026-06-16 22:56:12]   - models/gemini-3.1-flash-lite
+[INFO] [2026-06-16 22:56:12]   - models/gemini-3-pro-image-preview
+[INFO] [2026-06-16 22:56:12]   - models/gemini-3-pro-image
+[INFO] [2026-06-16 22:56:12]   - models/nano-banana-pro-preview
+[INFO] [2026-06-16 22:56:12]   - models/gemini-3.1-flash-image-preview
+[INFO] [2026-06-16 22:56:12]   - models/gemini-3.1-flash-image
+[INFO] [2026-06-16 22:56:12]   - models/gemini-3.5-flash
+[INFO] [2026-06-16 22:56:12]   - models/lyria-3-clip-preview
+[INFO] [2026-06-16 22:56:12]   - models/lyria-3-pro-preview
+[INFO] [2026-06-16 22:56:12]   - models/gemini-3.1-flash-tts-preview
+[INFO] [2026-06-16 22:56:12]   - models/gemini-robotics-er-1.5-preview
+[INFO] [2026-06-16 22:56:12]   - models/gemini-robotics-er-1.6-preview
+[INFO] [2026-06-16 22:56:12]   - models/gemini-2.5-computer-use-preview-10-2025
+[INFO] [2026-06-16 22:56:12]   - models/antigravity-preview-05-2026
+[INFO] [2026-06-16 22:56:12]   - models/deep-research-max-preview-04-2026
+[INFO] [2026-06-16 22:56:12]   - models/deep-research-preview-04-2026
+[INFO] [2026-06-16 22:56:12]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-16 22:56:17] Available Gemini models:
+[INFO] [2026-06-16 22:56:18]   - models/gemini-2.5-flash
+[INFO] [2026-06-16 22:56:18]   - models/gemini-2.5-pro
+[INFO] [2026-06-16 22:56:18]   - models/gemini-2.0-flash
+[INFO] [2026-06-16 22:56:18]   - models/gemini-2.0-flash-001
+[INFO] [2026-06-16 22:56:18]   - models/gemini-2.0-flash-lite-001
+[INFO] [2026-06-16 22:56:18]   - models/gemini-2.0-flash-lite
+[INFO] [2026-06-16 22:56:18]   - models/gemini-2.5-flash-preview-tts
+[INFO] [2026-06-16 22:56:18]   - models/gemini-2.5-pro-preview-tts
+[INFO] [2026-06-16 22:56:18]   - models/gemma-4-26b-a4b-it
+[INFO] [2026-06-16 22:56:18]   - models/gemma-4-31b-it
+[INFO] [2026-06-16 22:56:18]   - models/gemini-flash-latest
+[INFO] [2026-06-16 22:56:18]   - models/gemini-flash-lite-latest
+[INFO] [2026-06-16 22:56:18]   - models/gemini-pro-latest
+[INFO] [2026-06-16 22:56:18]   - models/gemini-2.5-flash-lite
+[INFO] [2026-06-16 22:56:18]   - models/gemini-2.5-flash-image
+[INFO] [2026-06-16 22:56:18]   - models/gemini-3-pro-preview
+[INFO] [2026-06-16 22:56:18]   - models/gemini-3-flash-preview
+[INFO] [2026-06-16 22:56:18]   - models/gemini-3.1-pro-preview
+[INFO] [2026-06-16 22:56:18]   - models/gemini-3.1-pro-preview-customtools
+[INFO] [2026-06-16 22:56:18]   - models/gemini-3.1-flash-lite-preview
+[INFO] [2026-06-16 22:56:18]   - models/gemini-3.1-flash-lite
+[INFO] [2026-06-16 22:56:18]   - models/gemini-3-pro-image-preview
+[INFO] [2026-06-16 22:56:18]   - models/gemini-3-pro-image
+[INFO] [2026-06-16 22:56:18]   - models/nano-banana-pro-preview
+[INFO] [2026-06-16 22:56:18]   - models/gemini-3.1-flash-image-preview
+[INFO] [2026-06-16 22:56:18]   - models/gemini-3.1-flash-image
+[INFO] [2026-06-16 22:56:18]   - models/gemini-3.5-flash
+[INFO] [2026-06-16 22:56:18]   - models/lyria-3-clip-preview
+[INFO] [2026-06-16 22:56:18]   - models/lyria-3-pro-preview
+[INFO] [2026-06-16 22:56:18]   - models/gemini-3.1-flash-tts-preview
+[INFO] [2026-06-16 22:56:18]   - models/gemini-robotics-er-1.5-preview
+[INFO] [2026-06-16 22:56:18]   - models/gemini-robotics-er-1.6-preview
+[INFO] [2026-06-16 22:56:18]   - models/gemini-2.5-computer-use-preview-10-2025
+[INFO] [2026-06-16 22:56:18]   - models/antigravity-preview-05-2026
+[INFO] [2026-06-16 22:56:18]   - models/deep-research-max-preview-04-2026
+[INFO] [2026-06-16 22:56:18]   - models/deep-research-preview-04-2026
+[INFO] [2026-06-16 22:56:18]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-16 23:00:48] Job f4802533-2c30-4075-8e0c-f68d105d6f81: Received upload request for SampleContract-Shuttle.pdf
+[INFO] [2026-06-16 23:00:48] Job f4802533-2c30-4075-8e0c-f68d105d6f81: File size: 49647 bytes
+[INFO] [2026-06-16 23:00:48] Job f4802533-2c30-4075-8e0c-f68d105d6f81: File saved (49647 bytes), queuing for processing
+[INFO] [2026-06-16 23:00:48] Job f4802533-2c30-4075-8e0c-f68d105d6f81: Started processing f4802533-2c30-4075-8e0c-f68d105d6f81_SampleContract-Shuttle.pdf
+[INFO] [2026-06-16 23:00:48] Job f4802533-2c30-4075-8e0c-f68d105d6f81: Read 49647 bytes from file
+[INFO] [2026-06-16 23:00:48] Job f4802533-2c30-4075-8e0c-f68d105d6f81: Extracting text from document
+[INFO] [2026-06-16 23:00:48] Job f4802533-2c30-4075-8e0c-f68d105d6f81: Opening PDF document
+[INFO] [2026-06-16 23:00:48] Job f4802533-2c30-4075-8e0c-f68d105d6f81: Processing PDF with 10 pages
+[INFO] [2026-06-16 23:00:48] Job f4802533-2c30-4075-8e0c-f68d105d6f81: Page 1 native text: 2847 chars
+[INFO] [2026-06-16 23:00:48] Job f4802533-2c30-4075-8e0c-f68d105d6f81: Page 2 native text: 3353 chars
+[INFO] [2026-06-16 23:00:48] Job f4802533-2c30-4075-8e0c-f68d105d6f81: Page 3 native text: 3663 chars
+[INFO] [2026-06-16 23:00:48] Job f4802533-2c30-4075-8e0c-f68d105d6f81: Page 4 native text: 3429 chars
+[INFO] [2026-06-16 23:00:48] Job f4802533-2c30-4075-8e0c-f68d105d6f81: Page 5 native text: 3625 chars
+[INFO] [2026-06-16 23:00:48] Job f4802533-2c30-4075-8e0c-f68d105d6f81: Page 6 native text: 4012 chars
+[INFO] [2026-06-16 23:00:48] Job f4802533-2c30-4075-8e0c-f68d105d6f81: Page 7 native text: 3771 chars
+[INFO] [2026-06-16 23:00:48] Job f4802533-2c30-4075-8e0c-f68d105d6f81: Page 8 native text: 3667 chars
+[INFO] [2026-06-16 23:00:48] Job f4802533-2c30-4075-8e0c-f68d105d6f81: Page 9 native text: 3210 chars
+[INFO] [2026-06-16 23:00:48] Job f4802533-2c30-4075-8e0c-f68d105d6f81: Page 10 native text: 1359 chars
+[INFO] [2026-06-16 23:00:48] Job f4802533-2c30-4075-8e0c-f68d105d6f81: Extracted 32936 total characters
+[INFO] [2026-06-16 23:00:48] Job f4802533-2c30-4075-8e0c-f68d105d6f81: Extracted text length: 5000 characters
+[INFO] [2026-06-16 23:00:48] Job f4802533-2c30-4075-8e0c-f68d105d6f81: First 200 chars:  
+Page 1 
+Sample Contract 
+ 
+Contract No.___________ 
+PROFESSIONAL SERVICES AGREEMENT 
+ 
+ 
+THIS AGREEMENT made and entered into this _______day of                      , 20     by and between the SANT
+[INFO] [2026-06-16 23:00:48] Job f4802533-2c30-4075-8e0c-f68d105d6f81: Sending to Gemini AI for analysis
+[INFO] [2026-06-16 23:00:49] Job b31c99c7-4001-41bb-b44c-f8b116bd375d: Received upload request for SampleContract-Shuttle.pdf
+[INFO] [2026-06-16 23:00:49] Job b31c99c7-4001-41bb-b44c-f8b116bd375d: File size: 49647 bytes
+[INFO] [2026-06-16 23:00:49] Job b31c99c7-4001-41bb-b44c-f8b116bd375d: File saved (49647 bytes), queuing for processing
+[INFO] [2026-06-16 23:00:49] Job b31c99c7-4001-41bb-b44c-f8b116bd375d: Started processing b31c99c7-4001-41bb-b44c-f8b116bd375d_SampleContract-Shuttle.pdf
+[INFO] [2026-06-16 23:00:49] Job b31c99c7-4001-41bb-b44c-f8b116bd375d: Read 49647 bytes from file
+[INFO] [2026-06-16 23:00:49] Job b31c99c7-4001-41bb-b44c-f8b116bd375d: Extracting text from document
+[INFO] [2026-06-16 23:00:49] Job b31c99c7-4001-41bb-b44c-f8b116bd375d: Opening PDF document
+[INFO] [2026-06-16 23:00:49] Job b31c99c7-4001-41bb-b44c-f8b116bd375d: Processing PDF with 10 pages
+[INFO] [2026-06-16 23:00:50] Job b31c99c7-4001-41bb-b44c-f8b116bd375d: Page 1 native text: 2847 chars
+[INFO] [2026-06-16 23:00:50] Job b31c99c7-4001-41bb-b44c-f8b116bd375d: Page 2 native text: 3353 chars
+[INFO] [2026-06-16 23:00:50] Job b31c99c7-4001-41bb-b44c-f8b116bd375d: Page 3 native text: 3663 chars
+[INFO] [2026-06-16 23:00:50] Job b31c99c7-4001-41bb-b44c-f8b116bd375d: Page 4 native text: 3429 chars
+[INFO] [2026-06-16 23:00:50] Job b31c99c7-4001-41bb-b44c-f8b116bd375d: Page 5 native text: 3625 chars
+[INFO] [2026-06-16 23:00:50] Job b31c99c7-4001-41bb-b44c-f8b116bd375d: Page 6 native text: 4012 chars
+[INFO] [2026-06-16 23:00:50] Job b31c99c7-4001-41bb-b44c-f8b116bd375d: Page 7 native text: 3771 chars
+[INFO] [2026-06-16 23:00:50] Job b31c99c7-4001-41bb-b44c-f8b116bd375d: Page 8 native text: 3667 chars
+[INFO] [2026-06-16 23:00:50] Job b31c99c7-4001-41bb-b44c-f8b116bd375d: Page 9 native text: 3210 chars
+[INFO] [2026-06-16 23:00:50] Job b31c99c7-4001-41bb-b44c-f8b116bd375d: Page 10 native text: 1359 chars
+[INFO] [2026-06-16 23:00:50] Job b31c99c7-4001-41bb-b44c-f8b116bd375d: Extracted 32936 total characters
+[INFO] [2026-06-16 23:00:50] Job b31c99c7-4001-41bb-b44c-f8b116bd375d: Extracted text length: 5000 characters
+[INFO] [2026-06-16 23:00:50] Job b31c99c7-4001-41bb-b44c-f8b116bd375d: First 200 chars:  
+Page 1 
+Sample Contract 
+ 
+Contract No.___________ 
+PROFESSIONAL SERVICES AGREEMENT 
+ 
+ 
+THIS AGREEMENT made and entered into this _______day of                      , 20     by and between the SANT
+[INFO] [2026-06-16 23:00:50] Job b31c99c7-4001-41bb-b44c-f8b116bd375d: Sending to Gemini AI for analysis
+[INFO] [2026-06-16 23:01:00] Job f4802533-2c30-4075-8e0c-f68d105d6f81: Gemini returned: {
+    "summary": "This is a draft Professional Services Agreement template between the Santa Cruz County Regional Transportation Commission (COMMISSION) and an unnamed Consultant. The agreement outlines performance duties, progress reporting, personnel constraints, and detailed invoice-based compensation terms.",
+    "legalCategory": "Corporate",
+    "urgencyLevel": "Medium",
+    "riskScore": 35,
+    "importantDates": [
+        "Within 45 calendar days after the performance of work (Invoicing deadline)",
+        "Within 60 calendar days after acceptance of work (Final invoice submission deadline)"
+    ],
+    "keywords": [
+        "Professional Services Agreement",
+        "Consultant",
+        "Compensation",
+        "Invoices",
+        "Key Personnel",
+        "Progress Reports",
+        "Termination"
+    ],
+    "riskyClauses": [
+        {
+            "clauseType": "Key Personnel Restriction",
+            "riskLevel": "Medium",
+            "reason": "Clause 1.C prohibits the Consultant from removing, replacing, or changing the function of key personnel without prior written consent from the Commission, which restricts operational and staffing flexibility."
+        },
+        {
+            "clauseType": "Payment Withholding and Termination for Delays",
+            "riskLevel": "Medium",
+            "reason": "Clause 2.E grants the Commission the right to delay payments or terminate the agreement if the Consultant fails to submit deliverables on schedule, creating potential cash flow and compliance risks."
+        },
+        {
+            "clauseType": "Strict Invoicing Deadlines",
+            "riskLevel": "Medium",
+            "reason": "Clause 2.H imposes strict deadlines for invoice submissions (within 45 days after performance of work and within 60 days of work acceptance for final invoices). Failure to adhere to these timelines could lead to denied payments."
+        }
+    ]
+}
+[INFO] [2026-06-16 23:01:00] Job f4802533-2c30-4075-8e0c-f68d105d6f81: Gemini analysis completed successfully
+[INFO] [2026-06-16 23:01:00] Job f4802533-2c30-4075-8e0c-f68d105d6f81: Building document context for lawyer matching
+[INFO] [2026-06-16 23:01:00] Job f4802533-2c30-4075-8e0c-f68d105d6f81: Document context prepared (1139 chars, 14 components)
+[INFO] [2026-06-16 23:01:00] Job f4802533-2c30-4075-8e0c-f68d105d6f81: Searching lawyer_mapping table
+[INFO] [2026-06-16 23:01:00] Searching lawyer types for document (1139 chars)
+[INFO] [2026-06-16 23:01:01] Loaded 60 lawyer types from database
+[INFO] [2026-06-16 23:01:01] Found 0 matching lawyer types, returning top 0
+[INFO] [2026-06-16 23:01:01] Job f4802533-2c30-4075-8e0c-f68d105d6f81: Found 0 matching lawyer types
+[INFO] [2026-06-16 23:01:01] Job f4802533-2c30-4075-8e0c-f68d105d6f81: Complete pipeline finished successfully. Analysis saved, 0 lawyer types recommended
+[INFO] [2026-06-16 23:01:01] Job f4802533-2c30-4075-8e0c-f68d105d6f81: Cleaned up file f4802533-2c30-4075-8e0c-f68d105d6f81_SampleContract-Shuttle.pdf
+[INFO] [2026-06-16 23:01:02] Job b31c99c7-4001-41bb-b44c-f8b116bd375d: Gemini returned: {
+    "summary": "This is a Professional Services Agreement between the Santa Cruz County Regional Transportation Commission (COMMISSION) and a Consultant. It outlines the scope of work, key personnel requirements, strict invoice submission deadlines, and payment terms.",
+    "legalCategory": "Other",
+    "urgencyLevel": "Medium",
+    "riskScore": 40,
+    "importantDates": [
+        "Within 45 calendar days after performance of work (Invoice submission deadline)",
+        "Within 60 calendar days after acceptance of work (Final invoice submission deadline)"
+    ],
+    "keywords": [
+        "Professional Services Agreement",
+        "Key Personnel",
+        "Progress Reports",
+        "Compensation",
+        "Invoices",
+        "Prevailing Wage"
+    ],
+    "riskyClauses": [
+        {
+            "clauseType": "Personnel Constraints",
+            "riskLevel": "Medium",
+            "reason": "Section 1.C restricts the Consultant from replacing or removing key personnel, or changing their functions, without the prior written consent of the Commission. This limits operational flexibility."
+        },
+        {
+            "clauseType": "Payment Withholding and Termination",
+            "riskLevel": "Medium",
+            "reason": "Section 2.E grants the Commission the right to delay payments and/or terminate the agreement if the Consultant fails to submit deliverables on schedule."
+        },
+        {
+            "clauseType": "Strict Billing Deadlines",
+            "riskLevel": "Medium",
+            "reason": "Section 2.H enforces strict deadlines for invoice submission (within 45 days of performance and final invoice within 60 days of acceptance). Failure to meet these timelines could lead to payment delays or forfeiture of compensation."
+        }
+    ]
+}
+[INFO] [2026-06-16 23:01:02] Job b31c99c7-4001-41bb-b44c-f8b116bd375d: Gemini analysis completed successfully
+[INFO] [2026-06-16 23:01:02] Job b31c99c7-4001-41bb-b44c-f8b116bd375d: Building document context for lawyer matching
+[INFO] [2026-06-16 23:01:02] Job b31c99c7-4001-41bb-b44c-f8b116bd375d: Document context prepared (1020 chars, 13 components)
+[INFO] [2026-06-16 23:01:02] Job b31c99c7-4001-41bb-b44c-f8b116bd375d: Searching lawyer_mapping table
+[INFO] [2026-06-16 23:01:02] Searching lawyer types for document (1020 chars)
+[INFO] [2026-06-16 23:01:02] Loaded 60 lawyer types from database
+[INFO] [2026-06-16 23:01:02] Found 0 matching lawyer types, returning top 0
+[INFO] [2026-06-16 23:01:02] Job b31c99c7-4001-41bb-b44c-f8b116bd375d: Found 0 matching lawyer types
+[INFO] [2026-06-16 23:01:02] Job b31c99c7-4001-41bb-b44c-f8b116bd375d: Complete pipeline finished successfully. Analysis saved, 0 lawyer types recommended
+[INFO] [2026-06-16 23:01:02] Job b31c99c7-4001-41bb-b44c-f8b116bd375d: Cleaned up file b31c99c7-4001-41bb-b44c-f8b116bd375d_SampleContract-Shuttle.pdf
+[INFO] [2026-06-16 23:03:30] Available Gemini models:
+[INFO] [2026-06-16 23:03:31]   - models/gemini-2.5-flash
+[INFO] [2026-06-16 23:03:31]   - models/gemini-2.5-pro
+[INFO] [2026-06-16 23:03:31]   - models/gemini-2.0-flash
+[INFO] [2026-06-16 23:03:31]   - models/gemini-2.0-flash-001
+[INFO] [2026-06-16 23:03:31]   - models/gemini-2.0-flash-lite-001
+[INFO] [2026-06-16 23:03:31]   - models/gemini-2.0-flash-lite
+[INFO] [2026-06-16 23:03:31]   - models/gemini-2.5-flash-preview-tts
+[INFO] [2026-06-16 23:03:31]   - models/gemini-2.5-pro-preview-tts
+[INFO] [2026-06-16 23:03:31]   - models/gemma-4-26b-a4b-it
+[INFO] [2026-06-16 23:03:31]   - models/gemma-4-31b-it
+[INFO] [2026-06-16 23:03:31]   - models/gemini-flash-latest
+[INFO] [2026-06-16 23:03:31]   - models/gemini-flash-lite-latest
+[INFO] [2026-06-16 23:03:31]   - models/gemini-pro-latest
+[INFO] [2026-06-16 23:03:31]   - models/gemini-2.5-flash-lite
+[INFO] [2026-06-16 23:03:31]   - models/gemini-2.5-flash-image
+[INFO] [2026-06-16 23:03:31]   - models/gemini-3-pro-preview
+[INFO] [2026-06-16 23:03:31]   - models/gemini-3-flash-preview
+[INFO] [2026-06-16 23:03:31]   - models/gemini-3.1-pro-preview
+[INFO] [2026-06-16 23:03:31]   - models/gemini-3.1-pro-preview-customtools
+[INFO] [2026-06-16 23:03:31]   - models/gemini-3.1-flash-lite-preview
+[INFO] [2026-06-16 23:03:31]   - models/gemini-3.1-flash-lite
+[INFO] [2026-06-16 23:03:31]   - models/gemini-3-pro-image-preview
+[INFO] [2026-06-16 23:03:31]   - models/gemini-3-pro-image
+[INFO] [2026-06-16 23:03:31]   - models/nano-banana-pro-preview
+[INFO] [2026-06-16 23:03:31]   - models/gemini-3.1-flash-image-preview
+[INFO] [2026-06-16 23:03:31]   - models/gemini-3.1-flash-image
+[INFO] [2026-06-16 23:03:31]   - models/gemini-3.5-flash
+[INFO] [2026-06-16 23:03:31]   - models/lyria-3-clip-preview
+[INFO] [2026-06-16 23:03:31]   - models/lyria-3-pro-preview
+[INFO] [2026-06-16 23:03:31]   - models/gemini-3.1-flash-tts-preview
+[INFO] [2026-06-16 23:03:31]   - models/gemini-robotics-er-1.5-preview
+[INFO] [2026-06-16 23:03:31]   - models/gemini-robotics-er-1.6-preview
+[INFO] [2026-06-16 23:03:31]   - models/gemini-2.5-computer-use-preview-10-2025
+[INFO] [2026-06-16 23:03:31]   - models/antigravity-preview-05-2026
+[INFO] [2026-06-16 23:03:31]   - models/deep-research-max-preview-04-2026
+[INFO] [2026-06-16 23:03:31]   - models/deep-research-preview-04-2026
+[INFO] [2026-06-16 23:03:31]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-16 23:06:59] Available Gemini models:
+[INFO] [2026-06-16 23:07:00]   - models/gemini-2.5-flash
+[INFO] [2026-06-16 23:07:00]   - models/gemini-2.5-pro
+[INFO] [2026-06-16 23:07:00]   - models/gemini-2.0-flash
+[INFO] [2026-06-16 23:07:00]   - models/gemini-2.0-flash-001
+[INFO] [2026-06-16 23:07:00]   - models/gemini-2.0-flash-lite-001
+[INFO] [2026-06-16 23:07:00]   - models/gemini-2.0-flash-lite
+[INFO] [2026-06-16 23:07:00]   - models/gemini-2.5-flash-preview-tts
+[INFO] [2026-06-16 23:07:00]   - models/gemini-2.5-pro-preview-tts
+[INFO] [2026-06-16 23:07:00]   - models/gemma-4-26b-a4b-it
+[INFO] [2026-06-16 23:07:00]   - models/gemma-4-31b-it
+[INFO] [2026-06-16 23:07:00]   - models/gemini-flash-latest
+[INFO] [2026-06-16 23:07:00]   - models/gemini-flash-lite-latest
+[INFO] [2026-06-16 23:07:00]   - models/gemini-pro-latest
+[INFO] [2026-06-16 23:07:00]   - models/gemini-2.5-flash-lite
+[INFO] [2026-06-16 23:07:00]   - models/gemini-2.5-flash-image
+[INFO] [2026-06-16 23:07:00]   - models/gemini-3-pro-preview
+[INFO] [2026-06-16 23:07:00]   - models/gemini-3-flash-preview
+[INFO] [2026-06-16 23:07:00]   - models/gemini-3.1-pro-preview
+[INFO] [2026-06-16 23:07:00]   - models/gemini-3.1-pro-preview-customtools
+[INFO] [2026-06-16 23:07:00]   - models/gemini-3.1-flash-lite-preview
+[INFO] [2026-06-16 23:07:00]   - models/gemini-3.1-flash-lite
+[INFO] [2026-06-16 23:07:00]   - models/gemini-3-pro-image-preview
+[INFO] [2026-06-16 23:07:00]   - models/gemini-3-pro-image
+[INFO] [2026-06-16 23:07:00]   - models/nano-banana-pro-preview
+[INFO] [2026-06-16 23:07:00]   - models/gemini-3.1-flash-image-preview
+[INFO] [2026-06-16 23:07:00]   - models/gemini-3.1-flash-image
+[INFO] [2026-06-16 23:07:00]   - models/gemini-3.5-flash
+[INFO] [2026-06-16 23:07:00]   - models/lyria-3-clip-preview
+[INFO] [2026-06-16 23:07:00]   - models/lyria-3-pro-preview
+[INFO] [2026-06-16 23:07:00]   - models/gemini-3.1-flash-tts-preview
+[INFO] [2026-06-16 23:07:00]   - models/gemini-robotics-er-1.5-preview
+[INFO] [2026-06-16 23:07:00]   - models/gemini-robotics-er-1.6-preview
+[INFO] [2026-06-16 23:07:00]   - models/gemini-2.5-computer-use-preview-10-2025
+[INFO] [2026-06-16 23:07:00]   - models/antigravity-preview-05-2026
+[INFO] [2026-06-16 23:07:00]   - models/deep-research-max-preview-04-2026
+[INFO] [2026-06-16 23:07:00]   - models/deep-research-preview-04-2026
+[INFO] [2026-06-16 23:07:00]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-16 23:08:44] Job bfd9885b-337e-46be-9085-2b1ccbc0cf47: Received upload request for SampleContract-Shuttle.pdf
+[INFO] [2026-06-16 23:08:44] Job bfd9885b-337e-46be-9085-2b1ccbc0cf47: File size: 49647 bytes
+[INFO] [2026-06-16 23:08:44] Job bfd9885b-337e-46be-9085-2b1ccbc0cf47: File saved (49647 bytes), queuing for processing
+[INFO] [2026-06-16 23:08:44] Job bfd9885b-337e-46be-9085-2b1ccbc0cf47: Started processing bfd9885b-337e-46be-9085-2b1ccbc0cf47_SampleContract-Shuttle.pdf
+[INFO] [2026-06-16 23:08:44] Job bfd9885b-337e-46be-9085-2b1ccbc0cf47: Read 49647 bytes from file
+[INFO] [2026-06-16 23:08:44] Job bfd9885b-337e-46be-9085-2b1ccbc0cf47: Extracting text from document
+[INFO] [2026-06-16 23:08:44] Job bfd9885b-337e-46be-9085-2b1ccbc0cf47: Opening PDF document
+[INFO] [2026-06-16 23:08:44] Job bfd9885b-337e-46be-9085-2b1ccbc0cf47: Processing PDF with 10 pages
+[INFO] [2026-06-16 23:08:44] Job bfd9885b-337e-46be-9085-2b1ccbc0cf47: Page 1 native text: 2847 chars
+[INFO] [2026-06-16 23:08:44] Job bfd9885b-337e-46be-9085-2b1ccbc0cf47: Page 2 native text: 3353 chars
+[INFO] [2026-06-16 23:08:44] Job bfd9885b-337e-46be-9085-2b1ccbc0cf47: Page 3 native text: 3663 chars
+[INFO] [2026-06-16 23:08:44] Job bfd9885b-337e-46be-9085-2b1ccbc0cf47: Page 4 native text: 3429 chars
+[INFO] [2026-06-16 23:08:44] Job bfd9885b-337e-46be-9085-2b1ccbc0cf47: Page 5 native text: 3625 chars
+[INFO] [2026-06-16 23:08:44] Job bfd9885b-337e-46be-9085-2b1ccbc0cf47: Page 6 native text: 4012 chars
+[INFO] [2026-06-16 23:08:44] Job bfd9885b-337e-46be-9085-2b1ccbc0cf47: Page 7 native text: 3771 chars
+[INFO] [2026-06-16 23:08:44] Job bfd9885b-337e-46be-9085-2b1ccbc0cf47: Page 8 native text: 3667 chars
+[INFO] [2026-06-16 23:08:44] Job bfd9885b-337e-46be-9085-2b1ccbc0cf47: Page 9 native text: 3210 chars
+[INFO] [2026-06-16 23:08:44] Job bfd9885b-337e-46be-9085-2b1ccbc0cf47: Page 10 native text: 1359 chars
+[INFO] [2026-06-16 23:08:44] Job bfd9885b-337e-46be-9085-2b1ccbc0cf47: Extracted 32936 total characters
+[INFO] [2026-06-16 23:08:44] Job bfd9885b-337e-46be-9085-2b1ccbc0cf47: Extracted text length: 5000 characters
+[INFO] [2026-06-16 23:08:44] Job bfd9885b-337e-46be-9085-2b1ccbc0cf47: First 200 chars:  
+Page 1 
+Sample Contract 
+ 
+Contract No.___________ 
+PROFESSIONAL SERVICES AGREEMENT 
+ 
+ 
+THIS AGREEMENT made and entered into this _______day of                      , 20     by and between the SANT
+[INFO] [2026-06-16 23:08:44] Job bfd9885b-337e-46be-9085-2b1ccbc0cf47: Sending to Gemini AI for analysis
+[INFO] [2026-06-16 23:08:55] Job bfd9885b-337e-46be-9085-2b1ccbc0cf47: Gemini returned: {
+    "summary": "A template Professional Services Agreement between the Santa Cruz County Regional Transportation Commission (COMMISSION) and an unnamed Consultant, detailing scope of services, key personnel requirements, compensation terms, and invoicing guidelines.",
+    "legalCategory": "Corporate",
+    "urgencyLevel": "Medium",
+    "riskScore": 40,
+    "importantDates": [
+        "Invoices must be submitted no later than 45 calendar days after the performance of billed work.",
+        "Final invoice must be submitted within 60 calendar days after acceptance of the work."
+    ],
+    "keywords": [
+        "Professional Services Agreement",
+        "Consultant",
+        "Commission",
+        "Key Personnel",
+        "Compensation",
+        "Progress Payments",
+        "Invoicing"
+    ],
+    "riskyClauses": [
+        {
+            "clauseType": "Key Personnel Restriction (Section 1.C)",
+            "riskLevel": "Medium",
+            "reason": "Prevents the Consultant from removing, replacing, or changing the role of designated key personnel without prior written consent from the Commission, which could disrupt operations if staff members leave or need reallocation."
+        },
+        {
+            "clauseType": "Payment Withholding and Termination (Section 2.E)",
+            "riskLevel": "Medium",
+            "reason": "Allows the Commission to delay payments and/or terminate the contract if the Consultant fails to meet schedule deadlines or deliver items as specified in the Scope of Services."
+        },
+        {
+            "clauseType": "No Payment for Pre-approval Work (Section 2.F)",
+            "riskLevel": "Low",
+            "reason": "Explicitly bars payment for any work performed prior to the official approval of the Agreement, which may lead to uncompensated work if there is a delay in execution."
+        },
+        {
+            "clauseType": "Strict Invoicing Deadlines (Section 2.H)",
+            "riskLevel": "Medium",
+            "reason": "Imposes strict timelines (45 days post-performance for progress invoices, and 60 days post-acceptance for the final invoice) which may risk forfeiture of payment if the Consultant experiences administrative delays."
+        }
+    ]
+}
+[INFO] [2026-06-16 23:08:55] Job bfd9885b-337e-46be-9085-2b1ccbc0cf47: Gemini analysis completed successfully
+[INFO] [2026-06-16 23:08:55] Job bfd9885b-337e-46be-9085-2b1ccbc0cf47: Building document context for lawyer matching
+[INFO] [2026-06-16 23:08:55] Job bfd9885b-337e-46be-9085-2b1ccbc0cf47: Document context prepared (1322 chars, 16 components)
+[INFO] [2026-06-16 23:08:55] Job bfd9885b-337e-46be-9085-2b1ccbc0cf47: Searching lawyer_mapping table
+[INFO] [2026-06-16 23:08:55] Searching lawyer types for document (1322 chars)
+[INFO] [2026-06-16 23:08:55] Loaded 60 lawyer types from database
+[INFO] [2026-06-16 23:08:55] Found 0 matching lawyer types, returning top 0
+[INFO] [2026-06-16 23:08:55] Job bfd9885b-337e-46be-9085-2b1ccbc0cf47: Found 0 matching lawyer types
+[INFO] [2026-06-16 23:08:55] Job bfd9885b-337e-46be-9085-2b1ccbc0cf47: Complete pipeline finished successfully. Analysis saved, 0 lawyer types recommended
+[INFO] [2026-06-16 23:08:55] Job bfd9885b-337e-46be-9085-2b1ccbc0cf47: Cleaned up file bfd9885b-337e-46be-9085-2b1ccbc0cf47_SampleContract-Shuttle.pdf
+[INFO] [2026-06-16 23:17:51] Available Gemini models:
+[INFO] [2026-06-16 23:17:52]   - models/gemini-2.5-flash
+[INFO] [2026-06-16 23:17:52]   - models/gemini-2.5-pro
+[INFO] [2026-06-16 23:17:52]   - models/gemini-2.0-flash
+[INFO] [2026-06-16 23:17:52]   - models/gemini-2.0-flash-001
+[INFO] [2026-06-16 23:17:52]   - models/gemini-2.0-flash-lite-001
+[INFO] [2026-06-16 23:17:52]   - models/gemini-2.0-flash-lite
+[INFO] [2026-06-16 23:17:52]   - models/gemini-2.5-flash-preview-tts
+[INFO] [2026-06-16 23:17:52]   - models/gemini-2.5-pro-preview-tts
+[INFO] [2026-06-16 23:17:52]   - models/gemma-4-26b-a4b-it
+[INFO] [2026-06-16 23:17:52]   - models/gemma-4-31b-it
+[INFO] [2026-06-16 23:17:52]   - models/gemini-flash-latest
+[INFO] [2026-06-16 23:17:52]   - models/gemini-flash-lite-latest
+[INFO] [2026-06-16 23:17:52]   - models/gemini-pro-latest
+[INFO] [2026-06-16 23:17:52]   - models/gemini-2.5-flash-lite
+[INFO] [2026-06-16 23:17:52]   - models/gemini-2.5-flash-image
+[INFO] [2026-06-16 23:17:52]   - models/gemini-3-pro-preview
+[INFO] [2026-06-16 23:17:52]   - models/gemini-3-flash-preview
+[INFO] [2026-06-16 23:17:52]   - models/gemini-3.1-pro-preview
+[INFO] [2026-06-16 23:17:52]   - models/gemini-3.1-pro-preview-customtools
+[INFO] [2026-06-16 23:17:52]   - models/gemini-3.1-flash-lite-preview
+[INFO] [2026-06-16 23:17:52]   - models/gemini-3.1-flash-lite
+[INFO] [2026-06-16 23:17:52]   - models/gemini-3-pro-image-preview
+[INFO] [2026-06-16 23:17:52]   - models/gemini-3-pro-image
+[INFO] [2026-06-16 23:17:52]   - models/nano-banana-pro-preview
+[INFO] [2026-06-16 23:17:52]   - models/gemini-3.1-flash-image-preview
+[INFO] [2026-06-16 23:17:52]   - models/gemini-3.1-flash-image
+[INFO] [2026-06-16 23:17:52]   - models/gemini-3.5-flash
+[INFO] [2026-06-16 23:17:52]   - models/lyria-3-clip-preview
+[INFO] [2026-06-16 23:17:52]   - models/lyria-3-pro-preview
+[INFO] [2026-06-16 23:17:52]   - models/gemini-3.1-flash-tts-preview
+[INFO] [2026-06-16 23:17:52]   - models/gemini-robotics-er-1.5-preview
+[INFO] [2026-06-16 23:17:52]   - models/gemini-robotics-er-1.6-preview
+[INFO] [2026-06-16 23:17:52]   - models/gemini-2.5-computer-use-preview-10-2025
+[INFO] [2026-06-16 23:17:52]   - models/antigravity-preview-05-2026
+[INFO] [2026-06-16 23:17:52]   - models/deep-research-max-preview-04-2026
+[INFO] [2026-06-16 23:17:52]   - models/deep-research-preview-04-2026
+[INFO] [2026-06-16 23:17:52]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-16 23:19:00] Available Gemini models:
+[INFO] [2026-06-16 23:19:00]   - models/gemini-2.5-flash
+[INFO] [2026-06-16 23:19:00]   - models/gemini-2.5-pro
+[INFO] [2026-06-16 23:19:00]   - models/gemini-2.0-flash
+[INFO] [2026-06-16 23:19:00]   - models/gemini-2.0-flash-001
+[INFO] [2026-06-16 23:19:00]   - models/gemini-2.0-flash-lite-001
+[INFO] [2026-06-16 23:19:00]   - models/gemini-2.0-flash-lite
+[INFO] [2026-06-16 23:19:00]   - models/gemini-2.5-flash-preview-tts
+[INFO] [2026-06-16 23:19:00]   - models/gemini-2.5-pro-preview-tts
+[INFO] [2026-06-16 23:19:00]   - models/gemma-4-26b-a4b-it
+[INFO] [2026-06-16 23:19:00]   - models/gemma-4-31b-it
+[INFO] [2026-06-16 23:19:00]   - models/gemini-flash-latest
+[INFO] [2026-06-16 23:19:00]   - models/gemini-flash-lite-latest
+[INFO] [2026-06-16 23:19:00]   - models/gemini-pro-latest
+[INFO] [2026-06-16 23:19:00]   - models/gemini-2.5-flash-lite
+[INFO] [2026-06-16 23:19:00]   - models/gemini-2.5-flash-image
+[INFO] [2026-06-16 23:19:00]   - models/gemini-3-pro-preview
+[INFO] [2026-06-16 23:19:00]   - models/gemini-3-flash-preview
+[INFO] [2026-06-16 23:19:00]   - models/gemini-3.1-pro-preview
+[INFO] [2026-06-16 23:19:00]   - models/gemini-3.1-pro-preview-customtools
+[INFO] [2026-06-16 23:19:00]   - models/gemini-3.1-flash-lite-preview
+[INFO] [2026-06-16 23:19:00]   - models/gemini-3.1-flash-lite
+[INFO] [2026-06-16 23:19:00]   - models/gemini-3-pro-image-preview
+[INFO] [2026-06-16 23:19:00]   - models/gemini-3-pro-image
+[INFO] [2026-06-16 23:19:00]   - models/nano-banana-pro-preview
+[INFO] [2026-06-16 23:19:00]   - models/gemini-3.1-flash-image-preview
+[INFO] [2026-06-16 23:19:00]   - models/gemini-3.1-flash-image
+[INFO] [2026-06-16 23:19:00]   - models/gemini-3.5-flash
+[INFO] [2026-06-16 23:19:00]   - models/lyria-3-clip-preview
+[INFO] [2026-06-16 23:19:00]   - models/lyria-3-pro-preview
+[INFO] [2026-06-16 23:19:00]   - models/gemini-3.1-flash-tts-preview
+[INFO] [2026-06-16 23:19:00]   - models/gemini-robotics-er-1.5-preview
+[INFO] [2026-06-16 23:19:00]   - models/gemini-robotics-er-1.6-preview
+[INFO] [2026-06-16 23:19:00]   - models/gemini-2.5-computer-use-preview-10-2025
+[INFO] [2026-06-16 23:19:00]   - models/antigravity-preview-05-2026
+[INFO] [2026-06-16 23:19:00]   - models/deep-research-max-preview-04-2026
+[INFO] [2026-06-16 23:19:00]   - models/deep-research-preview-04-2026
+[INFO] [2026-06-16 23:19:00]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-16 23:19:27] Available Gemini models:
+[INFO] [2026-06-16 23:19:27]   - models/gemini-2.5-flash
+[INFO] [2026-06-16 23:19:27]   - models/gemini-2.5-pro
+[INFO] [2026-06-16 23:19:27]   - models/gemini-2.0-flash
+[INFO] [2026-06-16 23:19:27]   - models/gemini-2.0-flash-001
+[INFO] [2026-06-16 23:19:27]   - models/gemini-2.0-flash-lite-001
+[INFO] [2026-06-16 23:19:27]   - models/gemini-2.0-flash-lite
+[INFO] [2026-06-16 23:19:27]   - models/gemini-2.5-flash-preview-tts
+[INFO] [2026-06-16 23:19:27]   - models/gemini-2.5-pro-preview-tts
+[INFO] [2026-06-16 23:19:27]   - models/gemma-4-26b-a4b-it
+[INFO] [2026-06-16 23:19:27]   - models/gemma-4-31b-it
+[INFO] [2026-06-16 23:19:27]   - models/gemini-flash-latest
+[INFO] [2026-06-16 23:19:27]   - models/gemini-flash-lite-latest
+[INFO] [2026-06-16 23:19:27]   - models/gemini-pro-latest
+[INFO] [2026-06-16 23:19:27]   - models/gemini-2.5-flash-lite
+[INFO] [2026-06-16 23:19:27]   - models/gemini-2.5-flash-image
+[INFO] [2026-06-16 23:19:27]   - models/gemini-3-pro-preview
+[INFO] [2026-06-16 23:19:27]   - models/gemini-3-flash-preview
+[INFO] [2026-06-16 23:19:27]   - models/gemini-3.1-pro-preview
+[INFO] [2026-06-16 23:19:27]   - models/gemini-3.1-pro-preview-customtools
+[INFO] [2026-06-16 23:19:27]   - models/gemini-3.1-flash-lite-preview
+[INFO] [2026-06-16 23:19:27]   - models/gemini-3.1-flash-lite
+[INFO] [2026-06-16 23:19:27]   - models/gemini-3-pro-image-preview
+[INFO] [2026-06-16 23:19:27]   - models/gemini-3-pro-image
+[INFO] [2026-06-16 23:19:27]   - models/nano-banana-pro-preview
+[INFO] [2026-06-16 23:19:27]   - models/gemini-3.1-flash-image-preview
+[INFO] [2026-06-16 23:19:27]   - models/gemini-3.1-flash-image
+[INFO] [2026-06-16 23:19:27]   - models/gemini-3.5-flash
+[INFO] [2026-06-16 23:19:27]   - models/lyria-3-clip-preview
+[INFO] [2026-06-16 23:19:27]   - models/lyria-3-pro-preview
+[INFO] [2026-06-16 23:19:27]   - models/gemini-3.1-flash-tts-preview
+[INFO] [2026-06-16 23:19:27]   - models/gemini-robotics-er-1.5-preview
+[INFO] [2026-06-16 23:19:27]   - models/gemini-robotics-er-1.6-preview
+[INFO] [2026-06-16 23:19:27]   - models/gemini-2.5-computer-use-preview-10-2025
+[INFO] [2026-06-16 23:19:27]   - models/antigravity-preview-05-2026
+[INFO] [2026-06-16 23:19:27]   - models/deep-research-max-preview-04-2026
+[INFO] [2026-06-16 23:19:27]   - models/deep-research-preview-04-2026
+[INFO] [2026-06-16 23:19:27]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-16 23:20:15] Job 180a22de-6fbe-4815-9269-ea166583dd3e: Received upload request for SampleContract-Shuttle.pdf
+[INFO] [2026-06-16 23:20:15] Job 180a22de-6fbe-4815-9269-ea166583dd3e: File size: 49647 bytes
+[INFO] [2026-06-16 23:20:15] Job 180a22de-6fbe-4815-9269-ea166583dd3e: File saved (49647 bytes), queuing for processing
+[INFO] [2026-06-16 23:20:15] Job 180a22de-6fbe-4815-9269-ea166583dd3e: Started processing 180a22de-6fbe-4815-9269-ea166583dd3e_SampleContract-Shuttle.pdf
+[INFO] [2026-06-16 23:20:15] Job 180a22de-6fbe-4815-9269-ea166583dd3e: Read 49647 bytes from file
+[INFO] [2026-06-16 23:20:15] Job 180a22de-6fbe-4815-9269-ea166583dd3e: Extracting text from document
+[INFO] [2026-06-16 23:20:15] Job 180a22de-6fbe-4815-9269-ea166583dd3e: Opening PDF document
+[INFO] [2026-06-16 23:20:15] Job 180a22de-6fbe-4815-9269-ea166583dd3e: Processing PDF with 10 pages
+[INFO] [2026-06-16 23:20:15] Job 180a22de-6fbe-4815-9269-ea166583dd3e: Page 1 native text: 2847 chars
+[INFO] [2026-06-16 23:20:15] Job 180a22de-6fbe-4815-9269-ea166583dd3e: Page 2 native text: 3353 chars
+[INFO] [2026-06-16 23:20:15] Job 180a22de-6fbe-4815-9269-ea166583dd3e: Page 3 native text: 3663 chars
+[INFO] [2026-06-16 23:20:15] Job 180a22de-6fbe-4815-9269-ea166583dd3e: Page 4 native text: 3429 chars
+[INFO] [2026-06-16 23:20:15] Job 180a22de-6fbe-4815-9269-ea166583dd3e: Page 5 native text: 3625 chars
+[INFO] [2026-06-16 23:20:15] Job 180a22de-6fbe-4815-9269-ea166583dd3e: Page 6 native text: 4012 chars
+[INFO] [2026-06-16 23:20:15] Job 180a22de-6fbe-4815-9269-ea166583dd3e: Page 7 native text: 3771 chars
+[INFO] [2026-06-16 23:20:15] Job 180a22de-6fbe-4815-9269-ea166583dd3e: Page 8 native text: 3667 chars
+[INFO] [2026-06-16 23:20:15] Job 180a22de-6fbe-4815-9269-ea166583dd3e: Page 9 native text: 3210 chars
+[INFO] [2026-06-16 23:20:15] Job 180a22de-6fbe-4815-9269-ea166583dd3e: Page 10 native text: 1359 chars
+[INFO] [2026-06-16 23:20:15] Job 180a22de-6fbe-4815-9269-ea166583dd3e: Extracted 32936 total characters
+[INFO] [2026-06-16 23:20:15] Job 180a22de-6fbe-4815-9269-ea166583dd3e: Extracted text length: 5000 characters
+[INFO] [2026-06-16 23:20:15] Job 180a22de-6fbe-4815-9269-ea166583dd3e: First 200 chars:  
+Page 1 
+Sample Contract 
+ 
+Contract No.___________ 
+PROFESSIONAL SERVICES AGREEMENT 
+ 
+ 
+THIS AGREEMENT made and entered into this _______day of                      , 20     by and between the SANT
+[INFO] [2026-06-16 23:20:15] Job 180a22de-6fbe-4815-9269-ea166583dd3e: Sending to Gemini AI for analysis
+[INFO] [2026-06-16 23:20:26] Job 180a22de-6fbe-4815-9269-ea166583dd3e: Gemini returned: {
+    "summary": "A standard template for a Professional Services Agreement between the Santa Cruz County Regional Transportation Commission (COMMISSION) and a CONSULTANT. It outlines the scope of duties, requirements for key personnel, invoicing procedures, and compensation limits, but is truncated at Section 3 (Term).",
+    "legalCategory": "Corporate",
+    "urgencyLevel": "Medium",
+    "riskScore": 45,
+    "importantDates": [
+        "45 calendar days after the performance of work (invoicing deadline)",
+        "60 calendar days after acceptance of the CONSULTANT's work (final invoice deadline)"
+    ],
+    "keywords": [
+        "Professional Services Agreement",
+        "Santa Cruz County Regional Transportation Commission",
+        "Consultant",
+        "Key Personnel",
+        "Compensation",
+        "Invoices",
+        "Scope of Services"
+    ],
+    "riskyClauses": [
+        {
+            "clauseType": "Key Personnel Restriction (Section 1.C)",
+            "riskLevel": "Medium",
+            "reason": "The Consultant cannot replace designated key personnel or change their functions without prior written consent from the Commission. This limits operational flexibility and poses compliance risks if staff leave unexpectedly."
+        },
+        {
+            "clauseType": "Payment Delay and Termination Penalty (Section 2.E)",
+            "riskLevel": "Medium",
+            "reason": "Allows the Commission to delay payments or terminate the agreement if the Consultant fails to submit deliverables strictly according to the schedule."
+        },
+        {
+            "clauseType": "Strict Invoicing Deadlines (Section 2.H & 2.H.7)",
+            "riskLevel": "Medium",
+            "reason": "Imposes rigid timelines for invoice submissions (45 days post-performance for monthly invoices, and 60 days post-acceptance for the final invoice). Late submissions may risk non-payment."
+        },
+        {
+            "clauseType": "Incomplete Agreement (Section 3)",
+            "riskLevel": "High",
+            "reason": "The document is severely truncated and cuts off at 'TERM. T', meaning vital contract terms, duration, renewal conditions, and termination rights are completely missing."
+        }
+    ]
+}
+[INFO] [2026-06-16 23:20:26] Job 180a22de-6fbe-4815-9269-ea166583dd3e: Gemini analysis completed successfully
+[INFO] [2026-06-16 23:20:26] Job 180a22de-6fbe-4815-9269-ea166583dd3e: Building document context for lawyer matching
+[INFO] [2026-06-16 23:20:26] Job 180a22de-6fbe-4815-9269-ea166583dd3e: Document context prepared (1357 chars, 16 components)
+[INFO] [2026-06-16 23:20:26] Job 180a22de-6fbe-4815-9269-ea166583dd3e: Searching lawyer_mapping table
+[INFO] [2026-06-16 23:20:26] Searching lawyer types for document (1357 chars)
+[INFO] [2026-06-16 23:20:26] Loaded 60 lawyer types from database
+[INFO] [2026-06-16 23:20:26] Found 0 matching lawyer types, returning top 0
+[INFO] [2026-06-16 23:20:26] Job 180a22de-6fbe-4815-9269-ea166583dd3e: Found 0 matching lawyer types
+[INFO] [2026-06-16 23:20:26] Job 180a22de-6fbe-4815-9269-ea166583dd3e: Complete pipeline finished successfully. Analysis saved, 0 lawyer types recommended
+[INFO] [2026-06-16 23:20:26] Job 180a22de-6fbe-4815-9269-ea166583dd3e: Cleaned up file 180a22de-6fbe-4815-9269-ea166583dd3e_SampleContract-Shuttle.pdf
