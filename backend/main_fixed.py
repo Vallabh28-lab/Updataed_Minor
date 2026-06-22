@@ -1,4 +1,5 @@
 import json
+import re
 import uvicorn
 import fitz  # PyMuPDF
 import pytesseract
@@ -29,6 +30,7 @@ engine = create_engine(DATABASE_URL)
 
 # CONFIGURATION
 pytesseract.pytesseract.tesseract_cmd = r"C:\\Program Files\\Tesseract-OCR\\tesseract.exe"
+MAX_JOBS = 100
 
 # Logging setup
 log_dir = "logs"
@@ -110,7 +112,10 @@ def get_high_accuracy_ocr(pix, page_num=None):
     """Uses OpenCV to clean the image and Tesseract for text extraction."""
     try:
         img_data = np.frombuffer(pix.samples, dtype=np.uint8).reshape(pix.h, pix.w, pix.n)
-        img = cv2.cvtColor(img_data, cv2.COLOR_RGB2BGR)
+        if pix.n == 4:
+            img = cv2.cvtColor(img_data, cv2.COLOR_RGBA2BGR)
+        else:
+            img = cv2.cvtColor(img_data, cv2.COLOR_RGB2BGR)
 
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         _, thresh = cv2.threshold(gray, 150, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
@@ -181,7 +186,7 @@ def process_document(job_id: str, file_path: str):
 
         jobs[job_id]["status"] = "extracting_text"
 
-        file_text = extract_text(file_bytes, job_id)[:5000]
+        file_text = extract_text(file_bytes, job_id)[:12000]
 
         if len(file_text) < 50:
             jobs[job_id] = {
@@ -194,7 +199,7 @@ def process_document(job_id: str, file_path: str):
 
         jobs[job_id]["status"] = "analyzing"
 
-        model = genai.GenerativeModel("gemini-1.5-flash")
+        model = genai.GenerativeModel("gemini-2.5-flash")
 
         prompt = f"""
         Analyze the following legal document.
@@ -251,49 +256,36 @@ def process_document(job_id: str, file_path: str):
         """
 
         response = model.generate_content(prompt)
-        clean_text = response.text.replace("```json", "").replace("```", "").strip()
+        clean_text = re.sub(
+            r"^```json|```$",
+            "",
+            response.text.strip(),
+            flags=re.MULTILINE,
+        ).strip()
 
         try:
-            parsed_data = json.loads(clean_text)
+            if not clean_text:
+                raise Exception("Gemini returned empty response")
+            match = re.search(r"\{.*\}", clean_text, re.DOTALL)
+            if not match:
+                raise Exception("No valid JSON returned")
+            parsed_data = json.loads(match.group())
             analysis = LegalAnalysis(**parsed_data)
 
             recommended_lawyers: List[Dict[str, Any]] = []
-            search_text = ""
 
             try:
-                document_context: List[str] = []
-
-                if analysis.summary:
-                    document_context.append(analysis.summary)
-
-                if analysis.keywords:
-                    document_context.extend(analysis.keywords)
-
-                search_text += (analysis.summary or "") + " "
-                search_text += analysis.legalCategory + " "
-                search_text += " ".join(analysis.keywords or []) + " "
+                search_text = (
+                    analysis.summary
+                    + " "
+                    + analysis.legalCategory
+                    + " "
+                    + " ".join(analysis.keywords)
+                )
 
                 if analysis.riskyClauses:
                     for clause in analysis.riskyClauses:
-                        document_context.append(clause.clauseType)
-                        document_context.append(clause.reason)
-                        search_text += clause.clauseType + " "
-                        search_text += clause.reason + " "
-
-                search_text += """
-                agreement
-                contract
-                consultant
-                compensation
-                invoice
-                payment
-                services
-                termination
-                liability
-                commercial
-                business
-                corporate
-                """
+                        search_text += " " + clause.clauseType + " " + clause.reason
 
                 recommended_raw = suggest_lawyer_types(search_text)
 
@@ -376,17 +368,53 @@ def process_document(job_id: str, file_path: str):
 
 @app.post("/api/predict", response_model=JobResponse)
 async def upload_and_analyze_document(file: UploadFile = File(...)):
-    job_id = str(uuid.uuid4())
-    file_path = os.path.join(UPLOAD_DIR, f"{job_id}_{file.filename}")
+    # Allow only PDF
+    if not file.filename.lower().endswith(".pdf"):
+        raise HTTPException(
+            status_code=400,
+            detail="Only PDF files are allowed"
+        )
+
+    MAX_SIZE = 15 * 1024 * 1024  # 15MB
 
     content = await file.read()
+
+    # Prevent large uploads
+    if len(content) > MAX_SIZE:
+        raise HTTPException(
+            status_code=413,
+            detail="File too large (max 15MB)"
+        )
+
+    job_id = str(uuid.uuid4())
+
+    file_path = os.path.join(
+        UPLOAD_DIR,
+        f"{job_id}_{file.filename}"
+    )
+
     with open(file_path, "wb") as f:
         f.write(content)
 
-    jobs[job_id] = {"status": "queued"}
-    executor.submit(process_document, job_id, file_path)
+    if len(jobs) > MAX_JOBS:
+        oldest = next(iter(jobs))
+        del jobs[oldest]
 
-    return {"job_id": job_id, "status": "queued"}
+    jobs[job_id] = {
+        "status": "queued"
+    }
+
+    executor.submit(
+        process_document,
+        job_id,
+        file_path
+    )
+
+    return {
+        "job_id": job_id,
+        "status": "queued"
+    }
+
 
 
 @app.get("/api/status/{job_id}", response_model=JobStatus)
@@ -398,5 +426,9 @@ async def get_job_status(job_id: str):
 
 if __name__ == "__main__":
     logger.info("Starting Legal AI Backend server")
-    uvicorn.run("main_fixed:app", host="127.0.0.1", port=5000, reload=True)
+    uvicorn.run(
+        app,
+        host="127.0.0.1",
+        port=5000
+    )
 

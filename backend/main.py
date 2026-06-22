@@ -1,4 +1,5 @@
 import json
+import re
 import uvicorn
 import fitz  # PyMuPDF
 import pytesseract
@@ -7,7 +8,8 @@ import cv2
 import numpy as np
 import uuid
 import logging
-import google.generativeai as genai
+#import google.generativeai as genai
+from google import genai
 
 from sqlalchemy import create_engine, text
 
@@ -29,6 +31,7 @@ engine = create_engine(DATABASE_URL)
 
 # CONFIGURATION
 pytesseract.pytesseract.tesseract_cmd = r"C:\\Program Files\\Tesseract-OCR\\tesseract.exe"
+MAX_JOBS = 100
 
 # Logging setup
 log_dir = "logs"
@@ -38,7 +41,9 @@ logging.basicConfig(
     format="[%(levelname)s] [%(asctime)s] %(message)s",
     datefmt="%Y-%m-%d %H:%M:%S",
     handlers=[
-        logging.FileHandler(os.path.join(log_dir, f"app_{datetime.now().strftime('%Y%m%d')}.log")),
+        logging.FileHandler(
+            os.path.join(log_dir, f"app_{datetime.now().strftime('%Y%m%d')}.log")
+        ),
         logging.StreamHandler(),
     ],
 )
@@ -53,12 +58,14 @@ class RiskyClause(BaseModel):
     riskLevel: str
     reason: str
 
+
 class RecommendedLawyerType(BaseModel):
     lawyer_type: str
     legal_domain: str
     match_percentage: int
     matched_items: List[str]
     match_count: int
+
 
 class LegalAnalysis(BaseModel):
     summary: str
@@ -69,9 +76,11 @@ class LegalAnalysis(BaseModel):
     keywords: List[str] = []
     riskyClauses: List[RiskyClause] = []
 
+
 class JobResponse(BaseModel):
     job_id: str
     status: str
+
 
 class JobStatus(BaseModel):
     status: str
@@ -87,17 +96,19 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+# Gemini client setup (new SDK)
+client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
 # Test available models on startup
 try:
-    available_models = genai.list_models()
+    available_models = client.models.list()
     logger.info("Available Gemini models:")
-    for model in available_models:
-        if "generateContent" in model.supported_generation_methods:
-            logger.info(f"  - {model.name}")
+    for m in available_models:
+        logger.info(f"  - {m.name}")
 except Exception as e:
     logger.warning(f"Could not list models: {e}")
+
+
 
 # Job storage and executor
 jobs: Dict[str, Dict[str, Any]] = {}
@@ -110,7 +121,10 @@ def get_high_accuracy_ocr(pix, page_num=None):
     """Uses OpenCV to clean the image and Tesseract for text extraction."""
     try:
         img_data = np.frombuffer(pix.samples, dtype=np.uint8).reshape(pix.h, pix.w, pix.n)
-        img = cv2.cvtColor(img_data, cv2.COLOR_RGB2BGR)
+        if pix.n == 4:
+            img = cv2.cvtColor(img_data, cv2.COLOR_RGBA2BGR)
+        else:
+            img = cv2.cvtColor(img_data, cv2.COLOR_RGB2BGR)
 
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         _, thresh = cv2.threshold(gray, 150, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
@@ -180,7 +194,7 @@ def process_document(job_id: str, file_path: str):
 
         jobs[job_id]["status"] = "extracting_text"
 
-        file_text = extract_text(file_bytes, job_id)[:5000]
+        file_text = extract_text(file_bytes, job_id)[:12000]
 
         if len(file_text) < 50:
             jobs[job_id] = {
@@ -193,9 +207,12 @@ def process_document(job_id: str, file_path: str):
 
         jobs[job_id]["status"] = "analyzing"
 
-        model = genai.GenerativeModel("models/gemini-2.5-flash")
+
+
+
 
         prompt = f"""
+
         Analyze the following legal document.
 
         Document:
@@ -249,117 +266,101 @@ def process_document(job_id: str, file_path: str):
         Return ONLY JSON.
         """
 
-        response = model.generate_content(prompt)
-        clean_text = response.text.replace("```json", "").replace("```", "").strip()
+        response = client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=prompt,
+        )
+
+
+        clean_text = re.sub(
+            r"^```json|```$",
+            "",
+            response.text.strip(),
+            flags=re.MULTILINE,
+        ).strip()
+
 
         try:
-            parsed_data = json.loads(clean_text)
+            if not clean_text:
+                raise Exception("Gemini returned empty response")
+            match = re.search(r"\{.*\}", clean_text, re.DOTALL)
+            if not match:
+                raise Exception("No valid JSON returned")
+            parsed_data = json.loads(match.group())
             analysis = LegalAnalysis(**parsed_data)
 
-            # ==========================================================
+            # ------------------------
             # LAWYER RECOMMENDATION
-            # ==========================================================
-
-            recommended_lawyers = []
+            # ------------------------
+            recommended_lawyers: List[Dict[str, Any]] = []
 
             try:
-
-                search_text = f"""
-{analysis.legalCategory}
-
-{' '.join(analysis.keywords)}
-
-{' '.join([x.clauseType for x in analysis.riskyClauses])}
-
-contract
-agreement
-corporate
-services
-payment
-invoice
-consultant
-termination
-compensation
-"""
-
-                print("\n========== SEARCH TEXT ==========")
-                print(search_text)
-
-                recommended_raw = suggest_lawyer_types(
-                    search_text
+                search_text = (
+                    analysis.summary
+                    + " "
+                    + analysis.legalCategory
+                    + " "
+                    + " ".join(analysis.keywords)
                 )
 
-                print("\n========== RAW LAWYERS ==========")
-                print(recommended_raw)
+                if analysis.riskyClauses:
+                    for clause in analysis.riskyClauses:
+                        search_text += " " + clause.clauseType + " " + clause.reason
+
+                STOP_WORDS = {
+                    "agreement",
+                    "contract",
+                    "payment",
+                    "consultant",
+                    "services",
+                    "termination",
+                    "performance",
+                    "invoice",
+                    "commission",
+                    "corporate",
+                }
+
+                recommended_raw = suggest_lawyer_types(search_text)
 
                 for item in recommended_raw:
+                    matched = (
+                        item.get("matched_terms", [])
+                        + item.get("matched_clauses", [])
+                        + item.get("matched_risks", [])
+                    )
 
                     matched = list(
                         set(
-                            item.get(
-                                "matched_terms",
-                                []
-                            )
-
-                            +
-
-                            item.get(
-                                "matched_clauses",
-                                []
-                            )
-
-                            +
-
-                            item.get(
-                                "matched_risks",
-                                []
-                            )
+                            [
+                                x.lower().strip()
+                                for x in matched
+                                if x.lower().strip() not in STOP_WORDS
+                            ]
                         )
                     )
 
+                    if len(matched) < 2:
+                        continue
+
                     recommended_lawyers.append(
                         {
-                            "lawyer_type":
-                            item.get(
-                                "lawyer_type",
-                                ""
-                            ),
-
-                            "legal_domain":
-                            item.get(
-                                "domain",
-                                ""
-                            ),
-
-                            "match_percentage":
-                            min(
-                                int(
-                                    item.get(
-                                        "score",
-                                        0
-                                    )
-                                ),
-                                100
-                            ),
-
-                            "matched_items":
-                            matched,
-
-                            "match_count":
-                            len(
-                                matched
-                            )
+                            "lawyer_type": item.get("lawyer_type", ""),
+                            "legal_domain": item.get("domain", ""),
+                            "match_percentage": min(len(matched) * 20, 100),
+                            "matched_items": matched,
+                            "match_count": len(matched),
                         }
                     )
 
-                print("\n========== FINAL LAWYERS ==========")
-                print(recommended_lawyers)
+                recommended_lawyers.sort(
+                    key=lambda x: x["match_percentage"], reverse=True
+                )
+                recommended_lawyers = recommended_lawyers[:5]
 
             except Exception as e:
-
-                print("\nLAWYER ERROR:")
-                print(str(e))
-
+                logger.error(
+                    f"Job {job_id}: Lawyer matching failed - {str(e)}", exc_info=True
+                )
                 recommended_lawyers = []
 
             with engine.connect() as conn:
@@ -407,10 +408,16 @@ compensation
 
         except ValidationError as ve:
             logger.error(f"Job {job_id}: Validation failed - {str(ve)}")
-            jobs[job_id] = {"status": "failed", "error": f"Invalid response format: {str(ve)}"}
+            jobs[job_id] = {
+                "status": "failed",
+                "error": f"Invalid response format: {str(ve)}",
+            }
         except json.JSONDecodeError as je:
             logger.error(f"Job {job_id}: JSON parsing failed - {str(je)}")
-            jobs[job_id] = {"status": "failed", "error": f"Invalid JSON response: {str(je)}"}
+            jobs[job_id] = {
+                "status": "failed",
+                "error": f"Invalid JSON response: {str(je)}",
+            }
 
     except Exception as e:
         logger.error(f"Job {job_id}: Processing failed - {str(e)}")
@@ -419,7 +426,9 @@ compensation
     finally:
         try:
             os.remove(file_path)
-            logger.info(f"Job {job_id}: Cleaned up file {os.path.basename(file_path)}")
+            logger.info(
+                f"Job {job_id}: Cleaned up file {os.path.basename(file_path)}"
+            )
         except Exception as e:
             logger.warning(f"Job {job_id}: Failed to cleanup file - {str(e)}")
 
@@ -438,7 +447,13 @@ async def upload_and_analyze_document(file: UploadFile = File(...)):
     with open(file_path, "wb") as f:
         f.write(content)
 
-    logger.info(f"Job {job_id}: File saved ({len(content)} bytes), queuing for processing")
+    logger.info(
+        f"Job {job_id}: File saved ({len(content)} bytes), queuing for processing"
+    )
+
+    if len(jobs) > MAX_JOBS:
+        oldest = next(iter(jobs))
+        del jobs[oldest]
 
     jobs[job_id] = {"status": "queued"}
 
@@ -455,7 +470,7 @@ async def get_job_status(job_id: str):
     return jobs[job_id]
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     logger.info("Starting Legal AI Backend server")
     uvicorn.run("main:app", host="127.0.0.1", port=5000, reload=True)
 
