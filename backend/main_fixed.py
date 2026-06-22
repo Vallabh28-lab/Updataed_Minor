@@ -287,6 +287,19 @@ def process_document(job_id: str, file_path: str):
                     for clause in analysis.riskyClauses:
                         search_text += " " + clause.clauseType + " " + clause.reason
 
+                STOP_WORDS = {
+                    "agreement",
+                    "contract",
+                    "payment",
+                    "consultant",
+                    "services",
+                    "termination",
+                    "performance",
+                    "invoice",
+                    "commission",
+                    "corporate",
+                }
+
                 recommended_raw = suggest_lawyer_types(search_text)
 
                 for item in recommended_raw:
@@ -296,15 +309,35 @@ def process_document(job_id: str, file_path: str):
                         + item.get("matched_risks", [])
                     )
 
-                    recommended_lawyers.append(
-                        {
-                            "lawyer_type": item.get("lawyer_type", ""),
-                            "legal_domain": item.get("domain", ""),
-                            "match_percentage": min(int(item.get("score", 0)), 100),
-                            "matched_items": matched,
-                            "match_count": len(set(matched)),
-                        }
+                    matched = list(
+                        set(
+                            [
+                                x.lower().strip()
+                                for x in matched
+                                if x.lower().strip() not in STOP_WORDS
+                            ]
+                        )
                     )
+
+                    match_count = len(matched)
+                    match_percentage = min(match_count * 20, 100)
+
+                    result = {
+                        "lawyer_type": item.get("lawyer_type", ""),
+                        "legal_domain": item.get("domain", ""),
+                        "match_percentage": match_percentage,
+                        "matched_items": matched,
+                        "match_count": match_count,
+                    }
+
+                    if match_percentage >= 60 and match_count >= 3:
+                        recommended_lawyers.append(result)
+
+                recommended_lawyers = sorted(
+                    recommended_lawyers,
+                    key=lambda x: x["match_percentage"],
+                    reverse=True
+                )[:5]
 
             except Exception as e:
                 logger.error(

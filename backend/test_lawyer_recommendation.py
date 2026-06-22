@@ -35,7 +35,58 @@ print("=" * 70)
 print()
 
 try:
-    results = suggest_lawyer_types(test_text, top_n=5)
+    STOP_WORDS = {
+        "agreement",
+        "contract",
+        "payment",
+        "consultant",
+        "services",
+        "termination",
+        "performance",
+        "invoice",
+        "commission",
+        "corporate",
+    }
+
+    raw_results = suggest_lawyer_types(test_text)
+    
+    results = []
+    for item in raw_results:
+        matched = (
+            item.get("matched_terms", [])
+            + item.get("matched_clauses", [])
+            + item.get("matched_risks", [])
+        )
+        
+        matched = list(
+            set(
+                [
+                    x.lower().strip()
+                    for x in matched
+                    if x.lower().strip() not in STOP_WORDS
+                ]
+            )
+        )
+        
+        match_count = len(matched)
+        match_percentage = min(match_count * 20, 100)
+        
+        result = {
+            "lawyer_type": item.get("lawyer_type", ""),
+            "legal_domain": item.get("domain", ""),
+            "match_percentage": match_percentage,
+            "matched_items": matched,
+            "match_count": match_count,
+        }
+        
+        if match_percentage >= 60 and match_count >= 3:
+            results.append(result)
+            
+    results = sorted(
+        results,
+        key=lambda x: x["match_percentage"],
+        reverse=True
+    )[:5]
     
     if not results:
         print("❌ No matching lawyer types found!")

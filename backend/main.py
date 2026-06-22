@@ -339,23 +339,25 @@ def process_document(job_id: str, file_path: str):
                         )
                     )
 
-                    if len(matched) < 2:
-                        continue
+                    match_count = len(matched)
+                    match_percentage = min(match_count * 20, 100)
 
-                    recommended_lawyers.append(
-                        {
-                            "lawyer_type": item.get("lawyer_type", ""),
-                            "legal_domain": item.get("domain", ""),
-                            "match_percentage": min(len(matched) * 20, 100),
-                            "matched_items": matched,
-                            "match_count": len(matched),
-                        }
-                    )
+                    result = {
+                        "lawyer_type": item.get("lawyer_type", ""),
+                        "legal_domain": item.get("domain", ""),
+                        "match_percentage": match_percentage,
+                        "matched_items": matched,
+                        "match_count": match_count,
+                    }
 
-                recommended_lawyers.sort(
-                    key=lambda x: x["match_percentage"], reverse=True
-                )
-                recommended_lawyers = recommended_lawyers[:5]
+                    if match_percentage >= 60 and match_count >= 3:
+                        recommended_lawyers.append(result)
+
+                recommended_lawyers = sorted(
+                    recommended_lawyers,
+                    key=lambda x: x["match_percentage"],
+                    reverse=True
+                )[:5]
 
             except Exception as e:
                 logger.error(

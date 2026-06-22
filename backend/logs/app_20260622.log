@@ -1,0 +1,137 @@
+[INFO] [2026-06-22 13:15:29] HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/models "HTTP/1.1 200 OK"
+[INFO] [2026-06-22 13:15:30] Available Gemini models:
+[INFO] [2026-06-22 13:15:30]   - models/gemini-2.5-flash
+[INFO] [2026-06-22 13:15:30]   - models/gemini-2.5-pro
+[INFO] [2026-06-22 13:15:30]   - models/gemini-2.0-flash
+[INFO] [2026-06-22 13:15:30]   - models/gemini-2.0-flash-001
+[INFO] [2026-06-22 13:15:30]   - models/gemini-2.0-flash-lite-001
+[INFO] [2026-06-22 13:15:30]   - models/gemini-2.0-flash-lite
+[INFO] [2026-06-22 13:15:30]   - models/gemini-2.5-flash-preview-tts
+[INFO] [2026-06-22 13:15:30]   - models/gemini-2.5-pro-preview-tts
+[INFO] [2026-06-22 13:15:30]   - models/gemma-4-26b-a4b-it
+[INFO] [2026-06-22 13:15:30]   - models/gemma-4-31b-it
+[INFO] [2026-06-22 13:15:30]   - models/gemini-flash-latest
+[INFO] [2026-06-22 13:15:30]   - models/gemini-flash-lite-latest
+[INFO] [2026-06-22 13:15:30]   - models/gemini-pro-latest
+[INFO] [2026-06-22 13:15:30]   - models/gemini-2.5-flash-lite
+[INFO] [2026-06-22 13:15:30]   - models/gemini-2.5-flash-image
+[INFO] [2026-06-22 13:15:30]   - models/gemini-3-pro-preview
+[INFO] [2026-06-22 13:15:30]   - models/gemini-3-flash-preview
+[INFO] [2026-06-22 13:15:30]   - models/gemini-3.1-pro-preview
+[INFO] [2026-06-22 13:15:30]   - models/gemini-3.1-pro-preview-customtools
+[INFO] [2026-06-22 13:15:30]   - models/gemini-3.1-flash-lite-preview
+[INFO] [2026-06-22 13:15:30]   - models/gemini-3.1-flash-lite
+[INFO] [2026-06-22 13:15:30]   - models/gemini-3-pro-image-preview
+[INFO] [2026-06-22 13:15:30]   - models/gemini-3-pro-image
+[INFO] [2026-06-22 13:15:30]   - models/nano-banana-pro-preview
+[INFO] [2026-06-22 13:15:30]   - models/gemini-3.1-flash-image-preview
+[INFO] [2026-06-22 13:15:30]   - models/gemini-3.1-flash-image
+[INFO] [2026-06-22 13:15:30]   - models/gemini-3.5-flash
+[INFO] [2026-06-22 13:15:30]   - models/lyria-3-clip-preview
+[INFO] [2026-06-22 13:15:30]   - models/lyria-3-pro-preview
+[INFO] [2026-06-22 13:15:30]   - models/gemini-3.1-flash-tts-preview
+[INFO] [2026-06-22 13:15:30]   - models/gemini-robotics-er-1.5-preview
+[INFO] [2026-06-22 13:15:30]   - models/gemini-robotics-er-1.6-preview
+[INFO] [2026-06-22 13:15:30]   - models/gemini-2.5-computer-use-preview-10-2025
+[INFO] [2026-06-22 13:15:30]   - models/antigravity-preview-05-2026
+[INFO] [2026-06-22 13:15:30]   - models/deep-research-max-preview-04-2026
+[INFO] [2026-06-22 13:15:30]   - models/deep-research-preview-04-2026
+[INFO] [2026-06-22 13:15:30]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-22 13:15:30]   - models/gemini-embedding-001
+[INFO] [2026-06-22 13:15:30]   - models/gemini-embedding-2-preview
+[INFO] [2026-06-22 13:15:30]   - models/gemini-embedding-2
+[INFO] [2026-06-22 13:15:30]   - models/aqa
+[INFO] [2026-06-22 13:15:30]   - models/imagen-4.0-generate-001
+[INFO] [2026-06-22 13:15:30]   - models/imagen-4.0-ultra-generate-001
+[INFO] [2026-06-22 13:15:30]   - models/imagen-4.0-fast-generate-001
+[INFO] [2026-06-22 13:15:30]   - models/veo-2.0-generate-001
+[INFO] [2026-06-22 13:15:30]   - models/veo-3.0-generate-001
+[INFO] [2026-06-22 13:15:30]   - models/veo-3.0-fast-generate-001
+[INFO] [2026-06-22 13:15:30]   - models/veo-3.1-generate-preview
+[INFO] [2026-06-22 13:15:30]   - models/veo-3.1-fast-generate-preview
+[INFO] [2026-06-22 13:15:30]   - models/veo-3.1-lite-generate-preview
+[INFO] [2026-06-22 13:15:30] HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/models?pageToken=CiRtb2RlbHMvdmVvLTMuMS1saXRlLWdlbmVyYXRlLXByZXZpZXc%3D "HTTP/1.1 200 OK"
+[INFO] [2026-06-22 13:15:30]   - models/gemini-2.5-flash-native-audio-latest
+[INFO] [2026-06-22 13:15:30]   - models/gemini-2.5-flash-native-audio-preview-09-2025
+[INFO] [2026-06-22 13:15:30]   - models/gemini-2.5-flash-native-audio-preview-12-2025
+[INFO] [2026-06-22 13:15:30]   - models/gemini-3.1-flash-live-preview
+[INFO] [2026-06-22 13:15:30]   - models/gemini-3.5-live-translate-preview
+[INFO] [2026-06-22 13:15:34] HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/models "HTTP/1.1 200 OK"
+[INFO] [2026-06-22 13:15:34] Available Gemini models:
+[INFO] [2026-06-22 13:15:34]   - models/gemini-2.5-flash
+[INFO] [2026-06-22 13:15:34]   - models/gemini-2.5-pro
+[INFO] [2026-06-22 13:15:34]   - models/gemini-2.0-flash
+[INFO] [2026-06-22 13:15:34]   - models/gemini-2.0-flash-001
+[INFO] [2026-06-22 13:15:34]   - models/gemini-2.0-flash-lite-001
+[INFO] [2026-06-22 13:15:34]   - models/gemini-2.0-flash-lite
+[INFO] [2026-06-22 13:15:34]   - models/gemini-2.5-flash-preview-tts
+[INFO] [2026-06-22 13:15:34]   - models/gemini-2.5-pro-preview-tts
+[INFO] [2026-06-22 13:15:34]   - models/gemma-4-26b-a4b-it
+[INFO] [2026-06-22 13:15:34]   - models/gemma-4-31b-it
+[INFO] [2026-06-22 13:15:34]   - models/gemini-flash-latest
+[INFO] [2026-06-22 13:15:34]   - models/gemini-flash-lite-latest
+[INFO] [2026-06-22 13:15:34]   - models/gemini-pro-latest
+[INFO] [2026-06-22 13:15:34]   - models/gemini-2.5-flash-lite
+[INFO] [2026-06-22 13:15:34]   - models/gemini-2.5-flash-image
+[INFO] [2026-06-22 13:15:34]   - models/gemini-3-pro-preview
+[INFO] [2026-06-22 13:15:34]   - models/gemini-3-flash-preview
+[INFO] [2026-06-22 13:15:34]   - models/gemini-3.1-pro-preview
+[INFO] [2026-06-22 13:15:34]   - models/gemini-3.1-pro-preview-customtools
+[INFO] [2026-06-22 13:15:34]   - models/gemini-3.1-flash-lite-preview
+[INFO] [2026-06-22 13:15:34]   - models/gemini-3.1-flash-lite
+[INFO] [2026-06-22 13:15:34]   - models/gemini-3-pro-image-preview
+[INFO] [2026-06-22 13:15:34]   - models/gemini-3-pro-image
+[INFO] [2026-06-22 13:15:34]   - models/nano-banana-pro-preview
+[INFO] [2026-06-22 13:15:34]   - models/gemini-3.1-flash-image-preview
+[INFO] [2026-06-22 13:15:34]   - models/gemini-3.1-flash-image
+[INFO] [2026-06-22 13:15:34]   - models/gemini-3.5-flash
+[INFO] [2026-06-22 13:15:34]   - models/lyria-3-clip-preview
+[INFO] [2026-06-22 13:15:34]   - models/lyria-3-pro-preview
+[INFO] [2026-06-22 13:15:34]   - models/gemini-3.1-flash-tts-preview
+[INFO] [2026-06-22 13:15:34]   - models/gemini-robotics-er-1.5-preview
+[INFO] [2026-06-22 13:15:34]   - models/gemini-robotics-er-1.6-preview
+[INFO] [2026-06-22 13:15:34]   - models/gemini-2.5-computer-use-preview-10-2025
+[INFO] [2026-06-22 13:15:34]   - models/antigravity-preview-05-2026
+[INFO] [2026-06-22 13:15:34]   - models/deep-research-max-preview-04-2026
+[INFO] [2026-06-22 13:15:34]   - models/deep-research-preview-04-2026
+[INFO] [2026-06-22 13:15:34]   - models/deep-research-pro-preview-12-2025
+[INFO] [2026-06-22 13:15:34]   - models/gemini-embedding-001
+[INFO] [2026-06-22 13:15:34]   - models/gemini-embedding-2-preview
+[INFO] [2026-06-22 13:15:34]   - models/gemini-embedding-2
+[INFO] [2026-06-22 13:15:34]   - models/aqa
+[INFO] [2026-06-22 13:15:34]   - models/imagen-4.0-generate-001
+[INFO] [2026-06-22 13:15:34]   - models/imagen-4.0-ultra-generate-001
+[INFO] [2026-06-22 13:15:34]   - models/imagen-4.0-fast-generate-001
+[INFO] [2026-06-22 13:15:34]   - models/veo-2.0-generate-001
+[INFO] [2026-06-22 13:15:34]   - models/veo-3.0-generate-001
+[INFO] [2026-06-22 13:15:34]   - models/veo-3.0-fast-generate-001
+[INFO] [2026-06-22 13:15:34]   - models/veo-3.1-generate-preview
+[INFO] [2026-06-22 13:15:34]   - models/veo-3.1-fast-generate-preview
+[INFO] [2026-06-22 13:15:34]   - models/veo-3.1-lite-generate-preview
+[INFO] [2026-06-22 13:15:34] HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/models?pageToken=CiRtb2RlbHMvdmVvLTMuMS1saXRlLWdlbmVyYXRlLXByZXZpZXc%3D "HTTP/1.1 200 OK"
+[INFO] [2026-06-22 13:15:34]   - models/gemini-2.5-flash-native-audio-latest
+[INFO] [2026-06-22 13:15:34]   - models/gemini-2.5-flash-native-audio-preview-09-2025
+[INFO] [2026-06-22 13:15:34]   - models/gemini-2.5-flash-native-audio-preview-12-2025
+[INFO] [2026-06-22 13:15:34]   - models/gemini-3.1-flash-live-preview
+[INFO] [2026-06-22 13:15:34]   - models/gemini-3.5-live-translate-preview
+[INFO] [2026-06-22 13:16:43] Job d757760d-46b8-4589-b4a5-3fc89dd00792: Received upload request for SampleContract-Shuttle.pdf
+[INFO] [2026-06-22 13:16:43] Job d757760d-46b8-4589-b4a5-3fc89dd00792: File size: 49647 bytes
+[INFO] [2026-06-22 13:16:43] Job d757760d-46b8-4589-b4a5-3fc89dd00792: File saved (49647 bytes), queuing for processing
+[INFO] [2026-06-22 13:16:43] Job d757760d-46b8-4589-b4a5-3fc89dd00792: Started processing d757760d-46b8-4589-b4a5-3fc89dd00792_SampleContract-Shuttle.pdf
+[INFO] [2026-06-22 13:16:43] Job d757760d-46b8-4589-b4a5-3fc89dd00792: Opening PDF document
+[INFO] [2026-06-22 13:16:43] Job d757760d-46b8-4589-b4a5-3fc89dd00792: Processing PDF with 10 pages
+[INFO] [2026-06-22 13:16:43] Job d757760d-46b8-4589-b4a5-3fc89dd00792: Page 1 native text: 2847 chars
+[INFO] [2026-06-22 13:16:43] Job d757760d-46b8-4589-b4a5-3fc89dd00792: Page 2 native text: 3353 chars
+[INFO] [2026-06-22 13:16:43] Job d757760d-46b8-4589-b4a5-3fc89dd00792: Page 3 native text: 3663 chars
+[INFO] [2026-06-22 13:16:43] Job d757760d-46b8-4589-b4a5-3fc89dd00792: Page 4 native text: 3429 chars
+[INFO] [2026-06-22 13:16:43] Job d757760d-46b8-4589-b4a5-3fc89dd00792: Page 5 native text: 3625 chars
+[INFO] [2026-06-22 13:16:43] Job d757760d-46b8-4589-b4a5-3fc89dd00792: Page 6 native text: 4012 chars
+[INFO] [2026-06-22 13:16:43] Job d757760d-46b8-4589-b4a5-3fc89dd00792: Page 7 native text: 3771 chars
+[INFO] [2026-06-22 13:16:43] Job d757760d-46b8-4589-b4a5-3fc89dd00792: Page 8 native text: 3667 chars
+[INFO] [2026-06-22 13:16:43] Job d757760d-46b8-4589-b4a5-3fc89dd00792: Page 9 native text: 3210 chars
+[INFO] [2026-06-22 13:16:43] Job d757760d-46b8-4589-b4a5-3fc89dd00792: Page 10 native text: 1359 chars
+[INFO] [2026-06-22 13:16:43] Job d757760d-46b8-4589-b4a5-3fc89dd00792: Extracted 32936 total characters
+[INFO] [2026-06-22 13:16:43] AFC is enabled with max remote calls: 10.
+[INFO] [2026-06-22 13:17:03] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+[INFO] [2026-06-22 13:17:03] Job d757760d-46b8-4589-b4a5-3fc89dd00792: Complete pipeline finished successfully. Analysis saved, 5 lawyer types recommended
+[INFO] [2026-06-22 13:17:03] Job d757760d-46b8-4589-b4a5-3fc89dd00792: Cleaned up file d757760d-46b8-4589-b4a5-3fc89dd00792_SampleContract-Shuttle.pdf

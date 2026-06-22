@@ -91,7 +91,7 @@ def suggest_lawyer_types(search_text):
         print("\n========== RESULTS ==========")
         print(results)
 
-        return results[:5]
+        return results
 
 
 def _calculate_match_score(
