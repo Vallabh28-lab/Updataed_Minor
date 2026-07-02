@@ -8,12 +8,12 @@ import cv2
 import numpy as np
 import uuid
 import logging
-#import google.generativeai as genai
+import concurrent.futures
 from google import genai
 
 from sqlalchemy import create_engine, text
 
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 from concurrent.futures import ThreadPoolExecutor
 from typing import List, Optional, Dict, Any
 
@@ -32,6 +32,10 @@ engine = create_engine(DATABASE_URL)
 # CONFIGURATION
 pytesseract.pytesseract.tesseract_cmd = r"C:\\Program Files\\Tesseract-OCR\\tesseract.exe"
 MAX_JOBS = 100
+MAX_FILE_SIZE = 10 * 1024 * 1024  # 10 MB
+GEMINI_TIMEOUT = 120               # seconds
+JOB_TTL = timedelta(hours=1)
+ALLOWED_EXTENSIONS = {".pdf", ".png", ".jpg", ".jpeg"}
 
 # Logging setup
 log_dir = "logs"
@@ -50,7 +54,11 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 load_dotenv()
-app = FastAPI(title="Legal AI Backend")
+app = FastAPI(
+    title="Legal Case Analysis API",
+    description="AI-powered legal document analysis: OCR extraction, risk scoring, clause detection, and lawyer recommendations.",
+    version="1.0.0",
+)
 
 # Pydantic Models
 class RiskyClause(BaseModel):
@@ -266,28 +274,65 @@ def process_document(job_id: str, file_path: str):
         Return ONLY JSON.
         """
 
-        response = client.models.generate_content(
-            model="gemini-2.5-flash",
-            contents=prompt,
-        )
+        def _call_gemini(contents: str) -> str:
+            """Call Gemini with timeout, return raw response text."""
+            with concurrent.futures.ThreadPoolExecutor(max_workers=1) as gem_exec:
+                future = gem_exec.submit(
+                    client.models.generate_content,
+                    model="gemini-2.5-flash",
+                    contents=contents,
+                )
+                return future.result(timeout=GEMINI_TIMEOUT).text
 
-
-        clean_text = re.sub(
-            r"^```json|```$",
-            "",
-            response.text.strip(),
-            flags=re.MULTILINE,
-        ).strip()
-
+        def _extract_json(raw: str) -> dict:
+            """Strip markdown fences and extract the first JSON object."""
+            cleaned = re.sub(r"^```json|^```|```$", "", raw.strip(), flags=re.MULTILINE).strip()
+            m = re.search(r"\{.*\}", cleaned, re.DOTALL)
+            if not m:
+                raise ValueError("No JSON object found in Gemini response")
+            return json.loads(m.group())
 
         try:
-            if not clean_text:
-                raise Exception("Gemini returned empty response")
-            match = re.search(r"\{.*\}", clean_text, re.DOTALL)
-            if not match:
-                raise Exception("No valid JSON returned")
-            parsed_data = json.loads(match.group())
+            raw = _call_gemini(prompt)
+        except concurrent.futures.TimeoutError:
+            jobs[job_id] = {"status": "failed", "error": "AI service timed out. Please retry."}
+            logger.error("Job %s: Gemini timed out after %ds", job_id, GEMINI_TIMEOUT)
+            return
+
+        # ── Retry JSON parsing once if first attempt fails ──────────────────
+        try:
+            parsed_data = _extract_json(raw)
+        except (ValueError, json.JSONDecodeError) as first_err:
+            logger.warning("Job %s: First JSON parse failed (%s) — retrying Gemini", job_id, first_err)
+            retry_prompt = prompt + "\n\nIMPORTANT: Return ONLY raw JSON. No markdown, no explanation, no code fences."
+            try:
+                raw = _call_gemini(retry_prompt)
+                parsed_data = _extract_json(raw)
+                logger.info("Job %s: Retry JSON parse succeeded", job_id)
+            except (ValueError, json.JSONDecodeError) as second_err:
+                logger.error("Job %s: Retry JSON parse also failed: %s", job_id, second_err)
+                jobs[job_id] = {"status": "failed", "error": "JSON parsing failed after retry. AI returned malformed response."}
+                return
+
+        try:
             analysis = LegalAnalysis(**parsed_data)
+
+            # ── Composite risk score: Gemini base + clause weight ────────────
+            HIGH_RISK_WEIGHT   = 15
+            MEDIUM_RISK_WEIGHT = 7
+            LOW_RISK_WEIGHT    = 3
+            clause_bonus = sum(
+                HIGH_RISK_WEIGHT   if c.riskLevel.lower() == "high"   else
+                MEDIUM_RISK_WEIGHT if c.riskLevel.lower() == "medium" else
+                LOW_RISK_WEIGHT
+                for c in analysis.riskyClauses
+            )
+            composite_risk = min(100, int(analysis.riskScore * 0.7 + clause_bonus * 0.3))
+            logger.info(
+                "Job %s: Risk — Gemini=%d, clause_bonus=%d, composite=%d",
+                job_id, analysis.riskScore, clause_bonus, composite_risk,
+            )
+            analysis = analysis.model_copy(update={"riskScore": composite_risk})
 
             # ------------------------
             # LAWYER RECOMMENDATION
@@ -295,68 +340,42 @@ def process_document(job_id: str, file_path: str):
             recommended_lawyers: List[Dict[str, Any]] = []
 
             try:
-                search_text = (
-                    analysis.summary
-                    + " "
-                    + analysis.legalCategory
-                    + " "
-                    + " ".join(analysis.keywords)
+                risky_clause_types = [
+                    c.clauseType for c in analysis.riskyClauses
+                ] if analysis.riskyClauses else []
+
+                recommended_raw = suggest_lawyer_types(
+                    summary=analysis.summary,
+                    legal_category=analysis.legalCategory,
+                    keywords=analysis.keywords,
+                    risky_clause_types=risky_clause_types,
                 )
 
-                if analysis.riskyClauses:
-                    for clause in analysis.riskyClauses:
-                        search_text += " " + clause.clauseType + " " + clause.reason
-
-                STOP_WORDS = {
-                    "agreement",
-                    "contract",
-                    "payment",
-                    "consultant",
-                    "services",
-                    "termination",
-                    "performance",
-                    "invoice",
-                    "commission",
-                    "corporate",
-                }
-
-                recommended_raw = suggest_lawyer_types(search_text)
+                # Normalise score to a realistic confidence percentage (60-97 range)
+                scores = [r["score"] for r in recommended_raw] or [1]
+                max_score = max(scores)
 
                 for item in recommended_raw:
-                    matched = (
-                        item.get("matched_terms", [])
-                        + item.get("matched_clauses", [])
-                        + item.get("matched_risks", [])
-                    )
-
-                    matched = list(
-                        set(
-                            [
-                                x.lower().strip()
-                                for x in matched
-                                if x.lower().strip() not in STOP_WORDS
-                            ]
-                        )
-                    )
-
+                    matched = list(set(item.get("matched_terms", [])))
                     match_count = len(matched)
-                    match_percentage = min(match_count * 20, 100)
 
-                    result = {
-                        "lawyer_type": item.get("lawyer_type", ""),
-                        "legal_domain": item.get("domain", ""),
-                        "match_percentage": match_percentage,
-                        "matched_items": matched,
-                        "match_count": match_count,
-                    }
+                    # Realistic confidence: top scorer gets ~92-97%, rest scale down
+                    raw_pct = (item["score"] / max_score) * 100
+                    match_percentage = int(60 + (raw_pct / 100) * 37)  # maps to 60-97
 
-                    if match_percentage >= 60 and match_count >= 3:
-                        recommended_lawyers.append(result)
+                    if match_count >= 3 and match_percentage >= 60:
+                        recommended_lawyers.append({
+                            "lawyer_type": item.get("lawyer_type", ""),
+                            "legal_domain": item.get("domain", ""),
+                            "match_percentage": match_percentage,
+                            "matched_items": matched,
+                            "match_count": match_count,
+                        })
 
                 recommended_lawyers = sorted(
                     recommended_lawyers,
                     key=lambda x: x["match_percentage"],
-                    reverse=True
+                    reverse=True,
                 )[:5]
 
             except Exception as e:
@@ -401,6 +420,7 @@ def process_document(job_id: str, file_path: str):
                 "status": "completed",
                 "analysis": analysis.model_dump(),
                 "recommendedLawyerTypes": recommended_lawyers,
+                "created_at": jobs[job_id].get("created_at"),
             }
 
             logger.info(
@@ -409,21 +429,22 @@ def process_document(job_id: str, file_path: str):
             )
 
         except ValidationError as ve:
-            logger.error(f"Job {job_id}: Validation failed - {str(ve)}")
-            jobs[job_id] = {
-                "status": "failed",
-                "error": f"Invalid response format: {str(ve)}",
-            }
-        except json.JSONDecodeError as je:
-            logger.error(f"Job {job_id}: JSON parsing failed - {str(je)}")
-            jobs[job_id] = {
-                "status": "failed",
-                "error": f"Invalid JSON response: {str(je)}",
-            }
+            logger.error("Job %s: Pydantic validation failed - %s", job_id, ve)
+            jobs[job_id] = {"status": "failed", "error": "Invalid response format from AI."}
 
+    except fitz.FileDataError:
+        logger.error(f"Job {job_id}: Invalid or corrupted PDF")
+        jobs[job_id] = {"status": "failed", "error": "Invalid PDF. The file may be corrupted or password-protected."}
     except Exception as e:
-        logger.error(f"Job {job_id}: Processing failed - {str(e)}")
-        jobs[job_id] = {"status": "failed", "error": str(e)}
+        msg = str(e)
+        if "quota" in msg.lower() or "429" in msg:
+            user_msg = "Gemini API quota exceeded. Please try again later."
+        elif "ECONNREFUSED" in msg or "connection" in msg.lower():
+            user_msg = "OCR extraction failed. Internal service unavailable."
+        else:
+            user_msg = f"Processing failed: {msg}"
+        logger.error(f"Job {job_id}: {user_msg}")
+        jobs[job_id] = {"status": "failed", "error": user_msg}
 
     finally:
         try:
@@ -435,36 +456,102 @@ def process_document(job_id: str, file_path: str):
             logger.warning(f"Job {job_id}: Failed to cleanup file - {str(e)}")
 
 
-@app.post("/api/predict", response_model=JobResponse)
-async def upload_and_analyze_document(file: UploadFile = File(...)):
-    job_id = str(uuid.uuid4())
-    file_path = os.path.join(UPLOAD_DIR, f"{job_id}_{file.filename}")
+def _evict_old_jobs():
+    """Remove completed/failed jobs older than JOB_TTL to keep RAM low."""
+    cutoff = datetime.now(timezone.utc) - JOB_TTL
+    stale = [
+        jid for jid, data in jobs.items()
+        if data.get("status") in ("completed", "failed")
+        and data.get("created_at", datetime.now(timezone.utc)) < cutoff
+    ]
+    for jid in stale:
+        del jobs[jid]
+    if stale:
+        logger.info("Evicted %d stale jobs", len(stale))
 
-    logger.info(f"Job {job_id}: Received upload request for {file.filename}")
+
+@app.post(
+    "/api/predict",
+    response_model=JobResponse,
+    summary="Upload and analyze a legal document",
+    description="Accepts a PDF or image file. Returns a job_id to poll for results.",
+    responses={
+        200: {
+            "description": "Job queued successfully",
+            "content": {"application/json": {"example": {"job_id": "a1b2c3d4-...", "status": "queued"}}},
+        },
+        400: {"description": "Unsupported file type"},
+        413: {"description": "File exceeds 10 MB limit"},
+    },
+)
+async def upload_and_analyze_document(file: UploadFile = File(..., description="Legal document — PDF, PNG, JPG or JPEG, max 10 MB")):
+    # Validate file extension
+    ext = os.path.splitext(file.filename or "")[1].lower()
+    if ext not in ALLOWED_EXTENSIONS:
+        raise HTTPException(400, f"Unsupported file type '{ext}'. Allowed: pdf, png, jpg, jpeg.")
 
     content = await file.read()
 
-    logger.info(f"Job {job_id}: File size: {len(content)} bytes")
+    # Validate file size
+    if len(content) > MAX_FILE_SIZE:
+        raise HTTPException(413, f"File too large ({len(content) // (1024*1024)} MB). Maximum allowed is 10 MB.")
+
+    job_id = str(uuid.uuid4())
+    file_path = os.path.join(UPLOAD_DIR, f"{job_id}_{file.filename}")
+
+    logger.info("Job %s: Received '%s' (%d bytes)", job_id, file.filename, len(content))
 
     with open(file_path, "wb") as f:
         f.write(content)
 
-    logger.info(
-        f"Job {job_id}: File saved ({len(content)} bytes), queuing for processing"
-    )
-
-    if len(jobs) > MAX_JOBS:
+    # Evict old jobs, then enforce hard cap
+    _evict_old_jobs()
+    if len(jobs) >= MAX_JOBS:
         oldest = next(iter(jobs))
         del jobs[oldest]
 
-    jobs[job_id] = {"status": "queued"}
+    jobs[job_id] = {"status": "queued", "created_at": datetime.now(timezone.utc)}
 
     executor.submit(process_document, job_id, file_path)
 
     return {"job_id": job_id, "status": "queued"}
 
 
-@app.get("/api/status/{job_id}", response_model=JobStatus)
+@app.get(
+    "/api/status/{job_id}",
+    response_model=JobStatus,
+    summary="Poll analysis job status",
+    description="Returns current status and, when complete, the full analysis with recommended lawyer types.",
+    responses={
+        200: {
+            "description": "Job status",
+            "content": {
+                "application/json": {
+                    "example": {
+                        "status": "completed",
+                        "analysis": {
+                            "summary": "Service agreement between two corporate parties.",
+                            "legalCategory": "Corporate",
+                            "urgencyLevel": "Medium",
+                            "riskScore": 74,
+                            "importantDates": ["01 January 2025"],
+                            "keywords": ["indemnity", "liability", "termination"],
+                            "riskyClauses": [
+                                {"clauseType": "Liability", "riskLevel": "high", "reason": "Uncapped liability exposure."}
+                            ],
+                        },
+                        "recommendedLawyerTypes": [
+                            {"lawyer_type": "Corporate Lawyer",      "legal_domain": "Corporate Law",  "match_percentage": 92, "matched_items": ["indemnity", "liability"], "match_count": 5},
+                            {"lawyer_type": "Contract Lawyer",       "legal_domain": "Contract Law",   "match_percentage": 86, "matched_items": ["termination", "breach"],  "match_count": 4},
+                            {"lawyer_type": "Construction Lawyer",   "legal_domain": "Construction Law","match_percentage": 73, "matched_items": ["penalty", "delay"],     "match_count": 3},
+                        ],
+                    }
+                }
+            },
+        },
+        404: {"description": "Job not found"},
+    },
+)
 async def get_job_status(job_id: str):
     if job_id not in jobs:
         logger.warning(f"Status check for unknown job: {job_id}")

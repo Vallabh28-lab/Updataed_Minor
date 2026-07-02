@@ -55,14 +55,23 @@ function ClauseCard({ clause }) {
 }
 // ────────────────────────────────────────────────────────────────────────────
 
+const PROGRESS_STEPS = [
+  { key: 'queued',          label: 'Uploading…' },
+  { key: 'extracting_text', label: 'Extracting Text…' },
+  { key: 'analyzing',       label: 'Analyzing Contract…' },
+  { key: 'matching',        label: 'Finding Risks…' },
+  { key: 'completed',       label: 'Matching Lawyers…' },
+];
+
 function DocumentAnalysis() {
 
-  // ─── CORE STATE — UNCHANGED ───────────────────────────────────────────────
+  // ─── CORE STATE ───────────────────────────────────────────────────────────
   const [uploadedFile, setUploadedFile]       = useState(null);
   const [analysisResults, setAnalysisResults] = useState(null);
   const [activeTab, setActiveTab]             = useState('upload');
   const [isProcessing, setIsProcessing]       = useState(false);
   const [errorMessage, setErrorMessage]       = useState(null);
+  const [progressStep, setProgressStep]       = useState(0);
   const inputRef = useRef();
   // ──────────────────────────────────────────────────────────────────────────
 
@@ -76,6 +85,7 @@ function DocumentAnalysis() {
     setErrorMessage(null);
     setActiveTab('processing');
     setIsProcessing(true);
+    setProgressStep(0);
 
     const formData = new FormData();
     formData.append('file', file);
@@ -94,26 +104,30 @@ function DocumentAnalysis() {
           const { status, analysis, error } = statusResponse.data;
 
           if (status === 'completed' && analysis) {
-            setAnalysisResults({
-              summary: analysis.summary || 'No summary provided.',
-              legalCategory: analysis.legalCategory || 'Other',
-              urgencyLevel: analysis.urgencyLevel || 'Low',
-              riskScore: analysis.riskScore || 0,
-              importantDates: analysis.importantDates || [],
-              keywords: analysis.keywords || [],
-              riskyClauses: analysis.riskyClauses || [],
-              recommendedLawyerTypes: statusResponse.data.recommendedLawyerTypes || []
-            });
-
-            setIsProcessing(false);
-            setActiveTab('results');
+            setProgressStep(PROGRESS_STEPS.length - 1);
+            setTimeout(() => {
+              setAnalysisResults({
+                summary: analysis.summary || 'No summary provided.',
+                legalCategory: analysis.legalCategory || 'Other',
+                urgencyLevel: analysis.urgencyLevel || 'Low',
+                riskScore: analysis.riskScore || 0,
+                importantDates: analysis.importantDates || [],
+                keywords: analysis.keywords || [],
+                riskyClauses: analysis.riskyClauses || [],
+                recommendedLawyerTypes: statusResponse.data.recommendedLawyerTypes || []
+              });
+              setIsProcessing(false);
+              setActiveTab('results');
+            }, 600);
 
           } else if (status === 'failed') {
             setErrorMessage(error || 'Analysis failed');
             setIsProcessing(false);
             setActiveTab('upload');
           } else {
-            // Still processing, poll again
+            const stepIdx = PROGRESS_STEPS.findIndex(s => s.key === status);
+            if (stepIdx >= 0) setProgressStep(stepIdx);
+            else setProgressStep(prev => Math.min(prev + 1, PROGRESS_STEPS.length - 2));
             setTimeout(pollStatus, 2000);
           }
         } catch (err) {
@@ -250,7 +264,7 @@ function DocumentAnalysis() {
             PROCESSING STATE
         ══════════════════════════════════════════════════════════════════ */}
         {activeTab === 'processing' && (
-          <div className="bg-white rounded-2xl border border-gray-100 shadow-sm flex flex-col items-center justify-center py-28 gap-6">
+          <div className="bg-white rounded-2xl border border-gray-100 shadow-sm flex flex-col items-center justify-center py-20 gap-8">
             <div className="relative">
               <div className="w-20 h-20 rounded-2xl bg-amber-50 border border-amber-100 flex items-center justify-center">
                 <FileText className="w-8 h-8 text-amber-400" />
@@ -259,14 +273,39 @@ function DocumentAnalysis() {
                 <Loader2 className="w-4 h-4 text-amber-500 animate-spin" />
               </div>
             </div>
-            <div className="text-center">
-              <p className="text-lg font-semibold text-gray-800">
-                {isProcessing ? 'Scanning Document…' : 'Analysis Complete'}
-              </p>
-              <p className="text-sm text-gray-400 mt-1">Extracting text, detecting clauses & identifying key terms</p>
+
+            {/* Step list */}
+            <div className="flex flex-col gap-2 w-64">
+              {PROGRESS_STEPS.map((step, i) => {
+                const done    = i < progressStep;
+                const active  = i === progressStep;
+                return (
+                  <div key={step.key} className="flex items-center gap-3">
+                    <div className={`w-6 h-6 rounded-full flex items-center justify-center shrink-0 transition-colors ${
+                      done   ? 'bg-emerald-500' :
+                      active ? 'bg-amber-400'   : 'bg-gray-100'
+                    }`}>
+                      {done
+                        ? <CheckCircle className="w-3.5 h-3.5 text-white" />
+                        : active
+                          ? <Loader2 className="w-3 h-3 text-white animate-spin" />
+                          : <span className="w-2 h-2 rounded-full bg-gray-300" />}
+                    </div>
+                    <span className={`text-sm transition-colors ${
+                      done   ? 'text-emerald-600 font-medium' :
+                      active ? 'text-gray-800 font-semibold'  : 'text-gray-400'
+                    }`}>{step.label}</span>
+                  </div>
+                );
+              })}
             </div>
-            <div className="w-48 h-1.5 bg-gray-100 rounded-full overflow-hidden">
-              <div className="h-full bg-amber-400 rounded-full animate-pulse w-2/3" />
+
+            {/* Progress bar */}
+            <div className="w-64 h-1.5 bg-gray-100 rounded-full overflow-hidden">
+              <div
+                className="h-full bg-amber-400 rounded-full transition-all duration-500"
+                style={{ width: `${((progressStep + 1) / PROGRESS_STEPS.length) * 100}%` }}
+              />
             </div>
           </div>
         )}
